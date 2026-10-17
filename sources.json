@@ -1,0 +1,15 @@
+{
+  "checked_date": "2026-10-17",
+  "all_sources_primary": true,
+  "sources": [
+    {"id": 1, "title": "JSP-000013: Hadamard matrix conjecture", "publisher": "The Justin Sun Prize", "url": "https://github.com/TheJustinSunPrize/awards/blob/main/problems/catalog-0001-0100.md#jsp-000013--hadamard-matrix-conjecture", "supports": "Exact universal existence problem; catalog status Open; pilot mapping. Does not establish award eligibility or a reward amount."},
+    {"id": 2, "title": "SliceGPT: Compress Large Language Models by Deleting Rows and Columns", "authors": "Saleh Ashkboos and coauthors", "url": "https://arxiv.org/abs/2401.15024v2", "supports": "Computational invariance for supported transformer architectures, with architectural assumptions."},
+    {"id": 3, "title": "QuaRot: Outlier-Free 4-Bit Inference in Rotated LLMs", "authors": "Saleh Ashkboos and coauthors", "url": "https://arxiv.org/html/2404.00456v2", "implementation": "https://github.com/spcl/QuaRot", "supports": "Hadamard processing of LLM weights, activations and cache; online and fused transforms; known non-power-of-two constructions. Our experiment is not a reproduction of the full method."},
+    {"id": 4, "title": "QuIP#: Even Better LLM Quantization with Hadamard Incoherence and Lattice Codebooks", "authors": "Albert Tseng and coauthors", "url": "https://arxiv.org/abs/2402.04396v2", "supports": "Prior work combining randomized Hadamard transforms with lattice vector quantization."},
+    {"id": 5, "title": "SpinQuant: LLM quantization with learned rotations", "authors": "Zechun Liu and coauthors", "url": "https://arxiv.org/abs/2405.16406v4", "supports": "Learned rotations and observed variation across random rotations in downstream model experiments."},
+    {"id": 6, "title": "MathDB cooperation pilot", "publisher": "The Justin Sun Prize", "url": "https://github.com/TheJustinSunPrize/awards/blob/main/problems/mathdb-pilot.md", "observed_rollout": "prepared", "supports": "Rollout state and inclusion of JSP-000013. State may change after the checked date."},
+    {"id": 7, "title": "MathDB award process", "publisher": "The Justin Sun Prize", "url": "https://github.com/TheJustinSunPrize/awards/blob/main/docs/award-process-mathdb.md", "supports": "Exposition category receives 20% of the formally announced problem reward if selected by the committee after review; open problems may be explained; uploads and technical approval alone do not establish an award."}
+  ],
+  "original_work_in_package": ["An authored explanation with elementary derivations", "A reproducible synthetic CPU quantization experiment with matched controls", "An exact rational counterexample presentation", "An interactive four-coordinate calculator"],
+  "not_claimed": ["A solution to the Hadamard conjecture", "A new quantization method", "An LLM accuracy result", "A GPU speedup", "A compressed integer implementation", "A submission, priority claim, committee approval or award"]
+}
