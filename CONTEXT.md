@@ -6,7 +6,9 @@ The reference workload uses 512 activation rows, 128 input features, 64 output f
 
 The first follow-up varies the quantization group size while preserving the full-width transform. Its frozen design is in `docs/experiments/group-size-v1.md`. Every result uses relative squared Frobenius output error against the same full-precision linear product. A rotation win means lower error within a matched seed and group size.
 
-The work is an error simulation in float64. It measures no language model accuracy, packed integer memory consumption or hardware throughput. The power-of-two Hadamard construction is known mathematics. No claim of solving the general Hadamard conjecture or receiving a prize follows from these experiments.
+The reference and group-size studies are error simulations in float64. The next design, `docs/experiments/model-benchmark-v1.md`, defines a matched six-arm Pythia-70M CPU benchmark. It targets four-bit weights with float32 activations in the six post-GELU MLP output projections. Its generated-input ONNX qualification checks actual packed-format execution, legal rotation placement and loss/data helpers. It measures no pretrained-model quality or inference improvement. Full-model acquisition, export parity and resource feasibility remain prerequisites for a later execution revision.
+
+The power-of-two Hadamard construction is known mathematics. No claim of solving the general Hadamard conjecture or receiving a prize follows from these experiments.
 
 Use GitHub issues and pull requests for work tracking. Read `docs/agents/issue-tracker.md` and `docs/agents/domain.md` for the repository conventions. Run the documented validation command before proposing changes. Preserve old results and negative outcomes, label exploratory follow-ups, and bind receipts to source and protocol hashes.
 

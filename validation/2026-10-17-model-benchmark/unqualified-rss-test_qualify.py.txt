@@ -1,0 +1,77 @@
+"""Memory preflight regression cases using supplied cgroup observations."""
+
+import unittest
+
+from benchmarks.qualify import _memory_preflight
+
+
+GIB = 1024**3
+
+
+class MemoryPreflightTests(unittest.TestCase):
+    def observation(self, limit=8 * GIB, current=8 * GIB - GIB // 4, *,
+                    inactive=2 * GIB, dirty=0, writeback=0, host=9 * GIB):
+        return {"cgroup_memory_max_bytes": limit, "cgroup_memory_current_bytes": current,
+                "cgroup_memory_stat": {"inactive_file": inactive, "file_dirty": dirty,
+                                       "file_writeback": writeback, "active_file": 6 * GIB,
+                                       "slab_reclaimable": 4 * GIB},
+                "host_memory_bytes": {"MemAvailable": host} if host is not None else {}}
+
+    def test_clean_inactive_cache_supplies_conservative_headroom(self):
+        observed = self.observation(limit=8589934592, current=8335228928,
+                                    inactive=1505341440, dirty=2007040, writeback=0)
+        _memory_preflight(observed, GIB)
+        estimate = observed["memory_availability_estimate"]
+        self.assertEqual(estimate["cgroup_headroom_bytes"], 254705664)
+        self.assertEqual(estimate["reclaimable_inactive_file_bytes"], 1503334400)
+        self.assertEqual(estimate["estimated_available_bytes"], 1758040064)
+        self.assertTrue(estimate["inactive_file_accounting_complete"])
+
+    def test_dirty_and_writeback_bytes_do_not_receive_cache_credit(self):
+        observed = self.observation(inactive=GIB, dirty=GIB // 2, writeback=GIB // 2)
+        with self.assertRaises(ValueError):
+            _memory_preflight(observed, GIB)
+        estimate = observed["memory_availability_estimate"]
+        self.assertEqual(estimate["reclaimable_inactive_file_bytes"], 0)
+        self.assertEqual(estimate["estimated_available_bytes"], GIB // 4)
+        # Neither large active-file nor slab fields may make this pass.
+        self.assertGreater(observed["cgroup_memory_stat"]["active_file"], GIB)
+
+    def test_host_memavailable_caps_the_estimate(self):
+        observed = self.observation(host=GIB // 2)
+        with self.assertRaises(ValueError):
+            _memory_preflight(observed, GIB)
+        self.assertEqual(observed["memory_availability_estimate"]["estimated_available_bytes"], GIB // 2)
+
+    def test_genuinely_insufficient_or_missing_stats_fail_closed(self):
+        insufficient = self.observation(inactive=GIB // 4)
+        with self.assertRaises(ValueError):
+            _memory_preflight(insufficient, GIB)
+        for missing in ("inactive_file", "file_dirty", "file_writeback"):
+            observed = self.observation()
+            del observed["cgroup_memory_stat"][missing]
+            with self.subTest(missing=missing), self.assertRaises(ValueError):
+                _memory_preflight(observed, GIB)
+            estimate = observed["memory_availability_estimate"]
+            self.assertFalse(estimate["inactive_file_accounting_complete"])
+            self.assertEqual(estimate["reclaimable_inactive_file_bytes"], 0)
+
+    def test_plain_headroom_can_pass_without_cache_or_host_accounting(self):
+        observed = self.observation(current=6 * GIB, host=None)
+        observed["cgroup_memory_stat"] = {}
+        _memory_preflight(observed, GIB)
+        self.assertEqual(observed["memory_availability_estimate"]["estimated_available_bytes"], 2 * GIB)
+
+    def test_negative_headroom_and_overdrawn_cache_credit_are_clamped(self):
+        observed = self.observation(current=9 * GIB, inactive=GIB // 4, dirty=GIB // 2)
+        with self.assertRaises(ValueError):
+            _memory_preflight(observed, GIB)
+        self.assertEqual(observed["memory_availability_estimate"]["estimated_available_bytes"], 0)
+        observed["cgroup_memory_max_bytes"] = None
+        with self.assertRaises(ValueError):
+            _memory_preflight(observed, GIB)
+        self.assertIsNone(observed["memory_availability_estimate"]["estimated_available_bytes"])
+
+
+if __name__ == "__main__":
+    unittest.main()

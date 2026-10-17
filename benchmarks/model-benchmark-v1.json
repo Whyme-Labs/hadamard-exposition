@@ -1,0 +1,345 @@
+{
+  "schema_version": "hadamard-model-benchmark.v1",
+  "campaign_id": "pythia70m-mlp-w4a32-v1",
+  "scope": "Design and generated-input qualification. Pretrained-model acquisition and evaluation require a later execution revision.",
+  "model": {
+    "repo": "EleutherAI/pythia-70m",
+    "revision": "301b2c9bdf4d6da917d8f02d3c48aac481a60d06",
+    "architecture": "GPTNeoXForCausalLM",
+    "hidden_size": 512,
+    "intermediate_size": 2048,
+    "num_hidden_layers": 6,
+    "num_attention_heads": 8,
+    "vocab_size": 50304,
+    "max_position_embeddings": 2048,
+    "weight_orientation": "output_by_input",
+    "trust_remote_code": false,
+    "use_safetensors": true,
+    "load_dtype": "float32",
+    "files": [
+      "config.json",
+      "model.safetensors",
+      "tokenizer.json",
+      "tokenizer_config.json",
+      "special_tokens_map.json"
+    ],
+    "tokenizer": {
+      "repo": "EleutherAI/pythia-70m",
+      "revision": "301b2c9bdf4d6da917d8f02d3c48aac481a60d06",
+      "add_special_tokens": false,
+      "truncation": false
+    },
+    "sites": [
+      "gpt_neox.layers.0.mlp.dense_4h_to_h",
+      "gpt_neox.layers.1.mlp.dense_4h_to_h",
+      "gpt_neox.layers.2.mlp.dense_4h_to_h",
+      "gpt_neox.layers.3.mlp.dense_4h_to_h",
+      "gpt_neox.layers.4.mlp.dense_4h_to_h",
+      "gpt_neox.layers.5.mlp.dense_4h_to_h"
+    ]
+  },
+  "dataset": {
+    "repo": "Salesforce/wikitext",
+    "revision": "b08601e04326c79dfdd32d625aee71d232d685c3",
+    "config": "wikitext-2-raw-v1",
+    "files": {
+      "train": "wikitext-2-raw-v1/train-00000-of-00001.parquet",
+      "validation": "wikitext-2-raw-v1/validation-00000-of-00001.parquet",
+      "test": "wikitext-2-raw-v1/test-00000-of-00001.parquet"
+    },
+    "roles": {
+      "development": {
+        "split": "validation",
+        "articles": 2,
+        "tokens_per_article": 513
+      },
+      "timing": {
+        "split": "train",
+        "articles": 4,
+        "tokens_per_article": 640
+      },
+      "quality": {
+        "split": "test",
+        "articles": 32,
+        "tokens_per_article": 513
+      }
+    },
+    "selection": {
+      "title_regex": "^= [^=].* =$",
+      "include_title": true,
+      "row_join": "\n",
+      "order": "source_row_order",
+      "rule": "first_articles_with_enough_tokens",
+      "token_prefix_only": true,
+      "insufficient_articles": "fail",
+      "identity": "revision/config/split/start_row",
+      "content_identity": "sha256_of_full_joined_utf8_article",
+      "token_identity": "sha256_of_little_endian_uint32_token_prefix"
+    },
+    "calibration": {
+      "method": "none",
+      "fitted_examples": 0,
+      "rotation_search": false,
+      "clipping_search": false
+    },
+    "role_overlap_policy": "reject_shared_ids_or_content_hashes",
+    "training_decontamination_claim": false
+  },
+  "runtime": {
+    "python_version": "3.12.14",
+    "numpy_version": "2.3.5",
+    "onnx_version": "1.19.1",
+    "onnxruntime_version": "1.23.2",
+    "onnxruntime_revision": "a83fc4d58cb48eb68890dd689f94f28288cf2278",
+    "provider": "CPUExecutionProvider",
+    "operator": "com.microsoft.MatMulNBits",
+    "accuracy_level": 1,
+    "threads": 1,
+    "inter_op_threads": 1,
+    "execution_mode": "sequential",
+    "graph_optimizations": "disabled",
+    "activation_dtype": "float32",
+    "scale_dtype": "float32",
+    "bias_dtype": "float32",
+    "cache_dtype": "float32",
+    "accumulation_dtype": "float32",
+    "onnx_opset": 18,
+    "onnx_ir_version": 10,
+    "operator_domain_version": 1,
+    "conversion": {
+      "environment": "separate_from_qualification_runtime",
+      "transformers_version": "4.46.3",
+      "transformers_revision": "052e652d6d53c2b26ffde87e039b723949a53493",
+      "torch_version": "2.5.1+cpu",
+      "torch_revision": "a8d6afb511a69687bbb2b7e88a3cf67917e1697e",
+      "sympy_version": "1.13.1",
+      "datasets_version": "3.1.0",
+      "safetensors_version": "0.4.5",
+      "huggingface_hub_version": "0.26.2",
+      "tokenizers_version": "0.20.3"
+    },
+    "internal_kernel_claim": "Operator/provider profiling does not identify the internal MLAS path; FP32 tiled dequantization or fallback costs remain part of the measured implementation."
+  },
+  "hardware": {
+    "architecture": "x86_64",
+    "cpu_model": "AMD EPYC 9V74 80-Core Processor",
+    "execution_surface": "current managed CPU workspace",
+    "observed_cgroup_memory_bytes": 8589934592,
+    "observed_cpu_quota_cores": 8,
+    "gpu_count": 0,
+    "target_threads": 1,
+    "required_free_memory_bytes": 6442450944,
+    "required_free_disk_bytes": 4294967296,
+    "match_policy": "Reobserve before launch; CPU model or architecture change requires a new hardware-qualified execution record."
+  },
+  "quantizer": {
+    "bits": 4,
+    "codes": {
+      "minimum": -7,
+      "maximum": 7
+    },
+    "scale_rule": "maxabs/7",
+    "rounding": "nearest_ties_to_even",
+    "zero_scale": 1,
+    "group_axis": "contiguous_input_features_per_output",
+    "scale_dtype": "float32",
+    "zero_point": 8,
+    "packing": {
+      "format": "unsigned_offset_nibbles",
+      "offset": 8,
+      "first_element": "low_nibble",
+      "second_element": "high_nibble",
+      "unused_unsigned_code": 0,
+      "layout": "[output_features,ceil(input_features/group_size),group_size/2]",
+      "padding_signed_code": 0
+    },
+    "activation_quantization": false
+  },
+  "rotation": {
+    "kind": "randomized_sylvester",
+    "width": 2048,
+    "seed_base": 20261017,
+    "seed_rule": "seed_base_plus_layer_index",
+    "generator": "NumPy PCG64",
+    "placement": "after_gelu_before_mlp_output_projection",
+    "row_vector_transform": "xQ",
+    "pytorch_weight_transform": "WQ",
+    "Q": "D H / sqrt(width)",
+    "runtime_algorithm": "sign_multiply_then_add_subtract_butterfly_then_normalize",
+    "dense_Q_in_runtime": false,
+    "selection": "none",
+    "sign_storage": "int8_in_conversion_receipt_float32_constant_in_ONNX"
+  },
+  "arms": [
+    {
+      "id": "fp32_original",
+      "basis": "original",
+      "weight_dtype": "float32",
+      "group_size": null,
+      "role": "reference"
+    },
+    {
+      "id": "fp32_rotated",
+      "basis": "rotated",
+      "weight_dtype": "float32",
+      "group_size": null,
+      "role": "invariance_control"
+    },
+    {
+      "id": "w4a32_g32_original",
+      "basis": "original",
+      "weight_dtype": "packed_uint4",
+      "group_size": 32,
+      "role": "primary_baseline"
+    },
+    {
+      "id": "w4a32_g32_rotated",
+      "basis": "rotated",
+      "weight_dtype": "packed_uint4",
+      "group_size": 32,
+      "role": "primary_treatment"
+    },
+    {
+      "id": "w4a32_g16_original",
+      "basis": "original",
+      "weight_dtype": "packed_uint4",
+      "group_size": 16,
+      "role": "sensitivity_baseline"
+    },
+    {
+      "id": "w4a32_g16_rotated",
+      "basis": "rotated",
+      "weight_dtype": "packed_uint4",
+      "group_size": 16,
+      "role": "sensitivity_treatment"
+    }
+  ],
+  "quality": {
+    "metric": "next_token_nll_nats",
+    "aggregation": "sum_nll_divided_by_sum_valid_target_tokens",
+    "target_shift": 1,
+    "valid_targets_per_article": 512,
+    "primary_comparison": {
+      "treatment": "w4a32_g32_rotated",
+      "baseline": "w4a32_g32_original",
+      "difference": "treatment_minus_baseline"
+    },
+    "bootstrap": {
+      "draws": 10000,
+      "seed": 20261018,
+      "unit": "whole_article_prefix",
+      "shared_indices": true,
+      "quantile_method": "linear",
+      "percentiles": [
+        2.5,
+        97.5
+      ],
+      "weighted_ratio_recomputed_per_draw": true
+    },
+    "acceptance": {
+      "primary_difference_upper_95_lt": 0,
+      "rotated_minus_fp32_upper_95_lte": 0.009950330853168092,
+      "relative_perplexity_margin": 1.01,
+      "sensitivity_selection": false
+    },
+    "float_controls": {
+      "relative_frobenius_max": 0.00001,
+      "absolute_logit_error_max": 0.001,
+      "absolute_nll_delta_max": 0.00001
+    }
+  },
+  "timing": {
+    "workloads": [
+      {
+        "id": "short",
+        "batch_size": 1,
+        "prompt_tokens": 128,
+        "decode_steps": 32,
+        "role": "sensitivity"
+      },
+      {
+        "id": "primary",
+        "batch_size": 1,
+        "prompt_tokens": 512,
+        "decode_steps": 128,
+        "role": "primary"
+      }
+    ],
+    "repeats": 20,
+    "workload_order": ["short", "primary"],
+    "warmups_per_worker_and_workload": 1,
+    "paired_block_seed": 20261019,
+    "order": "independent_arm_permutation_within_each_paired_block",
+    "input_rule": "same_train_article_tokens_and_fixed_teacher_forced_continuation_for_every_arm",
+    "article_schedule": "timing_article_index_equals_block_index_mod_4",
+    "early_eos_stop": false,
+    "cache_reset_per_request": true,
+    "measurement_boundary": "prefill_and_cached_decode_forward_calls_including_online_rotation_and_operator_workspace",
+    "worker_policy": "one_fresh_worker_per_arm_per_paired_block; both workloads run in that worker; no concurrent model workers",
+    "compilation_and_load_timing": "record_separately_and_include_in_outer_budget",
+    "memory_measurement": "peak_worker_RSS_and_steady_RSS_in_each_isolated_arm_worker",
+    "peak_rss_comparison": "maximum_treatment_worker_peak_divided_by_maximum_baseline_worker_peak",
+    "metrics": [
+      "prefill_seconds",
+      "prefill_tokens_per_second",
+      "decode_seconds",
+      "decode_tokens_per_second",
+      "decode_seconds_per_token",
+      "request_seconds",
+      "steady_rss_bytes",
+      "peak_rss_bytes",
+      "serialized_model_bytes",
+      "packed_payload_bytes"
+    ],
+    "acceptance": {
+      "primary_prefill_ratio_upper_95_lte": 1.05,
+      "primary_decode_ratio_upper_95_lte": 1.05,
+      "primary_request_ratio_upper_95_lte": 1.05,
+      "maximum_peak_rss_ratio_lte": 1.05
+    },
+    "bootstrap": {
+      "draws": 10000,
+      "seed": 20261020,
+      "unit": "paired_timing_block",
+      "quantile_method": "linear",
+      "ratio": "ratio_of_mean_treatment_time_to_mean_baseline_time"
+    }
+  },
+  "budgets": {
+    "campaign_seconds": 1800,
+    "acquisition_and_export_seconds": 600,
+    "quality_seconds": 600,
+    "timing_seconds": 600,
+    "process_memory_bytes": 6442450944,
+    "cache_and_output_bytes": 4294967296,
+    "model_and_data_download_bytes": 1073741824,
+    "generated_controls_seconds": 180,
+    "generated_controls_memory_bytes": 1073741824,
+    "paid_service_budget_usd": 0,
+    "gpu_hours": 0,
+    "model_workers": 1,
+    "threads_per_worker": 1
+  },
+  "readiness": {
+    "acquisition_receipt": "build/model-campaign/acquisition.json",
+    "full_model_adapter": "benchmarks/run_model.py",
+    "export_parity": "build/model-campaign/export-parity.json",
+    "bounded_development_proof": "build/model-campaign/development-proof.json",
+    "execution_lock": "build/model-campaign/execution-lock.json",
+    "required_before_test": [
+      "immutable_artifact_hashes",
+      "reviewed_adapter_revision",
+      "matched_onnx_graph_audit",
+      "float_model_parity",
+      "observed_resource_budget",
+      "role_identity_disjointness",
+      "single_development_feasibility_run"
+    ],
+    "current_milestone_can_launch_campaign": false
+  },
+  "decision": {
+    "favorable": "All primary quality and overhead criteria must pass on the same W4A32 treatment, followed by investigation on a representative production model.",
+    "negative": "Publish every arm and failed gate; do not promote group16, search signs, alter thresholds, or equate W4A4 quality with W4A32 timing.",
+    "commercial_claim": "No commercial saving or native W4A4 acceleration follows from this qualification."
+  }
+}

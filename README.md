@@ -43,6 +43,16 @@ Group size 128 reproduces all 520 corresponding numerical reference fields exact
 
 ![Quantization group-size sensitivity in the Gaussian control and persistent-outlier case.](group-size-results.png)
 
+## Matched model benchmark design
+
+[Issue #2](https://github.com/Whyme-Labs/hadamard-exposition/issues/2) now has a [version 1 protocol](docs/experiments/model-benchmark-v1.md) and [machine-readable contract](benchmarks/model-benchmark-v1.json). They define six Pythia-70M CPU arms: original and rotated FP32 controls, matched packed four-bit weights at group 32, and group 16 sensitivity arms. Activations stay float32, so this application design is W4A32. Quality and timing must use the same ONNX graphs and runtime.
+
+The intervention is limited to six post-GELU MLP output projections. Its online Hadamard transform uses Add/Sub butterflies, and the actual packed operator is ONNX Runtime `MatMulNBits` on the CPU provider. Generated-input controls check packing, rounding, padding, the full projection shape and valid versus invalid rotation placement. They establish numerical and format conformance, with no pretrained-model quality or inference-saving claim.
+
+[benchmarks/README.md](benchmarks/README.md) documents the bounded local qualification. The protocol fixes model/data/software revisions, token selection, paired quality and timing decisions, resource ceilings and the full-model launch prerequisites. Acquisition, export and a development-only model parity/feasibility check belong to the later execution milestone.
+
+The [accepted qualification and attempt history](validation/2026-10-17-model-benchmark/README.md) retain 38 passing tests, 20 passing runtime controls and valid process-identity-bound memory monitoring. The run completed in 6.194 seconds with about 179.3 MiB peak worker RSS, within its 180-second and 1 GiB limits. Two earlier resource-check defects and their original evidence are preserved. These numbers describe qualification cost, not model inference performance.
+
 ## Validate
 
 The recorded numerical environment uses Python 3.12.14, NumPy 2.3.5 and Matplotlib 3.10.8. Install the pinned Python dependencies in a virtual environment:
@@ -102,6 +112,6 @@ The calculator check executes its actual JavaScript with a small DOM stub. It te
 - [docs/reference-import.json](docs/reference-import.json) records the original package and imported file hashes. It identifies the imported snapshot; later article and tooling edits have their own Git history.
 - [sources.json](sources.json) records the primary references and the claims they support.
 
-These are synthetic error simulations in float64. The project measures no language model accuracy, packed integer memory use or hardware throughput. It makes no claim of solving the general Hadamard conjecture or receiving a prize.
+The reference and group-size results are synthetic error simulations in float64. The model-benchmark design adds actual packed-operator conformance checks on generated inputs. The project has not measured pretrained language-model quality or model inference improvements. It makes no claim of solving the general Hadamard conjecture or receiving a prize.
 
 The related Lean execution qualification remains in [autoresearch-harness issue #175](https://github.com/Whyme-Labs/autoresearch-harness/issues/175) and [PR #176](https://github.com/Whyme-Labs/autoresearch-harness/pull/176).

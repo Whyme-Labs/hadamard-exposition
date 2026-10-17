@@ -1,0 +1,120 @@
+{
+  "campaign_ready": false,
+  "claims": [
+    "Generated-input format, numerical and CPU operator qualification only.",
+    "No pretrained model, dataset, model-quality result or inference-cost improvement was measured.",
+    "An operator profile does not prove a particular internal MLAS path."
+  ],
+  "design_qualified": false,
+  "elapsed_seconds": 0.07006081599683966,
+  "environment": {
+    "architecture": "x86_64",
+    "cgroup_memory_current_bytes": 8341446656,
+    "cgroup_memory_max_bytes": 8589934592,
+    "conversion_stack": "Torch, Transformers, model files and dataset files are not imported or qualified by this command.",
+    "cpu_max": "800000 100000",
+    "cpu_model": "AMD EPYC 9V74 80-Core Processor",
+    "cpu_quota_cores": 8.0,
+    "dependency_metadata_versions": {
+      "numpy": "2.3.5",
+      "onnx": "1.19.1",
+      "onnxruntime": "1.23.2"
+    },
+    "disk_free_bytes": 24448720896,
+    "disk_total_bytes": 33770192896,
+    "host_memory_bytes": {
+      "MemAvailable": 9664393216,
+      "MemTotal": 10451439616
+    },
+    "logical_cpu_count": 9,
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "python_executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "python_version": "3.12.14"
+  },
+  "error": {
+    "message": "The current cgroup has less than the generated-input memory budget free",
+    "type": "ValueError"
+  },
+  "inputs_unchanged": true,
+  "manifest_validation": {
+    "arm_count": 6,
+    "campaign_id": "pythia70m-mlp-w4a32-v1",
+    "campaign_ready": false,
+    "nominal_payload_by_group": {
+      "16": {
+        "bias_bytes": 12288,
+        "packed_code_bytes": 3145728,
+        "scale_bytes": 1572864,
+        "scale_count": 393216,
+        "weight_count": 6291456
+      },
+      "32": {
+        "bias_bytes": 12288,
+        "packed_code_bytes": 3145728,
+        "scale_bytes": 786432,
+        "scale_count": 196608,
+        "weight_count": 6291456
+      }
+    },
+    "primary_group_size": 32,
+    "scope": "Frozen design validation only; artifact acquisition, adapter and campaign evidence remain unqualified.",
+    "status": "passed"
+  },
+  "output_directory": "/workspace/scratch/87d503cded2d/hadamard-exposition-repo/build/benchmark-qualification-v1",
+  "readiness": {
+    "campaign_ready": false,
+    "prerequisites": {
+      "acquisition_receipt": {
+        "exists": false,
+        "path": "build/model-campaign/acquisition.json",
+        "qualified": false
+      },
+      "bounded_development_proof": {
+        "exists": false,
+        "path": "build/model-campaign/development-proof.json",
+        "qualified": false
+      },
+      "execution_lock": {
+        "exists": false,
+        "path": "build/model-campaign/execution-lock.json",
+        "qualified": false
+      },
+      "export_parity": {
+        "exists": false,
+        "path": "build/model-campaign/export-parity.json",
+        "qualified": false
+      },
+      "full_model_adapter": {
+        "exists": false,
+        "path": "benchmarks/run_model.py",
+        "qualified": false
+      }
+    },
+    "reason": "This revision qualifies a design and generated controls. It has no reviewed full-model execution path or accepted campaign evidence."
+  },
+  "schema_version": "hadamard-benchmark-qualification.v1",
+  "source_sha256_after": {
+    "benchmarks/contract.py": "cc1b0b842917ce84cf10def8ba71aeea99c1630207e8a64abe26abe8b290ea7a",
+    "benchmarks/model-benchmark-v1.json": "67afbab1597f2d8024075c8f9cc94c181f5c4fa67b940553f8a5f7d8ead3898e",
+    "benchmarks/onnx_controls.py": "672b35f8816d4b5aaa34fc8eddb0252d18c5850ad9c4c97e434be1ceeba0f3ce",
+    "benchmarks/qualify.py": "7481905840254edc12cdfa43a92ea3d2a105955eb25f118604e5553bacfeab09",
+    "benchmarks/test_contract.py": "c5eee5bb2ef69330ca0072367afaef4d8ef0e0843151ce1860877a808fa1569f",
+    "benchmarks/test_onnx_controls.py": "caafd1f7b1ed3cf0b88c7ce9a1d08089c3b1e44475abda319e6ee7cc0962ce3a",
+    "docs/experiments/model-benchmark-v1.md": "ab358603cd2687cf752944ece56af38b3e1fbd4ea2518cf63234d63a739a02a3",
+    "requirements-benchmark.txt": "f243ef93135a9366162c78ded77c844e06e9c43f0b2e8618e7d9024a7f2b64bd",
+    "requirements.txt": "4c40934e438ae009a1eb0b5a9322cce029fba6ca1af6e314c088c1957cee0c04"
+  },
+  "source_sha256_before": {
+    "benchmarks/contract.py": "cc1b0b842917ce84cf10def8ba71aeea99c1630207e8a64abe26abe8b290ea7a",
+    "benchmarks/model-benchmark-v1.json": "67afbab1597f2d8024075c8f9cc94c181f5c4fa67b940553f8a5f7d8ead3898e",
+    "benchmarks/onnx_controls.py": "672b35f8816d4b5aaa34fc8eddb0252d18c5850ad9c4c97e434be1ceeba0f3ce",
+    "benchmarks/qualify.py": "7481905840254edc12cdfa43a92ea3d2a105955eb25f118604e5553bacfeab09",
+    "benchmarks/test_contract.py": "c5eee5bb2ef69330ca0072367afaef4d8ef0e0843151ce1860877a808fa1569f",
+    "benchmarks/test_onnx_controls.py": "caafd1f7b1ed3cf0b88c7ce9a1d08089c3b1e44475abda319e6ee7cc0962ce3a",
+    "docs/experiments/model-benchmark-v1.md": "ab358603cd2687cf752944ece56af38b3e1fbd4ea2518cf63234d63a739a02a3",
+    "requirements-benchmark.txt": "f243ef93135a9366162c78ded77c844e06e9c43f0b2e8618e7d9024a7f2b64bd",
+    "requirements.txt": "4c40934e438ae009a1eb0b5a9322cce029fba6ca1af6e314c088c1957cee0c04"
+  },
+  "started_utc": "2026-10-17T16:29:39.674825+00:00",
+  "status": "failed"
+}
