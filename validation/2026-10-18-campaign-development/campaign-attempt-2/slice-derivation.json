@@ -1,0 +1,75 @@
+{
+  "arrays": [
+    {
+      "array_c_order_sha256": "d77220405ae5ef9722e57f9ae26d15841ca0ac81811770752277cd35e7fc745a",
+      "dtype": "<f4",
+      "key": "article0_full",
+      "operation": "array[:,512:513,:]",
+      "shape": [
+        1,
+        1,
+        50304
+      ],
+      "source": {
+        "bytes": 103223936,
+        "path": "reference/article0.full.npy",
+        "reason": "Large development logit array. The reference receipt and full file identity are retained; exact last-position full slices are separately preserved for the failed cached comparison.",
+        "sha256": "fe632370cbcf55bdb1cf9a47c70b525434e6ae3cc7e58a17848611e250247fd8"
+      }
+    },
+    {
+      "array_c_order_sha256": "ab8e47ee95879fd4f848eb2d4f05ba8e2c7afe6b139df0f3dc07c01608c808a7",
+      "dtype": "<f4",
+      "key": "article0_cached",
+      "operation": "array[:]",
+      "shape": [
+        1,
+        1,
+        50304
+      ],
+      "source": {
+        "bytes": 201344,
+        "path": "reference/article0.cached.npy",
+        "sha256": "258de66d6b4d25f086d75c457feefcfbb7d2aa793466af40d8815cc9e89ddc35"
+      }
+    },
+    {
+      "array_c_order_sha256": "81fec33730fa2782f0320bd0f8c75e32124f836c59e544e12dc792c6ebef681d",
+      "dtype": "<f4",
+      "key": "article1_full",
+      "operation": "array[:,512:513,:]",
+      "shape": [
+        1,
+        1,
+        50304
+      ],
+      "source": {
+        "bytes": 103223936,
+        "path": "reference/article1.full.npy",
+        "reason": "Large development logit array. The reference receipt and full file identity are retained; exact last-position full slices are separately preserved for the failed cached comparison.",
+        "sha256": "ab57837936962815c04c9aff01bb73fad5e5ad9f3dbff27843a3c451b70e3a52"
+      }
+    },
+    {
+      "array_c_order_sha256": "78fe580b8beec6c0e24953376ac46b4384eee0466c1768537189f1b9c10fed7a",
+      "dtype": "<f4",
+      "key": "article1_cached",
+      "operation": "array[:]",
+      "shape": [
+        1,
+        1,
+        50304
+      ],
+      "source": {
+        "bytes": 201344,
+        "path": "reference/article1.cached.npy",
+        "sha256": "27e655b2a7b5384089d87a38348d98d012023d3b971365ca252bd7eb64f00365"
+      }
+    }
+  ],
+  "model_calls": 0,
+  "npz_bytes": 571796,
+  "npz_sha256": "6972d7416056a53c840b1bf62ce139a34f27325a8ad611fc6f3aac6e4cef6a6f",
+  "numpy_version": "2.3.5",
+  "schema_version": "hadamard-development-logit-slices.v1"
+}
