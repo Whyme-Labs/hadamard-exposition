@@ -1,0 +1,70 @@
+{
+  "archives": {
+    "dependencies": {
+      "bytes": 376354,
+      "member_count": 32,
+      "path": "raw-evidence.tar.gz",
+      "sha256": "e3d465bbe6ac71f65a2f9efaf915e6decec8f8e915823d6d6710f3a4d641f2c9",
+      "uncompressed_member_bytes": 1433948
+    },
+    "offline": {
+      "bytes": 12752,
+      "member_count": 9,
+      "path": "raw-evidence.tar.gz",
+      "sha256": "ef90c8954598fb82d1349d626ef4b4cbba2c695a8bc815a71ce78a65533343ba",
+      "uncompressed_member_bytes": 80480
+    }
+  },
+  "campaign_preflight": {
+    "available_memory_bytes": 5225238528,
+    "required_memory_bytes": 6442450944,
+    "status": "blocked"
+  },
+  "campaign_ready": false,
+  "combined_https_bytes_including_secondary_prior_observation": 715089677,
+  "fixture_cleanup_guarantee_established": false,
+  "fresh_effort_https_bytes": 357544826,
+  "install_reports": {
+    "converter": {
+      "exact_versions_urls_and_sha256": true,
+      "packages": 47,
+      "status": "passed"
+    },
+    "runtime": {
+      "exact_versions_urls_and_sha256": true,
+      "packages": 21,
+      "status": "passed"
+    }
+  },
+  "schema_version": "hadamard-recovery-verification.v1",
+  "scope": "Read-only verification of retained qualification, source, archive, task and package identities. No experiment rerun.",
+  "source_review": {
+    "commit": "8237ea186603b1b34aadbfdc9133bd956db41c05",
+    "status": "passed",
+    "tree": "00a7e6b0914a8e8cd46a010a121dc430318e09ae"
+  },
+  "status": "passed",
+  "tasks": {
+    "dependencies/abi-converter": {
+      "status": "passed",
+      "valid_rss_samples": 44
+    },
+    "dependencies/abi-runtime": {
+      "status": "passed",
+      "valid_rss_samples": 3
+    },
+    "dependencies/install-converter": {
+      "status": "passed",
+      "valid_rss_samples": 787
+    },
+    "dependencies/install-runtime": {
+      "status": "passed",
+      "valid_rss_samples": 255
+    },
+    "offline/full-suite": {
+      "status": "passed",
+      "valid_rss_samples": 130
+    }
+  },
+  "verifier_sha256": "e5c1a8fdf85f827bbb677bfc38fc2c667f834c387d7fe9e73e9c4659bd2d3424"
+}

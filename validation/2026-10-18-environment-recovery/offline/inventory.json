@@ -1,0 +1,97 @@
+{
+  "archive": {
+    "bytes": 12752,
+    "member_count": 9,
+    "path": "raw-evidence.tar.gz",
+    "sha256": "ef90c8954598fb82d1349d626ef4b4cbba2c695a8bc815a71ce78a65533343ba",
+    "uncompressed_member_bytes": 80480
+  },
+  "members": [
+    {
+      "archive_path": "campaign-preflight/preflight.json",
+      "bytes": 10766,
+      "original_path": "build/offline-recovery-002/campaign-preflight/preflight.json",
+      "sha256": "e172ba3459b1059ea0b8ad8e45d25561e45ce1e58c3e83fb7473a65efc8c0f34"
+    },
+    {
+      "archive_path": "effort-start.json",
+      "bytes": 4176,
+      "original_path": "build/offline-recovery-002/effort-start.json",
+      "sha256": "bbddf647658ad1f1076c8e02543382e407ac42c28388e174d6576897bd032242"
+    },
+    {
+      "archive_path": "full-suite/stderr.log",
+      "bytes": 22215,
+      "original_path": "build/offline-recovery-002/full-suite/stderr.log",
+      "sha256": "5bee52e7d9b70a29a20a3ca90793ebb32723c3284dae141ff5f09d4c9ba2918e"
+    },
+    {
+      "archive_path": "full-suite/stdout.log",
+      "bytes": 0,
+      "original_path": "build/offline-recovery-002/full-suite/stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive_path": "full-suite/task-receipt.json",
+      "bytes": 8624,
+      "original_path": "build/offline-recovery-002/full-suite/task-receipt.json",
+      "sha256": "61e72619e4cffc6c10ac3458478c09cdcd5373c891088aff749dc0d271913e24"
+    },
+    {
+      "archive_path": "full-suite/worker-identity.json",
+      "bytes": 124,
+      "original_path": "build/offline-recovery-002/full-suite/worker-identity.json",
+      "sha256": "9b504f1da250412536f42ec8f14bb91fe8c346f350201df57ee54324e213467a"
+    },
+    {
+      "archive_path": "full-suite/worker-result.json",
+      "bytes": 7036,
+      "original_path": "build/offline-recovery-002/full-suite/worker-result.json",
+      "sha256": "ed3c065105d92d94652aa0bda6e58788b28f9346ff3a6818b4073ba66ef32ae2"
+    },
+    {
+      "archive_path": "host-preflight.json",
+      "bytes": 3149,
+      "original_path": "build/offline-recovery-002/host-preflight.json",
+      "sha256": "59efecfb228bdf1472eaa54a240dc8e4a8ed62386ff0538c8171825abb6d3e89"
+    },
+    {
+      "archive_path": "qualification.json",
+      "bytes": 24390,
+      "original_path": "build/offline-recovery-002/qualification.json",
+      "sha256": "7520cff69e0a076ba2c6c59b785e9224192f9824840421122710a11af6f27399"
+    }
+  ],
+  "omissions": [
+    {
+      "path": "build/offline-recovery-002/mpl-cache",
+      "reason": "Regenerable installation or runtime cache, no original receipt or log omitted."
+    },
+    {
+      "path": "build/offline-recovery-002/transformers-cache",
+      "reason": "Regenerable installation or runtime cache, no original receipt or log omitted."
+    },
+    {
+      "path": "build/offline-recovery-002/hf-cache",
+      "reason": "Regenerable installation or runtime cache, no original receipt or log omitted."
+    }
+  ],
+  "schema_version": "hadamard-recovery-archive.v2",
+  "separate_copies": {
+    "campaign-preflight.json": {
+      "bytes": 10766,
+      "original_path": "build/offline-recovery-002/campaign-preflight/preflight.json",
+      "sha256": "e172ba3459b1059ea0b8ad8e45d25561e45ce1e58c3e83fb7473a65efc8c0f34"
+    },
+    "qualification.json": {
+      "bytes": 24390,
+      "original_path": "build/offline-recovery-002/qualification.json",
+      "sha256": "7520cff69e0a076ba2c6c59b785e9224192f9824840421122710a11af6f27399"
+    }
+  },
+  "snapshot_script_sha256": "9b0eef0546cef279aa17c35427bf9bfdbc0644160ca961d8f61ef01b9b67cc5b",
+  "source_root": "build/offline-recovery-002",
+  "temporary_negative_test_fixtures_included": false,
+  "virtual_environments_included": false,
+  "wheel_bodies_included": false
+}
