@@ -1,0 +1,137 @@
+{
+  "archive": {
+    "bytes": 28874,
+    "path": "raw-evidence.tar.gz",
+    "sha256": "d95caacb276979ac795a2badd78570157fcdb58c315d35dda8d5efe82a0acb5f"
+  },
+  "members": [
+    {
+      "bytes": 1357,
+      "path": "artifacts/acquisition.json",
+      "sha256": "f959ee88005d205285fba71320333e9636cd3e6785a73c7a0c75f6260f7f9c1e"
+    },
+    {
+      "bytes": 7795,
+      "path": "campaign.json",
+      "sha256": "cd4989c028e876c5616ec1530092e796373b272512fdcd7a443097497238149b"
+    },
+    {
+      "bytes": 354,
+      "path": "dependencies.json",
+      "sha256": "dccceb64d1d31de974833fbf760bc155a3fd938329894da959190e71c9ca10bf"
+    },
+    {
+      "bytes": 108745,
+      "path": "dependency-lock.json",
+      "sha256": "f4b045d55bb3de7d8673c2a1e89ee15ec3dcd398097df381d3faa0761c67878b"
+    },
+    {
+      "bytes": 1,
+      "path": "library-cache/version.txt",
+      "sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+    },
+    {
+      "bytes": 4187,
+      "path": "preflight.json",
+      "sha256": "6a5582cacb3694d4f36571a284124a1ea145a5ba16e32d25405bf87f49a758ee"
+    },
+    {
+      "bytes": 5187,
+      "path": "review.json",
+      "sha256": "4acb4165f6594d95d0d9b8713d17cb0da81d556060703c528e3d8862a0053a8a"
+    },
+    {
+      "bytes": 3393,
+      "path": "tasks/acquisition.json",
+      "sha256": "6585184d343f6bc31c059ef2f53082e186a1b1d33a2cdf5f52a3dce9c067c454"
+    },
+    {
+      "bytes": 3424,
+      "path": "tasks/dependencies-converter.json",
+      "sha256": "22b9fa73d6cb7833899af7956df203c803e3365783fa9ad88cb4daeb2a3c3104"
+    },
+    {
+      "bytes": 3422,
+      "path": "tasks/dependencies-runtime.json",
+      "sha256": "cce99f872b2abd98c7a493afe9689bb7aa93cce05c832e9aa5b54a492f22c989"
+    },
+    {
+      "bytes": 4797,
+      "path": "workers/acquisition/stderr.log",
+      "sha256": "1d5bd0a01b9244ac16ba8d4924eeb1b45f7d11416cb1ec96697a507c436d7f15"
+    },
+    {
+      "bytes": 0,
+      "path": "workers/acquisition/stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 8685,
+      "path": "workers/acquisition/task-receipt.json",
+      "sha256": "8e5a1a19bc8348605b0202a6a78f68963b3239460acc74943093598fbc1a744f"
+    },
+    {
+      "bytes": 125,
+      "path": "workers/acquisition/worker-identity.json",
+      "sha256": "0c2e2ad27f92d9f89dd089145068da7016f0b5998097768a9cce04c8cb4cd4ef"
+    },
+    {
+      "bytes": 6960,
+      "path": "workers/acquisition/worker-result.json",
+      "sha256": "d1576ec0c9cf8a28527154c7b59b4ea5f120c3c01bf0f1f699838fe4df2cce73"
+    },
+    {
+      "bytes": 295,
+      "path": "workers/dependencies-converter/stderr.log",
+      "sha256": "fd56b51a2eea810fc4789c8d5c4033128cecdfee09d5ee46b93b9997b9a169df"
+    },
+    {
+      "bytes": 0,
+      "path": "workers/dependencies-converter/stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 9447,
+      "path": "workers/dependencies-converter/task-receipt.json",
+      "sha256": "e27a14afaf88f700480b93cbeee12a70753917012d265098b8086350864859e9"
+    },
+    {
+      "bytes": 125,
+      "path": "workers/dependencies-converter/worker-identity.json",
+      "sha256": "d17afab484dda34fc555fd69867a7d89c5ad92813c4832c6e4378ffaa7eed6e0"
+    },
+    {
+      "bytes": 7652,
+      "path": "workers/dependencies-converter/worker-result.json",
+      "sha256": "8e72509979e780e2be3807ecac7c7e2bd884941f2e4b6f4dc6165dde0a5bb103"
+    },
+    {
+      "bytes": 0,
+      "path": "workers/dependencies-runtime/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "workers/dependencies-runtime/stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 9381,
+      "path": "workers/dependencies-runtime/task-receipt.json",
+      "sha256": "c3408fe5dd573789c5f989a140d249b88a171853a044e97e5317d1e76222ebc4"
+    },
+    {
+      "bytes": 125,
+      "path": "workers/dependencies-runtime/worker-identity.json",
+      "sha256": "554d40a18e78514bae04c188a04c4526d109de63b728a0d473c518e94c986599"
+    },
+    {
+      "bytes": 7601,
+      "path": "workers/dependencies-runtime/worker-result.json",
+      "sha256": "2ce1eadac92b3b36a222bbdedba5ee740f1bb59807808048aa9bcb506d2e4ab8"
+    }
+  ],
+  "omissions": [],
+  "original_directory": "build/model-campaign-development-001",
+  "schema_version": "hadamard-campaign-attempt-archive.v1"
+}
