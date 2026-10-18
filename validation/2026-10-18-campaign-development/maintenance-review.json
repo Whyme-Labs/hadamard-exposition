@@ -1,0 +1,33 @@
+{
+  "base_commit": "1b501f564750d0938adbe0ece3314dc0960bbc26",
+  "benchmark_source_map_sha256": "1dd75e9af0736795e4d83c26f866d15d9f7a3fe55003e399ddbd36951ab2d69e",
+  "campaign_ready": false,
+  "maintenance_executed": false,
+  "paths_relative_to": "validation/2026-10-18-campaign-development",
+  "reviewed_files_sha256": {
+    "plan.md": "05b5c10d0ffd141232a313f8f5d5bdd0ac2550b67e5abfb9cf6bcdcbe08d9d0d",
+    "preflight-before-cache/preflight.json": "cdacad612016f904b841f09a6bfe01b64031f9dddf20adad9cd3628a65e4629c",
+    "sources/release-owned-cache.py": "f277b0b7fcc5cfdceb11f5cf6a872d36b4609386098dd05f5c32a411e1f91091"
+  },
+  "reviews": [
+    {
+      "axis": "specification",
+      "path": "reviews/maintenance-specification.md",
+      "reviewer": "/root/campaign_readiness_audit",
+      "reviewer_kind": "independent_agent",
+      "sha256": "480cf4c567ba880f61dc1c1cdff51255ab272c0e131d4f651c63de8de61bf771",
+      "status": "passed"
+    },
+    {
+      "axis": "standards",
+      "path": "reviews/maintenance-standards.md",
+      "reviewer": "/root/campaign_resource_audit",
+      "reviewer_kind": "independent_agent",
+      "sha256": "81c2dd82c5c58bfaf6caed5815282a979999317b7c5e20e719cfa02eec493505",
+      "status": "passed"
+    }
+  ],
+  "schema_version": "hadamard-owned-cache-review.v1",
+  "scope": "Review of one prospective own-file cache advisory pass and subsequent unchanged execution gates; no execution outcome accepted.",
+  "status": "passed"
+}
