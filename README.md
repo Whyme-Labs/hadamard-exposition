@@ -55,6 +55,8 @@ The [accepted qualification and attempt history](validation/2026-10-17-model-ben
 
 [Issue #5](https://github.com/Whyme-Labs/hadamard-exposition/issues/5) now has the acquisition/export/measurement implementation and [execution supplement](docs/experiments/model-execution-v1.md). The [new evidence](validation/2026-10-17-model-campaign/README.md) retains both isolated dependency locks and a six-arm generated GPTNeoX export/cache probe through the pinned Torch/Transformers stack. Its 780 output comparisons pass, including independent dense/quantized references and cached decoding. The campaign runner checks reviewed source, full-model development parity, role separation and resource feasibility before test evaluation. The unchanged 6 GiB available-memory gate currently blocks the pretrained campaign; no Pythia quality or inference-cost result is reported.
 
+[Issue #6](https://github.com/Whyme-Labs/hadamard-exposition/issues/6) tracks the concrete CPU, memory, runtime and source-review prerequisites for the next campaign attempt. The original rejected launch and the later host preflight remain separate, source-bound observations.
+
 ## Validate
 
 The recorded numerical environment uses Python 3.12.14, NumPy 2.3.5 and Matplotlib 3.10.8. Install the pinned Python dependencies in a virtual environment:

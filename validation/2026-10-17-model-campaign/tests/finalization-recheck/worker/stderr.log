@@ -1,0 +1,12 @@
+test_blocked_preflight_retains_receipt_and_releases_real_lock (benchmarks.test_campaign_finalization.CampaignFinalizationTests.test_blocked_preflight_retains_receipt_and_releases_real_lock) ... ok
+test_both_final_observation_failures_are_retained_independently (benchmarks.test_campaign_finalization.CampaignFinalizationTests.test_both_final_observation_failures_are_retained_independently) ... ok
+test_final_disk_failure_keeps_source_observation_and_original_host_error (benchmarks.test_campaign_finalization.CampaignFinalizationTests.test_final_disk_failure_keeps_source_observation_and_original_host_error) ... ok
+test_final_receipt_publication_failure_still_releases_real_lock (benchmarks.test_campaign_finalization.CampaignFinalizationTests.test_final_receipt_publication_failure_still_releases_real_lock) ... ok
+test_final_source_failure_keeps_disk_observation_and_original_host_error (benchmarks.test_campaign_finalization.CampaignFinalizationTests.test_final_source_failure_keeps_disk_observation_and_original_host_error) ... ok
+test_repeated_accounting_failure_preserves_original_error_and_receipt (benchmarks.test_campaign_finalization.CampaignFinalizationTests.test_repeated_accounting_failure_preserves_original_error_and_receipt) ... ok
+test_unlock_failure_still_closes_handle_and_releases_kernel_lock (benchmarks.test_campaign_finalization.CampaignFinalizationTests.test_unlock_failure_still_closes_handle_and_releases_kernel_lock) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.021s
+
+OK

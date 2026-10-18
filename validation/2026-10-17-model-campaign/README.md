@@ -30,6 +30,12 @@ Active file cache and reclaimable slab receive no credit. No memory-accounting r
 
 The initial `--review` path was the intended publication path. That file was not read because the host gate failed first. Its eventual existence does not change the rejected attempt or produce an execution lock.
 
+### Fresh preflight after restoring the checkout
+
+The local checkout later reverted to an earlier milestone. The saved publication package recovered all 46 implementation/evidence files, and the base files were retrieved through the GitHub connector. The restored tree is exactly `176d41898e21b9bc1d28b39e34aa37e89e6afbd3`, now published as commit `bdb27ea4ae520d9da0ccece06a8a2665b56577b1`. This is the same tree originally reviewed at local commit `9d1d5b1089055b623b918113f74153649b78cef9`. Neither archive nor any original receipt was regenerated.
+
+After the finalization correction described below, a [fresh preflight](preflight-attempt-2/preflight.json) observed **6,354,026,496 bytes, about 5.92 GiB**, still below the unchanged 6 GiB requirement. The inspection interpreter also lacks the pinned ONNX and ONNX Runtime packages; the previous isolated environments are not present in this restored checkout. This invocation used `python3 benchmarks/run_model.py preflight --output build/model-campaign-preflight-2`, exited 2, and accessed no model or dataset. Its source hashes before and after agree. It is a host observation, not a second campaign execution or a replacement for the first launch receipt. [Issue #6](https://github.com/Whyme-Labs/hadamard-exposition/issues/6) tracks the execution-surface prerequisite, including restoration of both exact dependency environments.
+
 ## Dependency and numerical evidence
 
 | Evidence | Result and scope |
@@ -55,9 +61,19 @@ The first two successful test runs cover 128 distinct offline checks with 13 ove
 
 The atomic-publication regression addresses a real integration race: a pending file can disappear during normal publication while the disk monitor scans. Missing names are tolerated only inside that scan; permission/IO errors and all process-identity/RSS failures still fail closed.
 
+## Finalization review correction
+
+The initial independent [standards review](reviews/initial-standards.md) blocked publication approval because final source hashing or disk accounting could raise again during shutdown, preventing the failed campaign receipt and explicit process-lock cleanup. The separate [specification review](reviews/initial-specification.md) passed the implementation and blocked-launch scope, while explicitly withholding full-campaign acceptance. Both original verdicts are retained.
+
+The correction attempts the two final observations independently. An unavailable observation is `null`, with its exception type and message in `finalization_errors`; the original failure remains in the receipt. Unknown source identity also makes `inputs_unchanged` null. Every observation failure sets the campaign status to failed and disables the adoption decision. An unconditional nested `finally` releases and closes the process lock, including when final receipt publication or explicit unlock fails. The three dependency-lock navigation links were also corrected.
+
+The [new focused qualification](tests/finalization-recheck/qualification.json) passed **seven standard-library regressions**, with zero failures, errors or skips. It exercises real campaign finalization, actual atomic JSON publication and real advisory-lock reacquisition, using explicit blocked-host and injected-error fixtures. The cases cover repeated symlink accounting refusal, independent and simultaneous source/disk failures, failed final publication, failed explicit unlock and the ordinary blocked-preflight path.
+
+The parent observed 0.151912157 seconds, one valid RSS sample, a sampled peak of 24,862,720 bytes and an OS peak of 24,883,200 bytes. The declared scope was 128 MiB / 30 seconds and 32 MiB retained output. All 30 bound source files and the archived worker wrapper remained unchanged. The wrapper recorded no NumPy, ONNX, ONNX Runtime or Torch imports and no model/data access. The host observation, wrapper source, both receipts, worker identity and stdout/stderr are retained unchanged. This focused check does not substitute for the full offline suite, generated-model controls or the frozen pretrained campaign.
+
 ## Remaining campaign acceptance
 
-1. Obtain a zero-cost CPU execution surface satisfying the frozen memory, disk and hardware gates. A different CPU/architecture needs a separately reviewed hardware execution revision before measurement.
+1. Resolve [issue #6](https://github.com/Whyme-Labs/hadamard-exposition/issues/6): obtain a zero-cost CPU execution surface satisfying the frozen memory, disk and hardware gates. A different CPU/architecture needs a separately reviewed hardware execution revision before measurement.
 2. Run the command from the reviewed source and both exact dependency environments. Reobserve the host and preserve a fresh attempt directory.
 3. Acquire pinned inputs, produce the actual model graphs and establish full/reference/cached development parity and role disjointness.
 4. Complete the single six-arm development cost observation within preparation's 600 seconds. A failed time/RSS/cache projection stops before quality evaluation and requires a new reviewed protocol before changing the experiment.

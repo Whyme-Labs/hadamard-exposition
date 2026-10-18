@@ -2,7 +2,7 @@
 
 This record qualifies the Python dependencies for the converter and inference runtime. **No pretrained weights, tokenizer artifacts, WikiText rows or model-quality inputs were downloaded or evaluated.** The ABI checks used small generated arrays and two inline strings. `campaign_ready` remains false.
 
-The [qualification receipt](qualification.json) is an unchanged copy of `build/model-dependencies/dependency-qualification.json`. The [wheel lock](../../../../benchmarks/model-dependencies-v1.json) and [converter](../../../../benchmarks/locks/converter-requirements.txt)/[runtime](../../../../benchmarks/locks/runtime-requirements.txt) installation lists are exact copies of the qualified outputs.
+The [qualification receipt](qualification.json) is an unchanged copy of `build/model-dependencies/dependency-qualification.json`. The [wheel lock](../../../benchmarks/model-dependencies-v1.json) and [converter](../../../benchmarks/locks/converter-requirements.txt)/[runtime](../../../benchmarks/locks/runtime-requirements.txt) installation lists are exact copies of the qualified outputs.
 
 ## Outcome
 

@@ -605,26 +605,47 @@ def run_campaign(output: Path, converter_python: Path | None, runtime_python: Pa
         receipt["blocked_phase"] = phase
         receipt["phase_elapsed_seconds"][phase] = time.monotonic() - phase_started
     finally:
-        receipt["finished_utc"] = utc_now()
-        receipt["elapsed_seconds"] = time.monotonic() - started
-        receipt["source_sha256_after"] = source_hashes()
-        receipt["inputs_unchanged"] = sources == receipt["source_sha256_after"]
-        receipt["retained_cache_and_output_bytes_before_final_receipt"] = directory_bytes(output)
-        if not receipt["inputs_unchanged"]:
-            receipt["status"] = "failed"
-            receipt["errors"].append("Source identity changed before final receipt publication")
-        if receipt["status"] == "completed" and time.monotonic() >= min(deadline, phase_deadline):
-            receipt["status"] = "failed"
-            receipt["errors"].append("The final summary exceeded a phase or outer deadline")
-        final_size = len((json.dumps(receipt, indent=2, sort_keys=True, allow_nan=False) + "\n").encode())
-        if receipt["retained_cache_and_output_bytes_before_final_receipt"] + final_size > budgets["cache_and_output_bytes"]:
-            receipt["status"] = "failed"
-            receipt["errors"].append("The retained final evidence exceeded the cache/output budget")
-        if receipt["status"] != "completed":
-            receipt["adoption_candidate"] = False
-        write_json(output / "campaign.json", receipt)
-        fcntl.flock(process_lock.fileno(), fcntl.LOCK_UN)
-        process_lock.close()
+        try:
+            receipt["finished_utc"] = utc_now()
+            receipt["elapsed_seconds"] = time.monotonic() - started
+
+            def observe_final(field, observe):
+                # A refused or unavailable observation must not erase the
+                # original failure or prevent the other final observations.
+                try:
+                    receipt[field] = observe()
+                except Exception as error:
+                    receipt[field] = None
+                    receipt.setdefault("finalization_errors", []).append({
+                        "observation": field, "error_type": type(error).__name__,
+                        "message": str(error)})
+                    receipt["errors"].append(f"Final observation {field} failed: {type(error).__name__}: {error}")
+                    receipt["status"] = "failed"
+
+            observe_final("source_sha256_after", source_hashes)
+            receipt["inputs_unchanged"] = (None if receipt["source_sha256_after"] is None
+                                           else sources == receipt["source_sha256_after"])
+            observe_final("retained_cache_and_output_bytes_before_final_receipt", lambda: directory_bytes(output))
+            if receipt["inputs_unchanged"] is False:
+                receipt["status"] = "failed"
+                receipt["errors"].append("Source identity changed before final receipt publication")
+            if receipt["status"] == "completed" and time.monotonic() >= min(deadline, phase_deadline):
+                receipt["status"] = "failed"
+                receipt["errors"].append("The final summary exceeded a phase or outer deadline")
+            if receipt["status"] != "completed":
+                receipt["adoption_candidate"] = False
+            final_size = len((json.dumps(receipt, indent=2, sort_keys=True, allow_nan=False) + "\n").encode())
+            retained_bytes = receipt["retained_cache_and_output_bytes_before_final_receipt"]
+            if retained_bytes is not None and retained_bytes + final_size > budgets["cache_and_output_bytes"]:
+                receipt["status"] = "failed"
+                receipt["adoption_candidate"] = False
+                receipt["errors"].append("The retained final evidence exceeded the cache/output budget")
+            write_json(output / "campaign.json", receipt)
+        finally:
+            try:
+                fcntl.flock(process_lock.fileno(), fcntl.LOCK_UN)
+            finally:
+                process_lock.close()
     return receipt
 
 
