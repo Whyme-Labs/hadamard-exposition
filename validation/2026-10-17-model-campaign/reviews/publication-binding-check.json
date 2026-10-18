@@ -1,0 +1,16 @@
+{
+  "checked_utc": "2026-10-18T04:00:51.520335+00:00",
+  "git_commit_tree_and_all_current_sources_verified": true,
+  "imported_numerical_packages": [],
+  "model_or_dataset_accessed": false,
+  "report_hashes_verified": true,
+  "review_sha256": "4acb4165f6594d95d0d9b8713d17cb0da81d556060703c528e3d8862a0053a8a",
+  "reviewed_commit": "8237ea186603b1b34aadbfdc9133bd956db41c05",
+  "reviewed_tree": "00a7e6b0914a8e8cd46a010a121dc430318e09ae",
+  "schema_version": "hadamard-review-publication-binding-check.v1",
+  "scope": "Publisher source/report binding check using the production review validator; not another independent review or a model execution.",
+  "source_count": 30,
+  "source_map_sha256": "1dd75e9af0736795e4d83c26f866d15d9f7a3fe55003e399ddbd36951ab2d69e",
+  "sources_unchanged": true,
+  "status": "passed"
+}

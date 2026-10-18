@@ -71,6 +71,8 @@ The [new focused qualification](tests/finalization-recheck/qualification.json) p
 
 The parent observed 0.151912157 seconds, one valid RSS sample, a sampled peak of 24,862,720 bytes and an OS peak of 24,883,200 bytes. The declared scope was 128 MiB / 30 seconds and 32 MiB retained output. All 30 bound source files and the archived worker wrapper remained unchanged. The wrapper recorded no NumPy, ONNX, ONNX Runtime or Torch imports and no model/data access. The host observation, wrapper source, both receipts, worker identity and stdout/stderr are retained unchanged. This focused check does not substitute for the full offline suite, generated-model controls or the frozen pretrained campaign.
 
+Both independent incremental reviews passed on source commit `8237ea186603b1b34aadbfdc9133bd956db41c05`, tree `00a7e6b0914a8e8cd46a010a121dc430318e09ae`. The exact [Standards](reviews/final-standards.md) and [Specification](reviews/final-specification.md) reports, their hashes and all 30 source hashes are recorded in [review.json](review.json). The [publisher binding check](reviews/publication-binding-check.json) used the production review validator to verify the named Git object and every current source file. The [review index](reviews/README.md) explains the original BLOCK and its resolution. These are independent agent reviews of implementation and retained blocked-launch evidence; full campaign acceptance remains outstanding.
+
 ## Remaining campaign acceptance
 
 1. Resolve [issue #6](https://github.com/Whyme-Labs/hadamard-exposition/issues/6): obtain a zero-cost CPU execution surface satisfying the frozen memory, disk and hardware gates. A different CPU/architecture needs a separately reviewed hardware execution revision before measurement.
