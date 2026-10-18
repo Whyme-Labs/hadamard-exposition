@@ -53,6 +53,8 @@ The intervention is limited to six post-GELU MLP output projections. Its online 
 
 The [accepted qualification and attempt history](validation/2026-10-17-model-benchmark/README.md) retain 38 passing tests, 20 passing runtime controls and valid process-identity-bound memory monitoring. The run completed in 6.194 seconds with about 179.3 MiB peak worker RSS, within its 180-second and 1 GiB limits. Two earlier resource-check defects and their original evidence are preserved. These numbers describe qualification cost, not model inference performance.
 
+[Issue #5](https://github.com/Whyme-Labs/hadamard-exposition/issues/5) now has the acquisition/export/measurement implementation and [execution supplement](docs/experiments/model-execution-v1.md). The [new evidence](validation/2026-10-17-model-campaign/README.md) retains both isolated dependency locks and a six-arm generated GPTNeoX export/cache probe through the pinned Torch/Transformers stack. Its 780 output comparisons pass, including independent dense/quantized references and cached decoding. The campaign runner checks reviewed source, full-model development parity, role separation and resource feasibility before test evaluation. The unchanged 6 GiB available-memory gate currently blocks the pretrained campaign; no Pythia quality or inference-cost result is reported.
+
 ## Validate
 
 The recorded numerical environment uses Python 3.12.14, NumPy 2.3.5 and Matplotlib 3.10.8. Install the pinned Python dependencies in a virtual environment:
@@ -108,6 +110,7 @@ The calculator check executes its actual JavaScript with a small DOM stub. It te
 
 - [Issue #1](https://github.com/Whyme-Labs/hadamard-exposition/issues/1) tracks the reproducible exposition and group-size study.
 - [Issue #2](https://github.com/Whyme-Labs/hadamard-exposition/issues/2) tracks the design of a matched model-quality and inference-cost benchmark.
+- [Issue #5](https://github.com/Whyme-Labs/hadamard-exposition/issues/5) tracks the full-model implementation, launch prerequisites and bounded quality/cost campaign.
 - [CONTEXT.md](CONTEXT.md) defines the research vocabulary and boundaries.
 - [docs/reference-import.json](docs/reference-import.json) records the original package and imported file hashes. It identifies the imported snapshot; later article and tooling edits have their own Git history.
 - [sources.json](sources.json) records the primary references and the claims they support.

@@ -1,0 +1,37 @@
+from pathlib import Path
+import resource
+import sys
+import time
+import traceback
+import unittest
+
+from benchmarks.qualify import _publish_worker_identity
+from benchmarks.campaign_guard import ROOT, sha256_file, source_hashes, write_json
+
+output = Path(sys.argv[1])
+identity = _publish_worker_identity(output)
+started = time.monotonic()
+before = source_hashes()
+wrapper_sha256 = sha256_file(Path(__file__))
+receipt = {"status": "failed", "worker_identity": identity,
+           "source_sha256_before": before, "wrapper_sha256": wrapper_sha256,
+           "scope": "Focused standard-library resource-guard tests only; no NumPy, ONNX, Torch, model or dataset import.",
+           "model_or_dataset_accessed": False}
+try:
+    suite = unittest.defaultTestLoader.loadTestsFromName("benchmarks.test_campaign_guard")
+    tests = unittest.TextTestRunner(verbosity=2).run(suite)
+    receipt["tests"] = {"run": tests.testsRun, "failures": len(tests.failures),
+                        "errors": len(tests.errors), "skipped": len(tests.skipped)}
+    receipt["status"] = "passed" if tests.wasSuccessful() and not tests.skipped else "failed"
+except Exception as error:
+    receipt["error"] = {"type": type(error).__name__, "message": str(error)}
+    traceback.print_exc()
+receipt["source_sha256_after"] = source_hashes()
+receipt["inputs_unchanged"] = before == receipt["source_sha256_after"] and wrapper_sha256 == sha256_file(Path(__file__))
+receipt["imported_numpy_onnx_torch"] = sorted(name for name in ("numpy", "onnx", "onnxruntime", "torch") if name in sys.modules)
+if not receipt["inputs_unchanged"] or receipt["imported_numpy_onnx_torch"]:
+    receipt["status"] = "failed"
+receipt["elapsed_seconds"] = time.monotonic() - started
+receipt["peak_worker_rss_bytes"] = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss * 1024
+write_json(output / "worker-result.json", receipt)
+raise SystemExit(0 if receipt["status"] == "passed" else 1)

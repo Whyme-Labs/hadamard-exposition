@@ -1,0 +1,198 @@
+{
+  "archive": {
+    "bytes": 353211,
+    "members": 23,
+    "path": "provenance.tar.gz",
+    "sha256": "625b311c9d69c91708e9c4c7f2ce71f946d11ced4d7ce34a94d1b70b139f58ef",
+    "uncompressed_member_bytes": 1257238
+  },
+  "archive_members": [
+    {
+      "archive_path": "logs/converter-install-1.log",
+      "bytes": 235,
+      "original_path": "build/model-dependencies/converter-install-1.log",
+      "sha256": "06a89355507d29021ea1df778d4dc6185b8ad87092307593d9ce3a1cb3f3cf48"
+    },
+    {
+      "archive_path": "receipts/converter-abi.json",
+      "bytes": 1836,
+      "original_path": "build/model-dependencies/converter-abi.json",
+      "sha256": "9b59bbf0b68072a7e96d326416eb2b72169d1f4fcfcb52f081bdb0a86c280a68"
+    },
+    {
+      "archive_path": "receipts/converter-installed-verification-final.json",
+      "bytes": 469,
+      "original_path": "build/model-dependencies/converter-installed-verification-final.json",
+      "sha256": "ddfa099db81991c8ebfc2d7ef43df3f6f040fdfb41e4c4f23516277db7561198"
+    },
+    {
+      "archive_path": "receipts/effort-result-1.json",
+      "bytes": 622,
+      "original_path": "build/model-dependencies/effort-result-1.json",
+      "sha256": "ca957f146517494aa29a552eee1106ef669e853e76378d0dcdbaf30894c069f9"
+    },
+    {
+      "archive_path": "receipts/effort-result-2.json",
+      "bytes": 824,
+      "original_path": "build/model-dependencies/effort-result-2.json",
+      "sha256": "3f243dc4b6089069146ccb9b100cb77a71d33078752bb2e46f28526329dd0ff6"
+    },
+    {
+      "archive_path": "receipts/effort-start.json",
+      "bytes": 158,
+      "original_path": "build/model-dependencies/effort-start.json",
+      "sha256": "e2a5044ac9ed298a54fa10bf01fd188f74ec78fd770571520f73bb5274356111"
+    },
+    {
+      "archive_path": "receipts/runtime-abi.json",
+      "bytes": 1060,
+      "original_path": "build/model-dependencies/runtime-abi.json",
+      "sha256": "b0884b1e053081408ba56bdc2ca7a692b655b2f7a55387065ec3f3ec6fe42262"
+    },
+    {
+      "archive_path": "receipts/runtime-installed-verification-final.json",
+      "bytes": 423,
+      "original_path": "build/model-dependencies/runtime-installed-verification-final.json",
+      "sha256": "5a3235049aff0e66da5bba9bce7a5a0c24cdcd7f026844ce11fe288607a25bad"
+    },
+    {
+      "archive_path": "receipts/transfer-converter-1.json",
+      "bytes": 561,
+      "original_path": "build/model-dependencies/transfer-converter-1.json",
+      "sha256": "ec6f0c5e6debfbe07a9f04733b04b1889edae4d58e4520f272a649bb2b41dcc1"
+    },
+    {
+      "archive_path": "receipts/transfer-converter-2.json",
+      "bytes": 570,
+      "original_path": "build/model-dependencies/transfer-converter-2.json",
+      "sha256": "3751f0fc8408501effdeeae6a53ddf70421da7eca7cd0a90d815027ac0d2e64f"
+    },
+    {
+      "archive_path": "receipts/transfer-runtime-1.json",
+      "bytes": 566,
+      "original_path": "build/model-dependencies/transfer-runtime-1.json",
+      "sha256": "72c2a95c1a5de1c43cbc70c8a7f3ff265311816aa75c35934b523d64eb8809f1"
+    },
+    {
+      "archive_path": "receipts/wheel-files.json",
+      "bytes": 18693,
+      "original_path": "build/model-dependencies/wheel-files.json",
+      "sha256": "3b250d912722ee323a978833b5a25a8964d2f73af48891f56926e7e97af02e57"
+    },
+    {
+      "archive_path": "reports/converter-install-report.json",
+      "bytes": 810983,
+      "original_path": "build/model-dependencies/converter-install-report.json",
+      "sha256": "097159906d7848b6b144e52ac67c8f46a6411d9dcd98b629879197ff710ddf2f"
+    },
+    {
+      "archive_path": "reports/runtime-install-report.json",
+      "bytes": 373249,
+      "original_path": "build/model-dependencies/runtime-install-report.json",
+      "sha256": "e371754c2c7620d2db9bc81ec5dccd01176ea4287a9f4e67e45526c33e557bf7"
+    },
+    {
+      "archive_path": "sources/benchmarks/dependency_lock.py",
+      "bytes": 15514,
+      "original_path": "benchmarks/dependency_lock.py",
+      "sha256": "a57dc27ebfd61fb0c8a1cd1d2028cb6b60bb3aeae356146d441d1a1030d5dc76"
+    },
+    {
+      "archive_path": "sources/benchmarks/model-benchmark-v1.json",
+      "bytes": 11547,
+      "original_path": "benchmarks/model-benchmark-v1.json",
+      "sha256": "67afbab1597f2d8024075c8f9cc94c181f5c4fa67b940553f8a5f7d8ead3898e"
+    },
+    {
+      "archive_path": "sources/benchmarks/test_dependency_lock.py",
+      "bytes": 9000,
+      "original_path": "benchmarks/test_dependency_lock.py",
+      "sha256": "47c682fb66b8d243dcef1b4506ed4f76cacd231133bb2f2d072794accde3a6b7"
+    },
+    {
+      "archive_path": "sources/build/model-dependencies/abi_probe.py",
+      "bytes": 3741,
+      "original_path": "build/model-dependencies/abi_probe.py",
+      "sha256": "79bb1d354aa8b00b094e44a3a9eb46afa0fadc429b19804305ab860ad50896b4"
+    },
+    {
+      "archive_path": "sources/build/model-dependencies/bootstrap.py",
+      "bytes": 4367,
+      "original_path": "build/model-dependencies/bootstrap.py",
+      "sha256": "c22210ce611dcc225db29078c6248cb78062af57932b6707d0d4d610def23db1"
+    },
+    {
+      "archive_path": "sources/build/model-dependencies/pip_meter.py",
+      "bytes": 1954,
+      "original_path": "build/model-dependencies/pip_meter.py",
+      "sha256": "ecabb28c1a64ca0e156c7510c0408368ae8db11867fdf35629e5fad14d3bd3a9"
+    },
+    {
+      "archive_path": "sources/requirements-benchmark.txt",
+      "bytes": 218,
+      "original_path": "requirements-benchmark.txt",
+      "sha256": "f243ef93135a9366162c78ded77c844e06e9c43f0b2e8618e7d9024a7f2b64bd"
+    },
+    {
+      "archive_path": "sources/requirements-model-converter.txt",
+      "bytes": 616,
+      "original_path": "requirements-model-converter.txt",
+      "sha256": "1908dde46497025834d6a65ecc0aec65cc2db1e895b2a6e5d0bea93f03e477b0"
+    },
+    {
+      "archive_path": "sources/requirements.txt",
+      "bytes": 32,
+      "original_path": "requirements.txt",
+      "sha256": "4c40934e438ae009a1eb0b5a9322cce029fba6ca1af6e314c088c1957cee0c04"
+    }
+  ],
+  "omitted": [
+    {
+      "identity_source": "benchmarks/model-dependencies-v1.json",
+      "items": "55 unique binary wheel HTTP cache bodies and both installed virtual environments",
+      "original_local_path_mapping": "receipts/wheel-files.json",
+      "reason": "Locally verified against source URLs, package metadata and hashes; intentionally not retained in this repository archive.",
+      "unique_wheel_bytes": 357478998
+    },
+    {
+      "items": "converter-install-2.log and runtime-install-1.log",
+      "reason": "Routine successful install progress duplicated by the retained original full pip reports and exit/transfer receipts."
+    },
+    {
+      "items": "converter-installed-verification.json and runtime-installed-verification.json",
+      "reason": "Superseded successful preliminary package checks. Retained final verification receipts repeat them and add interpreter-marker and wheel-tag checks."
+    },
+    {
+      "items": "Original ABI probe stdout/stderr streams",
+      "reason": "Not saved as standalone files. Receipts and exact probe source are retained; cache-path warnings are disclosed in qualification.json and README.md."
+    }
+  ],
+  "published_files": [
+    {
+      "bytes": 108745,
+      "original_path": "build/model-dependencies/dependency-lock.json",
+      "published_path": "benchmarks/model-dependencies-v1.json",
+      "sha256": "f4b045d55bb3de7d8673c2a1e89ee15ec3dcd398097df381d3faa0761c67878b"
+    },
+    {
+      "bytes": 11714,
+      "original_path": "build/model-dependencies/converter-locked-requirements.txt",
+      "published_path": "benchmarks/locks/converter-requirements.txt",
+      "sha256": "9aa948fa3a9f3d1455a04b7cba936d1acb0f8f8029b09081ccb7de4097e130a1"
+    },
+    {
+      "bytes": 5283,
+      "original_path": "build/model-dependencies/runtime-locked-requirements.txt",
+      "published_path": "benchmarks/locks/runtime-requirements.txt",
+      "sha256": "3753da8da214a00a8a90200843c70988d1a3e3723b6b9723daf6cfd506f7dc3e"
+    },
+    {
+      "bytes": 5509,
+      "original_path": "build/model-dependencies/dependency-qualification.json",
+      "published_path": "validation/2026-10-17-model-campaign/dependencies/qualification.json",
+      "sha256": "a56ea9e3183d5e582db79b77db0919086da04f5eae3450e35cf196f6f0da8ba3"
+    }
+  ],
+  "schema_version": "hadamard-dependency-publication.v1",
+  "scope": "Dependency installation, wheel identity, closure and tiny generated-array ABI only; zero pretrained model/data access."
+}

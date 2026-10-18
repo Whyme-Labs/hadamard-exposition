@@ -1,0 +1,24 @@
+{
+  "schema_version": "hadamard-offline-test-observation.v1",
+  "observation_kind": "Transcribed from the retained shell-tool completion, not a contemporaneously hashed worker receipt",
+  "command": [
+    "build/model-runtime-venv/bin/python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "benchmarks",
+    "-p",
+    "test_*.py"
+  ],
+  "status": "passed",
+  "exit_code": 0,
+  "tests_run": 127,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "reported_elapsed_seconds": 6.977,
+  "source_hashes_recorded_by_invocation": false,
+  "scope": "All offline tests present before the last atomic-publication regression was added; no pretrained model or dataset access. A focused recheck covers the final guard change.",
+  "campaign_ready": false
+}
