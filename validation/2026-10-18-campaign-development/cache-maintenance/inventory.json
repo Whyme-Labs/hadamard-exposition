@@ -1,0 +1,27 @@
+{
+  "archive": {
+    "bytes": 3818163,
+    "path": "raw-evidence.tar.gz",
+    "sha256": "a2220411b8522d8cb864a70f88284efd2beb8682b82a3bc5ad06de04f0031a1a"
+  },
+  "members": [
+    {
+      "bytes": 1543,
+      "path": "advice.json",
+      "sha256": "689cb3ac9c2292a28c8d488721172a92a232bc9605e7131b48ed559028c008d1"
+    },
+    {
+      "bytes": 29657564,
+      "path": "files.jsonl",
+      "sha256": "36e9505a67336fbfeda09f71aedc01d8dd4b65d7d51866c7a25850343cea7489"
+    },
+    {
+      "bytes": 842,
+      "path": "start.json",
+      "sha256": "6206ceedafc8078e1b7be2417ed763881e71cae09be80c7e8626fbfa0f773b6a"
+    }
+  ],
+  "original_directory": "build/owned-cache-release-001",
+  "schema_version": "hadamard-owned-cache-archive.v1",
+  "scope": "Original maintenance receipts and complete per-file journal. Prepared inputs remain outside this archive."
+}
