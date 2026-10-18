@@ -1,0 +1,39 @@
+{
+  "acquisition_receipt_bound": false,
+  "clarified_entry": {
+    "bytes": 152043520,
+    "path": "new-acquisition/artifacts/model/model.safetensors.partial",
+    "sha256": "ac38da8bd2e8486f98002233560219695da843ccdd1cc0307301f395146b2910"
+  },
+  "classification": "Observed unreferenced partial artifact; origin unresolved.",
+  "consumed_model_identity_note": "The five complete model files in artifacts/model match their original pinned identities and the recorded trace before/after checks. This partial was outside that consumed map.",
+  "correction": "The initial inventory applied its general public-input-body reason to every file under an input prefix. That wording is too broad for this unreferenced partial; its observed hash does not establish pinned-public-input provenance.",
+  "file_deleted_or_modified_for_clarification": false,
+  "footprint_reconciliation": "345168215 + 13097 + 152043520 = 497224832",
+  "historical_verification_note": "The successful acquisition verification is a historical observation before the later extra file. The current new-acquisition/artifacts tree contains an additional unreferenced artifact body and must not be described as freshly passing the exact eight-file verifier.",
+  "later_snapshot_regular_file_bytes": 497224832,
+  "maintenance_journal_sha256": "5cb7531954d8f2fe2da5c222d204ad5b8029172bc19444e2b7c3e07dd7d43f12",
+  "maintenance_observed_same_partial_identity": true,
+  "maintenance_partial_metadata_unchanged": true,
+  "maintenance_started_utc": "2026-10-18T19:35:52.211277+00:00",
+  "metadata_limitation": "Recorded times and inode metadata do not establish creation time or explain the origin.",
+  "new_acquisition_tree_currently_matches_exact_eight_file_allowlist": false,
+  "observed_metadata": {
+    "ctime_ns": 1792352136871931085,
+    "device": 27,
+    "inode": 813872,
+    "mode": 33152,
+    "mtime_ns": 1792352129797379832,
+    "nlink": 1,
+    "uid": 0
+  },
+  "original_inventory_path": "inventory.json",
+  "original_inventory_preserved": true,
+  "original_inventory_sha256": "3ff5eca70d5598ad0e196a27f71d60c3ff05d9b18ad93eac76943a0d8814af34",
+  "reconstruction_final_receipt_bytes": 13097,
+  "reconstruction_finished_utc": "2026-10-18T19:35:34.607893+00:00",
+  "reconstruction_pre_final_receipt_bytes": 345168215,
+  "reconstruction_receipt_mtime_ns": 1792352134608829956,
+  "schema_version": "hadamard-diagnostic-omission-clarification.v1",
+  "trace_consumed_input": false
+}

@@ -1,0 +1,160 @@
+{
+  "articles": [
+    {
+      "boundary_max_absolute_errors": {
+        "embed_out:output": 0.016845703125,
+        "gpt_neox.final_layer_norm:output": 0.00754547119140625,
+        "gpt_neox.layers.0:output": 9.5367431640625e-07,
+        "gpt_neox.layers.1:output": 1.0132789611816406e-06,
+        "gpt_neox.layers.2:output": 2.384185791015625e-06,
+        "gpt_neox.layers.3:output": 0.00024706125259399414,
+        "gpt_neox.layers.4:output": 0.002284526824951172,
+        "gpt_neox.layers.5:output": 0.002376079559326172
+      },
+      "cached_prefix_prefill_cache_data_identities_equal": true,
+      "first_numerical_divergence": {
+        "actual": {
+          "array_sha256": "f2396db5f9bbcc23963da5e73ed20618b66854a699d3f6c9294d1ab08bed6829",
+          "bytes": 6144,
+          "dtype": "float32",
+          "shape": [
+            1,
+            1,
+            1536
+          ]
+        },
+        "actual_at_max_error": -5.618946552276611,
+        "array_equal": false,
+        "comparable": true,
+        "data_identity_equal": false,
+        "differing_elements": 1280,
+        "expected": {
+          "array_sha256": "21e1671056fdb1e77b212fcb9b714e8fda6055bed230207d8799ccfdfec64e3c",
+          "bytes": 6144,
+          "dtype": "float32",
+          "shape": [
+            1,
+            1,
+            1536
+          ]
+        },
+        "expected_at_max_error": -5.618947982788086,
+        "label": "gpt_neox.layers.0.attention.query_key_value:output",
+        "max_absolute_error": 1.430511474609375e-06,
+        "max_error_index": [
+          0,
+          0,
+          454
+        ],
+        "relative_frobenius_error": 1.2424414777816415e-07
+      },
+      "full_prefix_prefill_cache_data_identities_equal": true,
+      "numerically_equal_but_byte_different_events": [
+        "gpt_neox.layers.0.attention:attention_mask",
+        "gpt_neox.layers.1.attention:attention_mask",
+        "gpt_neox.layers.2.attention:attention_mask",
+        "gpt_neox.layers.3.attention:attention_mask",
+        "gpt_neox.layers.4.attention:attention_mask",
+        "gpt_neox.layers.5.attention:attention_mask"
+      ],
+      "qkv_call_input_shapes": {
+        "cached": [
+          1,
+          1,
+          512
+        ],
+        "full": [
+          1,
+          513,
+          512
+        ]
+      },
+      "qkv_last_input_data_identity_equal": true,
+      "start_row": 1,
+      "supplied_prefill_cache_unchanged": true
+    },
+    {
+      "boundary_max_absolute_errors": {
+        "embed_out:output": 0.001708984375,
+        "gpt_neox.final_layer_norm:output": 0.00151824951171875,
+        "gpt_neox.layers.0:output": 2.9206275939941406e-06,
+        "gpt_neox.layers.1:output": 2.0265579223632812e-06,
+        "gpt_neox.layers.2:output": 1.9073486328125e-06,
+        "gpt_neox.layers.3:output": 9.328126907348633e-05,
+        "gpt_neox.layers.4:output": 0.0010323524475097656,
+        "gpt_neox.layers.5:output": 0.00032830238342285156
+      },
+      "cached_prefix_prefill_cache_data_identities_equal": true,
+      "first_numerical_divergence": {
+        "actual": {
+          "array_sha256": "c8eb2459d039c1ca2b3ba7241d8683f7f94720de0647864ac6ab980218a110a5",
+          "bytes": 6144,
+          "dtype": "float32",
+          "shape": [
+            1,
+            1,
+            1536
+          ]
+        },
+        "actual_at_max_error": -6.574635982513428,
+        "array_equal": false,
+        "comparable": true,
+        "data_identity_equal": false,
+        "differing_elements": 1286,
+        "expected": {
+          "array_sha256": "974959fda5cb20be988eb7a918d3c3f1ba251461ea65c6762d1c4ec2f54e528a",
+          "bytes": 6144,
+          "dtype": "float32",
+          "shape": [
+            1,
+            1,
+            1536
+          ]
+        },
+        "expected_at_max_error": -6.574634552001953,
+        "label": "gpt_neox.layers.0.attention.query_key_value:output",
+        "max_absolute_error": 1.430511474609375e-06,
+        "max_error_index": [
+          0,
+          0,
+          6
+        ],
+        "relative_frobenius_error": 1.2068638218794116e-07
+      },
+      "full_prefix_prefill_cache_data_identities_equal": true,
+      "numerically_equal_but_byte_different_events": [
+        "gpt_neox.layers.0.attention:attention_mask",
+        "gpt_neox.layers.1.attention:attention_mask",
+        "gpt_neox.layers.2.attention:attention_mask",
+        "gpt_neox.layers.3.attention:attention_mask",
+        "gpt_neox.layers.4.attention:attention_mask",
+        "gpt_neox.layers.5.attention:attention_mask"
+      ],
+      "qkv_call_input_shapes": {
+        "cached": [
+          1,
+          1,
+          512
+        ],
+        "full": [
+          1,
+          513,
+          512
+        ]
+      },
+      "qkv_last_input_data_identity_equal": true,
+      "start_row": 47,
+      "supplied_prefill_cache_unchanged": true
+    }
+  ],
+  "first_divergence_definition": "First numerically unequal saved last-token event; signed-zero byte differences are separate.",
+  "limitations": [
+    "No internal kernel or accumulation order was identified.",
+    "The first QKV divergence does not by itself explain every later discrepancy.",
+    "Full/prefill originals are unavailable; whole-array reproduction relies on retained canonical data identities."
+  ],
+  "model_calls_in_analysis": 0,
+  "original_failure_reproduced": true,
+  "schema_version": "hadamard-reference-trace-analysis.v1",
+  "source_worker_receipt_sha256": "0a3f346cc8fc3904167cd9bf4d8331e31591117ec30d2e11dfcc57866887965c"
+}

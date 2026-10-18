@@ -1,0 +1,42 @@
+{
+  "address_space_limit_bytes": 536870912,
+  "advice": "POSIX_FADV_DONTNEED",
+  "advice_length": 0,
+  "advice_offset": 0,
+  "advised_files": 54519,
+  "advised_logical_bytes": 3565454159,
+  "campaign_ready": false,
+  "data_writes": 0,
+  "deadline_seconds": 120,
+  "deletions": 0,
+  "elapsed_seconds": 4.56131951000134,
+  "errors": [],
+  "files_journal_sha256": "5cb7531954d8f2fe2da5c222d204ad5b8029172bc19444e2b7c3e07dd7d43f12",
+  "global_cache_controls": false,
+  "metadata_unchanged_after_advice": true,
+  "model_calls": 0,
+  "network_bytes": 0,
+  "reclamation_guaranteed": false,
+  "schema_version": "hadamard-owned-cache-advice.v1",
+  "scope_roots": [
+    "build/diagnostic-environment-recovery-001/pip-cache",
+    "build/diagnostic-environment-recovery-001/pip-temporary",
+    "build/diagnostic-environments-001",
+    "build/reference-diagnostic-inputs-001"
+  ],
+  "script_sha256_after": "05ad34c4716a5f1d1a6239bb6189a780eb7bdb7fb521ab3bb6e22def7352702a",
+  "script_sha256_before": "05ad34c4716a5f1d1a6239bb6189a780eb7bdb7fb521ab3bb6e22def7352702a",
+  "skipped_symlinks": [
+    "build/diagnostic-environments-001/runtime/lib64",
+    "build/diagnostic-environments-001/runtime/bin/python",
+    "build/diagnostic-environments-001/runtime/bin/python3",
+    "build/diagnostic-environments-001/runtime/bin/python3.12",
+    "build/diagnostic-environments-001/converter/lib64",
+    "build/diagnostic-environments-001/converter/bin/python",
+    "build/diagnostic-environments-001/converter/bin/python3",
+    "build/diagnostic-environments-001/converter/bin/python3.12"
+  ],
+  "started_utc": "2026-10-18T19:35:52.211277+00:00",
+  "status": "completed",
+  "worker_os_peak_rss_bytes": 14827520
+}
