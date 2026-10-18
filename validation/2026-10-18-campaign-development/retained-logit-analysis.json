@@ -1,0 +1,76 @@
+{
+  "analysis_source_sha256": "f4444af3c385d023e4084b5266183de2f71bac9fa889eb0e60289bab4ef23210",
+  "articles": [
+    {
+      "above_absolute_gate": 41289,
+      "article_index": 0,
+      "best_uniform_shift_maximum_error": 0.0126953125,
+      "cached_top_token": 342,
+      "exactly_equal": 558,
+      "full_maximum": 1077.0443115234375,
+      "full_mean": 1055.6208409677631,
+      "full_minimum": 224.360595703125,
+      "full_standard_deviation": 64.4991486941802,
+      "full_top_token": 342,
+      "logit_count": 50304,
+      "maximum_absolute_error": 0.016845703125,
+      "maximum_error_tokens": [
+        {
+          "cached": 1059.788818359375,
+          "full": 1059.77197265625,
+          "signed_error": 0.016845703125,
+          "token_id": 15971,
+          "ulp_distance": 138
+        }
+      ],
+      "maximum_ulp_distance": 216,
+      "mean_centered_maximum_error": 0.014466814412415482,
+      "median_absolute_error": 0.00244140625,
+      "relative_frobenius_error": 2.7538376741586733e-06,
+      "same_top_20_order": true
+    },
+    {
+      "above_absolute_gate": 498,
+      "article_index": 1,
+      "best_uniform_shift_maximum_error": 0.00140380859375,
+      "cached_top_token": 10130,
+      "exactly_equal": 5830,
+      "full_maximum": 1069.557373046875,
+      "full_mean": 1050.975214482567,
+      "full_minimum": 228.2921142578125,
+      "full_standard_deviation": 63.87261624162164,
+      "full_top_token": 10130,
+      "logit_count": 50304,
+      "maximum_absolute_error": 0.001708984375,
+      "maximum_error_tokens": [
+        {
+          "cached": 1065.464111328125,
+          "full": 1065.4658203125,
+          "signed_error": -0.001708984375,
+          "token_id": 11854,
+          "ulp_distance": 14
+        },
+        {
+          "cached": 1060.316162109375,
+          "full": 1060.31787109375,
+          "signed_error": -0.001708984375,
+          "token_id": 38036,
+          "ulp_distance": 14
+        }
+      ],
+      "maximum_ulp_distance": 33,
+      "mean_centered_maximum_error": 0.001442895894135531,
+      "median_absolute_error": 0.000244140625,
+      "relative_frobenius_error": 4.0352919739532284e-07,
+      "same_top_20_order": true
+    }
+  ],
+  "campaign_ready": false,
+  "gate_repaired": false,
+  "maximum_absolute_gate": 0.001,
+  "model_calls": 0,
+  "note": "All extra metrics describe the same two saved development outputs; none replaces a frozen acceptance criterion.",
+  "quality_test_accessed": false,
+  "schema_version": "hadamard-retained-logit-analysis.v1",
+  "source_npz_sha256": "6972d7416056a53c840b1bf62ce139a34f27325a8ad611fc6f3aac6e4cef6a6f"
+}
