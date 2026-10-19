@@ -1,0 +1,8 @@
+{
+  "source_commit": "e26702bdd16242abbfe7dd34cdcf7529327f527a",
+  "transport": "Temporary download capabilities returned by the GitHub connector; no shell Git authentication.",
+  "source_body_bytes": 0,
+  "model_or_operator_calls": 0,
+  "elapsed_seconds": 0.16914531200018246,
+  "records": []
+}

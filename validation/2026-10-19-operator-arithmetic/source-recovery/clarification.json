@@ -1,0 +1,20 @@
+{
+  "archive_attempt_001": {
+    "error_observed_in_session": "HTTP 404 from the expired connector-issued capability",
+    "limitation": "The original write-once receipt records zero bytes and no completed records; it omits the exception, which was reported by the command. This is an append-only clarification, not a rewritten receipt.",
+    "observed_response_body_bytes": 0,
+    "status": "failed"
+  },
+  "archive_attempt_002": {
+    "observed_response_body_bytes": 9860354,
+    "status": "passed",
+    "verified_archive_count": 3
+  },
+  "base_commit": "e26702bdd16242abbfe7dd34cdcf7529327f527a",
+  "base_tree": "d0490c2647f8c067dfc6b5fde1d69730fa7ab932",
+  "dependency_downloaded_bytes": 0,
+  "model_or_operator_calls": 0,
+  "schema_version": "hadamard-source-recovery-clarification.v1",
+  "source_transport_scope": "The measured body count covers direct archive streams. GitHub connector text/base64 source recovery is separate and has no measured HTTP body ledger here.",
+  "temporary_signed_urls_retained": false
+}

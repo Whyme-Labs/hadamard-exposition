@@ -1,0 +1,32 @@
+{
+  "campaign_ready": false,
+  "causal_limitation": "Historical native and current candidate computations differ in hardware, backend and precision; the exact affine value is the common mathematical target.",
+  "hardware": {
+    "architecture": "x86_64",
+    "cpu_model": "INTEL(R) XEON(R) PLATINUM 8573C"
+  },
+  "historical_native_trace_hardware": {
+    "architecture": "x86_64",
+    "cpu_model": "AMD EPYC 9V74 80-Core Processor"
+  },
+  "original_campaign_hardware_acceptance_changed": false,
+  "qualification_reason": "The metadata-only observation differs solely in CPU model; memory, disk, Python and existing numerical dependencies pass. This separate record fixes the observed CPU for the local exact-arithmetic candidate experiment. It does not qualify the unavailable campaign runtime or a hardware-matched performance comparison.",
+  "qualified_before_acquisition_or_trace_evaluation": true,
+  "resource_requirements": {
+    "conservative_available_memory_bytes": 6442450944,
+    "free_disk_bytes": 4294967296,
+    "minimum_cpu_quota_cores": 1
+  },
+  "runtime": {
+    "numpy_version": "2.3.5",
+    "python_version": "3.12.14",
+    "threadpoolctl_version": "3.6.0"
+  },
+  "schema_version": "hadamard-operator-host.v1",
+  "scope": "Exact affine audit and fixed NumPy FP64 candidate only",
+  "source_observation": {
+    "bytes": 4278,
+    "path": "validation/2026-10-19-operator-arithmetic/pre-registration-host-check-001.json",
+    "sha256": "04584afde8af44878737ccd4074f8f6ecef16e4f409eaef7c11bfbcaaf0448da"
+  }
+}

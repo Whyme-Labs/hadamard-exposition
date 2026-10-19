@@ -1,0 +1,30 @@
+{
+  "source_commit": "e26702bdd16242abbfe7dd34cdcf7529327f527a",
+  "transport": "Temporary download capabilities returned by the GitHub connector; no shell Git authentication.",
+  "source_body_bytes": 9860354,
+  "model_or_operator_calls": 0,
+  "elapsed_seconds": 1.3988445260001754,
+  "records": [
+    {
+      "path": "validation/2026-10-18-campaign-development/reference-trace-v2/raw-evidence.tar.gz",
+      "bytes": 2216803,
+      "git_blob_sha1": "b8d60375c56ee845fbb14ec7950cfa31ffad3210",
+      "sha256": "67d20a6e24f477fcf5e789aa8af6259f07f06ffd83bc407084e24b747e0f683a",
+      "identity_matches": true
+    },
+    {
+      "path": "validation/2026-10-18-campaign-development/cache-maintenance/raw-evidence.tar.gz",
+      "bytes": 3818163,
+      "git_blob_sha1": "696c0a929b061597a8a4996b186f2344b9df59c8",
+      "sha256": "a2220411b8522d8cb864a70f88284efd2beb8682b82a3bc5ad06de04f0031a1a",
+      "identity_matches": true
+    },
+    {
+      "path": "validation/2026-10-18-campaign-development/recovered-cache-maintenance/raw-evidence.tar.gz",
+      "bytes": 3825388,
+      "git_blob_sha1": "a2b53984118ff7771d5b75cff9107c815fba42a7",
+      "sha256": "f598c5343d7321d8278821a76c038f8afe7531d56fd4a5cb89e2ebdfb74b9278",
+      "identity_matches": true
+    }
+  ]
+}
