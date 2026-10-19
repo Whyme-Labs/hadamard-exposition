@@ -1,0 +1,16 @@
+{
+  "certificate_defaults": {
+    "cafile": "/usr/local/share/ca-certificates/nebula-dns.crt",
+    "cafile_exists": true,
+    "capath": "/etc/ssl/certs",
+    "capath_exists": true
+  },
+  "checkpoint_body_bytes_received": 0,
+  "checkpoint_request_retried": false,
+  "dns": {
+    "errno": -3,
+    "message": "[Errno -3] Temporary failure in name resolution",
+    "status": "failed",
+    "type": "gaierror"
+  }
+}

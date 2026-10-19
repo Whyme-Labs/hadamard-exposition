@@ -1,0 +1,85 @@
+{
+  "additional_preparation_attempts": 1,
+  "arithmetic_execution_permission": "use_default",
+  "arithmetic_source_map_sha256": "18389440bb75da613a20c7e1b7eaf698f8787841ea2ad90c3db64629656cec24",
+  "audit_output": "build/operator-arithmetic-audit-001",
+  "candidate_evaluations_total": 8,
+  "correction_files": {
+    "docs/experiments/operator-transport-correction-001.md": {
+      "bytes": 8134,
+      "sha256": "bde8321fe784b46f3e95187547e83ded5f2f7d3216055d6f27591d46b775cd78"
+    },
+    "validation/2026-10-19-operator-arithmetic/transport-correction-001/diagnostics/operator-transport-diagnosis.json": {
+      "bytes": 410,
+      "sha256": "f8217900205ef2ac9c9409a4facbeaaec5d7a809b52faef25924ff7322228bbb"
+    },
+    "validation/2026-10-19-operator-arithmetic/transport-correction-001/diagnostics/operator-transport-proxy-diagnosis-001.json": {
+      "bytes": 1134,
+      "sha256": "506f8e1e1b16c8257240b8a1b74ac14bfbfd87389f21a4c19f812f1a7638fba0"
+    },
+    "validation/2026-10-19-operator-arithmetic/transport-correction-001/diagnostics/operator-transport-proxy-diagnosis-002.json": {
+      "bytes": 590,
+      "sha256": "e9c0ce8682f6f2af298bc8ee73db48a3f50a84e15ea922b5f548b1620cb6f1ea"
+    },
+    "validation/2026-10-19-operator-arithmetic/transport-correction-001/evidence-inventory.json": {
+      "bytes": 3747,
+      "sha256": "cd6562cea8e000a61bb66597cdfeb570d28b6ad11661ad897e79b49b4d5603c5"
+    },
+    "validation/2026-10-19-operator-arithmetic/transport-correction-001/preparation-001/phase-result.json": {
+      "bytes": 21028,
+      "sha256": "116eed566564fe43cdddcfcd87f1826693920cc45024ca37268e204edfa3dc8e"
+    },
+    "validation/2026-10-19-operator-arithmetic/transport-correction-001/preparation-001/preflight.json": {
+      "bytes": 4452,
+      "sha256": "b73fee0e2af60150a653d926c1c045ce051050b0c9109eb6ad246e431c74c880"
+    },
+    "validation/2026-10-19-operator-arithmetic/transport-correction-001/preparation-001/start.json": {
+      "bytes": 5865,
+      "sha256": "a9746dccf1a3e109f4c5e51ac99cf10934bb3f9c9e33750450d957466be7959e"
+    },
+    "validation/2026-10-19-operator-arithmetic/transport-correction-001/preparation-001/worker/start.json": {
+      "bytes": 6991,
+      "sha256": "2d32f29337dece11b46b6636d9afa128bb4289d562e2c956f6ab1167f5b90d23"
+    },
+    "validation/2026-10-19-operator-arithmetic/transport-correction-001/preparation-001/worker/stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "validation/2026-10-19-operator-arithmetic/transport-correction-001/preparation-001/worker/stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "validation/2026-10-19-operator-arithmetic/transport-correction-001/preparation-001/worker/task-receipt.json": {
+      "bytes": 9321,
+      "sha256": "0abbfb9d282099a268ec1646afb7cc93a809b99ee1e98f79b68e104caa845698"
+    },
+    "validation/2026-10-19-operator-arithmetic/transport-correction-001/preparation-001/worker/worker-identity.json": {
+      "bytes": 124,
+      "sha256": "24ed206841e0cca8317163f902484eeae26340ed2a08b21b977d4e122e104a1b"
+    },
+    "validation/2026-10-19-operator-arithmetic/transport-correction-001/preparation-001/worker/worker-result.json": {
+      "bytes": 7399,
+      "sha256": "941246487b1689ebabfdadcf18b658ccb9e3a86ebe2b97a49805e95ffb7a56f2"
+    },
+    "validation/2026-10-19-operator-arithmetic/transport-correction-001/registration-v1/prepare-claim.json": {
+      "bytes": 5642,
+      "sha256": "7e6260e34e274a7d3c1efe21886867697efc177612ed57f18f5b2311fee63fc5"
+    },
+    "validation/2026-10-19-operator-arithmetic/transport-correction-001/registration-v1/publication.json": {
+      "bytes": 552,
+      "sha256": "e9dee40bd6742e9cf86108188cfeb3475e3c04d2248a176855a052cea8420ab6"
+    }
+  },
+  "correction_map_sha256": "2d77e5c0a07e6de98ac5aa109960d45b43bc5782274d4e09740e47c8b06c4290",
+  "new_dependencies_permitted": false,
+  "original_arithmetic_commit": "3a4169b255c6bf9ed64caf49057397a5306cc0b5",
+  "original_arithmetic_tree": "71a1415defd61dcd9507da9d5090f63189a269ec",
+  "per_corrected_preparation_wall_limit_seconds": 600,
+  "preparation_execution_permission": "require_escalated",
+  "preparation_output": "build/operator-arithmetic-prepare-002",
+  "prior_checkpoint_body_bytes": 0,
+  "prior_preparation_attempts": 1,
+  "prior_preparation_elapsed_seconds": 0.4762331849997281,
+  "publication_path": "build/operator-arithmetic-registration-v2/publication.json",
+  "schema_version": "hadamard-operator-transport-inputs.v1"
+}

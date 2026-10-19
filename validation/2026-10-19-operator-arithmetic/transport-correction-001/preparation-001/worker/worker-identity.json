@@ -1,0 +1,6 @@
+{
+  "namespace_pid": 6,
+  "procfs_pid": 4908,
+  "schema_version": "hadamard-worker-identity.v1",
+  "start_ticks": 3673722
+}

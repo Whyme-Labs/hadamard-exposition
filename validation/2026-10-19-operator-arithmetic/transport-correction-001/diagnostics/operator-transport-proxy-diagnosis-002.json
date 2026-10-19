@@ -1,0 +1,18 @@
+{
+  "checkpoint_body_bytes_received": 0,
+  "checkpoint_request_retried": false,
+  "elapsed_seconds": 0.08289395400061039,
+  "execution_permission": "require_escalated",
+  "finished_utc": "2026-10-19T15:51:35.530904+00:00",
+  "metadata_request": {
+    "http_status": 200,
+    "method": "HEAD",
+    "response_body_bytes_read": 0,
+    "status": "passed",
+    "url": "https://huggingface.co/"
+  },
+  "proxy_configuration_changed": false,
+  "schema_version": "hadamard-operator-transport-diagnosis.v1",
+  "started_utc": "2026-10-19T15:51:35.447990+00:00",
+  "tls_verification_disabled": false
+}

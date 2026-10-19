@@ -1,0 +1,27 @@
+{
+  "candidate_evaluations": 0,
+  "correction_input_identity": {
+    "bytes": 4597,
+    "sha256": "4fbdd4629f7284354fa5481d1d3320a813649a79d35d84061c335a6053c517ae"
+  },
+  "correction_map_sha256": "2d77e5c0a07e6de98ac5aa109960d45b43bc5782274d4e09740e47c8b06c4290",
+  "evaluated_checkpoint_or_trace_arrays": false,
+  "original_arithmetic_commit": "3a4169b255c6bf9ed64caf49057397a5306cc0b5",
+  "original_arithmetic_source_map_sha256": "18389440bb75da613a20c7e1b7eaf698f8787841ea2ad90c3db64629656cec24",
+  "reviewed_staged_tree": "72de66ee34a65da086e9e28a08be8c1d485bc930",
+  "schema_version": "hadamard-operator-transport-review.v1",
+  "specification": {
+    "correction_map_sha256": "2d77e5c0a07e6de98ac5aa109960d45b43bc5782274d4e09740e47c8b06c4290",
+    "report_path": "validation/2026-10-19-operator-arithmetic/reviews/transport-specification.md",
+    "report_sha256": "68819767e794ea316e184cb4c34ce34ef541dfddf34f1d538d8715d52aab91ce",
+    "reviewer": "/root/operator_methodology",
+    "status": "passed"
+  },
+  "standards": {
+    "correction_map_sha256": "2d77e5c0a07e6de98ac5aa109960d45b43bc5782274d4e09740e47c8b06c4290",
+    "report_path": "validation/2026-10-19-operator-arithmetic/reviews/transport-standards.md",
+    "report_sha256": "21517109096e20bb322a55677cbbf790560345ff5ad658fd8a0f271f78f59b1e",
+    "reviewer": "/root/operator_primary_sources",
+    "status": "passed"
+  }
+}

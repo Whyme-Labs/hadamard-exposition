@@ -1,0 +1,40 @@
+{
+  "bypass": {
+    "hf.co": false,
+    "huggingface.co": false,
+    "raw.githubusercontent.com": false
+  },
+  "checkpoint_body_bytes_received": 0,
+  "checkpoint_request_retried": false,
+  "direct_dns_not_diagnostic_of_proxy_request": true,
+  "elapsed_seconds": 0.004523004005022813,
+  "finished_utc": "2026-10-19T15:51:03.655816+00:00",
+  "metadata_request": {
+    "error_type": "URLError",
+    "message": "<urlopen error [Errno 1] Operation not permitted>",
+    "method": "HEAD",
+    "reason_message": "[Errno 1] Operation not permitted",
+    "reason_type": "PermissionError",
+    "response_body_bytes_read": 0,
+    "status": "failed",
+    "url": "https://huggingface.co/"
+  },
+  "proxy_paths": {
+    "http": {
+      "configured": true,
+      "dns_answers": 1,
+      "dns_status": "passed",
+      "has_credentials": false,
+      "scheme": "http"
+    },
+    "https": {
+      "configured": true,
+      "dns_answers": 1,
+      "dns_status": "passed",
+      "has_credentials": false,
+      "scheme": "http"
+    }
+  },
+  "schema_version": "hadamard-operator-transport-diagnosis.v1",
+  "started_utc": "2026-10-19T15:51:03.649830+00:00"
+}

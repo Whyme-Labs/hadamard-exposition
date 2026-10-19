@@ -1,0 +1,13 @@
+{
+  "branch": "work/issue5-operator-arithmetic",
+  "issue": 5,
+  "preregistration_comment": {
+    "id": 6271157828
+  },
+  "preregistration_commit": "3a4169b255c6bf9ed64caf49057397a5306cc0b5",
+  "preregistration_tree": "71a1415defd61dcd9507da9d5090f63189a269ec",
+  "published_before_acquisition_and_evaluation": true,
+  "review_sha256": "4e398acdce967c399c50a065b8c9eb4071282ffb177c51508fc1e8c6fb63c04d",
+  "schema_version": "hadamard-operator-publication.v1",
+  "source_map_sha256": "18389440bb75da613a20c7e1b7eaf698f8787841ea2ad90c3db64629656cec24"
+}
