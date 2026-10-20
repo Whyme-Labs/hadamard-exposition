@@ -1,0 +1,238 @@
+{
+  "archive": {
+    "bytes": 376461,
+    "member_count": 32,
+    "path": "raw-evidence.tar.gz",
+    "sha256": "52e967a0f4d4b873666065e42084e8544cb113ba4a57fd1f3990c46c93a5f424",
+    "uncompressed_member_bytes": 1434516
+  },
+  "members": [
+    {
+      "archive_path": "abi-converter/stderr.log",
+      "bytes": 304,
+      "original_path": "build/diagnostic-environment-recovery-001/abi-converter/stderr.log",
+      "sha256": "fd94c97ed92a9b6b9d429a40900d833005286a0d500097f1e41ca53dd0ab4404"
+    },
+    {
+      "archive_path": "abi-converter/stdout.log",
+      "bytes": 0,
+      "original_path": "build/diagnostic-environment-recovery-001/abi-converter/stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive_path": "abi-converter/task-receipt.json",
+      "bytes": 9471,
+      "original_path": "build/diagnostic-environment-recovery-001/abi-converter/task-receipt.json",
+      "sha256": "d7c7ac643f2d1979f7e989216eef4b30b47a583c2a0b580b6266ece04a1d6c4e"
+    },
+    {
+      "archive_path": "abi-converter/worker-identity.json",
+      "bytes": 129,
+      "original_path": "build/diagnostic-environment-recovery-001/abi-converter/worker-identity.json",
+      "sha256": "752f977dc053ae32ac26365f042763754595a9e66b5d7898e99bcaa1778d254f"
+    },
+    {
+      "archive_path": "abi-converter/worker-result.json",
+      "bytes": 7675,
+      "original_path": "build/diagnostic-environment-recovery-001/abi-converter/worker-result.json",
+      "sha256": "603649d8643e1378ea83f61eb5f78dc1ffc72a19ca44a3b734b22dcfa673eadf"
+    },
+    {
+      "archive_path": "abi-runtime/stderr.log",
+      "bytes": 0,
+      "original_path": "build/diagnostic-environment-recovery-001/abi-runtime/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive_path": "abi-runtime/stdout.log",
+      "bytes": 0,
+      "original_path": "build/diagnostic-environment-recovery-001/abi-runtime/stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive_path": "abi-runtime/task-receipt.json",
+      "bytes": 9405,
+      "original_path": "build/diagnostic-environment-recovery-001/abi-runtime/task-receipt.json",
+      "sha256": "098244ffc1bacde773c8f0e9ca2851744860ef817c7a497026b7b2f51ad488f4"
+    },
+    {
+      "archive_path": "abi-runtime/worker-identity.json",
+      "bytes": 129,
+      "original_path": "build/diagnostic-environment-recovery-001/abi-runtime/worker-identity.json",
+      "sha256": "24a36f593b98bcd6ef140a69060bc3170e067102c2edcd7933ccf419ae5f78a8"
+    },
+    {
+      "archive_path": "abi-runtime/worker-result.json",
+      "bytes": 7623,
+      "original_path": "build/diagnostic-environment-recovery-001/abi-runtime/worker-result.json",
+      "sha256": "231123a829af6928f57953fd5c08800427ff5fc8d785bcb1b232fbd523fd7caa"
+    },
+    {
+      "archive_path": "converter-abi-config.json",
+      "bytes": 3398,
+      "original_path": "build/diagnostic-environment-recovery-001/converter-abi-config.json",
+      "sha256": "7c00b1832441fdf2f1e2e3b74ab6c0db516820739d9876be965b628cb94ba1ca"
+    },
+    {
+      "archive_path": "converter-abi-host.json",
+      "bytes": 3153,
+      "original_path": "build/diagnostic-environment-recovery-001/converter-abi-host.json",
+      "sha256": "57fb93eec6128d8a07e8d02d8708d592bbe0440cf8aeb93a5a1003af52580059"
+    },
+    {
+      "archive_path": "converter-install-report.json",
+      "bytes": 811132,
+      "original_path": "build/diagnostic-environment-recovery-001/converter-install-report.json",
+      "sha256": "89298ee067b757ee4b29701d1871a631120bffe61e4f3255da8f88db120f081a"
+    },
+    {
+      "archive_path": "dependency-lock.json",
+      "bytes": 108745,
+      "original_path": "build/diagnostic-environment-recovery-001/dependency-lock.json",
+      "sha256": "f4b045d55bb3de7d8673c2a1e89ee15ec3dcd398097df381d3faa0761c67878b"
+    },
+    {
+      "archive_path": "effort-start.json",
+      "bytes": 4422,
+      "original_path": "build/diagnostic-environment-recovery-001/effort-start.json",
+      "sha256": "fa4663e4059f5de35a5596864aed09927ac64c1ecf9f7dda48aca3b943b02154"
+    },
+    {
+      "archive_path": "host-preflight.json",
+      "bytes": 3139,
+      "original_path": "build/diagnostic-environment-recovery-001/host-preflight.json",
+      "sha256": "d1847d24241998c4f57906adf2326ee77853e744ebe17de15cea10f960b5eb8d"
+    },
+    {
+      "archive_path": "install-converter-1/stderr.log",
+      "bytes": 0,
+      "original_path": "build/diagnostic-environment-recovery-001/install-converter-1/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive_path": "install-converter-1/stdout.log",
+      "bytes": 21874,
+      "original_path": "build/diagnostic-environment-recovery-001/install-converter-1/stdout.log",
+      "sha256": "816adfd1e057b9cae736712f8918c3cfb9159a60ca487934cf963162dd943df5"
+    },
+    {
+      "archive_path": "install-converter-1/task-receipt.json",
+      "bytes": 10332,
+      "original_path": "build/diagnostic-environment-recovery-001/install-converter-1/task-receipt.json",
+      "sha256": "7d8c89585c89bfb4da509fd19afc142403c3e03abdc49e699f0e701c823d3581"
+    },
+    {
+      "archive_path": "install-converter-1/transfer.json",
+      "bytes": 591,
+      "original_path": "build/diagnostic-environment-recovery-001/install-converter-1/transfer.json",
+      "sha256": "d835904c86d25091f406a8d2669a7d1348de06a204fca71dbfad72a7a2e96244"
+    },
+    {
+      "archive_path": "install-converter-1/worker-identity.json",
+      "bytes": 129,
+      "original_path": "build/diagnostic-environment-recovery-001/install-converter-1/worker-identity.json",
+      "sha256": "3adbb66b6fcfee8ea1aa50309ca74891be2338098e88d69d147730b43eb5cd7e"
+    },
+    {
+      "archive_path": "install-converter-1/worker-result.json",
+      "bytes": 7693,
+      "original_path": "build/diagnostic-environment-recovery-001/install-converter-1/worker-result.json",
+      "sha256": "87e5622301075f860b1ccbb07524c2a6d0a25c2b1693618f56c57740e51cedce"
+    },
+    {
+      "archive_path": "install-runtime-1/stderr.log",
+      "bytes": 0,
+      "original_path": "build/diagnostic-environment-recovery-001/install-runtime-1/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "archive_path": "install-runtime-1/stdout.log",
+      "bytes": 9462,
+      "original_path": "build/diagnostic-environment-recovery-001/install-runtime-1/stdout.log",
+      "sha256": "563c957b56e7660251caad9fbdde3e0d11fa05fb9c87090d6443d3eef6198db5"
+    },
+    {
+      "archive_path": "install-runtime-1/task-receipt.json",
+      "bytes": 10322,
+      "original_path": "build/diagnostic-environment-recovery-001/install-runtime-1/task-receipt.json",
+      "sha256": "272a3456a28c8977bf23912414d3b2e9b6377a3084f0c2a35c7efb089fc714a2"
+    },
+    {
+      "archive_path": "install-runtime-1/transfer.json",
+      "bytes": 586,
+      "original_path": "build/diagnostic-environment-recovery-001/install-runtime-1/transfer.json",
+      "sha256": "b61ee027f122bb9d027e3d837a1e362b5cf884460eebfcf41ef095311c6d41f8"
+    },
+    {
+      "archive_path": "install-runtime-1/worker-identity.json",
+      "bytes": 129,
+      "original_path": "build/diagnostic-environment-recovery-001/install-runtime-1/worker-identity.json",
+      "sha256": "4d3535d74a520bee4706d3083647310d8a90ca7ec462bdbfc99787f376fea3fc"
+    },
+    {
+      "archive_path": "install-runtime-1/worker-result.json",
+      "bytes": 7693,
+      "original_path": "build/diagnostic-environment-recovery-001/install-runtime-1/worker-result.json",
+      "sha256": "21501524949a8a763b4100de1963550a59e610f5fa9d24efed038cae1de41a3b"
+    },
+    {
+      "archive_path": "qualification.json",
+      "bytes": 17210,
+      "original_path": "build/diagnostic-environment-recovery-001/qualification.json",
+      "sha256": "32f7d78d46d91f03d75d464857cfbdebeff78fd662b305f6a6de7eec64050258"
+    },
+    {
+      "archive_path": "runtime-abi-config.json",
+      "bytes": 3396,
+      "original_path": "build/diagnostic-environment-recovery-001/runtime-abi-config.json",
+      "sha256": "d532ece76f20fb94379b95d178dfcb62b67a2c78ec3f09d66519c03fcc501176"
+    },
+    {
+      "archive_path": "runtime-abi-host.json",
+      "bytes": 3154,
+      "original_path": "build/diagnostic-environment-recovery-001/runtime-abi-host.json",
+      "sha256": "5a61c08ac4c1b31cc6fd2a452b8fbb49450a19b7d7991e0fdb093afebd162c37"
+    },
+    {
+      "archive_path": "runtime-install-report.json",
+      "bytes": 373220,
+      "original_path": "build/diagnostic-environment-recovery-001/runtime-install-report.json",
+      "sha256": "edcfdee13852fe1e3b932f32cc6b65e2766ef630e1302adcb70b69f90618c78b"
+    }
+  ],
+  "omissions": [
+    {
+      "path": "build/diagnostic-environment-recovery-001/mpl-cache",
+      "reason": "Regenerable installation or runtime cache, no original receipt or log omitted."
+    },
+    {
+      "path": "build/diagnostic-environment-recovery-001/pip-temporary",
+      "reason": "Regenerable installation or runtime cache, no original receipt or log omitted."
+    },
+    {
+      "path": "build/diagnostic-environment-recovery-001/transformers-cache",
+      "reason": "Regenerable installation or runtime cache, no original receipt or log omitted."
+    },
+    {
+      "path": "build/diagnostic-environment-recovery-001/pip-cache",
+      "reason": "Regenerable installation or runtime cache, no original receipt or log omitted."
+    },
+    {
+      "path": "build/diagnostic-environment-recovery-001/hf-cache",
+      "reason": "Regenerable installation or runtime cache, no original receipt or log omitted."
+    }
+  ],
+  "schema_version": "hadamard-recovery-archive.v2",
+  "separate_copies": {
+    "qualification.json": {
+      "bytes": 17210,
+      "original_path": "build/diagnostic-environment-recovery-001/qualification.json",
+      "sha256": "32f7d78d46d91f03d75d464857cfbdebeff78fd662b305f6a6de7eec64050258"
+    }
+  },
+  "snapshot_script_sha256": "9b0eef0546cef279aa17c35427bf9bfdbc0644160ca961d8f61ef01b9b67cc5b",
+  "source_root": "build/diagnostic-environment-recovery-001",
+  "temporary_negative_test_fixtures_included": false,
+  "virtual_environments_included": false,
+  "wheel_bodies_included": false
+}

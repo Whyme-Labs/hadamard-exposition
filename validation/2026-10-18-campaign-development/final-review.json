@@ -1,0 +1,363 @@
+{
+  "benchmark_source_map_sha256": "1dd75e9af0736795e4d83c26f866d15d9f7a3fe55003e399ddbd36951ab2d69e",
+  "benchmark_source_sha256": {
+    "benchmarks/campaign_guard.py": "f63effd9c96d59d841983dafa35dd6c1a8601024b0f9bb003d09a8ee3ba84030",
+    "benchmarks/contract.py": "cc1b0b842917ce84cf10def8ba71aeea99c1630207e8a64abe26abe8b290ea7a",
+    "benchmarks/dependency_lock.py": "a57dc27ebfd61fb0c8a1cd1d2028cb6b60bb3aeae356146d441d1a1030d5dc76",
+    "benchmarks/locks/converter-requirements.txt": "9aa948fa3a9f3d1455a04b7cba936d1acb0f8f8029b09081ccb7de4097e130a1",
+    "benchmarks/locks/runtime-requirements.txt": "3753da8da214a00a8a90200843c70988d1a3e3723b6b9723daf6cfd506f7dc3e",
+    "benchmarks/model-benchmark-v1.json": "67afbab1597f2d8024075c8f9cc94c181f5c4fa67b940553f8a5f7d8ead3898e",
+    "benchmarks/model-dependencies-v1.json": "f4b045d55bb3de7d8673c2a1e89ee15ec3dcd398097df381d3faa0761c67878b",
+    "benchmarks/model_acquire.py": "b9ab7b9f92b7bc7e2399d5679db7abb3eb74125769e353ac4182918576d128da",
+    "benchmarks/model_export.py": "87d8e2f54b2a876dd9b47bd38b0bb6f59dda2a4aaa3046fe6ee16262c72815b7",
+    "benchmarks/model_metrics.py": "4765c87aeb18aacb44f328974a430175cf15aca688f1b7d5b2286b4647b5e6f2",
+    "benchmarks/model_runtime.py": "fd155fd2919f2523c84468fc68040469e85fe93c8e98ed964d60c718b3e24756",
+    "benchmarks/onnx_controls.py": "672b35f8816d4b5aaa34fc8eddb0252d18c5850ad9c4c97e434be1ceeba0f3ce",
+    "benchmarks/qualify.py": "658bb41dabacffe23402873318fb3187a8bfbaf9ec430c3c30b1986a1a64f7ce",
+    "benchmarks/run_model.py": "2afb5de688d4e64b481faae50c4a1d5ef951f932e2e102c74006c36d37e889e4",
+    "benchmarks/test_campaign_finalization.py": "eca0ef895b17a3175ae04dd36fec6cd8bae77cc28e055fbe55387813f323af4b",
+    "benchmarks/test_campaign_guard.py": "f5e32424a0bc798cae136defba31f9f9220a5c31fc54fcbf8741e20e415446ef",
+    "benchmarks/test_contract.py": "c5eee5bb2ef69330ca0072367afaef4d8ef0e0843151ce1860877a808fa1569f",
+    "benchmarks/test_dependency_lock.py": "47c682fb66b8d243dcef1b4506ed4f76cacd231133bb2f2d072794accde3a6b7",
+    "benchmarks/test_model_acquire.py": "546681433bef18a289d382ecc20590783e275f81aa546bdda464a458d929d5b7",
+    "benchmarks/test_model_export.py": "9c8467cfcfadd05479b3155e81b655679b78c462ec4bddc48296e62eb1d6af3e",
+    "benchmarks/test_model_metrics.py": "5d4bb67dd05929bd9246717fa3dab976d8f6aa88fac49a7ca47186c0b632db1a",
+    "benchmarks/test_model_runtime.py": "d2f68d5dab8d73a71a88d4198f98f51d1c44d3050bf1d30b31e709d6a02294b6",
+    "benchmarks/test_onnx_controls.py": "caafd1f7b1ed3cf0b88c7ce9a1d08089c3b1e44475abda319e6ee7cc0962ce3a",
+    "benchmarks/test_qualify.py": "b9df06877f8feaced29de915d1b0f1fbc90d1dad39931536ec558fac3999b8bd",
+    "benchmarks/test_run_model.py": "cf2e6f15a4598b92f64d69b0404152fe391ba736f9f3e9e64f85d9beba720a36",
+    "docs/experiments/model-benchmark-v1.md": "74a121f2b14bd5a77bc26adb5f770110126c59f104bb2e0c7d690f91ee54046f",
+    "docs/experiments/model-execution-v1.md": "35290f75005ba6cf8d5174139472f44a1454ccb41c03fc98d4ddd3cdb2e12b71",
+    "requirements-benchmark.txt": "f243ef93135a9366162c78ded77c844e06e9c43f0b2e8618e7d9024a7f2b64bd",
+    "requirements-model-converter.txt": "1908dde46497025834d6a65ecc0aec65cc2db1e895b2a6e5d0bea93f03e477b0",
+    "requirements.txt": "4c40934e438ae009a1eb0b5a9322cce029fba6ca1af6e314c088c1957cee0c04"
+  },
+  "campaign_ready": false,
+  "created_utc": "2026-10-18T19:52:55.032613+00:00",
+  "development_cost_proof_accepted": false,
+  "diagnostic_reproduction": "passed",
+  "diagnostic_source_sha256": {
+    "diagnostic-plan-v2.md": "51b70b024d7bee5ec3a7eb79bd2c21d25db150cc7e6c89935f6aa087a12b34e8",
+    "sources/prepare-reference-inputs-v2.py": "eb8d1a42eef898b21f33dedd46639a6fcfaa8490f1ca5f64866b66f1d21fa3c6",
+    "sources/reference-trace-worker-v2.py": "47efde703add5de133ff7ce891b2d2b3e073b07d491e00025599b0976f6bed1d",
+    "sources/release-recovered-cache-v2.py": "05ad34c4716a5f1d1a6239bb6189a780eb7bdb7fb521ab3bb6e22def7352702a",
+    "sources/run-reference-trace-v2.py": "863a7187c61114b1aff5a5f98d0aad05cb623878645294fc5662b13e8883f6f7"
+  },
+  "execution_lock_created": false,
+  "execution_source_commit": "49d787419737f3ab0da3b692549d6bd6c2912e63",
+  "execution_source_tree": "aa0917333e67a278d3dac34dc66b191f014254a6",
+  "frozen_reference_control": "failed",
+  "input_provenance_limitation": "The current new-acquisition artifact tree has an unreferenced partial outside the trace-consumed input map; successful exact acquisition verification is historical. Preserve the original inventory and appended omission clarification.",
+  "invocation_sha256": "fe0dadac2fafc79041bbe7f42acbe6c4a28bc95b162ce541e7d945759dd8ce36",
+  "next_experiment_preregistered": false,
+  "onnx_development_parity_accepted": false,
+  "original_campaign_publication_commit": "c45ff6b4f29ad6190e5783ff36a7a71bdd4e8e2a",
+  "original_campaign_sha256": "96136cf823ca00d82c28d080b0c7ff38726717cd2764cca20dacd914ff07b781",
+  "prospective_review_path": "validation/2026-10-18-campaign-development/diagnostic-review-v2.json",
+  "prospective_review_sha256": "f8b6795138b4fa55c734d470feb0017ce6d753d07d9198863000d36c21871786",
+  "quality_evaluation_performed": false,
+  "recovery_helper_sha256": {
+    "full-suite-worker.py": "068ab1ce700cd12ce9f1b2c684577c0504f18675689076c6b6012171cb2b0b72",
+    "pip-worker.py": "8e034e8f6786c5a36c2e902965008aac978dd72a9a961c007378c555cbf04641",
+    "pip_meter.py": "ecabb28c1a64ca0e156c7510c0408368ae8db11867fdf35629e5fad14d3bd3a9",
+    "run-recovery.py": "d79444ff9329dd2e80c4c6bd6e3696bb56a35c70156b1820b63a2a0e70691329"
+  },
+  "reference_forwards_attempted": 6,
+  "reference_forwards_completed": 6,
+  "report_sha256": {
+    "CONTEXT.md": "6c3cc3f98ffddb0beb3b17abdcf9bd9e3c235d1fd4e80c7e3280542bf0289fca",
+    "README.md": "aa4dc37635648074ae422e64d5d50e493cc52c9be5d85c27f4f14066785ef9bf",
+    "validation/2026-10-18-campaign-development/README.md": "d498b09dffa143650510aa76f3fd086c83dfc8dd8fa22d812ba1ceb3a319f85e",
+    "validation/2026-10-18-campaign-development/diagnostic-input-recovery/omission-clarification.json": "9282a659e2e42febe29d0f53fc8fb7c298b30fece6b990cbd848828ccedc17a5",
+    "validation/2026-10-18-campaign-development/trace-analysis.json": "97f3ef9cb52c867d7ac694ed49b32378dcee02cc4d8c23f0c910c6c69e191aac"
+  },
+  "review_scope": "Retrospective evidence and final-report review for the first pretrained attempt and completed version-2 diagnostic; no full-campaign acceptance or authorization for another experiment.",
+  "reviewed_milestone_artifacts": {
+    "validation/2026-10-18-campaign-development/README.md": {
+      "bytes": 20737,
+      "sha256": "d498b09dffa143650510aa76f3fd086c83dfc8dd8fa22d812ba1ceb3a319f85e"
+    },
+    "validation/2026-10-18-campaign-development/cache-maintenance/advice.json": {
+      "bytes": 1543,
+      "sha256": "689cb3ac9c2292a28c8d488721172a92a232bc9605e7131b48ed559028c008d1"
+    },
+    "validation/2026-10-18-campaign-development/cache-maintenance/inventory.json": {
+      "bytes": 852,
+      "sha256": "490262756ec1f2b970f31d6bad90e8a2fc3dbd909634f413a2c77406d87da117"
+    },
+    "validation/2026-10-18-campaign-development/cache-maintenance/raw-evidence.tar.gz": {
+      "bytes": 3818163,
+      "sha256": "a2220411b8522d8cb864a70f88284efd2beb8682b82a3bc5ad06de04f0031a1a"
+    },
+    "validation/2026-10-18-campaign-development/campaign-attempt-1/acquisition.json": {
+      "bytes": 1357,
+      "sha256": "f959ee88005d205285fba71320333e9636cd3e6785a73c7a0c75f6260f7f9c1e"
+    },
+    "validation/2026-10-18-campaign-development/campaign-attempt-1/campaign.json": {
+      "bytes": 7795,
+      "sha256": "cd4989c028e876c5616ec1530092e796373b272512fdcd7a443097497238149b"
+    },
+    "validation/2026-10-18-campaign-development/campaign-attempt-1/inventory.json": {
+      "bytes": 4515,
+      "sha256": "f3bd76d1e953843097fb561ec82c920d9d094fe0fce3f2207d55f8482ade5096"
+    },
+    "validation/2026-10-18-campaign-development/campaign-attempt-1/preflight.json": {
+      "bytes": 4187,
+      "sha256": "6a5582cacb3694d4f36571a284124a1ea145a5ba16e32d25405bf87f49a758ee"
+    },
+    "validation/2026-10-18-campaign-development/campaign-attempt-1/raw-evidence.tar.gz": {
+      "bytes": 28874,
+      "sha256": "d95caacb276979ac795a2badd78570157fcdb58c315d35dda8d5efe82a0acb5f"
+    },
+    "validation/2026-10-18-campaign-development/campaign-attempt-2/acquisition.json": {
+      "bytes": 9795,
+      "sha256": "982613be2e25d233f9b06c6ab6d7063b58e94dacbbc9a76ca1047cfd4b4e7175"
+    },
+    "validation/2026-10-18-campaign-development/campaign-attempt-2/cache-comparison-slices.npz": {
+      "bytes": 571796,
+      "sha256": "6972d7416056a53c840b1bf62ce139a34f27325a8ad611fc6f3aac6e4cef6a6f"
+    },
+    "validation/2026-10-18-campaign-development/campaign-attempt-2/campaign.json": {
+      "bytes": 8336,
+      "sha256": "96136cf823ca00d82c28d080b0c7ff38726717cd2764cca20dacd914ff07b781"
+    },
+    "validation/2026-10-18-campaign-development/campaign-attempt-2/inventory.json": {
+      "bytes": 18700,
+      "sha256": "b9845e3937988d60a8e3822e313ef447d25dceae094e162f0ae119df4ea2e862"
+    },
+    "validation/2026-10-18-campaign-development/campaign-attempt-2/preflight.json": {
+      "bytes": 4191,
+      "sha256": "9c2dd2d333facaa4d6e6973bd14377b4b61ab4b46f934c7cfcf8d2b060a582d8"
+    },
+    "validation/2026-10-18-campaign-development/campaign-attempt-2/raw-evidence.tar.gz": {
+      "bytes": 514572,
+      "sha256": "320ab8f6dbcb36b4cc962de25b193f9cbfee88345fae37beb1ea9453f373031e"
+    },
+    "validation/2026-10-18-campaign-development/campaign-attempt-2/reference.json": {
+      "bytes": 29995,
+      "sha256": "7693dcacf075b7975880d3e77f4219c29401390488dc386f6a9e947c0b9e4aed"
+    },
+    "validation/2026-10-18-campaign-development/campaign-attempt-2/slice-derivation.json": {
+      "bytes": 2430,
+      "sha256": "7d8188d744de8e676b62ac3f4f17dd42ae82e0823f16d5ecc54e21ee662501b9"
+    },
+    "validation/2026-10-18-campaign-development/diagnostic-environment-recovery/inventory.json": {
+      "bytes": 10351,
+      "sha256": "8e50cfdd70752e08ee02b2afc23351940c644db513cc3f06e470178f1fa8f48c"
+    },
+    "validation/2026-10-18-campaign-development/diagnostic-environment-recovery/qualification.json": {
+      "bytes": 17210,
+      "sha256": "32f7d78d46d91f03d75d464857cfbdebeff78fd662b305f6a6de7eec64050258"
+    },
+    "validation/2026-10-18-campaign-development/diagnostic-environment-recovery/raw-evidence.tar.gz": {
+      "bytes": 376461,
+      "sha256": "52e967a0f4d4b873666065e42084e8544cb113ba4a57fd1f3990c46c93a5f424"
+    },
+    "validation/2026-10-18-campaign-development/diagnostic-input-recovery/acquisition-host.json": {
+      "bytes": 3200,
+      "sha256": "87bfd6d0fcf7bf3cb4879cb1b8bfcb9d39820ec7cee125bed6181c8057622fc2"
+    },
+    "validation/2026-10-18-campaign-development/diagnostic-input-recovery/acquisition.json": {
+      "bytes": 9794,
+      "sha256": "a2e7d8f3bd8ce57899d8c81f8a1cdde304faa434b6f497e0140361ae9a16d074"
+    },
+    "validation/2026-10-18-campaign-development/diagnostic-input-recovery/inventory.json": {
+      "bytes": 9020,
+      "sha256": "3ff5eca70d5598ad0e196a27f71d60c3ff05d9b18ad93eac76943a0d8814af34"
+    },
+    "validation/2026-10-18-campaign-development/diagnostic-input-recovery/omission-clarification.json": {
+      "bytes": 2445,
+      "sha256": "9282a659e2e42febe29d0f53fc8fb7c298b30fece6b990cbd848828ccedc17a5"
+    },
+    "validation/2026-10-18-campaign-development/diagnostic-input-recovery/raw-evidence.tar.gz": {
+      "bytes": 884064,
+      "sha256": "c75a5fbb6ee4cce4506f8e0d75193aa692ccb54da42603898c8138cd15b23e4f"
+    },
+    "validation/2026-10-18-campaign-development/diagnostic-input-recovery/reconstruction.json": {
+      "bytes": 13097,
+      "sha256": "2b759c6c3693c2eee7d727f3c229adb366e3eb4d97aa4efb14feb6a223534004"
+    },
+    "validation/2026-10-18-campaign-development/diagnostic-plan-v2.md": {
+      "bytes": 9819,
+      "sha256": "51b70b024d7bee5ec3a7eb79bd2c21d25db150cc7e6c89935f6aa087a12b34e8"
+    },
+    "validation/2026-10-18-campaign-development/diagnostic-plan.md": {
+      "bytes": 5951,
+      "sha256": "4a5e58d3fa61828cf6a3352a3f9988fe79ce3016608ab640b7ca25996a5d8996"
+    },
+    "validation/2026-10-18-campaign-development/diagnostic-review-v2.json": {
+      "bytes": 5277,
+      "sha256": "f8b6795138b4fa55c734d470feb0017ce6d753d07d9198863000d36c21871786"
+    },
+    "validation/2026-10-18-campaign-development/diagnostic-review.json": {
+      "bytes": 4558,
+      "sha256": "8d45809dad2ce8d226f9a5dfa490b11e0b1ce3ac440d66a7765a02eb9b478871"
+    },
+    "validation/2026-10-18-campaign-development/exposition-validation.json": {
+      "bytes": 13420,
+      "sha256": "a0ee5f9a9c75e43381762560b4f6e4d6e99811ab4e2f0b2def68fd0477bfd44c"
+    },
+    "validation/2026-10-18-campaign-development/maintenance-review.json": {
+      "bytes": 1463,
+      "sha256": "b910769513853f783f973c1609ae56b6f31252a82a62d672eca120f6705a072a"
+    },
+    "validation/2026-10-18-campaign-development/plan.md": {
+      "bytes": 4561,
+      "sha256": "05b5c10d0ffd141232a313f8f5d5bdd0ac2550b67e5abfb9cf6bcdcbe08d9d0d"
+    },
+    "validation/2026-10-18-campaign-development/preflight-after-cache/preflight.json": {
+      "bytes": 10653,
+      "sha256": "99731306afcdf23e8a3f1f6e6dacdb1e5cf46d2bf3cd3d63201ea4167556a840"
+    },
+    "validation/2026-10-18-campaign-development/preflight-before-cache/preflight.json": {
+      "bytes": 10758,
+      "sha256": "cdacad612016f904b841f09a6bfe01b64031f9dddf20adad9cd3628a65e4629c"
+    },
+    "validation/2026-10-18-campaign-development/recovered-cache-maintenance/advice.json": {
+      "bytes": 1690,
+      "sha256": "0058741055215ab80f59ac7702da9ef9d1372ebdd9fa2e17f088b41165470a48"
+    },
+    "validation/2026-10-18-campaign-development/recovered-cache-maintenance/inventory.json": {
+      "bytes": 1330,
+      "sha256": "13749f62aac9b076370adc38d19942960966e3f9ada9c88af7f408a33a644870"
+    },
+    "validation/2026-10-18-campaign-development/recovered-cache-maintenance/raw-evidence.tar.gz": {
+      "bytes": 3825388,
+      "sha256": "f598c5343d7321d8278821a76c038f8afe7531d56fd4a5cb89e2ebdfb74b9278"
+    },
+    "validation/2026-10-18-campaign-development/reference-trace-v2/inventory.json": {
+      "bytes": 3673,
+      "sha256": "09c0be5d13fe13ab29124d401122b2b8e7b2fcff47f2409a9b7da73aa55abd07"
+    },
+    "validation/2026-10-18-campaign-development/reference-trace-v2/preflight.json": {
+      "bytes": 4233,
+      "sha256": "17dabd1d32aeef129d4c899b7d8f9aa5fcff40a62bb8d87445354cea90850f7b"
+    },
+    "validation/2026-10-18-campaign-development/reference-trace-v2/raw-evidence.tar.gz": {
+      "bytes": 2216803,
+      "sha256": "67d20a6e24f477fcf5e789aa8af6259f07f06ffd83bc407084e24b747e0f683a"
+    },
+    "validation/2026-10-18-campaign-development/reference-trace-v2/trace-run.json": {
+      "bytes": 8672,
+      "sha256": "f0e36fe9a8b950b5887bd2ea012eb914ffed8d6ab5e419ce37e9aaef59b19b8c"
+    },
+    "validation/2026-10-18-campaign-development/reference-trace-v2/worker-result.json": {
+      "bytes": 866754,
+      "sha256": "0a3f346cc8fc3904167cd9bf4d8331e31591117ec30d2e11dfcc57866887965c"
+    },
+    "validation/2026-10-18-campaign-development/retained-logit-analysis.json": {
+      "bytes": 2606,
+      "sha256": "f315ed5eb300fc309ff3d3078c9b476a77ddf354e49f8497b0c0c86f20097d12"
+    },
+    "validation/2026-10-18-campaign-development/reviews/diagnostic-specification.md": {
+      "bytes": 2802,
+      "sha256": "a582fec885fb5156302bccd1d77e4316748b00ed38b516bf3f93ef6d2211159d"
+    },
+    "validation/2026-10-18-campaign-development/reviews/diagnostic-standards.md": {
+      "bytes": 2747,
+      "sha256": "b8da1cd446fe1bfdba0b506f307fd4276047506bb645e855d716c69438be434f"
+    },
+    "validation/2026-10-18-campaign-development/reviews/diagnostic-v2-specification.md": {
+      "bytes": 3284,
+      "sha256": "22dc68d900e6d099abd555856991a94d94bef3d6ed751dbcde721fb3469dc285"
+    },
+    "validation/2026-10-18-campaign-development/reviews/diagnostic-v2-standards.md": {
+      "bytes": 2832,
+      "sha256": "74897762edc1b33026909613dcf25dd18dc673c78a0877f5a5c2b6acf62d7265"
+    },
+    "validation/2026-10-18-campaign-development/reviews/final-specification.md": {
+      "bytes": 6976,
+      "sha256": "0825f82e6cf8b2dc3312c304ff2cb5460244a4c7b31848850c49eb0d58738076"
+    },
+    "validation/2026-10-18-campaign-development/reviews/final-standards.md": {
+      "bytes": 3692,
+      "sha256": "2f12a0c1c8b497cf548c138fb89f1c2ea858fe6273b51ace65d126362dace591"
+    },
+    "validation/2026-10-18-campaign-development/reviews/maintenance-specification.md": {
+      "bytes": 2366,
+      "sha256": "480cf4c567ba880f61dc1c1cdff51255ab272c0e131d4f651c63de8de61bf771"
+    },
+    "validation/2026-10-18-campaign-development/reviews/maintenance-standards.md": {
+      "bytes": 2399,
+      "sha256": "81c2dd82c5c58bfaf6caed5815282a979999317b7c5e20e719cfa02eec493505"
+    },
+    "validation/2026-10-18-campaign-development/source-recovery.json": {
+      "bytes": 27985,
+      "sha256": "be96ce62f5ed4798c2ecef57851a1b09ca466d1606324cc8f7c1012f2e05c4f7"
+    },
+    "validation/2026-10-18-campaign-development/sources/analyze-retained-logits.py": {
+      "bytes": 4284,
+      "sha256": "f4444af3c385d023e4084b5266183de2f71bac9fa889eb0e60289bab4ef23210"
+    },
+    "validation/2026-10-18-campaign-development/sources/prepare-reference-inputs-v2.py": {
+      "bytes": 14466,
+      "sha256": "eb8d1a42eef898b21f33dedd46639a6fcfaa8490f1ca5f64866b66f1d21fa3c6"
+    },
+    "validation/2026-10-18-campaign-development/sources/reference-trace-invocation-v2.md": {
+      "bytes": 6389,
+      "sha256": "fe0dadac2fafc79041bbe7f42acbe6c4a28bc95b162ce541e7d945759dd8ce36"
+    },
+    "validation/2026-10-18-campaign-development/sources/reference-trace-invocation.md": {
+      "bytes": 2676,
+      "sha256": "68402d2410e5d93b5e233c4531ebce157c68e1cfb397a55bae396c5cb73d02a2"
+    },
+    "validation/2026-10-18-campaign-development/sources/reference-trace-worker-v2.py": {
+      "bytes": 36566,
+      "sha256": "47efde703add5de133ff7ce891b2d2b3e073b07d491e00025599b0976f6bed1d"
+    },
+    "validation/2026-10-18-campaign-development/sources/reference-trace-worker.py": {
+      "bytes": 27446,
+      "sha256": "c973d35f99b7978266146d17e54a2216b801de5282c1fb5b5f158889c0c0f9c9"
+    },
+    "validation/2026-10-18-campaign-development/sources/release-owned-cache.py": {
+      "bytes": 9341,
+      "sha256": "f277b0b7fcc5cfdceb11f5cf6a872d36b4609386098dd05f5c32a411e1f91091"
+    },
+    "validation/2026-10-18-campaign-development/sources/release-recovered-cache-v2.py": {
+      "bytes": 9417,
+      "sha256": "05ad34c4716a5f1d1a6239bb6189a780eb7bdb7fb521ab3bb6e22def7352702a"
+    },
+    "validation/2026-10-18-campaign-development/sources/release-reference-cache.py": {
+      "bytes": 9256,
+      "sha256": "7396ee1f0bd3029210bed981a650e8ead6d005841be3d8004bae19c2099a9baf"
+    },
+    "validation/2026-10-18-campaign-development/sources/run-reference-trace-v2.py": {
+      "bytes": 9413,
+      "sha256": "863a7187c61114b1aff5a5f98d0aad05cb623878645294fc5662b13e8883f6f7"
+    },
+    "validation/2026-10-18-campaign-development/sources/run-reference-trace.py": {
+      "bytes": 7472,
+      "sha256": "32cd0055b60f2d24f165b867ec842f7ab1405e433574dc7816945c2903c428bd"
+    },
+    "validation/2026-10-18-campaign-development/sources/snapshot-campaign.py": {
+      "bytes": 8324,
+      "sha256": "7cfebfe05664b48dc06de4f3ea2321a57caf7aa716ea41dfd3bee37aa61601b5"
+    },
+    "validation/2026-10-18-campaign-development/sources/snapshot-diagnostic-v2.py": {
+      "bytes": 5361,
+      "sha256": "368706f965c189cdd61852a56170e3ae5cda834de30dab8e7973da460f5ab843"
+    },
+    "validation/2026-10-18-campaign-development/trace-analysis.json": {
+      "bytes": 5490,
+      "sha256": "97f3ef9cb52c867d7ac694ed49b32378dcee02cc4d8c23f0c910c6c69e191aac"
+    }
+  },
+  "reviews": {
+    "specification": {
+      "agent": "campaign_readiness_audit",
+      "path": "reviews/final-specification.md",
+      "sha256": "0825f82e6cf8b2dc3312c304ff2cb5460244a4c7b31848850c49eb0d58738076",
+      "verdict": "passed"
+    },
+    "standards": {
+      "agent": "campaign_resource_audit",
+      "path": "reviews/final-standards.md",
+      "sha256": "2f12a0c1c8b497cf548c138fb89f1c2ea858fe6273b51ace65d126362dace591",
+      "verdict": "passed"
+    }
+  },
+  "schema_version": "hadamard-reference-diagnostic-final-review.v1",
+  "specification": "passed",
+  "standards": "passed",
+  "timing_campaign_performed": false
+}

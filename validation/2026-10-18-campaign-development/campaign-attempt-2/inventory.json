@@ -1,0 +1,453 @@
+{
+  "archive": {
+    "bytes": 514572,
+    "member_count": 49,
+    "path": "raw-evidence.tar.gz",
+    "sha256": "320ab8f6dbcb36b4cc962de25b193f9cbfee88345fae37beb1ea9453f373031e",
+    "uncompressed_member_bytes": 2312296
+  },
+  "members": [
+    {
+      "bytes": 9795,
+      "path": "artifacts/acquisition.json",
+      "sha256": "982613be2e25d233f9b06c6ab6d7063b58e94dacbbc9a76ca1047cfd4b4e7175"
+    },
+    {
+      "bytes": 8336,
+      "path": "campaign.json",
+      "sha256": "96136cf823ca00d82c28d080b0c7ff38726717cd2764cca20dacd914ff07b781"
+    },
+    {
+      "bytes": 354,
+      "path": "dependencies.json",
+      "sha256": "dccceb64d1d31de974833fbf760bc155a3fd938329894da959190e71c9ca10bf"
+    },
+    {
+      "bytes": 108745,
+      "path": "dependency-lock.json",
+      "sha256": "f4b045d55bb3de7d8673c2a1e89ee15ec3dcd398097df381d3faa0761c67878b"
+    },
+    {
+      "bytes": 454447,
+      "path": "export/export.json",
+      "sha256": "3278fb89130dcd51216e11b3cb8b18e1eb94411d7cb5160ef538c4767de09642"
+    },
+    {
+      "bytes": 1,
+      "path": "library-cache/version.txt",
+      "sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+    },
+    {
+      "bytes": 4191,
+      "path": "preflight.json",
+      "sha256": "9c2dd2d333facaa4d6e6973bd14377b4b61ab4b46f934c7cfcf8d2b060a582d8"
+    },
+    {
+      "bytes": 201344,
+      "path": "reference/article0.cached.npy",
+      "sha256": "258de66d6b4d25f086d75c457feefcfbb7d2aa793466af40d8815cc9e89ddc35"
+    },
+    {
+      "bytes": 201344,
+      "path": "reference/article1.cached.npy",
+      "sha256": "27e655b2a7b5384089d87a38348d98d012023d3b971365ca252bd7eb64f00365"
+    },
+    {
+      "bytes": 29995,
+      "path": "reference/reference.json",
+      "sha256": "7693dcacf075b7975880d3e77f4219c29401390488dc386f6a9e947c0b9e4aed"
+    },
+    {
+      "bytes": 5187,
+      "path": "review.json",
+      "sha256": "4acb4165f6594d95d0d9b8713d17cb0da81d556060703c528e3d8862a0053a8a"
+    },
+    {
+      "bytes": 27377,
+      "path": "selection/selection.json",
+      "sha256": "5506c8882fb3f5772d628bdf7f1b69d2a7175d217b49f9609bed32272c4c4c78"
+    },
+    {
+      "bytes": 15478,
+      "path": "selection/tokens.development.json",
+      "sha256": "cc11f24b75693260cd1bfb9716139056f7094a2f452063962e6d2af0e4a81eb5"
+    },
+    {
+      "bytes": 3393,
+      "path": "tasks/acquisition.json",
+      "sha256": "cde909daf0989d00da45ced741410b3150d21f77f74cc22f7ebc605c9600a94e"
+    },
+    {
+      "bytes": 3424,
+      "path": "tasks/dependencies-converter.json",
+      "sha256": "5d75153b57dcdc5b3402a0dc95982d74e978f8110aa06e3c10ac0c3f8f0d1d5a"
+    },
+    {
+      "bytes": 3422,
+      "path": "tasks/dependencies-runtime.json",
+      "sha256": "97c56fb59c5a697b6b44d837c2af8b91645e356941d78af8d5e299b01f2129a7"
+    },
+    {
+      "bytes": 3388,
+      "path": "tasks/export.json",
+      "sha256": "b540a80e31a36b403c3c724df7ad05ef847d273cb79f3469e1f68daa145a4cd9"
+    },
+    {
+      "bytes": 3391,
+      "path": "tasks/reference.json",
+      "sha256": "e4b6287a67f1df9befcdefd510c0c6fe073eb59489d8280cdcfc670d6b024ae8"
+    },
+    {
+      "bytes": 3391,
+      "path": "tasks/selection.json",
+      "sha256": "e6c853879fe4bce43d7df317249bd22a9df162c4305d14a861df01243e09b67f"
+    },
+    {
+      "bytes": 0,
+      "path": "workers/acquisition/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "workers/acquisition/stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 18911,
+      "path": "workers/acquisition/task-receipt.json",
+      "sha256": "f51c5a5c33e054eed05d1df67064d27f27a97dd849a4d7922852cdf93a23edc9"
+    },
+    {
+      "bytes": 127,
+      "path": "workers/acquisition/worker-identity.json",
+      "sha256": "1e9591880be77d7af267f78a9edfa29167889ef2ef08f54dd194683329d9c5eb"
+    },
+    {
+      "bytes": 16862,
+      "path": "workers/acquisition/worker-result.json",
+      "sha256": "67afbe62d10d88f7b5d0f1d9f391bb9aa2d38957a04b3fd04119695d1edb31d2"
+    },
+    {
+      "bytes": 295,
+      "path": "workers/dependencies-converter/stderr.log",
+      "sha256": "fd56b51a2eea810fc4789c8d5c4033128cecdfee09d5ee46b93b9997b9a169df"
+    },
+    {
+      "bytes": 0,
+      "path": "workers/dependencies-converter/stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 9453,
+      "path": "workers/dependencies-converter/task-receipt.json",
+      "sha256": "9d982bf1687e03de0a37d1174babe802c240f94ec9cb953d9ae5a20ece835393"
+    },
+    {
+      "bytes": 127,
+      "path": "workers/dependencies-converter/worker-identity.json",
+      "sha256": "fc13017963c6c851f204f41e251ad2e8d15477260546c39dbcd6ee9e4d4a46a7"
+    },
+    {
+      "bytes": 7655,
+      "path": "workers/dependencies-converter/worker-result.json",
+      "sha256": "6f4a7cc5d2342d55c0fb7720b3fd2b32093b7b5dd52b55559d2d5d54156637e4"
+    },
+    {
+      "bytes": 0,
+      "path": "workers/dependencies-runtime/stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 0,
+      "path": "workers/dependencies-runtime/stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 9385,
+      "path": "workers/dependencies-runtime/task-receipt.json",
+      "sha256": "7dfe32755588a1272cd732f5e4c70b6dd626171e3f07c8e6708f6e40dc3c1dcb"
+    },
+    {
+      "bytes": 127,
+      "path": "workers/dependencies-runtime/worker-identity.json",
+      "sha256": "d32e1fbdd953252d0c107c101768405165f2eaf0ee1d25f74c56df827b1291c2"
+    },
+    {
+      "bytes": 7603,
+      "path": "workers/dependencies-runtime/worker-result.json",
+      "sha256": "802256565f8c3329ca82f617ee346e0346ab90f02847554e0153ac8738e61656"
+    },
+    {
+      "bytes": 3018,
+      "path": "workers/export/stderr.log",
+      "sha256": "352a7c9d8e44c42e7874a5a704dca96f7e50f487786cda188d6b6ac1893162ca"
+    },
+    {
+      "bytes": 0,
+      "path": "workers/export/stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 553322,
+      "path": "workers/export/task-receipt.json",
+      "sha256": "79f3f1a4ad8b5f63a84220e6e651f1024b9a89531d269745b0e1c3c4f6615480"
+    },
+    {
+      "bytes": 127,
+      "path": "workers/export/worker-identity.json",
+      "sha256": "7e7cc568ad1c3aa0014ff70c2561ee01d5b34198aadadc8b9cc806dac9e0bef7"
+    },
+    {
+      "bytes": 506398,
+      "path": "workers/export/worker-result.json",
+      "sha256": "038053888d6b242fc3e058617d6af9dc5a14cb0ef0c1458bd376628e262a5f85"
+    },
+    {
+      "bytes": 2046,
+      "path": "workers/reference/stderr.log",
+      "sha256": "41d774f89e6686ba8036c84e01c264f468f4dfbb25e3a7b06aa3614cf734b936"
+    },
+    {
+      "bytes": 0,
+      "path": "workers/reference/stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 8697,
+      "path": "workers/reference/task-receipt.json",
+      "sha256": "02cd050939717cd9286815a588f620ed60fb4021b4090ebf97cb2d3d062fcba3"
+    },
+    {
+      "bytes": 127,
+      "path": "workers/reference/worker-identity.json",
+      "sha256": "70adc58f78ba93507f2ffc1b68ad1341aae3c36c75321d36829af90c97349d08"
+    },
+    {
+      "bytes": 6968,
+      "path": "workers/reference/worker-result.json",
+      "sha256": "bd9c2c7f92220d6cd09e37bba86a01b0506206472991ebab305a3cff6f28c80e"
+    },
+    {
+      "bytes": 295,
+      "path": "workers/selection/stderr.log",
+      "sha256": "fd56b51a2eea810fc4789c8d5c4033128cecdfee09d5ee46b93b9997b9a169df"
+    },
+    {
+      "bytes": 0,
+      "path": "workers/selection/stdout.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 38282,
+      "path": "workers/selection/task-receipt.json",
+      "sha256": "e01b0f9c2f74a0125e5ede56b241d79e65d3d36b9aaa772eb8a88156e0d8304e"
+    },
+    {
+      "bytes": 127,
+      "path": "workers/selection/worker-identity.json",
+      "sha256": "dd3096ce0c930ac0c37cd1614e88899ac0bb830dc0243a5976d080359661d641"
+    },
+    {
+      "bytes": 35341,
+      "path": "workers/selection/worker-result.json",
+      "sha256": "edea3ff18108a39c764c1a9e931a0a2b26d78703e5242bea356eafa0a44eb644"
+    }
+  ],
+  "model_calls": 0,
+  "note": "Original receipts are byte copies. Derived full-last slices are separate and explicitly bound to their original full arrays. Omitted files remain unchanged in the source directory.",
+  "omissions": [
+    {
+      "bytes": 732610,
+      "path": "artifacts/dataset/wikitext-2-raw-v1/test-00000-of-00001.parquet",
+      "reason": "Pinned public input. Its acquisition receipt and immutable byte identity are retained.",
+      "sha256": "5f1bea067869d04849c0f975a2b29c4ff47d867f484f5010ea5e861eab246d91"
+    },
+    {
+      "bytes": 6357543,
+      "path": "artifacts/dataset/wikitext-2-raw-v1/train-00000-of-00001.parquet",
+      "reason": "Pinned public input. Its acquisition receipt and immutable byte identity are retained.",
+      "sha256": "e83889baabc497075506f91975be5fac0d45c5290b6b20582c8cd1e853d0c9f7"
+    },
+    {
+      "bytes": 657209,
+      "path": "artifacts/dataset/wikitext-2-raw-v1/validation-00000-of-00001.parquet",
+      "reason": "Pinned public input. Its acquisition receipt and immutable byte identity are retained.",
+      "sha256": "204929b7ff9d6184953f867dedb860e40aa69c078fc1e54b3baaa8fb28511c4c"
+    },
+    {
+      "bytes": 567,
+      "path": "artifacts/model/config.json",
+      "reason": "Pinned public input. Its acquisition receipt and immutable byte identity are retained.",
+      "sha256": "002050231a9b1ec3ac77aa6b9b3bbdc4d923f4068a7dd33b8da72a9bd6ad9a43"
+    },
+    {
+      "bytes": 166029852,
+      "path": "artifacts/model/model.safetensors",
+      "reason": "Pinned public input. Its acquisition receipt and immutable byte identity are retained.",
+      "sha256": "ebfa4e2f18696ebd83716a0d39fe2c025f2ff8483f72a83ca59c475692fc9d15"
+    },
+    {
+      "bytes": 99,
+      "path": "artifacts/model/special_tokens_map.json",
+      "reason": "Pinned public input. Its acquisition receipt and immutable byte identity are retained.",
+      "sha256": "6f50ab5a5a509a1c309d6171f339b196a900dc9c99ad0408ff23bb615fdae7ad"
+    },
+    {
+      "bytes": 2113710,
+      "path": "artifacts/model/tokenizer.json",
+      "reason": "Pinned public input. Its acquisition receipt and immutable byte identity are retained.",
+      "sha256": "c24618a1b3e6a38167beff1c72cffd126c3a66254347304b50547d12c5f25624"
+    },
+    {
+      "bytes": 396,
+      "path": "artifacts/model/tokenizer_config.json",
+      "reason": "Pinned public input. Its acquisition receipt and immutable byte identity are retained.",
+      "sha256": "70e38394e494931c6f773ba41e19460dd4436526b852207367f04341b4066d3f"
+    },
+    {
+      "bytes": 225181696,
+      "path": "export/.fp32_original.onnx.SICpHo",
+      "reason": "Unreferenced export-adjacent file observed during archival after the model worker ended. Origin and cleanup are unestablished; this file is not one of the six receipt-bound graphs.",
+      "sha256": "ef1b11ab64103e3593f230c8a1c1ff9cb08a0c05ada15ddf706f9da8a0c4477e"
+    },
+    {
+      "bytes": 212074496,
+      "path": "export/.fp32_original.onnx.SICpHo.IwQlti",
+      "reason": "Unreferenced export-adjacent file observed during archival after the model worker ended. Origin and cleanup are unestablished; this file is not one of the six receipt-bound graphs.",
+      "sha256": "8b828bbc757f5076870c64e950c058e561c7511bc6d9c7867453366df591ac93"
+    },
+    {
+      "bytes": 215220224,
+      "path": "export/.w4a32_g16_original.onnx.AoGTdg",
+      "reason": "Unreferenced export-adjacent file observed during archival after the model worker ended. Origin and cleanup are unestablished; this file is not one of the six receipt-bound graphs.",
+      "sha256": "45361cf1d4dff1b3fbf8b6b74e3b49d5b476939ee6bb81bb5254fdab7bdf580c"
+    },
+    {
+      "bytes": 151781376,
+      "path": "export/.w4a32_g16_original.onnx.AoGTdg.D5R9Qd",
+      "reason": "Unreferenced export-adjacent file observed during archival after the model worker ended. Origin and cleanup are unestablished; this file is not one of the six receipt-bound graphs.",
+      "sha256": "f49ab899c0afddd7ea321bbbd04b1906e6eb14fe5136711e9bea2a717281e30b"
+    },
+    {
+      "bytes": 194248704,
+      "path": "export/.w4a32_g32_rotated.onnx.1TcPdd",
+      "reason": "Unreferenced export-adjacent file observed during archival after the model worker ended. Origin and cleanup are unestablished; this file is not one of the six receipt-bound graphs.",
+      "sha256": "118584c7a45190cd51db2fdf42dff4d5f990434a33b41292bf735b9194544256"
+    },
+    {
+      "bytes": 190054400,
+      "path": "export/.w4a32_g32_rotated.onnx.1TcPdd.TouMLl",
+      "reason": "Unreferenced export-adjacent file observed during archival after the model worker ended. Origin and cleanup are unestablished; this file is not one of the six receipt-bound graphs.",
+      "sha256": "d801be59a9b25f59d67a78b9c1d732dc668fb40f247f0803b21e3f57b21c16e7"
+    },
+    {
+      "bytes": 51380224,
+      "path": "export/.w4a32_g32_rotated.onnx.1TcPdd.TouMLl.4olBsI",
+      "reason": "Unreferenced export-adjacent file observed during archival after the model worker ended. Origin and cleanup are unestablished; this file is not one of the six receipt-bound graphs.",
+      "sha256": "fecf4a30864a3341b7e303dfd590b46987d8c00d030cb3cd11b9498bcd18962e"
+    },
+    {
+      "bytes": 286241403,
+      "path": "export/fp32_original.onnx",
+      "reason": "Large generated graph. Complete export receipt, graph hash and initializer audit are retained.",
+      "sha256": "14ae5b094ce622c49061a7b7e209885c5d4d52e1942d017ecb4d4f467fb165c3"
+    },
+    {
+      "bytes": 286360353,
+      "path": "export/fp32_rotated.onnx",
+      "reason": "Large generated graph. Complete export receipt, graph hash and initializer audit are retained.",
+      "sha256": "e6badd061a6265f442516ff4d6809e566a0b54375ecd7ef338d4209d54705342"
+    },
+    {
+      "bytes": 265794381,
+      "path": "export/w4a32_g16_original.onnx",
+      "reason": "Large generated graph. Complete export receipt, graph hash and initializer audit are retained.",
+      "sha256": "bb5bbe9bb05759fa1859de57408ce89647cbd4ef6feb1825cba3d87733ca68fe"
+    },
+    {
+      "bytes": 265913331,
+      "path": "export/w4a32_g16_rotated.onnx",
+      "reason": "Large generated graph. Complete export receipt, graph hash and initializer audit are retained.",
+      "sha256": "3778b1156f7b132b4dd10aa425108aa2989d802430a033dd0de754746710202e"
+    },
+    {
+      "bytes": 265007937,
+      "path": "export/w4a32_g32_original.onnx",
+      "reason": "Large generated graph. Complete export receipt, graph hash and initializer audit are retained.",
+      "sha256": "9647b3eb56d1f92e51fa0724a2da1f3637ddd09e7cb6f14466479091c99e86cd"
+    },
+    {
+      "bytes": 265126887,
+      "path": "export/w4a32_g32_rotated.onnx",
+      "reason": "Large generated graph. Complete export receipt, graph hash and initializer audit are retained.",
+      "sha256": "a60422cbd7599bf1a229216c39a49cee731a729be0e0259548bc50660af3cef5"
+    },
+    {
+      "bytes": 56885248,
+      "path": "reference/.article1.prefill.npy.3KU4Qz",
+      "reason": "Unreferenced logit-adjacent file observed during archival after the model worker ended. Origin and cleanup are unestablished; this file is not a receipt-bound reference array.",
+      "sha256": "e540026a986f5ba3eca66dd2788582365413d77fd9573b847810c13a78484fda"
+    },
+    {
+      "bytes": 103223936,
+      "path": "reference/article0.full.npy",
+      "reason": "Large development logit array. The reference receipt and full file identity are retained; exact last-position full slices are separately preserved for the failed cached comparison.",
+      "sha256": "fe632370cbcf55bdb1cf9a47c70b525434e6ae3cc7e58a17848611e250247fd8"
+    },
+    {
+      "bytes": 103022720,
+      "path": "reference/article0.prefill.npy",
+      "reason": "Large development logit array. The reference receipt and full file identity are retained; exact last-position full slices are separately preserved for the failed cached comparison.",
+      "sha256": "3040c08b87a06f5da690e25b8126431a23e2aace6ca119a562a31cbf2d9cde0e"
+    },
+    {
+      "bytes": 103223936,
+      "path": "reference/article1.full.npy",
+      "reason": "Large development logit array. The reference receipt and full file identity are retained; exact last-position full slices are separately preserved for the failed cached comparison.",
+      "sha256": "ab57837936962815c04c9aff01bb73fad5e5ad9f3dbff27843a3c451b70e3a52"
+    },
+    {
+      "bytes": 103022720,
+      "path": "reference/article1.prefill.npy",
+      "reason": "Large development logit array. The reference receipt and full file identity are retained; exact last-position full slices are separately preserved for the failed cached comparison.",
+      "sha256": "8283acce27c01e2422f906885b5fc31cafa0416702fb10bd84353723f5be1fb0"
+    },
+    {
+      "bytes": 244303,
+      "path": "selection/tokens.quality.json",
+      "reason": "Selected nondevelopment tokens. Role identities and token hashes are retained in selection.json; no model quality or timing evaluation ran.",
+      "sha256": "3dccb6abef036027af1866ab285c6a63c0e5327a640956309d829ca6c09c4bbc"
+    },
+    {
+      "bytes": 37492,
+      "path": "selection/tokens.timing.json",
+      "reason": "Selected nondevelopment tokens. Role identities and token hashes are retained in selection.json; no model quality or timing evaluation ran.",
+      "sha256": "49406da85c698eac2d816f0771dc13efd5097a34cee1db5065dca1163abdc5fb"
+    }
+  ],
+  "original_directory": "build/model-campaign-development-002",
+  "schema_version": "hadamard-campaign-attempt-archive.v2",
+  "separate_copies": {
+    "acquisition.json": {
+      "bytes": 9795,
+      "path": "artifacts/acquisition.json",
+      "sha256": "982613be2e25d233f9b06c6ab6d7063b58e94dacbbc9a76ca1047cfd4b4e7175"
+    },
+    "campaign.json": {
+      "bytes": 8336,
+      "path": "campaign.json",
+      "sha256": "96136cf823ca00d82c28d080b0c7ff38726717cd2764cca20dacd914ff07b781"
+    },
+    "preflight.json": {
+      "bytes": 4191,
+      "path": "preflight.json",
+      "sha256": "9c2dd2d333facaa4d6e6973bd14377b4b61ab4b46f934c7cfcf8d2b060a582d8"
+    },
+    "reference.json": {
+      "bytes": 29995,
+      "path": "reference/reference.json",
+      "sha256": "7693dcacf075b7975880d3e77f4219c29401390488dc386f6a9e947c0b9e4aed"
+    }
+  },
+  "snapshot_source_sha256": "7cfebfe05664b48dc06de4f3ea2321a57caf7aa716ea41dfd3bee37aa61601b5"
+}
