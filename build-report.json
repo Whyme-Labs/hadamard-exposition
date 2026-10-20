@@ -1,0 +1,31 @@
+{
+  "archive_bytes": 2308860,
+  "archive_sha256": "567664ff7ba50befd5f8e95e4bef611ce28fc4c2ed8b82770197935eb07f5b28",
+  "bounded_credential_scan": "no_indicators",
+  "finished_utc": "2026-10-20T17:28:58.743358+00:00",
+  "frozen_files_verified": 26,
+  "history_exported": false,
+  "local_links_complete": true,
+  "manifest_sha256": "50cd88bc4894af54aa3769e1638254c478f80edf5b17e2ee1202101405cfe7a8",
+  "original_inputs_unchanged": true,
+  "payload_file_count": 36,
+  "publication_performed": false,
+  "schema": "hadamard-release-build.v1",
+  "scientific_source_commit": "280ab929e206d263a5928585b13e09558ad445da",
+  "started_utc": "2026-10-20T17:28:57.234184+00:00",
+  "status": "passed",
+  "tool_commit": "145341727c963c9768a4bac26bf0d470d93c0cd7",
+  "tool_source_sha256": {
+    "release/build_bundle.py": "1af9146c4d91dc5d0951d8259fb2ebf8120d2a685994f21cd0d17e687e8d0f4e",
+    "release/spec.json": "cb004d54526327938d58ca35532b8c39f12ef29a8b0fe417f4147d68cf4989b1",
+    "release/templates/.nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "release/templates/CITATION.cff": "297f4d868dde7ac390e7e825787de3ec9d04f75f2fb26b97cc41a7be0df10662",
+    "release/templates/LICENSE-CC-BY-4.0.md": "aa930b65a78a319ef14c17da894de762ea135f1875141917154e17d13b96b135",
+    "release/templates/LICENSE-MIT.txt": "1365a22a3a00b03a6f5ab15641c3b9cf2f7bf4cbfc62b34a6e0c256d664776a0",
+    "release/templates/LICENSE.md": "d0f4fe17320ed97085a32bdc9d008ecf7d31e162e9d5fe2e45c58fb9de515893",
+    "release/templates/README.md": "cf4c95a4cd189a17f9b8e0d2e6743beffa092d6e0f3f04c9fea816f6ff135ffa",
+    "release/templates/SUBMISSION.md": "04ec47f97ef7bc53a423574e3b0fc634b56521ecd10ee9a94fef1e80dbe901c2",
+    "release/templates/index.html": "6e582e932b2febab19c3cc384f06efbc1a9a41b028e191e26043783cb33431d0"
+  },
+  "validation_receipt_sha256": "b84d7a6247133503198c6048631d7f8f45ef258d36ac88d0e7e9fee797b12744"
+}

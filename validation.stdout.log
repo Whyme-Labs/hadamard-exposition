@@ -1,0 +1,6 @@
+focused_unit_tests: passed
+retained_results: passed
+bundled_calculator: passed
+group_reproduction: passed
+inputs_unchanged: passed
+Validation passed: /tmp/hadamard-release-check-70dhn7s8/build/validation.json

@@ -1,0 +1,265 @@
+{
+  "schema": "hadamard-validation.v1",
+  "status": "passed",
+  "started_utc": "2026-10-20T17:28:57.342329+00:00",
+  "reproduce_requested": true,
+  "source_sha256": {
+    "experiment.py": "b1c76633c73ecda248af1d5fc868db41fb6b9302e1a5f63a0d1b63edde323525",
+    "results.json": "28c0c37a0e6e053384cbe6a54eec99741e67f6f65057705dc1121a7db4032d03",
+    "group_experiment.py": "fe9af69af6efad13e94a5281cb0e2ff3e7f42f355cbcd98184faa2139bb944b7",
+    "test_group_experiment.py": "9a47cd85d848c48ae5e83d8123a549bd92b2f53a0e003366e6def1d100193e83",
+    "group-results.json": "8d61250424b953b8cf5c35743fc722f66f1324756f334f359d15f486fce362d3",
+    "scripts/verify_results.py": "bea1fa627f8cc93c9f16b4af308c7648fbb031cdc49961ee7fe94c2dc50685a1",
+    "scripts/validate.py": "5bee8f11467b71d72c1de843e8f7c6a38dce78e09cfd6de444c9b67a0ceb4098",
+    "test_verify_results.py": "9836ff535dda2e59393ac0e5def5a93fbdc7bb9a6eb43ce491820f4bdef1cb0d",
+    "scripts/build_article.py": "078b10931fca2e1cd6dc8f53690b8e00c2058f74c39abb66c4e865de90693578",
+    "docs/experiments/group-size-v1.md": "ecaab57a178eac4e1530641130c63600debfd87e5782f75557fb76ee7a33049d",
+    "docs/reference-import.json": "95d003d9e72a95d9148394822df16ce55dc478392f6ed67cd5aaee1eaddbdcb9",
+    "requirements.txt": "4c40934e438ae009a1eb0b5a9322cce029fba6ca1af6e314c088c1957cee0c04",
+    "article.md": "64f023284e93c4f9cd91538ac2c5b00c9c827a29d2e9559b1e0e676cfe85aeb2",
+    "exposition.html": "5d71be8f4c4859edb5c39c6b80714cc9408c7ecbc0b306f1b6e109bce40bc734",
+    "calculator.html": "3291a3f85d7f0ce981930bdf80f908003e37e03f3da791c284870d6a35bd5b7f",
+    "verify-calculator.cjs": "baf9e541aeaa2351712ee85e2f2536b03f00b9f1a915214e2e12485ea86f6797",
+    "calculator-verification.json": "199cc606e9f28033e2d548c4098249950d7c57bafee989246df4a7e5d10d53b3"
+  },
+  "thread_environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "VECLIB_MAXIMUM_THREADS": "1"
+  },
+  "validation_python": "3.12.14 (main, Aug 13 2026, 02:47:42) [GCC 13.3.0]",
+  "phases": [
+    {
+      "name": "focused_unit_tests",
+      "status": "passed",
+      "command": [
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        ".",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "deadline_seconds": 60,
+      "exit_code": 0,
+      "timed_out": false,
+      "stdout": "",
+      "stderr": "test_activation_groups_match_hand_values_and_scalar_oracle (test_group_experiment.GroupQuantizerTests.test_activation_groups_match_hand_values_and_scalar_oracle) ... ok\ntest_frozen_scale_counts_include_all_zero_groups (test_group_experiment.GroupQuantizerTests.test_frozen_scale_counts_include_all_zero_groups) ... ok\ntest_noncontiguous_input_and_axis_orientation_match_scalar_oracle (test_group_experiment.GroupQuantizerTests.test_noncontiguous_input_and_axis_orientation_match_scalar_oracle) ... ok\ntest_rejects_invalid_group_boundaries_and_nonfinite_values (test_group_experiment.GroupQuantizerTests.test_rejects_invalid_group_boundaries_and_nonfinite_values) ... ok\ntest_signed_halfway_values_use_ties_to_even (test_group_experiment.GroupQuantizerTests.test_signed_halfway_values_use_ties_to_even) ... ok\ntest_weights_group_down_feature_rows_not_output_columns (test_group_experiment.GroupQuantizerTests.test_weights_group_down_feature_rows_not_output_columns) ... ok\ntest_zero_groups_keep_scales_without_polluting_exact_neighbor (test_group_experiment.GroupQuantizerTests.test_zero_groups_keep_scales_without_polluting_exact_neighbor) ... ok\ntest_bootstrap_indices_are_seeded_whole_record_positions (test_group_experiment.PairedSummaryTests.test_bootstrap_indices_are_seeded_whole_record_positions) ... ok\ntest_constant_paired_difference_has_zero_bootstrap_width (test_group_experiment.PairedSummaryTests.test_constant_paired_difference_has_zero_bootstrap_width) ... ok\ntest_duplicate_missing_mixed_or_invalid_resampling_rows_are_rejected (test_group_experiment.PairedSummaryTests.test_duplicate_missing_mixed_or_invalid_resampling_rows_are_rejected) ... ok\ntest_linear_percentiles_and_negative_rotation_sign (test_group_experiment.PairedSummaryTests.test_linear_percentiles_and_negative_rotation_sign) ... ok\ntest_means_seed_ratios_without_pooling_reference_norms (test_group_experiment.PairedSummaryTests.test_means_seed_ratios_without_pooling_reference_norms) ... ok\ntest_record_permutation_does_not_change_shared_seed_pairing (test_group_experiment.PairedSummaryTests.test_record_permutation_does_not_change_shared_seed_pairing) ... ok\ntest_reduction_is_ratio_of_means_not_mean_seed_reduction (test_group_experiment.PairedSummaryTests.test_reduction_is_ratio_of_means_not_mean_seed_reduction) ... ok\ntest_reference_identity_guard_rejects_duplicate_or_unexpected_rows (test_group_experiment.PairedSummaryTests.test_reference_identity_guard_rejects_duplicate_or_unexpected_rows) ... ok\ntest_zero_mean_and_undefined_resampled_reductions_stay_explicit (test_group_experiment.PairedSummaryTests.test_zero_mean_and_undefined_resampled_reductions_stay_explicit) ... ok\ntest_rejects_duplicate_json_keys_and_nonfinite_literals (test_verify_results.JsonControls.test_rejects_duplicate_json_keys_and_nonfinite_literals) ... ok\ntest_all_grouped_cells_and_whole_seed_summaries_verify (test_verify_results.RetainedResultControls.test_all_grouped_cells_and_whole_seed_summaries_verify) ... ok\ntest_reference_has_sixty_records_and_arithmetic_seed_summaries (test_verify_results.RetainedResultControls.test_reference_has_sixty_records_and_arithmetic_seed_summaries) ... ok\ntest_rejects_broken_bootstrap_pairing_or_diagnostic_interval (test_verify_results.RetainedResultControls.test_rejects_broken_bootstrap_pairing_or_diagnostic_interval) ... ok\ntest_rejects_duplicate_missing_and_nonfinite_cells (test_verify_results.RetainedResultControls.test_rejects_duplicate_missing_and_nonfinite_cells) ... ok\ntest_rejects_failed_or_incomplete_outer_process_observations (test_verify_results.RetainedResultControls.test_rejects_failed_or_incomplete_outer_process_observations) ... ok\ntest_rejects_stale_protocol_identity_or_unmatched_scales (test_verify_results.RetainedResultControls.test_rejects_stale_protocol_identity_or_unmatched_scales) ... ok\ntest_rejects_wrong_mean_paired_difference_wins_or_reduction (test_verify_results.RetainedResultControls.test_rejects_wrong_mean_paired_difference_wins_or_reduction) ... ok\ntest_reproduction_checks_all_deterministic_sections (test_verify_results.RetainedResultControls.test_reproduction_checks_all_deterministic_sections) ... ok\n\n----------------------------------------------------------------------\nRan 25 tests in 0.204s\n\nOK\n",
+      "result": {
+        "completed": true
+      },
+      "wall_seconds": 0.3334538279999997
+    },
+    {
+      "name": "retained_results",
+      "status": "passed",
+      "result": {
+        "status": "passed",
+        "reference": {
+          "records": 60,
+          "summary_numeric_comparisons": 152,
+          "reference_source_and_import_bytes_match": true
+        },
+        "group": {
+          "paired_cells": 160,
+          "settings": 8,
+          "g128_numeric_comparisons": 520,
+          "summary_numeric_comparisons": 520,
+          "bootstrap_draws_per_setting": 10000,
+          "bootstrap_indices_sha256": "bf7b7ba470a4399445899bf18d8ace2080546da10f070ddb6ea9894ef5ac5b3d",
+          "rtol": 2e-12,
+          "atol": 2e-14,
+          "method": "independent arithmetic seed means, bootstrap seed multiplicities, and linear order-statistic interpolation"
+        }
+      },
+      "wall_seconds": 0.03446500899999805
+    },
+    {
+      "name": "bundled_calculator",
+      "status": "passed",
+      "command": [
+        "/opt/hostedtoolcache/node/22.16.0/x64/bin/node",
+        "/tmp/hadamard-release-check-70dhn7s8/verify-calculator.cjs",
+        "/tmp/hadamard-release-check-70dhn7s8/exposition.html"
+      ],
+      "deadline_seconds": 30,
+      "exit_code": 0,
+      "timed_out": false,
+      "stdout": "{\n  \"actual_bundled_javascript_executed\": true,\n  \"update_events_checked\": true,\n  \"exact_counterexample_matches_rational_result\": true,\n  \"all_assets_embedded\": true,\n  \"mathml_equations\": 67,\n  \"embedded_images\": 3,\n  \"screenshot_verification\": false,\n  \"screenshot_limitation\": \"This check executes the bundled JavaScript with a DOM stub. It does not perform browser screenshot verification.\",\n  \"cases\": [\n    {\n      \"case\": \"exact_rational_counterexample\",\n      \"original\": \"0.0000%\",\n      \"rotated\": \"0.3301%\",\n      \"summary\": \"This vector rounds more accurately in its original basis.\"\n    },\n    {\n      \"case\": \"outlier_example\",\n      \"original\": \"0.5480%\",\n      \"rotated\": \"0.0078%\",\n      \"summary\": \"This vector rounds more accurately in the Hadamard basis.\"\n    },\n    {\n      \"case\": \"equal_coordinates\",\n      \"original\": \"0.0000%\",\n      \"rotated\": \"0.0000%\",\n      \"summary\": \"Both representations give the same error.\"\n    },\n    {\n      \"case\": \"zero_vector\",\n      \"original\": \"Undefined\",\n      \"rotated\": \"Undefined\",\n      \"summary\": \"The zero vector has zero absolute error; relative error is undefined.\"\n    },\n    {\n      \"case\": \"bit_count_control\",\n      \"original\": \"0.0002%\",\n      \"rotated\": \"0.0007%\",\n      \"summary\": \"This vector rounds more accurately in its original basis.\"\n    }\n  ]\n}\n",
+      "stderr": "",
+      "result": {
+        "actual_bundled_javascript_executed": true,
+        "update_events_checked": true,
+        "exact_counterexample_matches_rational_result": true,
+        "all_assets_embedded": true,
+        "mathml_equations": 67,
+        "embedded_images": 3,
+        "screenshot_verification": false,
+        "screenshot_limitation": "This check executes the bundled JavaScript with a DOM stub. It does not perform browser screenshot verification.",
+        "cases": [
+          {
+            "case": "exact_rational_counterexample",
+            "original": "0.0000%",
+            "rotated": "0.3301%",
+            "summary": "This vector rounds more accurately in its original basis."
+          },
+          {
+            "case": "outlier_example",
+            "original": "0.5480%",
+            "rotated": "0.0078%",
+            "summary": "This vector rounds more accurately in the Hadamard basis."
+          },
+          {
+            "case": "equal_coordinates",
+            "original": "0.0000%",
+            "rotated": "0.0000%",
+            "summary": "Both representations give the same error."
+          },
+          {
+            "case": "zero_vector",
+            "original": "Undefined",
+            "rotated": "Undefined",
+            "summary": "The zero vector has zero absolute error; relative error is undefined."
+          },
+          {
+            "case": "bit_count_control",
+            "original": "0.0002%",
+            "rotated": "0.0007%",
+            "summary": "This vector rounds more accurately in its original basis."
+          }
+        ]
+      },
+      "wall_seconds": 0.0288162719999967
+    },
+    {
+      "name": "group_reproduction",
+      "status": "passed",
+      "output_directory": "build/reproduction-9d7ck_q9",
+      "command": [
+        "/opt/hostedtoolcache/Python/3.12.14/x64/bin/python",
+        "/tmp/hadamard-release-check-70dhn7s8/group_experiment.py",
+        "--no-plots",
+        "--output",
+        "/tmp/hadamard-release-check-70dhn7s8/build/reproduction-9d7ck_q9"
+      ],
+      "deadline_seconds": 180,
+      "exit_code": 0,
+      "timed_out": false,
+      "stdout": "isotropic_gaussian g=128: 2.754490% -> 2.751812%; paired delta -0.002678 pp; wins 11/20\nisotropic_gaussian g=64: 2.313643% -> 2.329498%; paired delta 0.015855 pp; wins 8/20\nisotropic_gaussian g=32: 1.885990% -> 1.890345%; paired delta 0.004355 pp; wins 8/20\nisotropic_gaussian g=16: 1.453503% -> 1.458522%; paired delta 0.005020 pp; wins 8/20\npersistent_outlier g=128: 8.030172% -> 1.999829%; paired delta -6.030343 pp; wins 20/20\npersistent_outlier g=64: 4.527049% -> 1.670243%; paired delta -2.856805 pp; wins 20/20\npersistent_outlier g=32: 2.656032% -> 1.419916%; paired delta -1.236116 pp; wins 20/20\npersistent_outlier g=16: 1.606158% -> 1.116102%; paired delta -0.490056 pp; wins 20/20\nComplete: 160 paired cells; 0.765 seconds\n",
+      "stderr": "",
+      "reproduced_results_sha256": "a50931a046bac511b57a48c3e92d33a7747a5d610f6585e60c72299050137b55",
+      "result": {
+        "independent_verification": {
+          "status": "passed",
+          "reference": {
+            "records": 60,
+            "summary_numeric_comparisons": 152,
+            "reference_source_and_import_bytes_match": true
+          },
+          "group": {
+            "paired_cells": 160,
+            "settings": 8,
+            "g128_numeric_comparisons": 520,
+            "summary_numeric_comparisons": 520,
+            "bootstrap_draws_per_setting": 10000,
+            "bootstrap_indices_sha256": "bf7b7ba470a4399445899bf18d8ace2080546da10f070ddb6ea9894ef5ac5b3d",
+            "rtol": 2e-12,
+            "atol": 2e-14,
+            "method": "independent arithmetic seed means, bootstrap seed multiplicities, and linear order-statistic interpolation"
+          }
+        },
+        "deterministic_comparison": {
+          "status": "passed",
+          "numeric_comparisons": 3085,
+          "rtol": 2e-12,
+          "atol": 2e-14,
+          "runtime_metadata_not_compared_for_equality": [
+            "environment",
+            "finished_utc",
+            "started_utc",
+            "timing"
+          ]
+        },
+        "retained_environment": {
+          "python": "3.12.14",
+          "numpy": "2.3.5",
+          "matplotlib": "3.10.8",
+          "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+          "thread_environment": {
+            "OPENBLAS_NUM_THREADS": "1",
+            "OMP_NUM_THREADS": "1",
+            "MKL_NUM_THREADS": "1",
+            "VECLIB_MAXIMUM_THREADS": "1"
+          },
+          "threadpools": [
+            {
+              "user_api": "blas",
+              "internal_api": "openblas",
+              "num_threads": 1,
+              "prefix": "libscipy_openblas",
+              "filepath": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/numpy.libs/libscipy_openblas64_-fdde5778.so",
+              "version": "0.3.30",
+              "threading_layer": "pthreads",
+              "architecture": "SkylakeX"
+            }
+          ]
+        },
+        "reproduced_environment": {
+          "python": "3.12.14",
+          "numpy": "2.3.5",
+          "matplotlib": "3.10.8",
+          "platform": "Linux-6.6.141-x86_64-with-glibc2.39",
+          "thread_environment": {
+            "OPENBLAS_NUM_THREADS": "1",
+            "OMP_NUM_THREADS": "1",
+            "MKL_NUM_THREADS": "1",
+            "VECLIB_MAXIMUM_THREADS": "1"
+          },
+          "threadpools": null
+        },
+        "reproduced_timing": {
+          "definition": "main start through computation, checks and plotting; excludes module imports and final JSON write",
+          "sweep_seconds": 0.6833300229999999,
+          "bootstrap_seconds": 0.06779381099999782,
+          "figures_generated": false,
+          "plotting_seconds": 3.977999998738824e-06,
+          "total_run_wall_seconds": 0.7650793569999976
+        }
+      },
+      "wall_seconds": 0.9216496640000003
+    },
+    {
+      "name": "inputs_unchanged",
+      "status": "passed",
+      "final_source_sha256": {
+        "experiment.py": "b1c76633c73ecda248af1d5fc868db41fb6b9302e1a5f63a0d1b63edde323525",
+        "results.json": "28c0c37a0e6e053384cbe6a54eec99741e67f6f65057705dc1121a7db4032d03",
+        "group_experiment.py": "fe9af69af6efad13e94a5281cb0e2ff3e7f42f355cbcd98184faa2139bb944b7",
+        "test_group_experiment.py": "9a47cd85d848c48ae5e83d8123a549bd92b2f53a0e003366e6def1d100193e83",
+        "group-results.json": "8d61250424b953b8cf5c35743fc722f66f1324756f334f359d15f486fce362d3",
+        "scripts/verify_results.py": "bea1fa627f8cc93c9f16b4af308c7648fbb031cdc49961ee7fe94c2dc50685a1",
+        "scripts/validate.py": "5bee8f11467b71d72c1de843e8f7c6a38dce78e09cfd6de444c9b67a0ceb4098",
+        "test_verify_results.py": "9836ff535dda2e59393ac0e5def5a93fbdc7bb9a6eb43ce491820f4bdef1cb0d",
+        "scripts/build_article.py": "078b10931fca2e1cd6dc8f53690b8e00c2058f74c39abb66c4e865de90693578",
+        "docs/experiments/group-size-v1.md": "ecaab57a178eac4e1530641130c63600debfd87e5782f75557fb76ee7a33049d",
+        "docs/reference-import.json": "95d003d9e72a95d9148394822df16ce55dc478392f6ed67cd5aaee1eaddbdcb9",
+        "requirements.txt": "4c40934e438ae009a1eb0b5a9322cce029fba6ca1af6e314c088c1957cee0c04",
+        "article.md": "64f023284e93c4f9cd91538ac2c5b00c9c827a29d2e9559b1e0e676cfe85aeb2",
+        "exposition.html": "5d71be8f4c4859edb5c39c6b80714cc9408c7ecbc0b306f1b6e109bce40bc734",
+        "calculator.html": "3291a3f85d7f0ce981930bdf80f908003e37e03f3da791c284870d6a35bd5b7f",
+        "verify-calculator.cjs": "baf9e541aeaa2351712ee85e2f2536b03f00b9f1a915214e2e12485ea86f6797",
+        "calculator-verification.json": "199cc606e9f28033e2d548c4098249950d7c57bafee989246df4a7e5d10d53b3"
+      },
+      "result": {
+        "all_source_and_retained_result_bytes_unchanged": true
+      },
+      "wall_seconds": 0.001363223999998553
+    }
+  ],
+  "finished_utc": "2026-10-20T17:28:58.667545+00:00",
+  "wall_seconds": 1.3252404210000002
+}
