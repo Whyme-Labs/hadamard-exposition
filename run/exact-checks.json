@@ -1,0 +1,262 @@
+{
+  "scope": "Exact finite constructions and arithmetic checks, not a universal existence proof.",
+  "paley": [
+    {
+      "q": 3,
+      "order": 4,
+      "integer_gram_pass": true,
+      "determinant": -16,
+      "absolute_determinant_bound": 16,
+      "character_correlations_checked": 9,
+      "corruption_rejected": true
+    },
+    {
+      "q": 7,
+      "order": 8,
+      "integer_gram_pass": true,
+      "determinant": -4096,
+      "absolute_determinant_bound": 4096,
+      "character_correlations_checked": 49,
+      "corruption_rejected": true
+    },
+    {
+      "q": 11,
+      "order": 12,
+      "integer_gram_pass": true,
+      "determinant": -2985984,
+      "absolute_determinant_bound": 2985984,
+      "character_correlations_checked": 121,
+      "corruption_rejected": true
+    },
+    {
+      "q": 19,
+      "order": 20,
+      "integer_gram_pass": true,
+      "determinant": -10240000000000,
+      "absolute_determinant_bound": 10240000000000,
+      "character_correlations_checked": 361,
+      "corruption_rejected": true
+    },
+    {
+      "q": 23,
+      "order": 24,
+      "integer_gram_pass": true,
+      "determinant": -36520347436056576,
+      "absolute_determinant_bound": 36520347436056576,
+      "character_correlations_checked": 529,
+      "corruption_rejected": true
+    },
+    {
+      "q": 31,
+      "order": 32,
+      "integer_gram_pass": true,
+      "determinant": -1208925819614629174706176,
+      "absolute_determinant_bound": 1208925819614629174706176,
+      "character_correlations_checked": 961,
+      "corruption_rejected": true
+    },
+    {
+      "q": 43,
+      "order": 44,
+      "integer_gram_pass": true,
+      "determinant": -1432052311740255546466984939315265536,
+      "absolute_determinant_bound": 1432052311740255546466984939315265536,
+      "character_correlations_checked": 1849,
+      "corruption_rejected": true
+    }
+  ],
+  "order_12_matrix": [
+    [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      -1,
+      1,
+      -1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      -1,
+      1,
+      -1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      1
+    ],
+    [
+      1,
+      1,
+      -1,
+      -1,
+      1,
+      -1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      1,
+      -1,
+      -1,
+      1,
+      -1,
+      1,
+      1,
+      1,
+      -1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      -1,
+      1,
+      -1,
+      -1,
+      1,
+      -1,
+      1,
+      1,
+      1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      -1,
+      -1,
+      1,
+      -1,
+      -1,
+      1,
+      -1,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      1,
+      -1,
+      -1,
+      1,
+      -1,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      1,
+      -1,
+      -1,
+      1,
+      -1,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      1,
+      -1,
+      -1,
+      1,
+      -1
+    ],
+    [
+      1,
+      -1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      1,
+      -1,
+      -1,
+      1
+    ],
+    [
+      1,
+      1,
+      -1,
+      1,
+      1,
+      1,
+      -1,
+      -1,
+      -1,
+      1,
+      -1,
+      -1
+    ]
+  ],
+  "rational_counterexample": {
+    "input": [
+      "7",
+      "1",
+      "1",
+      "0"
+    ],
+    "transformed": [
+      "9/2",
+      "7/2",
+      "7/2",
+      "5/2"
+    ],
+    "dequantized": [
+      "9/2",
+      "45/14",
+      "45/14",
+      "18/7"
+    ],
+    "relative_squared_error": "11/3332",
+    "original_peak": "7",
+    "transformed_peak": "9/2"
+  },
+  "invalid_inputs_rejected": true
+}

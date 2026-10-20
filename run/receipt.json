@@ -1,0 +1,108 @@
+{
+  "schema": "hadamard-strengthening-results.v2",
+  "status": "passed",
+  "registration_commit": "7d5e4dabccace930c0de2cc41e7da847486f95a1",
+  "started_utc": "2026-10-20T18:26:04.327867+00:00",
+  "source_sha256": {
+    "browser_check.py": "0cda3a512558efcffe16d34e36e3b389a23ad0dab8325ff2ddab42e7f51ec716",
+    "build_article.py": "ad93184505fbaf05ba3273551a017b4f3c1248c42a08f3f3173af83fc7dd6342",
+    "build_pdf.py": "3aa79a6805a747b36b7a8b822de7d3ac77b9a639c809ad437e901967b2767507",
+    "counterexample_family.py": "2d93449724eece91c6c21d05949b85bb8ca2bc254840e1292975b4942790ee95",
+    "exact_checks.py": "95d734777ea4129b02ebbe48b2f3c79dbea3824297c1fe21682cf2c2bd6d4263",
+    "local-run-receipt.json": "54dea91f1755485bcabc1ed841c8b1963de5ac82a43c769470bacb5ade9078ad",
+    "protocol-v2.json": "1a239984661f3c229225aa4d899fe3960eb2f5f47dc5e7099c49764022f08c29",
+    "study.py": "eb3ccb5d9ee2dba06a91ce33c5438c422d2870b14fb377434cd4e1eb562d17b0",
+    "test_exact.py": "27aea3d1b515ed30427f8e3d415b71a1774c1a3cb080399a5595ea5c4a0c63e0",
+    "test_family.py": "4ca1871dfe0893f7953270aa86018ad577ec59f77c04d49fa9e98d17b2d090a1",
+    "test_study.py": "b8ab325646dd0bded9b9289bed20a2462aea39ff0645bc670e2ae3f234a1692a",
+    "verify_study.py": "0c3b3b37011879f5ed5f652a6c6287e488a91e9ce1d846814405a850760699d2"
+  },
+  "environment": {
+    "python": "3.13.5 (main, Jun 12 2025, 03:51:07) [GCC 13.3.0]",
+    "numpy": "2.3.5",
+    "platform": "Linux-6.6.141-x86_64-with-glibc2.39",
+    "thread_env": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1"
+    }
+  },
+  "scope": "Fresh pseudorandom samples within the same synthetic family. No new algorithm, model result or award claim.",
+  "cells": 7600,
+  "settings": 19,
+  "primary": {
+    "case": "gaussian_outlier",
+    "multiplier": 32,
+    "group": 32,
+    "seeds": 100,
+    "arms": {
+      "original": {
+        "mean_error": 0.026061753740665536,
+        "mean_delta_vs_original": 0.0,
+        "paired_95_interval_vs_original": [
+          0.0,
+          0.0
+        ],
+        "wins_vs_original": 0,
+        "min_error": 0.01737045378059743,
+        "max_error": 0.0392668838314663
+      },
+      "randomized_hadamard": {
+        "mean_error": 0.013558977723082425,
+        "mean_delta_vs_original": -0.012502776017583117,
+        "paired_95_interval_vs_original": [
+          -0.01307422272561057,
+          -0.011942032422965532
+        ],
+        "wins_vs_original": 100,
+        "min_error": 0.0088117029267983,
+        "max_error": 0.021963881445229688
+      },
+      "haar_orthogonal": {
+        "mean_error": 0.018937155760594883,
+        "mean_delta_vs_original": -0.007124597980070657,
+        "paired_95_interval_vs_original": [
+          -0.0076537899451754226,
+          -0.006589518763394885
+        ],
+        "wins_vs_original": 99,
+        "min_error": 0.013055395292884176,
+        "max_error": 0.030779061113211402
+      },
+      "signed_permutation": {
+        "mean_error": 0.02577980894643409,
+        "mean_delta_vs_original": -0.00028194479423145394,
+        "paired_95_interval_vs_original": [
+          -0.0005861785921212384,
+          3.237302088701054e-05
+        ],
+        "wins_vs_original": 57,
+        "min_error": 0.017485251739677007,
+        "max_error": 0.0394511135269573
+      }
+    },
+    "hadamard_minus_haar": {
+      "mean": -0.0053781780375124575,
+      "descriptive_paired_95_interval": [
+        -0.005906317155237004,
+        -0.004864142406433527
+      ]
+    }
+  },
+  "directional_confirmation_within_synthetic_family": true,
+  "controls": {
+    "orthogonality_max_absolute": 1.3322676295501878e-15,
+    "full_precision_max_relative_norm": 1.6416683716936652e-15,
+    "signed_permutation_group128_max_error_difference": 4.163336342344337e-17
+  },
+  "numerical_and_summary_seconds": 5.1501751920000025,
+  "output_sha256": {
+    "cells.csv": "1a23e8c7828cfa4bfdd4d1d6575cd3a450922e94b3550256701f715409359246",
+    "exact-checks.json": "8e61143584576dd56f49896c1d60e0fdd97b7c93ed1eb2e071851eda4f94e5f5",
+    "inputs.json": "d42f533a81d0b0feac20887c40c0504a1d8996acc017aa4e417f1b407ce44957",
+    "summary.json": "2ffc8ac7ad175493fc08c88ce94b49e8df500271f6faf13d4cbbb49f20d7faea"
+  },
+  "finished_utc": "2026-10-20T18:26:09.564504+00:00",
+  "wall_seconds": 5.237115054
+}

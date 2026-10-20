@@ -1,0 +1,26 @@
+test_all_registered_constructions (test_exact.ExactTests.test_all_registered_constructions) ... ok
+test_bad_inputs (test_exact.ExactTests.test_bad_inputs) ... ok
+test_bad_matrices (test_exact.ExactTests.test_bad_matrices) ... ok
+test_determinant_against_independent_permutation_sum (test_exact.ExactTests.test_determinant_against_independent_permutation_sum) ... ok
+test_paley_worked_example (test_exact.ExactTests.test_paley_worked_example) ... ok
+test_rational_example (test_exact.ExactTests.test_rational_example) ... ok
+test_all_registered_examples_and_closed_form (test_family.FamilyTests.test_all_registered_examples_and_closed_form) ... ok
+test_all_supported_signs (test_family.FamilyTests.test_all_supported_signs) ... ok
+test_four_bit_reference (test_family.FamilyTests.test_four_bit_reference) ... ok
+test_invalid (test_family.FamilyTests.test_invalid) ... ok
+test_linear_layer_corollary (test_family.FamilyTests.test_linear_layer_corollary) ... ok
+test_orthogonality (test_family.FamilyTests.test_orthogonality) ... ok
+test_three_bit (test_family.FamilyTests.test_three_bit) ... ok
+test_all_transforms_orthogonal_and_compensated (test_study.StudyTests.test_all_transforms_orthogonal_and_compensated) ... ok
+test_group_orientation (test_study.StudyTests.test_group_orientation) ... ok
+test_non_power_of_two_rejected (test_study.StudyTests.test_non_power_of_two_rejected) ... ok
+test_reject_bad_groups_and_values (test_study.StudyTests.test_reject_bad_groups_and_values) ... ok
+test_signed_permutation_preserves_full_group_error (test_study.StudyTests.test_signed_permutation_preserves_full_group_error) ... ok
+test_summary_pairing_and_coverage (test_study.StudyTests.test_summary_pairing_and_coverage) ... ok
+test_ties_and_zero (test_study.StudyTests.test_ties_and_zero) ... ok
+test_zero_reference_rejected (test_study.StudyTests.test_zero_reference_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.697s
+
+OK

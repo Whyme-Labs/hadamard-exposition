@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "scope": "Separate cross-environment reproduction, not the original local observation or new-data validation.",
+  "source_commit": "12f0463020cfb6e81f9ce2178386668f9b60c27f",
+  "original_local_started_utc": "2026-10-20T17:14:02.387026+00:00",
+  "reproduction_started_utc": "2026-10-20T18:26:04.327867+00:00",
+  "primary_fields_compared": [
+    "original.mean_error",
+    "original.mean_delta_vs_original",
+    "randomized_hadamard.mean_error",
+    "randomized_hadamard.mean_delta_vs_original",
+    "haar_orthogonal.mean_error",
+    "haar_orthogonal.mean_delta_vs_original",
+    "signed_permutation.mean_error",
+    "signed_permutation.mean_delta_vs_original"
+  ],
+  "raw_cells_byte_identical_to_original": true,
+  "original_cells_sha256": "1a23e8c7828cfa4bfdd4d1d6575cd3a450922e94b3550256701f715409359246",
+  "reproduced_cells_sha256": "1a23e8c7828cfa4bfdd4d1d6575cd3a450922e94b3550256701f715409359246",
+  "public_release": false
+}
