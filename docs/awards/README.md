@@ -24,11 +24,14 @@ The scientific content is complete enough for content review. It is not a soluti
 - [`jsp-000013-exposition-submission.md`](jsp-000013-exposition-submission.md) is the submission draft. It contains the author, scope, original contributions, citations, review evidence, and claim limits.
 - [`jsp-000013-reviewed-content.md`](jsp-000013-reviewed-content.md) maps the material to the official exposition requirements and identifies the two external blockers.
 - [`jsp-000013-publication-manifest.json`](jsp-000013-publication-manifest.json) records exact source and artifact identities. Its public URL and public publication date remain null until publication.
+- [`jsp-000013-public-release-plan.md`](jsp-000013-public-release-plan.md) defines the bounded safety audit, allowlist, denylist, license gate, immutable release procedure, and release acceptance checks.
 - [`../../CITATION.cff`](../../CITATION.cff) supplies citation metadata without asserting a journal publication or award.
 
 ## Recommended public release
 
-Publish the existing standalone `exposition.html` without changing its bytes. The best release unit is an immutable public Git tag or release that points to a commit containing the exact article blob recorded in the manifest. A separate static host may mirror the same file, but the Git object should remain the primary fixed-version record.
+Publish the existing standalone `exposition.html` without changing its bytes. The recommended first release is a curated public mirror containing the allowlisted article, source, experiment, and dossier files. The private repository includes internal model-campaign evidence and has no committed license, so exposing its entire history adds review and redistribution risk without helping the Exposition claim.
+
+The mirror should have an immutable Git tag or release that points to its first public commit. A separate static host may mirror the same standalone article, but the Git object should remain the primary fixed-version record.
 
 Do not edit the article during publication. Any substantive correction creates a new version and should receive a new review record. Typographical corrections should still be documented so reviewers can identify exactly what they read.
 
