@@ -1,0 +1,38 @@
+{
+  "schema": "hadamard-release-local-tests.v1",
+  "observed_utc": "2026-10-20T16:27:28.285258+00:00",
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "exit_code": 0,
+  "wall_seconds": 2.1896527710000555,
+  "tests_run": 33,
+  "scope": "Real Git boundary fixtures and publisher safety tests only; not the actual 26-file scientific reproduction. No public repository created.",
+  "source_sha256": {
+    ".github/workflows/exposition-release.yml": "4e2f08ec5f6c86b1e4e8e5a52b96706219633e13cfc20543dcf5d6489056d6a1",
+    "release/README.md": "21396b35ced8c10e2524ce2fc97774117c6e87fbfe176f902fa5c997cde80eab",
+    "release/REVIEW.md": "953cc6a6a8ae7a00e45a96d5a541f4ba5bf90bb52cda99be10645ba0ff9739cf",
+    "release/build_bundle.py": "1af9146c4d91dc5d0951d8259fb2ebf8120d2a685994f21cd0d17e687e8d0f4e",
+    "release/publish_bundle.py": "98052a494a5c629169716a8cd4af00ca8a7871176fb6ec5bab37775076058da0",
+    "release/spec.json": "cb004d54526327938d58ca35532b8c39f12ef29a8b0fe417f4147d68cf4989b1",
+    "release/templates/.nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "release/templates/CITATION.cff": "297f4d868dde7ac390e7e825787de3ec9d04f75f2fb26b97cc41a7be0df10662",
+    "release/templates/LICENSE-CC-BY-4.0.md": "aa930b65a78a319ef14c17da894de762ea135f1875141917154e17d13b96b135",
+    "release/templates/LICENSE-MIT.txt": "1365a22a3a00b03a6f5ab15641c3b9cf2f7bf4cbfc62b34a6e0c256d664776a0",
+    "release/templates/LICENSE.md": "d0f4fe17320ed97085a32bdc9d008ecf7d31e162e9d5fe2e45c58fb9de515893",
+    "release/templates/README.md": "cf4c95a4cd189a17f9b8e0d2e6743beffa092d6e0f3f04c9fea816f6ff135ffa",
+    "release/templates/SUBMISSION.md": "04ec47f97ef7bc53a423574e3b0fc634b56521ecd10ee9a94fef1e80dbe901c2",
+    "release/templates/index.html": "6e582e932b2febab19c3cc384f06efbc1a9a41b028e191e26043783cb33431d0",
+    "release/test_bundle.py": "9094f2b40a43715a21f5fd7d74d3569478b4e54125258c555020cb140be2e62a",
+    "release/test_publish.py": "a063195c70f2276d6410ac62e60c5ea63142675b53520a0542389a9d96652402"
+  },
+  "stdout": "",
+  "stderr": "test_case_collision_fails (test_bundle.BundleTests.test_case_collision_fails) ... ok\ntest_changed_expected_blob_fails (test_bundle.BundleTests.test_changed_expected_blob_fails) ... ok\ntest_checksum_list_is_verified (test_bundle.BundleTests.test_checksum_list_is_verified) ... ok\ntest_cli_preserves_existing_receipt (test_bundle.BundleTests.test_cli_preserves_existing_receipt) ... ok\ntest_credential_detection_and_no_value_disclosure (test_bundle.BundleTests.test_credential_detection_and_no_value_disclosure) ... ok\ntest_exports_only_allowlisted_bytes (test_bundle.BundleTests.test_exports_only_allowlisted_bytes) ... ok\ntest_local_links_are_checked (test_bundle.BundleTests.test_local_links_are_checked) ... ok\ntest_local_links_with_fragment_and_query (test_bundle.BundleTests.test_local_links_with_fragment_and_query) ... ok\ntest_manifest_checks_tampering (test_bundle.BundleTests.test_manifest_checks_tampering) ... ok\ntest_manifest_rejects_extra_file (test_bundle.BundleTests.test_manifest_rejects_extra_file) ... ok\ntest_manifest_rejects_removed_file (test_bundle.BundleTests.test_manifest_rejects_removed_file) ... ok\ntest_missing_file_fails (test_bundle.BundleTests.test_missing_file_fails) ... ok\ntest_mutable_ref_fails (test_bundle.BundleTests.test_mutable_ref_fails) ... ok\ntest_output_overwrite_refused (test_bundle.BundleTests.test_output_overwrite_refused) ... ok\ntest_reads_frozen_git_not_dirty_worktree (test_bundle.BundleTests.test_reads_frozen_git_not_dirty_worktree) ... ok\ntest_real_spec_closes_historical_dependency_gap (test_bundle.BundleTests.test_real_spec_closes_historical_dependency_gap) ... ok\ntest_symlink_in_git_fails (test_bundle.BundleTests.test_symlink_in_git_fails) ... ok\ntest_unsafe_paths_fail (test_bundle.BundleTests.test_unsafe_paths_fail) ... ok\ntest_zip_is_byte_identical (test_bundle.BundleTests.test_zip_is_byte_identical) ... ok\ntest_archive_symlink_blocks_publication (test_publish.PublishTests.test_archive_symlink_blocks_publication) ... ok\ntest_existing_stage_is_not_modified (test_publish.PublishTests.test_existing_stage_is_not_modified) ... ok\ntest_extra_private_file_blocks_publication (test_publish.PublishTests.test_extra_private_file_blocks_publication) ... ok\ntest_failed_receipt_blocks_publication (test_publish.PublishTests.test_failed_receipt_blocks_publication) ... ok\ntest_gh_cannot_inherit_git_directory_or_alternate_host (test_publish.PublishTests.test_gh_cannot_inherit_git_directory_or_alternate_host) ... ok\ntest_global_clean_filter_cannot_change_frozen_bytes (test_publish.PublishTests.test_global_clean_filter_cannot_change_frozen_bytes) ... ok\ntest_inherited_git_environment_cannot_redirect_public_commit (test_publish.PublishTests.test_inherited_git_environment_cannot_redirect_public_commit) ... ok\ntest_load_verified_fixture (test_publish.PublishTests.test_load_verified_fixture) ... ok\ntest_missing_reproduction_phase_blocks_even_with_updated_hash (test_publish.PublishTests.test_missing_reproduction_phase_blocks_even_with_updated_hash) ... ok\ntest_new_repository_has_no_source_history (test_publish.PublishTests.test_new_repository_has_no_source_history) ... ok\ntest_payload_symlink_blocks_publication (test_publish.PublishTests.test_payload_symlink_blocks_publication) ... ok\ntest_receipt_tampering_blocks_publication (test_publish.PublishTests.test_receipt_tampering_blocks_publication) ... ok\ntest_resealed_extra_file_still_blocks_publication (test_publish.PublishTests.test_resealed_extra_file_still_blocks_publication) ... ok\ntest_source_mismatch_blocks_publication (test_publish.PublishTests.test_source_mismatch_blocks_publication) ... ok\n\n----------------------------------------------------------------------\nRan 33 tests in 1.376s\n\nOK\n",
+  "hosted_attempt": {
+    "run_id": 39454855096,
+    "job_id": 118738916919,
+    "conclusion": "failure",
+    "steps": [],
+    "cause": "Not exposed by available connector actions",
+    "scientific_validation_performed": false
+  },
+  "next_gate": "Pass build_bundle.py against the actual frozen Git inputs before publication."
+}

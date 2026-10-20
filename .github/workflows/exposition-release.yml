@@ -1,7 +1,5 @@
 name: Verify curated exposition release
 on:
-  push:
-    branches: ['work/issue11-release-bundle']
   pull_request:
     paths: ['release/**', '.github/workflows/exposition-release.yml']
   workflow_dispatch:
