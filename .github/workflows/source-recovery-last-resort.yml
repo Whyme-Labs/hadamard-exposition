@@ -1,8 +1,8 @@
 name: Last-resort private source recovery
 # Local computation works. Direct source download fails DNS in the assistant
 # container. Home run 39463443466 remained queued without executing a step.
-# This one-shot transfer does not change the normal local -> home -> Blacksmith
-# execution policy, publish the repository, or imply validation acceptance.
+# This transfer does not change the normal local -> home -> Blacksmith policy,
+# publish the repository, or imply validation acceptance.
 on:
   pull_request:
     paths: ['.github/workflows/source-recovery-last-resort.yml']
@@ -10,7 +10,7 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: exposition-release-${{ github.ref }}
+  group: exposition-source-recovery-${{ github.ref }}
   cancel-in-progress: true
 jobs:
   recover:
