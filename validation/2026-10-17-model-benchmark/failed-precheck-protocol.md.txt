@@ -1,0 +1,142 @@
+# Matched Pythia W4A32 benchmark, version 1
+
+Date: 17 October 2026. Owner: [issue #2](https://github.com/Whyme-Labs/hadamard-exposition/issues/2). Machine-readable contract: [model-benchmark-v1.json](../../benchmarks/model-benchmark-v1.json).
+
+## Question and milestone
+
+Does one fixed randomized Hadamard change of basis reduce language-model loss after grouped weight quantization, while keeping the cost of the same implementation within a stated overhead margin?
+
+The group-size study found a distribution-dependent synthetic benefit. It used float64 error simulation and quantized both operands. This design tests a narrower application intervention: four-bit weights and float32 activations, abbreviated W4A32. Quality and cost must use the same six model graphs, packed format, runtime and CPU. A W4A4 simulation cannot supply the quality endpoint for this W4A32 cost experiment.
+
+This milestone freezes the design and qualifies the packed operator, legal rotation placement and evaluation helpers on generated inputs. It does not acquire pretrained weights, evaluate WikiText or implement a complete GPT-NeoX exporter. The later execution revision must satisfy the launch prerequisites below. `design_qualified` and `campaign_ready` are separate receipt fields; this revision always leaves the latter false.
+
+The useful deliverables are concrete. A reproducer can run one bounded command and inspect source identities and failures. A research reader can identify the exact intervention behind every quality and cost comparison. An implementer has a fixed data-selection and graph contract. If a control, resource limit or primary comparison fails, the full observation remains available and the failure blocks the associated claim.
+
+## Fixed inputs and source audit
+
+The JSON contract gives full immutable revisions, filenames and dimensions. The following primary sources explain the choices.
+
+| Input | Frozen choice | Evidence and reason |
+|---|---|---|
+| Model and tokenizer | `EleutherAI/pythia-70m`, revision `301b2c9bdf4d6da917d8f02d3c48aac481a60d06` | The [pinned configuration](https://huggingface.co/EleutherAI/pythia-70m/blob/301b2c9bdf4d6da917d8f02d3c48aac481a60d06/config.json) has six GPT-NeoX layers, hidden width 512, intermediate width 2048, GELU and parallel residuals. The intermediate width permits a full Sylvester transform. |
+| Data | `Salesforce/wikitext`, `wikitext-2-raw-v1`, revision `b08601e04326c79dfdd32d625aee71d232d685c3` | The [pinned dataset card](https://huggingface.co/datasets/Salesforce/wikitext/blob/b08601e04326c79dfdd32d625aee71d232d685c3/README.md) defines separate train, validation and test files. Only the three named WikiText-2 Parquet files are permitted. |
+| Runtime | ONNX Runtime 1.23.2, `CPUExecutionProvider`, `com.microsoft.MatMulNBits`, `accuracy_level=1` | The [operator contract](https://github.com/microsoft/onnxruntime/blob/a83fc4d58cb48eb68890dd689f94f28288cf2278/docs/ContribOperators.md#commicrosoftmatmulnbits) supports packed grouped weights. The [CPU implementation](https://github.com/microsoft/onnxruntime/blob/a83fc4d58cb48eb68890dd689f94f28288cf2278/onnxruntime/contrib_ops/cpu/quantization/matmul_nbits.cc) and [MLAS implementation](https://github.com/microsoft/onnxruntime/blob/a83fc4d58cb48eb68890dd689f94f28288cf2278/onnxruntime/core/mlas/lib/qnbitgemm.cpp) define the actual execution paths. |
+| Model implementation | Transformers 4.46.3, source `052e652d6d53c2b26ffde87e039b723949a53493` | The [GPT-NeoX implementation](https://github.com/huggingface/transformers/blob/052e652d6d53c2b26ffde87e039b723949a53493/src/transformers/models/gpt_neox/modeling_gpt_neox.py) defines the post-GELU output projection and cache behavior that the later adapter must preserve. |
+| Qualification environment | Python 3.12.14, NumPy 2.3.5, ONNX 1.19.1, ONNX Runtime 1.23.2 | [requirements-benchmark.txt](../../requirements-benchmark.txt) pins the installed qualification dependencies. The local receipt records observed versions and hardware. |
+
+The planned converter uses Torch 2.5.1+cpu, Transformers 4.46.3, datasets 3.1.0, safetensors 0.4.5, huggingface-hub 0.26.2 and tokenizers 0.20.3. These are future converter inputs, not a claim that the full conversion stack was installed or tested in this milestone. The [pinned Torch setup](https://github.com/pytorch/pytorch/blob/a8d6afb511a69687bbb2b7e88a3cf67917e1697e/setup.py) requires SymPy 1.13.1 on Python 3.12; the qualification runtime currently pins SymPy 1.14.0. Use an isolated converter environment with SymPy 1.13.1 rather than combining those two requirements files. The produced graphs are evaluated and timed in the same pinned ONNX Runtime environment. The execution lock must record every resolved dependency, wheel source and hash for both environments before a model run. Base-package metadata compatibility does not establish NumPy ABI compatibility, successful imports or export parity. A dependency change requires a new reviewed execution record.
+
+Stock QuaRot is useful prior work, but its [audited packed linear module](https://github.com/spcl/QuaRot/blob/5008669b08c1f11f9b64d52d16fddd47ca754c5a/quarot/nn/linear.py) uses one weight scale per output row. Its post-GEMM scaling does not implement our group-32 contraction with independently varying scales along the input dimension. The selected ONNX CPU operator makes a matched grouped W4A32 experiment possible. It does not establish native W4A4 acceleration.
+
+An ONNX profile establishes that the requested operator ran on the CPU provider. It does not identify the internal MLAS path. Depending on shape and hardware, execution can include FP32 tiled dequantization or an unpacked fallback. Those costs stay inside the measurement boundary. Log evidence must be retained, and the result must describe the observed implementation without inferring an integer GEMM from the operator name.
+
+## Intervention and six arms
+
+Change only `gpt_neox.layers.{0..5}.mlp.dense_4h_to_h`. Each selected PyTorch weight has shape `[512, 2048]`. All other weights, embeddings, attention, normalization parameters, biases and caches remain FP32. This targets 6,291,456 weights; it is not whole-model four-bit quantization.
+
+For a row activation after GELU, PyTorch computes
+
+$$y=xW^T+b.$$
+
+Let $Q=DH/\sqrt{2048}$, where $H$ is the Sylvester matrix and $D$ is a diagonal matrix of signs. Use the same $Q$ for the activation and the right-hand side of the stored PyTorch weight:
+
+$$x'=xQ,\qquad W'=WQ,\qquad x'(W')^T+b=xQQ^TW^T+b=y.$$
+
+The online graph applies the signs, eleven Add/Sub butterfly stages and normalization. It must not multiply by a serialized dense $2048\times2048$ rotation. Conversion may use a high-precision reference and then round the transformed weight once to FP32. Quantization consumes those FP32 values. Bias is unchanged. The rotation belongs immediately after GELU; moving it through GELU is not a valid identity. The later model adapter must restore batch and sequence shape after a flattened butterfly.
+
+For layer index $l$, generate signs once with NumPy `PCG64(20261017 + l)` and `choice([-1, 1], size=2048)`, in that order. Save the int8 signs and their hashes in the conversion receipt. ONNX uses FP32 sign constants. There is no search over signs, clipping thresholds, examples or placements.
+
+| Arm | Basis | Selected weight storage | Role |
+|---|---|---|---|
+| `fp32_original` | Original | FP32 | Reference |
+| `fp32_rotated` | Fixed Hadamard | FP32 | Model invariance control |
+| `w4a32_g32_original` | Original | Packed four-bit, group 32 | Primary baseline |
+| `w4a32_g32_rotated` | Fixed Hadamard | Packed four-bit, group 32 | Primary treatment |
+| `w4a32_g16_original` | Original | Packed four-bit, group 16 | Sensitivity baseline |
+| `w4a32_g16_rotated` | Fixed Hadamard | Packed four-bit, group 16 | Sensitivity treatment |
+
+Every quality and timing run uses these exported ONNX graphs. The exporter records complete graph hashes, node attributes, tensor dtypes and sites. It verifies that only the six intended projections and their online transforms differ. Model evaluation mode, FP32 arithmetic, explicit CPU provider, sequential execution and one intra-op/inter-op thread are required. Disable graph optimizations for this version, matching the qualified controls. Report that choice as part of the measured implementation. A later optimized graph is a new implementation revision requiring parity and conformance checks before test access.
+
+## Packed weight contract
+
+For each output row, split contiguous input coordinates into groups of 32 or 16. Use $s=\max|w|/7$ in FP32, or $s=1$ for an entirely zero group. Compute $q=\operatorname{clip}(\operatorname{round}(w/s),-7,7)$ using ties to even. Reject nonfinite values or a positive group's scale underflow. Dequantization means $qs$.
+
+Store unsigned nibbles `q + 8`, with the earlier input coordinate in the low nibble. Unsigned code 0, which would represent -8, is unused. Padding encodes signed zero, or unsigned 8. The operator's implicit zero point is 8. Store weights as `[N, ceil(K/g), g/2]` uint8 bytes and scales as `[N, ceil(K/g)]` FP32 values. The Pythia width divides both groups exactly; generated edge controls also exercise partial padding.
+
+Use ONNX opset 18, IR version 10, custom-domain version 1, `bits=4`, `block_size=g`, `K=2048`, `N=512`, and `accuracy_level=1`. Do not select accuracy level 4 or introduce activation quantization. Activations, biases, scales, cache and numerical accumulation contract remain FP32.
+
+The six selected FP32 weight matrices occupy 24 MiB. The four-bit codes occupy 3 MiB in either basis. FP32 scales add 0.75 MiB at group 32 or 1.5 MiB at group 16. Thus nominal codes plus scales are 3.75 MiB and 4.5 MiB. These counts exclude biases, signs, graph metadata, other model weights, caches, prepacking and workspaces. Both bases have the same code and scale bytes at the same group size. Serialized size and process RSS must still be measured; these arithmetic payload counts are not observed memory savings.
+
+## Data selection and separation
+
+Load the model and tokenizer only at the pinned revision. Use `trust_remote_code=False`, safetensors weights, FP32 loading and the matching tokenizer with `add_special_tokens=False` and no truncation. Acquisition records file hashes and distinguishes trainable parameters from serialized buffers; a model-card parameter count is not a memory measurement.
+
+Read each pinned Parquet file in row order. A first-level article begins when `row.strip()` matches `^= [^=].* =$`. Ignore rows before the first article. Keep the original row text, including the title and subsection rows, and join rows within each article using one newline. End an article immediately before the next first-level title. Tokenize that joined text as one string. Do not concatenate different articles.
+
+Take the first requested number of articles having at least the required token count, then keep exactly the prefix length below. If a split has insufficient eligible articles, fail before quality evaluation and record the selection failure. Do not substitute shorter articles or change the count.
+
+| Role | Source split | Articles | Tokens per prefix | Use |
+|---|---|---:|---:|---|
+| Development | validation | 2 | 513 | Export parity and one resource feasibility pass |
+| Timing | train | 4 | 640 | Identical fixed request tokens across all arms |
+| Quality | test | 32 | 513 | 512 next-token targets per article |
+
+Each selected record binds the dataset revision, configuration, split and article start row. Retain the SHA256 of the complete joined UTF8 article and the little-endian uint32 token prefix. Save IDs, counts and hashes in public receipts; source text and model files need not be copied into the repository. Reject any repeated article identity or exact full-text hash within or across roles. The development and timing roles never supply fitted parameters. Calibration has zero examples because this is weight-only maxabs quantization. Public dataset split separation does not establish that a model never saw the text during pretraining.
+
+## Quality endpoint and prespecified decision
+
+For token sequence $t_0,\ldots,t_{512}$, logits at positions 0 through 511 predict targets 1 through 512. Reset model state per article. There is no padding in the fixed prefixes. Helpers must also reject an empty target set and correctly mask both a target and its predictor when passed padded fixtures.
+
+Compute stable log-softmax loss totals in float64 from each graph's FP32 logits. Retain each article's NLL sum and valid target count. Aggregate as total NLL divided by total valid targets, in nats. Report perplexity as the exponential of that aggregate. Do not average batch perplexities or give articles with different valid counts equal loss weight.
+
+The primary effect is group-32 rotated minus group-32 original mean NLL. Form a paired percentile bootstrap interval using 10,000 draws, NumPy PCG64 seed 20261018, shared article indices and linear 2.5/97.5 percentiles. Each draw resamples whole article prefixes and recomputes total loss divided by total targets. Tokens are not independent bootstrap units. Report per-article differences and all six point estimates.
+
+A favorable primary quality result requires both:
+
+1. The upper 95% bound on rotated minus matched original NLL is below zero.
+2. The upper 95% bound on rotated minus original FP32 NLL is at most `ln(1.01) = 0.009950330853168092` nats, equivalent to a 1% relative perplexity margin.
+
+The unquantized original and rotated full models must agree before interpreting quantized loss. On development and retained quality prefixes, require relative Frobenius logit error at most `1e-5`, maximum absolute logit error at most `1e-3`, and absolute aggregate NLL change at most `1e-5`. Before test access, the original ONNX graph must meet the same bounds against the pinned Transformers reference on development prefixes and cached decode. The generated residual-MLP controls do not replace these full-model checks.
+
+The intervals describe the selected article prefixes. The thresholds are conservative engineering choices for this bounded pilot, not a theorem or a claim about every language task. Group 16 is a prespecified sensitivity result and cannot replace a failed group-32 primary endpoint.
+
+## Timing and memory endpoint
+
+Use the same six graph hashes, CPU runtime, precision, grouping and online transforms as quality evaluation. The observed qualification machine is Linux x86_64, AMD EPYC 9V74, with an 8 GiB cgroup memory ceiling, an eight-core quota and no GPU. The benchmark uses one CPU thread. Reobserve CPU model, architecture, quota, memory, available disk and dependency versions before launch; the managed surface is not guaranteed to remain identical. A changed CPU or architecture requires a new hardware-qualified execution record.
+
+The primary request has batch 1, a 512-token prefill and 128 subsequent cached one-token forward calls. A sensitivity request uses 128-token prefill and 32 cached calls. Prefill consumes the first prompt tokens; cached calls consume the following fixed tokens. These are teacher-forced continuations shared by every arm, with no EOS early stopping. They compare equal work and do not time text sampling. Cache is reset for every request.
+
+Run 20 paired blocks. Block index modulo four selects the timing article. Draw a fresh permutation of all six arms within each block with NumPy PCG64 seed 20261019. Use a fresh worker per arm per block, with no concurrent model workers. In each worker, process the short workload and then the primary workload; each has one warmup request followed by one measured request. This yields 20 matched measurements per arm and workload. Session loading and graph preparation are measured separately and remain inside the outer resource budget.
+
+Measure complete CPU forward calls with a monotonic high-resolution clock. Prefill time includes its online rotations. Decode time sums all cached calls and includes their online rotations and operator workspace. Request time is prefill plus decode. Report seconds, prefill tokens/s, decode tokens/s and decode seconds/token with the exact token denominators. Tokenization and file loading are outside forward-call latency and reported separately.
+
+Record steady process RSS after the workload warmup and before its measured request. Record peak RSS for the isolated worker including loading, warmup and execution, using OS measurements rather than Python array sizes. Record serialized model bytes, actual packed code/scale bytes, sign constants, cache representation and runtime prepacking evidence. No throughput result may omit the online Add/Sub transforms.
+
+For each primary timing metric, compare group-32 rotated with group-32 original using a paired block bootstrap with 10,000 draws, seed 20261020 and linear 2.5/97.5 percentiles. Each draw divides mean treatment time by mean baseline time using shared block indices. The upper 95% bounds for prefill, decode and total request ratios must each be at most 1.05. The ratio of the maximum observed worker peak RSS across the 20 treatment workers to the maximum across the 20 matched baseline workers must be at most 1.05. Report every arm and the short workload even when a primary gate fails.
+
+All quality and overhead gates must pass to justify investigating a representative production model. Passing this small pilot does not establish commercial savings. A failure or inconclusive interval is a retained result; do not search signs, promote group 16, narrow intervals by treating tokens as independent, or alter margins after observing outcomes.
+
+## Bounded execution and launch prerequisites
+
+The generated-input qualification has a 180-second child-process deadline and a 1 GiB sampled worker-RSS ceiling. The parent records the sampling policy, actual peak, elapsed time, stdout/stderr, every control outcome and source hashes before and after execution. A sampled RSS guard is an observation-and-termination mechanism, not a kernel-enforced instantaneous memory allocation limit. Existing output directories are preserved. A failed or timed-out observation stays available and cannot be silently replaced by a passing rerun.
+
+The future model campaign has an 1,800-second outer deadline, divided into at most 600 seconds for acquisition/export, 600 for quality and 600 for timing. Its worker memory ceiling is 6 GiB; cache plus output allowance is 4 GiB; model and dataset downloads are at most 1 GiB. It permits one worker and one CPU thread, zero GPU hours and zero paid-service spend. Require at least 6 GiB available memory and 4 GiB free disk before launch. The acquisition/export budget includes all arm loading and serialization needed in that phase; later repeated loads stay within their phase budgets. Stop the campaign at the first exceeded limit and retain partial records.
+
+These model budgets are ceilings, not measured feasibility claims. Before accessing quality test prefixes, the later implementation must acquire the pinned inputs, implement `benchmarks/run_model.py`, and save the following evidence:
+
+- An acquisition receipt with immutable model, tokenizer and dataset file hashes, parameter/buffer counts, download sizes and provenance.
+- A reviewed adapter revision, a resolved dependency/wheel lock, all six graph hashes, fixed signs, operator attributes, precision audit and packed-format verification.
+- Full-model FP32 parity on the two development prefixes and cached decode, including the original Transformers reference and legal rotated graph.
+- Article-selection identities and role-disjointness checks. Reading IDs or hashing selected inputs is not a quality measurement and cannot guide a design change.
+- One development-only feasibility pass establishing observed memory and a conservative complete-campaign time estimate within the ceilings. If infeasible, propose a new version before any test result is read.
+- An execution lock binding these receipts to this protocol/manifest and the reviewed code revision. Missing or mismatched items block test evaluation.
+
+The current qualifier reports these prerequisites as incomplete. It must not treat placeholder paths, package names or the presence of a manifest as evidence that a full model can run.
+
+## Verification and exclusions
+
+Run the documented command in [benchmarks/README.md](../../benchmarks/README.md). The generated controls cover every signed code, ties, zero groups, invalid values, unequal group scales and partial padding; real packed projections at `K=2048`, `N=512`, one and eight rows; and a two-block residual network with nontrivial normalization parameters, GELU, biases and a final output head. Independent scalar quantization/decoding and float64 network calculations check ORT outputs. Both legal and deliberately invalid rotation placements must behave as predicted. Reusable data helpers test article boundaries, split separation, token hashes, shifted targets and token-weighted loss.
+
+Retain source-bound qualification receipts and dated issue comments. Freeze this protocol before the documented qualification run and before any model measurement. Later corrections receive explicit history, a new receipt and review; they do not retroactively bless an earlier run.
+
+This version excludes whole-model quantization, attention/KV quantization, learned rotations, activation calibration, custom CUDA kernels, pretrained-model results and prize submissions. It makes no claim about the general Hadamard conjecture. The completed design and local qualification support the next implementation milestone, whose full-model checks remain necessary.

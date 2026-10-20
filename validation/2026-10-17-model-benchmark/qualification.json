@@ -1,0 +1,1707 @@
+{
+  "bounded_process": {
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/workspace/scratch/87d503cded2d/hadamard-exposition-repo/benchmarks/qualify.py",
+      "--output",
+      "/workspace/scratch/87d503cded2d/hadamard-exposition-repo/build/benchmark-qualification-v1-identity",
+      "--worker"
+    ],
+    "elapsed_seconds": 6.126200097998662,
+    "memory_limit_bytes": 1073741824,
+    "returncode": 0,
+    "rss_monitor_error": null,
+    "rss_sampling_interval_seconds": 0.05,
+    "sampled_peak_worker_rss_bytes": 160874496,
+    "stopped_for": null,
+    "thread_environment": {
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1"
+    },
+    "valid_rss_samples": 119,
+    "worker_identity": {
+      "namespace_pid": 14,
+      "procfs_pid": 21588,
+      "schema_version": "hadamard-worker-identity.v1",
+      "start_ticks": 4015504
+    },
+    "worker_identity_sha256": "94012c72b24a62e75837107951d0af3f94e9ba98634d72e4a5a79284137def17"
+  },
+  "campaign_ready": false,
+  "claims": [
+    "Generated-input format, numerical and CPU operator qualification only.",
+    "No pretrained model, dataset, model-quality result or inference-cost improvement was measured.",
+    "An operator profile does not prove a particular internal MLAS path."
+  ],
+  "control_evidence_verification": {
+    "artifact_bytes": 6403417,
+    "artifacts": 60,
+    "controls": 20,
+    "status": "passed"
+  },
+  "design_qualified": true,
+  "elapsed_seconds": 6.194479798003158,
+  "environment": {
+    "architecture": "x86_64",
+    "cgroup_memory_current_bytes": 8346968064,
+    "cgroup_memory_max_bytes": 8589934592,
+    "cgroup_memory_stat": {
+      "active_anon": 61440,
+      "active_file": 6125436928,
+      "anon": 109588480,
+      "anon_thp": 0,
+      "file": 7630696448,
+      "file_dirty": 974848,
+      "file_mapped": 65536,
+      "file_thp": 50331648,
+      "file_writeback": 0,
+      "inactive_anon": 109211648,
+      "inactive_file": 1505259520,
+      "kernel": 605474816,
+      "kernel_stack": 819200,
+      "pagetables": 3891200,
+      "percpu": 6204,
+      "pgactivate": 1481242,
+      "pgdeactivate": 0,
+      "pgdemote_direct": 0,
+      "pgdemote_khugepaged": 0,
+      "pgdemote_kswapd": 0,
+      "pgdemote_proactive": 0,
+      "pgfault": 26901550,
+      "pglazyfree": 8414,
+      "pglazyfreed": 0,
+      "pgmajfault": 297,
+      "pgrefill": 0,
+      "pgscan": 18619,
+      "pgscan_direct": 18619,
+      "pgscan_khugepaged": 0,
+      "pgscan_kswapd": 0,
+      "pgscan_proactive": 0,
+      "pgsteal": 18246,
+      "pgsteal_direct": 18246,
+      "pgsteal_khugepaged": 0,
+      "pgsteal_kswapd": 0,
+      "pgsteal_proactive": 0,
+      "pswpin": 0,
+      "pswpout": 0,
+      "sec_pagetables": 0,
+      "shmem": 0,
+      "shmem_thp": 0,
+      "slab": 600709312,
+      "slab_reclaimable": 599674464,
+      "slab_unreclaimable": 1034848,
+      "sock": 0,
+      "swapcached": 0,
+      "swpin_zero": 0,
+      "swpout_zero": 0,
+      "thp_collapse_alloc": 101,
+      "thp_fault_alloc": 2446,
+      "thp_swpout": 0,
+      "thp_swpout_fallback": 0,
+      "unevictable": 0,
+      "vmalloc": 4096,
+      "workingset_activate_anon": 0,
+      "workingset_activate_file": 7068,
+      "workingset_nodereclaim": 0,
+      "workingset_refault_anon": 0,
+      "workingset_refault_file": 7068,
+      "workingset_restore_anon": 0,
+      "workingset_restore_file": 0
+    },
+    "conversion_stack": "Torch, Transformers, model files and dataset files are not imported or qualified by this command.",
+    "cpu_max": "800000 100000",
+    "cpu_model": "AMD EPYC 9V74 80-Core Processor",
+    "cpu_quota_cores": 8.0,
+    "dependency_metadata_versions": {
+      "numpy": "2.3.5",
+      "onnx": "1.19.1",
+      "onnxruntime": "1.23.2"
+    },
+    "disk_free_bytes": 24441069568,
+    "disk_total_bytes": 33770192896,
+    "host_memory_bytes": {
+      "MemAvailable": 9687195648,
+      "MemTotal": 10451439616
+    },
+    "logical_cpu_count": 9,
+    "memory_availability_estimate": {
+      "cgroup_headroom_bytes": 242966528,
+      "estimated_available_bytes": 1747251200,
+      "excluded_from_reclaimable_credit": [
+        "active_file",
+        "slab_reclaimable"
+      ],
+      "formula": "max(0, min(host_MemAvailable_if_known, (memory.max - memory.current) + max(0, inactive_file - file_dirty - file_writeback)))",
+      "host_memavailable_cap_bytes": 9687195648,
+      "inactive_file_accounting_complete": true,
+      "missing_or_invalid_inactive_file_fields": [],
+      "reclaimable_inactive_file_bytes": 1504284672,
+      "required_bytes": 1073741824,
+      "scope": "Preflight estimate only; the sampled worker RSS ceiling remains enforced during execution."
+    },
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "python_executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "python_version": "3.12.14"
+  },
+  "inputs_unchanged": true,
+  "manifest_validation": {
+    "arm_count": 6,
+    "campaign_id": "pythia70m-mlp-w4a32-v1",
+    "campaign_ready": false,
+    "nominal_payload_by_group": {
+      "16": {
+        "bias_bytes": 12288,
+        "packed_code_bytes": 3145728,
+        "scale_bytes": 1572864,
+        "scale_count": 393216,
+        "weight_count": 6291456
+      },
+      "32": {
+        "bias_bytes": 12288,
+        "packed_code_bytes": 3145728,
+        "scale_bytes": 786432,
+        "scale_count": 196608,
+        "weight_count": 6291456
+      }
+    },
+    "primary_group_size": 32,
+    "scope": "Frozen design validation only; artifact acquisition, adapter and campaign evidence remain unqualified.",
+    "status": "passed"
+  },
+  "output_directory": "/workspace/scratch/87d503cded2d/hadamard-exposition-repo/build/benchmark-qualification-v1-identity",
+  "readiness": {
+    "campaign_ready": false,
+    "prerequisites": {
+      "acquisition_receipt": {
+        "exists": false,
+        "path": "build/model-campaign/acquisition.json",
+        "qualified": false
+      },
+      "bounded_development_proof": {
+        "exists": false,
+        "path": "build/model-campaign/development-proof.json",
+        "qualified": false
+      },
+      "execution_lock": {
+        "exists": false,
+        "path": "build/model-campaign/execution-lock.json",
+        "qualified": false
+      },
+      "export_parity": {
+        "exists": false,
+        "path": "build/model-campaign/export-parity.json",
+        "qualified": false
+      },
+      "full_model_adapter": {
+        "exists": false,
+        "path": "benchmarks/run_model.py",
+        "qualified": false
+      }
+    },
+    "reason": "This revision qualifies a design and generated controls. It has no reviewed full-model execution path or accepted campaign evidence."
+  },
+  "schema_version": "hadamard-benchmark-qualification.v1",
+  "source_sha256_after": {
+    "benchmarks/contract.py": "cc1b0b842917ce84cf10def8ba71aeea99c1630207e8a64abe26abe8b290ea7a",
+    "benchmarks/model-benchmark-v1.json": "67afbab1597f2d8024075c8f9cc94c181f5c4fa67b940553f8a5f7d8ead3898e",
+    "benchmarks/onnx_controls.py": "672b35f8816d4b5aaa34fc8eddb0252d18c5850ad9c4c97e434be1ceeba0f3ce",
+    "benchmarks/qualify.py": "658bb41dabacffe23402873318fb3187a8bfbaf9ec430c3c30b1986a1a64f7ce",
+    "benchmarks/test_contract.py": "c5eee5bb2ef69330ca0072367afaef4d8ef0e0843151ce1860877a808fa1569f",
+    "benchmarks/test_onnx_controls.py": "caafd1f7b1ed3cf0b88c7ce9a1d08089c3b1e44475abda319e6ee7cc0962ce3a",
+    "benchmarks/test_qualify.py": "b9df06877f8feaced29de915d1b0f1fbc90d1dad39931536ec558fac3999b8bd",
+    "docs/experiments/model-benchmark-v1.md": "74a121f2b14bd5a77bc26adb5f770110126c59f104bb2e0c7d690f91ee54046f",
+    "requirements-benchmark.txt": "f243ef93135a9366162c78ded77c844e06e9c43f0b2e8618e7d9024a7f2b64bd",
+    "requirements.txt": "4c40934e438ae009a1eb0b5a9322cce029fba6ca1af6e314c088c1957cee0c04"
+  },
+  "source_sha256_before": {
+    "benchmarks/contract.py": "cc1b0b842917ce84cf10def8ba71aeea99c1630207e8a64abe26abe8b290ea7a",
+    "benchmarks/model-benchmark-v1.json": "67afbab1597f2d8024075c8f9cc94c181f5c4fa67b940553f8a5f7d8ead3898e",
+    "benchmarks/onnx_controls.py": "672b35f8816d4b5aaa34fc8eddb0252d18c5850ad9c4c97e434be1ceeba0f3ce",
+    "benchmarks/qualify.py": "658bb41dabacffe23402873318fb3187a8bfbaf9ec430c3c30b1986a1a64f7ce",
+    "benchmarks/test_contract.py": "c5eee5bb2ef69330ca0072367afaef4d8ef0e0843151ce1860877a808fa1569f",
+    "benchmarks/test_onnx_controls.py": "caafd1f7b1ed3cf0b88c7ce9a1d08089c3b1e44475abda319e6ee7cc0962ce3a",
+    "benchmarks/test_qualify.py": "b9df06877f8feaced29de915d1b0f1fbc90d1dad39931536ec558fac3999b8bd",
+    "docs/experiments/model-benchmark-v1.md": "74a121f2b14bd5a77bc26adb5f770110126c59f104bb2e0c7d690f91ee54046f",
+    "requirements-benchmark.txt": "f243ef93135a9366162c78ded77c844e06e9c43f0b2e8618e7d9024a7f2b64bd",
+    "requirements.txt": "4c40934e438ae009a1eb0b5a9322cce029fba6ca1af6e314c088c1957cee0c04"
+  },
+  "started_utc": "2026-10-17T16:41:26.550631+00:00",
+  "status": "design_qualified",
+  "worker": {
+    "controls": {
+      "artifacts": [
+        {
+          "bytes": 593,
+          "path": "edge_codes_g16.onnx",
+          "sha256": "d8af1437ff5b8e3e4a92de7d7e1cb62754497b8736be401b65299ff6ea5d97a5"
+        },
+        {
+          "bytes": 3132,
+          "path": "edge_codes_g16.ort.log",
+          "sha256": "c334ef6b5f77edd1149cf92a9d4ed3f69ff8f46d8ec24a7d9e75adecf1b26120"
+        },
+        {
+          "bytes": 1241,
+          "path": "edge_codes_g16.profile.json",
+          "sha256": "fe4376feb148995fbb944d41e3bfb358c66347061a6578cda820b427b603353e"
+        },
+        {
+          "bytes": 577,
+          "path": "edge_codes_g32.onnx",
+          "sha256": "9ecce3759dcfbe07b8c10eccf727be4b44b373e5fe5101db888d208fceeaf55f"
+        },
+        {
+          "bytes": 3132,
+          "path": "edge_codes_g32.ort.log",
+          "sha256": "eabf32ac3319cb3d573a64093f135446b0ff91255064ffbfe15b6c4c30b25cd3"
+        },
+        {
+          "bytes": 1243,
+          "path": "edge_codes_g32.profile.json",
+          "sha256": "a95cd22f5fc1d6d08394ca75f071186069deca393dc14374ff8ae6c86f91da2b"
+        },
+        {
+          "bytes": 561,
+          "path": "partial_padding_g16.onnx",
+          "sha256": "798c4d914f1a9e0e5172366499115f5497ed2a74ca21ab1b8475cdb537dc8777"
+        },
+        {
+          "bytes": 3142,
+          "path": "partial_padding_g16.ort.log",
+          "sha256": "fd9bc3ea6ff0387abceca61a674cd4199fa892b4cb79f038a32e51076f0a77b5"
+        },
+        {
+          "bytes": 1240,
+          "path": "partial_padding_g16.profile.json",
+          "sha256": "e98c1da2caef9dd5c2675030f1d110dba5346488c827c58f5bbbeb64d84c3db7"
+        },
+        {
+          "bytes": 569,
+          "path": "partial_padding_g32.onnx",
+          "sha256": "ad3a3e41afce9aab4f0a7a8c4521c6ffb1d46b4c765055af8d2235f2f47636f0"
+        },
+        {
+          "bytes": 3142,
+          "path": "partial_padding_g32.ort.log",
+          "sha256": "3d5e464133bc1ed833fe9525b367dfa11c1e270a9147617a6088b572f8b9dc5a"
+        },
+        {
+          "bytes": 1241,
+          "path": "partial_padding_g32.profile.json",
+          "sha256": "aaa235955720885c5db72e271db760d85410e6a3adc23199b44e35e1ae0bc4e0"
+        },
+        {
+          "bytes": 788981,
+          "path": "projection_original_g16_rows1.onnx",
+          "sha256": "76fca9d29ce3f727bd92810ea5928c3313e5b54aebf406c331f7114d324383a9"
+        },
+        {
+          "bytes": 3162,
+          "path": "projection_original_g16_rows1.ort.log",
+          "sha256": "ba2d9fb1a6d75100957f75f6178105c63296ef9ab0df380582b5b746898dc2ac"
+        },
+        {
+          "bytes": 1270,
+          "path": "projection_original_g16_rows1.profile.json",
+          "sha256": "95e0b8921d18a53f7702895aa0b03e6cb122b1f23957f9a610c2d3e354edfdbe"
+        },
+        {
+          "bytes": 788981,
+          "path": "projection_original_g16_rows8.onnx",
+          "sha256": "76fca9d29ce3f727bd92810ea5928c3313e5b54aebf406c331f7114d324383a9"
+        },
+        {
+          "bytes": 3162,
+          "path": "projection_original_g16_rows8.ort.log",
+          "sha256": "b523b8f438d55debd47be31af1f4c01d2e0f0e18cfc540a02b24de594c74ca71"
+        },
+        {
+          "bytes": 1273,
+          "path": "projection_original_g16_rows8.profile.json",
+          "sha256": "5049a8fcef2142a67cd45f58e0624607bac21e71cafea81b11b9582161868e07"
+        },
+        {
+          "bytes": 657907,
+          "path": "projection_original_g32_rows1.onnx",
+          "sha256": "ac933fbb977fd2f44fe46ce9378d7c640fb72e56df65d9400270f3ea82a84ebd"
+        },
+        {
+          "bytes": 3162,
+          "path": "projection_original_g32_rows1.ort.log",
+          "sha256": "461d35bcfebb09361f57e05db094fc9e673d363c9ea0bd5c85b1e196f5740d0c"
+        },
+        {
+          "bytes": 1262,
+          "path": "projection_original_g32_rows1.profile.json",
+          "sha256": "9810255312daeb47063fab7d2407a883e20c97fb95d7e34dcfb862288edc6ae4"
+        },
+        {
+          "bytes": 657907,
+          "path": "projection_original_g32_rows8.onnx",
+          "sha256": "ac933fbb977fd2f44fe46ce9378d7c640fb72e56df65d9400270f3ea82a84ebd"
+        },
+        {
+          "bytes": 3162,
+          "path": "projection_original_g32_rows8.ort.log",
+          "sha256": "07d38f802990c0ae42e56af196c7f1880e1d07925bd8ed8cdf35841df458d96f"
+        },
+        {
+          "bytes": 1268,
+          "path": "projection_original_g32_rows8.profile.json",
+          "sha256": "cd80fb963cec0685cca434bc382a3cb710c53a268449d6f6cc147a314283fa78"
+        },
+        {
+          "bytes": 806313,
+          "path": "projection_rotated_g16_rows1.onnx",
+          "sha256": "3d538cfc580d8db4cc70995b82f016a5295bfa95200d0121894d214d3e5107cd"
+        },
+        {
+          "bytes": 3160,
+          "path": "projection_rotated_g16_rows1.ort.log",
+          "sha256": "6604f0a1ed031e1ac2fc9952719215fb7cc87a2f09fa5f58955046411f707f2c"
+        },
+        {
+          "bytes": 29550,
+          "path": "projection_rotated_g16_rows1.profile.json",
+          "sha256": "6c404a1e1fb7c7b370894931a84346dc28c180bb7a6078896ed1db4edeebf56b"
+        },
+        {
+          "bytes": 806313,
+          "path": "projection_rotated_g16_rows8.onnx",
+          "sha256": "3d538cfc580d8db4cc70995b82f016a5295bfa95200d0121894d214d3e5107cd"
+        },
+        {
+          "bytes": 3160,
+          "path": "projection_rotated_g16_rows8.ort.log",
+          "sha256": "9e969cb76e3a1d32146733045756369f09e152aa36d641561eafa8f6c4d3b27b"
+        },
+        {
+          "bytes": 29697,
+          "path": "projection_rotated_g16_rows8.profile.json",
+          "sha256": "730cb669a2a12bcdafbf57715206d77c5ff4dcc1284c3c29f3acebb3787993ea"
+        },
+        {
+          "bytes": 675239,
+          "path": "projection_rotated_g32_rows1.onnx",
+          "sha256": "c66104d30f01bbe7da28f6a20a1edb737278f605b6a01998f0307bb84e31d7ba"
+        },
+        {
+          "bytes": 3160,
+          "path": "projection_rotated_g32_rows1.ort.log",
+          "sha256": "93dc6ef59f6323d6b9e5fb5c3e7d42a278375cab4f70541ae19e6bf4d27d2695"
+        },
+        {
+          "bytes": 29551,
+          "path": "projection_rotated_g32_rows1.profile.json",
+          "sha256": "53681c43e63360456a700aff70060e811053e743f755fe78dc42f14a86a7b25a"
+        },
+        {
+          "bytes": 675239,
+          "path": "projection_rotated_g32_rows8.onnx",
+          "sha256": "c66104d30f01bbe7da28f6a20a1edb737278f605b6a01998f0307bb84e31d7ba"
+        },
+        {
+          "bytes": 3160,
+          "path": "projection_rotated_g32_rows8.ort.log",
+          "sha256": "ac796a64d72f96e41dc10e861cc8b925c18c6e2a349a95e36aee3145b7bb18a9"
+        },
+        {
+          "bytes": 29701,
+          "path": "projection_rotated_g32_rows8.profile.json",
+          "sha256": "9589611b1734f0978c6626486adc43eb515b1656d7d99697e343d1a0be2fde31"
+        },
+        {
+          "bytes": 23313,
+          "path": "residual_mlp_before_gelu_float.onnx",
+          "sha256": "f246645dd9e5d0becc035e60b22f8893fe79f9b90adc0e7311c9cf1b75e54d57"
+        },
+        {
+          "bytes": 3164,
+          "path": "residual_mlp_before_gelu_float.ort.log",
+          "sha256": "68296bc26d9f6aa3428b9d494e9a536a93b253f65f33364407073c2020cc1c09"
+        },
+        {
+          "bytes": 36806,
+          "path": "residual_mlp_before_gelu_float.profile.json",
+          "sha256": "509dadb507b7bc7989fb1c39270b070809b01a52130e9ed3987604dcf818efee"
+        },
+        {
+          "bytes": 12402,
+          "path": "residual_mlp_original_float.onnx",
+          "sha256": "225e854f67cb200e20d160839aaedd38488c2518b654c79412996324e3076409"
+        },
+        {
+          "bytes": 3158,
+          "path": "residual_mlp_original_float.ort.log",
+          "sha256": "874756142bd313ad2edf5bc4c4f248be3aee1f716b73ad78de22f896f602929f"
+        },
+        {
+          "bytes": 10187,
+          "path": "residual_mlp_original_float.profile.json",
+          "sha256": "f69c5c1d0f3e827071208e0d5a21743303815bb589268b6ed4b44a33d83d1eca"
+        },
+        {
+          "bytes": 9242,
+          "path": "residual_mlp_original_g16.onnx",
+          "sha256": "a2ee48b992347d4e4aeacd316c87f3da9d8604ffb73bad6f73c584a12cecae1e"
+        },
+        {
+          "bytes": 3154,
+          "path": "residual_mlp_original_g16.ort.log",
+          "sha256": "31dab5a942639e11670e819a9bfc4ddc94c28e0f623b4f0d7ce4b1c12a08c2fc"
+        },
+        {
+          "bytes": 9475,
+          "path": "residual_mlp_original_g16.profile.json",
+          "sha256": "17459dff00cd415a81ac7091e129e847708d1f43f5e0c91a16c5681494c4a260"
+        },
+        {
+          "bytes": 9110,
+          "path": "residual_mlp_original_g32.onnx",
+          "sha256": "f21641ffcc857619d95749edbb99152424c237a5ca59a110355e87e0243b8fb9"
+        },
+        {
+          "bytes": 3154,
+          "path": "residual_mlp_original_g32.ort.log",
+          "sha256": "eeeb9754025dd8c5f9f7c58fdba5a506fb8b1c871ca2e964d62eea6daf9f4dd4"
+        },
+        {
+          "bytes": 9475,
+          "path": "residual_mlp_original_g32.profile.json",
+          "sha256": "2b0f23668f3c11b146a50e764c2c8540c647591c7df70e1fb5187409480f4387"
+        },
+        {
+          "bytes": 23293,
+          "path": "residual_mlp_post_gelu_float.onnx",
+          "sha256": "4de346404e9cb7be3cc8a77241a5f33a6abe39e6236440f9423f97f462daace5"
+        },
+        {
+          "bytes": 3160,
+          "path": "residual_mlp_post_gelu_float.ort.log",
+          "sha256": "63244cd7f6e18b9b8f7dc8b19f72fbf5cd2d534bd7dfb8733dfc17d537b813a7"
+        },
+        {
+          "bytes": 36806,
+          "path": "residual_mlp_post_gelu_float.profile.json",
+          "sha256": "359347ec84eea9c0793b22739af56f5052d91eaf3f8303ad1763b34e5dbf90e2"
+        },
+        {
+          "bytes": 20133,
+          "path": "residual_mlp_post_gelu_g16.onnx",
+          "sha256": "20581bdfd1c0c15f5047b68647c70921fe727dc8824d42c02e0f4c43eef93988"
+        },
+        {
+          "bytes": 3156,
+          "path": "residual_mlp_post_gelu_g16.ort.log",
+          "sha256": "007cc89e6422b7dff1d29f93c53280f1178de6548dfad5d9581bd86cd99aae53"
+        },
+        {
+          "bytes": 36094,
+          "path": "residual_mlp_post_gelu_g16.profile.json",
+          "sha256": "964236d1ef7ea64e97a57493a3f5393b41acc92ea9effc1008e0d4abeaaf3d5f"
+        },
+        {
+          "bytes": 20001,
+          "path": "residual_mlp_post_gelu_g32.onnx",
+          "sha256": "b3909d164bb8069810f8a3a01fd95a55f121f9c5727cb833ee3061bc8fb1a6dc"
+        },
+        {
+          "bytes": 3156,
+          "path": "residual_mlp_post_gelu_g32.ort.log",
+          "sha256": "4406b06d5eb8d365d0bd116959bbc22f81a8d5541022c1dbf2bb7ab33263bc6b"
+        },
+        {
+          "bytes": 36094,
+          "path": "residual_mlp_post_gelu_g32.profile.json",
+          "sha256": "fb8f4c73f26055a333b10170a704e93b037da8aaad99fa986e7c4e70a5b4200d"
+        },
+        {
+          "bytes": 23341,
+          "path": "residual_mlp_wrong_inverse_float.onnx",
+          "sha256": "02bb444e0d02a165379ee6e8f5f0a268df8ba279c0913a0edf3b23f241c49bfc"
+        },
+        {
+          "bytes": 3168,
+          "path": "residual_mlp_wrong_inverse_float.ort.log",
+          "sha256": "d79caee17746ed6e45a27284e8f7a08eb1726825054f4b2f75ed873b34662321"
+        },
+        {
+          "bytes": 36822,
+          "path": "residual_mlp_wrong_inverse_float.profile.json",
+          "sha256": "35ba74ff6a436ea565e45420d9e3287284c0ef14d6682a0b9218e81930202636"
+        }
+      ],
+      "claims": [
+        "Synthetic numerical and packed-format conformance only.",
+        "No pretrained-model quality, latency or memory improvement was measured.",
+        "CPU operator profiles do not identify the internal MLAS path; tiled dequantization or fallback may occur."
+      ],
+      "controls": [
+        {
+          "butterfly_additions": 0,
+          "butterfly_subtractions": 0,
+          "errors": {
+            "max_absolute_error": 7.62939453125e-06,
+            "passed": true,
+            "relative_frobenius_error": 1.9887921487128562e-08
+          },
+          "input_shape": [
+            32,
+            32
+          ],
+          "name": "edge_codes_g32",
+          "packing": {
+            "code_range": [
+              -7,
+              7
+            ],
+            "decoded_matches_scalar_quantizer": true,
+            "group_size": 32,
+            "input_features": 32,
+            "output_features": 4,
+            "packed_sha256": "e557d8cdb0b8653635edfc281678ea6c3bc3348bd11acd6cf3310ff720d79c5d",
+            "packed_shape": [
+              4,
+              1,
+              16
+            ],
+            "padding_code_count": 0,
+            "padding_equivalent_bytes": 0.0,
+            "payload_bytes": 80,
+            "scale_bytes": 16,
+            "scale_dtype": "float32",
+            "scales_sha256": "0a4a6d95a98f1f0fb640797f8abbe3431e05b0ec78641d9f47e722cc0a158a86",
+            "scales_shape": [
+              4,
+              1
+            ],
+            "stored_zero_code": 8,
+            "weight_code_bytes": 64
+          },
+          "rotation": false,
+          "runtime": {
+            "graph": "edge_codes_g32.onnx",
+            "internal_mlas_path": "not established by operator profiling",
+            "observed_providers": [
+              "CPUExecutionProvider"
+            ],
+            "operator_execution_counts": {
+              "Identity": 1,
+              "MatMulNBits": 1
+            },
+            "profile": "edge_codes_g32.profile.json",
+            "runtime_log": "edge_codes_g32.ort.log",
+            "session_providers": [
+              "CPUExecutionProvider"
+            ],
+            "unpacked_fallback_message_present": false
+          },
+          "status": "passed"
+        },
+        {
+          "butterfly_additions": 0,
+          "butterfly_subtractions": 0,
+          "errors": {
+            "max_absolute_error": 4.76837158203125e-07,
+            "passed": true,
+            "relative_frobenius_error": 2.5637571655189524e-08
+          },
+          "input_shape": [
+            35,
+            35
+          ],
+          "name": "partial_padding_g32",
+          "packing": {
+            "code_range": [
+              -7,
+              7
+            ],
+            "decoded_matches_scalar_quantizer": true,
+            "group_size": 32,
+            "input_features": 35,
+            "output_features": 2,
+            "packed_sha256": "fc1b5147610dc783e3065da1baed9c12f9dda22b0f456b0b82521340fc5a4884",
+            "packed_shape": [
+              2,
+              2,
+              16
+            ],
+            "padding_code_count": 58,
+            "padding_equivalent_bytes": 29.0,
+            "payload_bytes": 80,
+            "scale_bytes": 16,
+            "scale_dtype": "float32",
+            "scales_sha256": "53243f71840953cd269e7f2b7e0060dea4b44b9322f588be033523c50f8e236a",
+            "scales_shape": [
+              2,
+              2
+            ],
+            "stored_zero_code": 8,
+            "weight_code_bytes": 64
+          },
+          "rotation": false,
+          "runtime": {
+            "graph": "partial_padding_g32.onnx",
+            "internal_mlas_path": "not established by operator profiling",
+            "observed_providers": [
+              "CPUExecutionProvider"
+            ],
+            "operator_execution_counts": {
+              "Identity": 1,
+              "MatMulNBits": 1
+            },
+            "profile": "partial_padding_g32.profile.json",
+            "runtime_log": "partial_padding_g32.ort.log",
+            "session_providers": [
+              "CPUExecutionProvider"
+            ],
+            "unpacked_fallback_message_present": false
+          },
+          "status": "passed"
+        },
+        {
+          "butterfly_additions": 0,
+          "butterfly_subtractions": 0,
+          "errors": {
+            "max_absolute_error": 7.62939453125e-06,
+            "passed": true,
+            "relative_frobenius_error": 1.9887940717754772e-08
+          },
+          "input_shape": [
+            32,
+            32
+          ],
+          "name": "edge_codes_g16",
+          "packing": {
+            "code_range": [
+              -7,
+              7
+            ],
+            "decoded_matches_scalar_quantizer": true,
+            "group_size": 16,
+            "input_features": 32,
+            "output_features": 4,
+            "packed_sha256": "67dafdcb77b87f8871e9ee48607b57ca68a6c1a44763588b26e3857f7373a101",
+            "packed_shape": [
+              4,
+              2,
+              8
+            ],
+            "padding_code_count": 0,
+            "padding_equivalent_bytes": 0.0,
+            "payload_bytes": 96,
+            "scale_bytes": 32,
+            "scale_dtype": "float32",
+            "scales_sha256": "a4155ac3b11d58236b218080a9e3e5c60d013ab61cd2aea9a98e7b348cf4e596",
+            "scales_shape": [
+              4,
+              2
+            ],
+            "stored_zero_code": 8,
+            "weight_code_bytes": 64
+          },
+          "rotation": false,
+          "runtime": {
+            "graph": "edge_codes_g16.onnx",
+            "internal_mlas_path": "not established by operator profiling",
+            "observed_providers": [
+              "CPUExecutionProvider"
+            ],
+            "operator_execution_counts": {
+              "Identity": 1,
+              "MatMulNBits": 1
+            },
+            "profile": "edge_codes_g16.profile.json",
+            "runtime_log": "edge_codes_g16.ort.log",
+            "session_providers": [
+              "CPUExecutionProvider"
+            ],
+            "unpacked_fallback_message_present": false
+          },
+          "status": "passed"
+        },
+        {
+          "butterfly_additions": 0,
+          "butterfly_subtractions": 0,
+          "errors": {
+            "max_absolute_error": 4.76837158203125e-07,
+            "passed": true,
+            "relative_frobenius_error": 2.5637571655189524e-08
+          },
+          "input_shape": [
+            35,
+            35
+          ],
+          "name": "partial_padding_g16",
+          "packing": {
+            "code_range": [
+              -7,
+              7
+            ],
+            "decoded_matches_scalar_quantizer": true,
+            "group_size": 16,
+            "input_features": 35,
+            "output_features": 2,
+            "packed_sha256": "e07639b0846f1367ebdf9665d99b66059cd26f97879fbe99382ff9a5415cd2e7",
+            "packed_shape": [
+              2,
+              3,
+              8
+            ],
+            "padding_code_count": 26,
+            "padding_equivalent_bytes": 13.0,
+            "payload_bytes": 72,
+            "scale_bytes": 24,
+            "scale_dtype": "float32",
+            "scales_sha256": "6b0e76776b88016b22865aafd6dc14cd0758ccdf49a3512ac96074899ef11590",
+            "scales_shape": [
+              2,
+              3
+            ],
+            "stored_zero_code": 8,
+            "weight_code_bytes": 48
+          },
+          "rotation": false,
+          "runtime": {
+            "graph": "partial_padding_g16.onnx",
+            "internal_mlas_path": "not established by operator profiling",
+            "observed_providers": [
+              "CPUExecutionProvider"
+            ],
+            "operator_execution_counts": {
+              "Identity": 1,
+              "MatMulNBits": 1
+            },
+            "profile": "partial_padding_g16.profile.json",
+            "runtime_log": "partial_padding_g16.ort.log",
+            "session_providers": [
+              "CPUExecutionProvider"
+            ],
+            "unpacked_fallback_message_present": false
+          },
+          "status": "passed"
+        },
+        {
+          "butterfly_additions": 0,
+          "butterfly_subtractions": 0,
+          "errors": {
+            "max_absolute_error": 5.315825246654526e-07,
+            "passed": true,
+            "relative_frobenius_error": 1.984506340189696e-07
+          },
+          "input_shape": [
+            1,
+            2048
+          ],
+          "name": "projection_original_g32_rows1",
+          "packing": {
+            "code_range": [
+              -7,
+              7
+            ],
+            "decoded_matches_scalar_quantizer": true,
+            "group_size": 32,
+            "input_features": 2048,
+            "output_features": 512,
+            "packed_sha256": "e1ec0d684f76d9661957750a0ba057a1bc048f8c5df0349fb73a10c474db1c88",
+            "packed_shape": [
+              512,
+              64,
+              16
+            ],
+            "padding_code_count": 0,
+            "padding_equivalent_bytes": 0.0,
+            "payload_bytes": 655360,
+            "scale_bytes": 131072,
+            "scale_dtype": "float32",
+            "scales_sha256": "5dae79db88e294d3cbd308b11e610d2f9a412dd1662e9d967c740a87fa1d7618",
+            "scales_shape": [
+              512,
+              64
+            ],
+            "stored_zero_code": 8,
+            "weight_code_bytes": 524288
+          },
+          "rotation": false,
+          "runtime": {
+            "graph": "projection_original_g32_rows1.onnx",
+            "internal_mlas_path": "not established by operator profiling",
+            "observed_providers": [
+              "CPUExecutionProvider"
+            ],
+            "operator_execution_counts": {
+              "Identity": 1,
+              "MatMulNBits": 1
+            },
+            "profile": "projection_original_g32_rows1.profile.json",
+            "runtime_log": "projection_original_g32_rows1.ort.log",
+            "session_providers": [
+              "CPUExecutionProvider"
+            ],
+            "unpacked_fallback_message_present": false
+          },
+          "status": "passed"
+        },
+        {
+          "butterfly_additions": 0,
+          "butterfly_subtractions": 0,
+          "errors": {
+            "max_absolute_error": 4.609596113258618e-06,
+            "passed": true,
+            "relative_frobenius_error": 8.024070777581697e-07
+          },
+          "input_shape": [
+            8,
+            2048
+          ],
+          "name": "projection_original_g32_rows8",
+          "packing": {
+            "code_range": [
+              -7,
+              7
+            ],
+            "decoded_matches_scalar_quantizer": true,
+            "group_size": 32,
+            "input_features": 2048,
+            "output_features": 512,
+            "packed_sha256": "e1ec0d684f76d9661957750a0ba057a1bc048f8c5df0349fb73a10c474db1c88",
+            "packed_shape": [
+              512,
+              64,
+              16
+            ],
+            "padding_code_count": 0,
+            "padding_equivalent_bytes": 0.0,
+            "payload_bytes": 655360,
+            "scale_bytes": 131072,
+            "scale_dtype": "float32",
+            "scales_sha256": "5dae79db88e294d3cbd308b11e610d2f9a412dd1662e9d967c740a87fa1d7618",
+            "scales_shape": [
+              512,
+              64
+            ],
+            "stored_zero_code": 8,
+            "weight_code_bytes": 524288
+          },
+          "rotation": false,
+          "runtime": {
+            "graph": "projection_original_g32_rows8.onnx",
+            "internal_mlas_path": "not established by operator profiling",
+            "observed_providers": [
+              "CPUExecutionProvider"
+            ],
+            "operator_execution_counts": {
+              "Identity": 1,
+              "MatMulNBits": 1
+            },
+            "profile": "projection_original_g32_rows8.profile.json",
+            "runtime_log": "projection_original_g32_rows8.ort.log",
+            "session_providers": [
+              "CPUExecutionProvider"
+            ],
+            "unpacked_fallback_message_present": false
+          },
+          "status": "passed"
+        },
+        {
+          "butterfly_additions": 11,
+          "butterfly_subtractions": 11,
+          "errors": {
+            "max_absolute_error": 5.226084548726195e-07,
+            "passed": true,
+            "relative_frobenius_error": 2.255136937392503e-07
+          },
+          "input_shape": [
+            1,
+            2048
+          ],
+          "name": "projection_rotated_g32_rows1",
+          "packing": {
+            "code_range": [
+              -7,
+              7
+            ],
+            "decoded_matches_scalar_quantizer": true,
+            "group_size": 32,
+            "input_features": 2048,
+            "output_features": 512,
+            "packed_sha256": "d2e740e20cedd68b291c78304db96aae3cb350b440802138173025c9aae496ce",
+            "packed_shape": [
+              512,
+              64,
+              16
+            ],
+            "padding_code_count": 0,
+            "padding_equivalent_bytes": 0.0,
+            "payload_bytes": 655360,
+            "scale_bytes": 131072,
+            "scale_dtype": "float32",
+            "scales_sha256": "6c345cbc9f187f9c46c0e286b13880bfbff8c8c8d6faab08c4106a236731f676",
+            "scales_shape": [
+              512,
+              64
+            ],
+            "stored_zero_code": 8,
+            "weight_code_bytes": 524288
+          },
+          "rotation": true,
+          "runtime": {
+            "graph": "projection_rotated_g32_rows1.onnx",
+            "internal_mlas_path": "not established by operator profiling",
+            "observed_providers": [
+              "CPUExecutionProvider"
+            ],
+            "operator_execution_counts": {
+              "Add": 11,
+              "Concat": 11,
+              "Identity": 1,
+              "MatMulNBits": 1,
+              "Mul": 2,
+              "Reshape": 22,
+              "Split": 11,
+              "Sub": 11
+            },
+            "profile": "projection_rotated_g32_rows1.profile.json",
+            "runtime_log": "projection_rotated_g32_rows1.ort.log",
+            "session_providers": [
+              "CPUExecutionProvider"
+            ],
+            "unpacked_fallback_message_present": false
+          },
+          "status": "passed"
+        },
+        {
+          "butterfly_additions": 11,
+          "butterfly_subtractions": 11,
+          "errors": {
+            "max_absolute_error": 3.7084898769634833e-06,
+            "passed": true,
+            "relative_frobenius_error": 7.535966692993046e-07
+          },
+          "input_shape": [
+            8,
+            2048
+          ],
+          "name": "projection_rotated_g32_rows8",
+          "packing": {
+            "code_range": [
+              -7,
+              7
+            ],
+            "decoded_matches_scalar_quantizer": true,
+            "group_size": 32,
+            "input_features": 2048,
+            "output_features": 512,
+            "packed_sha256": "d2e740e20cedd68b291c78304db96aae3cb350b440802138173025c9aae496ce",
+            "packed_shape": [
+              512,
+              64,
+              16
+            ],
+            "padding_code_count": 0,
+            "padding_equivalent_bytes": 0.0,
+            "payload_bytes": 655360,
+            "scale_bytes": 131072,
+            "scale_dtype": "float32",
+            "scales_sha256": "6c345cbc9f187f9c46c0e286b13880bfbff8c8c8d6faab08c4106a236731f676",
+            "scales_shape": [
+              512,
+              64
+            ],
+            "stored_zero_code": 8,
+            "weight_code_bytes": 524288
+          },
+          "rotation": true,
+          "runtime": {
+            "graph": "projection_rotated_g32_rows8.onnx",
+            "internal_mlas_path": "not established by operator profiling",
+            "observed_providers": [
+              "CPUExecutionProvider"
+            ],
+            "operator_execution_counts": {
+              "Add": 11,
+              "Concat": 11,
+              "Identity": 1,
+              "MatMulNBits": 1,
+              "Mul": 2,
+              "Reshape": 22,
+              "Split": 11,
+              "Sub": 11
+            },
+            "profile": "projection_rotated_g32_rows8.profile.json",
+            "runtime_log": "projection_rotated_g32_rows8.ort.log",
+            "session_providers": [
+              "CPUExecutionProvider"
+            ],
+            "unpacked_fallback_message_present": false
+          },
+          "status": "passed"
+        },
+        {
+          "butterfly_additions": 0,
+          "butterfly_subtractions": 0,
+          "errors": {
+            "max_absolute_error": 3.7000278818588583e-07,
+            "passed": true,
+            "relative_frobenius_error": 1.9390362811292766e-07
+          },
+          "input_shape": [
+            1,
+            2048
+          ],
+          "name": "projection_original_g16_rows1",
+          "packing": {
+            "code_range": [
+              -7,
+              7
+            ],
+            "decoded_matches_scalar_quantizer": true,
+            "group_size": 16,
+            "input_features": 2048,
+            "output_features": 512,
+            "packed_sha256": "ff308b516758015245db66cdff2a453e5d7c587c2a11735566c7fe83ced99885",
+            "packed_shape": [
+              512,
+              128,
+              8
+            ],
+            "padding_code_count": 0,
+            "padding_equivalent_bytes": 0.0,
+            "payload_bytes": 786432,
+            "scale_bytes": 262144,
+            "scale_dtype": "float32",
+            "scales_sha256": "a6fbadc5f5f67bb25f4942a5f7683e5ab3a9a80aa919d62f50751cf34491c2a9",
+            "scales_shape": [
+              512,
+              128
+            ],
+            "stored_zero_code": 8,
+            "weight_code_bytes": 524288
+          },
+          "rotation": false,
+          "runtime": {
+            "graph": "projection_original_g16_rows1.onnx",
+            "internal_mlas_path": "not established by operator profiling",
+            "observed_providers": [
+              "CPUExecutionProvider"
+            ],
+            "operator_execution_counts": {
+              "Identity": 1,
+              "MatMulNBits": 1
+            },
+            "profile": "projection_original_g16_rows1.profile.json",
+            "runtime_log": "projection_original_g16_rows1.ort.log",
+            "session_providers": [
+              "CPUExecutionProvider"
+            ],
+            "unpacked_fallback_message_present": false
+          },
+          "status": "passed"
+        },
+        {
+          "butterfly_additions": 0,
+          "butterfly_subtractions": 0,
+          "errors": {
+            "max_absolute_error": 5.707463393012091e-06,
+            "passed": true,
+            "relative_frobenius_error": 8.251977963763346e-07
+          },
+          "input_shape": [
+            8,
+            2048
+          ],
+          "name": "projection_original_g16_rows8",
+          "packing": {
+            "code_range": [
+              -7,
+              7
+            ],
+            "decoded_matches_scalar_quantizer": true,
+            "group_size": 16,
+            "input_features": 2048,
+            "output_features": 512,
+            "packed_sha256": "ff308b516758015245db66cdff2a453e5d7c587c2a11735566c7fe83ced99885",
+            "packed_shape": [
+              512,
+              128,
+              8
+            ],
+            "padding_code_count": 0,
+            "padding_equivalent_bytes": 0.0,
+            "payload_bytes": 786432,
+            "scale_bytes": 262144,
+            "scale_dtype": "float32",
+            "scales_sha256": "a6fbadc5f5f67bb25f4942a5f7683e5ab3a9a80aa919d62f50751cf34491c2a9",
+            "scales_shape": [
+              512,
+              128
+            ],
+            "stored_zero_code": 8,
+            "weight_code_bytes": 524288
+          },
+          "rotation": false,
+          "runtime": {
+            "graph": "projection_original_g16_rows8.onnx",
+            "internal_mlas_path": "not established by operator profiling",
+            "observed_providers": [
+              "CPUExecutionProvider"
+            ],
+            "operator_execution_counts": {
+              "Identity": 1,
+              "MatMulNBits": 1
+            },
+            "profile": "projection_original_g16_rows8.profile.json",
+            "runtime_log": "projection_original_g16_rows8.ort.log",
+            "session_providers": [
+              "CPUExecutionProvider"
+            ],
+            "unpacked_fallback_message_present": false
+          },
+          "status": "passed"
+        },
+        {
+          "butterfly_additions": 11,
+          "butterfly_subtractions": 11,
+          "errors": {
+            "max_absolute_error": 3.8369747179523017e-07,
+            "passed": true,
+            "relative_frobenius_error": 2.1354391352817115e-07
+          },
+          "input_shape": [
+            1,
+            2048
+          ],
+          "name": "projection_rotated_g16_rows1",
+          "packing": {
+            "code_range": [
+              -7,
+              7
+            ],
+            "decoded_matches_scalar_quantizer": true,
+            "group_size": 16,
+            "input_features": 2048,
+            "output_features": 512,
+            "packed_sha256": "7afd19e4d4651e4e36734e2b0820222b4cd96d6931d6406137111968baa3ffeb",
+            "packed_shape": [
+              512,
+              128,
+              8
+            ],
+            "padding_code_count": 0,
+            "padding_equivalent_bytes": 0.0,
+            "payload_bytes": 786432,
+            "scale_bytes": 262144,
+            "scale_dtype": "float32",
+            "scales_sha256": "407d001a0c53570e014e145aea81e783b07576a0d4e0d9958f74560d1ef0aaa1",
+            "scales_shape": [
+              512,
+              128
+            ],
+            "stored_zero_code": 8,
+            "weight_code_bytes": 524288
+          },
+          "rotation": true,
+          "runtime": {
+            "graph": "projection_rotated_g16_rows1.onnx",
+            "internal_mlas_path": "not established by operator profiling",
+            "observed_providers": [
+              "CPUExecutionProvider"
+            ],
+            "operator_execution_counts": {
+              "Add": 11,
+              "Concat": 11,
+              "Identity": 1,
+              "MatMulNBits": 1,
+              "Mul": 2,
+              "Reshape": 22,
+              "Split": 11,
+              "Sub": 11
+            },
+            "profile": "projection_rotated_g16_rows1.profile.json",
+            "runtime_log": "projection_rotated_g16_rows1.ort.log",
+            "session_providers": [
+              "CPUExecutionProvider"
+            ],
+            "unpacked_fallback_message_present": false
+          },
+          "status": "passed"
+        },
+        {
+          "butterfly_additions": 11,
+          "butterfly_subtractions": 11,
+          "errors": {
+            "max_absolute_error": 4.716655495506927e-06,
+            "passed": true,
+            "relative_frobenius_error": 7.650478133100199e-07
+          },
+          "input_shape": [
+            8,
+            2048
+          ],
+          "name": "projection_rotated_g16_rows8",
+          "packing": {
+            "code_range": [
+              -7,
+              7
+            ],
+            "decoded_matches_scalar_quantizer": true,
+            "group_size": 16,
+            "input_features": 2048,
+            "output_features": 512,
+            "packed_sha256": "7afd19e4d4651e4e36734e2b0820222b4cd96d6931d6406137111968baa3ffeb",
+            "packed_shape": [
+              512,
+              128,
+              8
+            ],
+            "padding_code_count": 0,
+            "padding_equivalent_bytes": 0.0,
+            "payload_bytes": 786432,
+            "scale_bytes": 262144,
+            "scale_dtype": "float32",
+            "scales_sha256": "407d001a0c53570e014e145aea81e783b07576a0d4e0d9958f74560d1ef0aaa1",
+            "scales_shape": [
+              512,
+              128
+            ],
+            "stored_zero_code": 8,
+            "weight_code_bytes": 524288
+          },
+          "rotation": true,
+          "runtime": {
+            "graph": "projection_rotated_g16_rows8.onnx",
+            "internal_mlas_path": "not established by operator profiling",
+            "observed_providers": [
+              "CPUExecutionProvider"
+            ],
+            "operator_execution_counts": {
+              "Add": 11,
+              "Concat": 11,
+              "Identity": 1,
+              "MatMulNBits": 1,
+              "Mul": 2,
+              "Reshape": 22,
+              "Split": 11,
+              "Sub": 11
+            },
+            "profile": "projection_rotated_g16_rows8.profile.json",
+            "runtime_log": "projection_rotated_g16_rows8.ort.log",
+            "session_providers": [
+              "CPUExecutionProvider"
+            ],
+            "unpacked_fallback_message_present": false
+          },
+          "status": "passed"
+        },
+        {
+          "group_size": null,
+          "name": "residual_mlp_original_float",
+          "negative_control": false,
+          "original_float_errors": {
+            "max_absolute_error": 3.4253252512161936e-07,
+            "passed": true,
+            "relative_frobenius_error": 1.1554615157826938e-07
+          },
+          "placement": "original",
+          "reference_errors": {
+            "max_absolute_error": 3.4253252512161936e-07,
+            "passed": true,
+            "relative_frobenius_error": 1.1554615157826938e-07
+          },
+          "runtime": {
+            "graph": "residual_mlp_original_float.onnx",
+            "internal_mlas_path": "not established by operator profiling",
+            "observed_providers": [
+              "CPUExecutionProvider"
+            ],
+            "operator_execution_counts": {
+              "Add": 9,
+              "Div": 2,
+              "Erf": 2,
+              "Identity": 1,
+              "LayerNormalization": 2,
+              "MatMul": 5,
+              "Mul": 4
+            },
+            "profile": "residual_mlp_original_float.profile.json",
+            "runtime_log": "residual_mlp_original_float.ort.log",
+            "session_providers": [
+              "CPUExecutionProvider"
+            ],
+            "unpacked_fallback_message_present": false
+          },
+          "status": "passed"
+        },
+        {
+          "group_size": null,
+          "name": "residual_mlp_post_gelu_float",
+          "negative_control": false,
+          "original_float_errors": {
+            "max_absolute_error": 4.471449871479294e-07,
+            "passed": true,
+            "relative_frobenius_error": 1.7586676781378333e-07
+          },
+          "original_runtime_errors": {
+            "max_absolute_error": 4.172325134277344e-07,
+            "passed": true,
+            "relative_frobenius_error": 1.4681475992503365e-07
+          },
+          "placement": "post_gelu",
+          "reference_errors": {
+            "max_absolute_error": 4.4741900762090836e-07,
+            "passed": true,
+            "relative_frobenius_error": 1.7141931931177226e-07
+          },
+          "runtime": {
+            "graph": "residual_mlp_post_gelu_float.onnx",
+            "internal_mlas_path": "not established by operator profiling",
+            "observed_providers": [
+              "CPUExecutionProvider"
+            ],
+            "operator_execution_counts": {
+              "Add": 19,
+              "Concat": 10,
+              "Div": 2,
+              "Erf": 2,
+              "Identity": 1,
+              "LayerNormalization": 2,
+              "MatMul": 5,
+              "Mul": 8,
+              "Reshape": 20,
+              "Split": 10,
+              "Sub": 10
+            },
+            "profile": "residual_mlp_post_gelu_float.profile.json",
+            "runtime_log": "residual_mlp_post_gelu_float.ort.log",
+            "session_providers": [
+              "CPUExecutionProvider"
+            ],
+            "unpacked_fallback_message_present": false
+          },
+          "status": "passed"
+        },
+        {
+          "group_size": null,
+          "name": "residual_mlp_before_gelu_float",
+          "negative_control": true,
+          "original_float_errors": {
+            "max_absolute_error": 1.9594240120784856,
+            "passed": false,
+            "relative_frobenius_error": 0.7414115147312857
+          },
+          "placement": "before_gelu",
+          "reference_errors": {
+            "max_absolute_error": 6.59865708740881e-07,
+            "passed": true,
+            "relative_frobenius_error": 2.29850504339838e-07
+          },
+          "runtime": {
+            "graph": "residual_mlp_before_gelu_float.onnx",
+            "internal_mlas_path": "not established by operator profiling",
+            "observed_providers": [
+              "CPUExecutionProvider"
+            ],
+            "operator_execution_counts": {
+              "Add": 19,
+              "Concat": 10,
+              "Div": 2,
+              "Erf": 2,
+              "Identity": 1,
+              "LayerNormalization": 2,
+              "MatMul": 5,
+              "Mul": 8,
+              "Reshape": 20,
+              "Split": 10,
+              "Sub": 10
+            },
+            "profile": "residual_mlp_before_gelu_float.profile.json",
+            "runtime_log": "residual_mlp_before_gelu_float.ort.log",
+            "session_providers": [
+              "CPUExecutionProvider"
+            ],
+            "unpacked_fallback_message_present": false
+          },
+          "status": "passed"
+        },
+        {
+          "group_size": null,
+          "name": "residual_mlp_wrong_inverse_float",
+          "negative_control": true,
+          "original_float_errors": {
+            "max_absolute_error": 4.1968077497112315,
+            "passed": false,
+            "relative_frobenius_error": 1.1065547715317328
+          },
+          "placement": "wrong_inverse",
+          "reference_errors": {
+            "max_absolute_error": 7.612062935535846e-07,
+            "passed": true,
+            "relative_frobenius_error": 1.4393230081002756e-07
+          },
+          "runtime": {
+            "graph": "residual_mlp_wrong_inverse_float.onnx",
+            "internal_mlas_path": "not established by operator profiling",
+            "observed_providers": [
+              "CPUExecutionProvider"
+            ],
+            "operator_execution_counts": {
+              "Add": 19,
+              "Concat": 10,
+              "Div": 2,
+              "Erf": 2,
+              "Identity": 1,
+              "LayerNormalization": 2,
+              "MatMul": 5,
+              "Mul": 8,
+              "Reshape": 20,
+              "Split": 10,
+              "Sub": 10
+            },
+            "profile": "residual_mlp_wrong_inverse_float.profile.json",
+            "runtime_log": "residual_mlp_wrong_inverse_float.ort.log",
+            "session_providers": [
+              "CPUExecutionProvider"
+            ],
+            "unpacked_fallback_message_present": false
+          },
+          "status": "passed"
+        },
+        {
+          "group_size": 32,
+          "name": "residual_mlp_original_g32",
+          "negative_control": false,
+          "original_float_errors": {
+            "max_absolute_error": 0.17876074249800777,
+            "passed": false,
+            "relative_frobenius_error": 0.06272598988186225
+          },
+          "placement": "original",
+          "reference_errors": {
+            "max_absolute_error": 6.392621527684383e-07,
+            "passed": true,
+            "relative_frobenius_error": 2.1222094465178258e-07
+          },
+          "runtime": {
+            "graph": "residual_mlp_original_g32.onnx",
+            "internal_mlas_path": "not established by operator profiling",
+            "observed_providers": [
+              "CPUExecutionProvider"
+            ],
+            "operator_execution_counts": {
+              "Add": 7,
+              "Div": 2,
+              "Erf": 2,
+              "Identity": 1,
+              "LayerNormalization": 2,
+              "MatMul": 3,
+              "MatMulNBits": 2,
+              "Mul": 4
+            },
+            "profile": "residual_mlp_original_g32.profile.json",
+            "runtime_log": "residual_mlp_original_g32.ort.log",
+            "session_providers": [
+              "CPUExecutionProvider"
+            ],
+            "unpacked_fallback_message_present": false
+          },
+          "status": "passed"
+        },
+        {
+          "group_size": 32,
+          "name": "residual_mlp_post_gelu_g32",
+          "negative_control": false,
+          "original_float_errors": {
+            "max_absolute_error": 0.1949083265765028,
+            "passed": false,
+            "relative_frobenius_error": 0.06444639401981134
+          },
+          "placement": "post_gelu",
+          "reference_errors": {
+            "max_absolute_error": 3.8133869445511337e-07,
+            "passed": true,
+            "relative_frobenius_error": 1.299152076973411e-07
+          },
+          "runtime": {
+            "graph": "residual_mlp_post_gelu_g32.onnx",
+            "internal_mlas_path": "not established by operator profiling",
+            "observed_providers": [
+              "CPUExecutionProvider"
+            ],
+            "operator_execution_counts": {
+              "Add": 17,
+              "Concat": 10,
+              "Div": 2,
+              "Erf": 2,
+              "Identity": 1,
+              "LayerNormalization": 2,
+              "MatMul": 3,
+              "MatMulNBits": 2,
+              "Mul": 8,
+              "Reshape": 20,
+              "Split": 10,
+              "Sub": 10
+            },
+            "profile": "residual_mlp_post_gelu_g32.profile.json",
+            "runtime_log": "residual_mlp_post_gelu_g32.ort.log",
+            "session_providers": [
+              "CPUExecutionProvider"
+            ],
+            "unpacked_fallback_message_present": false
+          },
+          "status": "passed"
+        },
+        {
+          "group_size": 16,
+          "name": "residual_mlp_original_g16",
+          "negative_control": false,
+          "original_float_errors": {
+            "max_absolute_error": 0.25170054299936506,
+            "passed": false,
+            "relative_frobenius_error": 0.0955594927091469
+          },
+          "placement": "original",
+          "reference_errors": {
+            "max_absolute_error": 4.2257093491038233e-07,
+            "passed": true,
+            "relative_frobenius_error": 1.61946625545103e-07
+          },
+          "runtime": {
+            "graph": "residual_mlp_original_g16.onnx",
+            "internal_mlas_path": "not established by operator profiling",
+            "observed_providers": [
+              "CPUExecutionProvider"
+            ],
+            "operator_execution_counts": {
+              "Add": 7,
+              "Div": 2,
+              "Erf": 2,
+              "Identity": 1,
+              "LayerNormalization": 2,
+              "MatMul": 3,
+              "MatMulNBits": 2,
+              "Mul": 4
+            },
+            "profile": "residual_mlp_original_g16.profile.json",
+            "runtime_log": "residual_mlp_original_g16.ort.log",
+            "session_providers": [
+              "CPUExecutionProvider"
+            ],
+            "unpacked_fallback_message_present": false
+          },
+          "status": "passed"
+        },
+        {
+          "group_size": 16,
+          "name": "residual_mlp_post_gelu_g16",
+          "negative_control": false,
+          "original_float_errors": {
+            "max_absolute_error": 0.16713201052646198,
+            "passed": false,
+            "relative_frobenius_error": 0.04843854924603764
+          },
+          "placement": "post_gelu",
+          "reference_errors": {
+            "max_absolute_error": 4.0837912562707857e-07,
+            "passed": true,
+            "relative_frobenius_error": 1.2999555634270315e-07
+          },
+          "runtime": {
+            "graph": "residual_mlp_post_gelu_g16.onnx",
+            "internal_mlas_path": "not established by operator profiling",
+            "observed_providers": [
+              "CPUExecutionProvider"
+            ],
+            "operator_execution_counts": {
+              "Add": 17,
+              "Concat": 10,
+              "Div": 2,
+              "Erf": 2,
+              "Identity": 1,
+              "LayerNormalization": 2,
+              "MatMul": 3,
+              "MatMulNBits": 2,
+              "Mul": 8,
+              "Reshape": 20,
+              "Split": 10,
+              "Sub": 10
+            },
+            "profile": "residual_mlp_post_gelu_g16.profile.json",
+            "runtime_log": "residual_mlp_post_gelu_g16.ort.log",
+            "session_providers": [
+              "CPUExecutionProvider"
+            ],
+            "unpacked_fallback_message_present": false
+          },
+          "status": "passed"
+        }
+      ],
+      "fixture_seed": 20261017,
+      "runtime": {
+        "accuracy_level": 1,
+        "graph_optimizations": "disabled",
+        "input_dtype": "float32",
+        "inter_op_threads": 1,
+        "intra_op_threads": 1,
+        "numpy": "2.3.5",
+        "onnx": "1.19.1",
+        "onnxruntime": "1.23.2",
+        "requested_provider": "CPUExecutionProvider"
+      },
+      "schema_version": "hadamard-onnx-controls.v1",
+      "status": "passed",
+      "tolerances": {
+        "max_absolute": 0.001,
+        "relative_frobenius": 1e-05
+      }
+    },
+    "elapsed_seconds": 5.981800547997409,
+    "manifest_validation": {
+      "arm_count": 6,
+      "campaign_id": "pythia70m-mlp-w4a32-v1",
+      "campaign_ready": false,
+      "nominal_payload_by_group": {
+        "16": {
+          "bias_bytes": 12288,
+          "packed_code_bytes": 3145728,
+          "scale_bytes": 1572864,
+          "scale_count": 393216,
+          "weight_count": 6291456
+        },
+        "32": {
+          "bias_bytes": 12288,
+          "packed_code_bytes": 3145728,
+          "scale_bytes": 786432,
+          "scale_count": 196608,
+          "weight_count": 6291456
+        }
+      },
+      "primary_group_size": 32,
+      "scope": "Frozen design validation only; artifact acquisition, adapter and campaign evidence remain unqualified.",
+      "status": "passed"
+    },
+    "peak_worker_rss_bytes": 187994112,
+    "status": "passed",
+    "tests": {
+      "errors": 0,
+      "failures": 0,
+      "run": 38,
+      "skipped": 0,
+      "status": "passed"
+    },
+    "thread_environment": {
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1"
+    },
+    "worker_identity": {
+      "namespace_pid": 14,
+      "procfs_pid": 21588,
+      "schema_version": "hadamard-worker-identity.v1",
+      "start_ticks": 4015504
+    }
+  },
+  "worker_result_sha256": "b7d0482da8a19d6a82c601ad851d0ec0bb0b5759a84abb46416405b2b6a3edce"
+}

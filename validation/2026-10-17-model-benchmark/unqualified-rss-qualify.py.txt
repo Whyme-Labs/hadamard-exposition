@@ -1,0 +1,319 @@
+#!/usr/bin/env python3
+"""Qualify the benchmark design with generated inputs, never a model campaign."""
+
+from __future__ import annotations
+
+import argparse
+from datetime import datetime, timezone
+import hashlib
+import importlib.metadata
+import json
+import os
+from pathlib import Path
+import platform
+import resource
+import shutil
+import signal
+import subprocess
+import sys
+import time
+import traceback
+import unittest
+
+
+ROOT = Path(__file__).resolve().parents[1]
+BENCHMARKS = ROOT / "benchmarks"
+MANIFEST = BENCHMARKS / "model-benchmark-v1.json"
+PROTOCOL = ROOT / "docs/experiments/model-benchmark-v1.md"
+THREAD_ENVIRONMENT = {name: "1" for name in (
+    "OPENBLAS_NUM_THREADS", "OMP_NUM_THREADS", "MKL_NUM_THREADS", "NUMEXPR_NUM_THREADS")}
+sys.path.insert(0, str(ROOT))
+
+
+def _sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def _source_hashes() -> dict:
+    paths = [MANIFEST, PROTOCOL, ROOT / "requirements-benchmark.txt", ROOT / "requirements.txt"]
+    paths.extend(sorted(BENCHMARKS.rglob("*.py")))
+    return {path.relative_to(ROOT).as_posix(): _sha256(path) for path in paths}
+
+
+def _write_json(path: Path, value: dict) -> None:
+    with path.open("x", encoding="utf-8") as stream:
+        json.dump(value, stream, indent=2, sort_keys=True, allow_nan=False)
+        stream.write("\n")
+
+
+def _read_text(path: str) -> str | None:
+    try:
+        return Path(path).read_text().strip()
+    except OSError:
+        return None
+
+
+def _environment() -> dict:
+    cpu_info = _read_text("/proc/cpuinfo") or ""
+    model = next((line.split(":", 1)[1].strip() for line in cpu_info.splitlines()
+                  if line.startswith("model name")), None)
+    memory = {}
+    for line in (_read_text("/proc/meminfo") or "").splitlines():
+        parts = line.split()
+        if parts and parts[0] in {"MemTotal:", "MemAvailable:"}:
+            memory[parts[0].rstrip(":")] = int(parts[1]) * 1024
+    memory_max = _read_text("/sys/fs/cgroup/memory.max")
+    memory_current = _read_text("/sys/fs/cgroup/memory.current")
+    memory_stat = {}
+    for line in (_read_text("/sys/fs/cgroup/memory.stat") or "").splitlines():
+        try:
+            name, value = line.split()
+            memory_stat[name] = int(value)
+        except ValueError:
+            continue
+    quota = _read_text("/sys/fs/cgroup/cpu.max")
+    versions = {}
+    for package in ("numpy", "onnx", "onnxruntime"):
+        try:
+            versions[package] = importlib.metadata.version(package)
+        except importlib.metadata.PackageNotFoundError:
+            versions[package] = None
+    disk = shutil.disk_usage(ROOT)
+    return {"python_version": platform.python_version(), "python_executable": sys.executable,
+            "platform": platform.platform(), "architecture": platform.machine(), "cpu_model": model,
+            "logical_cpu_count": os.cpu_count(), "cpu_max": quota,
+            "cpu_quota_cores": (int(quota.split()[0]) / int(quota.split()[1])) if quota and not quota.startswith("max") else None,
+            "cgroup_memory_max_bytes": int(memory_max) if memory_max and memory_max != "max" else None,
+            "cgroup_memory_current_bytes": int(memory_current) if memory_current else None,
+            "cgroup_memory_stat": memory_stat,
+            "host_memory_bytes": memory, "disk_total_bytes": disk.total, "disk_free_bytes": disk.free,
+            "dependency_metadata_versions": versions,
+            "conversion_stack": "Torch, Transformers, model files and dataset files are not imported or qualified by this command."}
+
+
+def _memory_preflight(observed: dict, required_bytes: int) -> None:
+    """Credit only conservatively reclaimable inactive file cache, then cap by host availability."""
+    def valid_bytes(value) -> bool:
+        return type(value) is int and value >= 0
+
+    limit, current = observed.get("cgroup_memory_max_bytes"), observed.get("cgroup_memory_current_bytes")
+    headroom = limit - current if valid_bytes(limit) and valid_bytes(current) else None
+    stats = observed.get("cgroup_memory_stat", {})
+    fields = ("inactive_file", "file_dirty", "file_writeback")
+    missing = [name for name in fields if not valid_bytes(stats.get(name))]
+    reclaimable = max(0, stats["inactive_file"] - stats["file_dirty"] - stats["file_writeback"]) if not missing else 0
+    host = observed.get("host_memory_bytes", {}).get("MemAvailable")
+    host = host if valid_bytes(host) else None
+    available = max(0, headroom + reclaimable) if headroom is not None else None
+    if available is not None and host is not None:
+        available = min(host, available)
+    observed["memory_availability_estimate"] = {
+        "formula": "max(0, min(host_MemAvailable_if_known, (memory.max - memory.current) + max(0, inactive_file - file_dirty - file_writeback)))",
+        "cgroup_headroom_bytes": headroom, "inactive_file_accounting_complete": not missing,
+        "missing_or_invalid_inactive_file_fields": missing, "reclaimable_inactive_file_bytes": reclaimable,
+        "host_memavailable_cap_bytes": host, "estimated_available_bytes": available,
+        "required_bytes": required_bytes,
+        "excluded_from_reclaimable_credit": ["active_file", "slab_reclaimable"],
+        "scope": "Preflight estimate only; the sampled worker RSS ceiling remains enforced during execution.",
+    }
+    if available is None or available < required_bytes:
+        raise ValueError("Conservative available-memory accounting is missing or below the generated-input memory budget")
+
+
+def _check_environment(observed: dict, manifest: dict) -> None:
+    for key in ("architecture", "cpu_model"):
+        if observed[key] != manifest["hardware"][key]:
+            raise ValueError(f"Observed {key} differs from the hardware-qualified design")
+    if observed["python_version"] != manifest["runtime"]["python_version"]:
+        raise ValueError("The observed Python version differs from the manifest")
+    for name, actual in observed["dependency_metadata_versions"].items():
+        if actual != manifest["runtime"][f"{name}_version"]:
+            raise ValueError(f"The observed {name} package version differs from the manifest")
+    _memory_preflight(observed, manifest["budgets"]["generated_controls_memory_bytes"])
+
+
+def _campaign_readiness(manifest: dict) -> dict:
+    prerequisites = {}
+    for name in ("acquisition_receipt", "full_model_adapter", "export_parity", "bounded_development_proof", "execution_lock"):
+        path = manifest["readiness"][name]
+        prerequisites[name] = {"path": path, "exists": (ROOT / path).is_file(), "qualified": False}
+    return {"campaign_ready": False, "prerequisites": prerequisites,
+            "reason": "This revision qualifies a design and generated controls. It has no reviewed full-model execution path or accepted campaign evidence."}
+
+
+def _worker(output: Path) -> int:
+    """Run tests and the single retained ONNX sweep inside the bounded child."""
+    from benchmarks.contract import validate_manifest
+
+    started = time.monotonic()
+    result = {"status": "failed", "tests": None, "controls": None}
+    try:
+        manifest = json.loads(MANIFEST.read_text())
+        result["manifest_validation"] = validate_manifest(manifest)
+        suite = unittest.defaultTestLoader.discover(str(BENCHMARKS), pattern="test_*.py")
+        tests = unittest.TextTestRunner(verbosity=2).run(suite)
+        result["tests"] = {"status": "passed" if tests.wasSuccessful() else "failed", "run": tests.testsRun,
+                           "failures": len(tests.failures), "errors": len(tests.errors), "skipped": len(tests.skipped)}
+        if not tests.wasSuccessful() or tests.skipped:
+            raise RuntimeError("Focused tests must pass without skipped cases before the retained sweep")
+        from benchmarks.onnx_controls import run_controls
+
+        result["controls"] = run_controls(output / "onnx-controls")
+        if result["controls"].get("status") != "passed":
+            raise RuntimeError("At least one generated ONNX control failed")
+        result["status"] = "passed"
+    except Exception as error:
+        result["error"] = {"type": type(error).__name__, "message": str(error)}
+        traceback.print_exc()
+    result["elapsed_seconds"] = time.monotonic() - started
+    result["peak_worker_rss_bytes"] = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss * 1024
+    result["thread_environment"] = {name: os.environ.get(name) for name in THREAD_ENVIRONMENT}
+    _write_json(output / "worker-result.json", result)
+    return 0 if result["status"] == "passed" else 1
+
+
+def _rss(pid: int) -> int:
+    status = _read_text(f"/proc/{pid}/status") or ""
+    return next((int(line.split()[1]) * 1024 for line in status.splitlines() if line.startswith("VmRSS:")), 0)
+
+
+def _run_bounded(output: Path, deadline: float, memory_limit: int) -> dict:
+    command = [sys.executable, str(Path(__file__).resolve()), "--output", str(output), "--worker"]
+    environment = {**os.environ, **THREAD_ENVIRONMENT, "PYTHONHASHSEED": "0"}
+    observed_peak, stopped_for = 0, None
+    started = time.monotonic()
+    if started >= deadline:
+        raise TimeoutError("The outer deadline expired before the generated-input worker could start")
+    with (output / "stdout.log").open("xb") as stdout, (output / "stderr.log").open("xb") as stderr:
+        process = subprocess.Popen(command, cwd=ROOT, env=environment, stdout=stdout, stderr=stderr,
+                                   start_new_session=True)
+        while process.poll() is None:
+            observed_peak = max(observed_peak, _rss(process.pid))
+            if time.monotonic() >= deadline:
+                stopped_for = "outer_deadline"
+            elif observed_peak > memory_limit:
+                stopped_for = "worker_rss_budget"
+            if stopped_for:
+                try:
+                    os.killpg(process.pid, signal.SIGKILL)
+                except ProcessLookupError:
+                    pass
+                break
+            time.sleep(min(0.05, max(0, deadline - time.monotonic())))
+        returncode = process.wait()
+    return {"command": command, "returncode": returncode, "stopped_for": stopped_for,
+            "elapsed_seconds": time.monotonic() - started, "sampled_peak_worker_rss_bytes": observed_peak,
+            "rss_sampling_interval_seconds": 0.05, "memory_limit_bytes": memory_limit,
+            "thread_environment": THREAD_ENVIRONMENT}
+
+
+def _verify_controls(evidence: dict, output: Path, manifest: dict) -> dict:
+    expected = {f"{kind}_g{group}" for kind in ("edge_codes", "partial_padding") for group in (32, 16)}
+    expected |= {f"projection_{basis}_g{group}_rows{rows}" for basis in ("original", "rotated")
+                 for group in (32, 16) for rows in (1, 8)}
+    expected |= {f"residual_mlp_{placement}_float" for placement in ("original", "post_gelu", "before_gelu", "wrong_inverse")}
+    expected |= {f"residual_mlp_{placement}_g{group}" for placement in ("original", "post_gelu") for group in (32, 16)}
+    records = evidence["controls"]
+    if evidence["status"] != "passed" or len(records) != len(expected) or {record["name"] for record in records} != expected:
+        raise ValueError("The complete set of 20 generated controls was not retained")
+    runtime = evidence["runtime"]
+    for package in ("numpy", "onnx", "onnxruntime"):
+        if runtime[package] != manifest["runtime"][f"{package}_version"]:
+            raise ValueError(f"The imported {package} runtime differs from the manifest")
+    if runtime["intra_op_threads"] != 1 or runtime["inter_op_threads"] != 1 or runtime["accuracy_level"] != 1:
+        raise ValueError("The control runtime does not match the single-thread accuracy-1 contract")
+    for record in records:
+        if record["status"] != "passed" or record["runtime"]["observed_providers"] != ["CPUExecutionProvider"]:
+            raise ValueError("Every retained control must establish CPU operator execution")
+    controls_dir = output / "onnx-controls"
+    recorded_paths = set()
+    for artifact in evidence["artifacts"]:
+        path = (controls_dir / artifact["path"]).resolve()
+        if not path.is_relative_to(controls_dir) or artifact["path"] in recorded_paths:
+            raise ValueError("Control artifact paths must be unique and within their output directory")
+        if path.stat().st_size != artifact["bytes"] or _sha256(path) != artifact["sha256"]:
+            raise ValueError("A retained control artifact differs from its recorded bytes")
+        recorded_paths.add(artifact["path"])
+    actual_paths = {path.relative_to(controls_dir).as_posix() for path in controls_dir.rglob("*") if path.is_file()}
+    if actual_paths != recorded_paths or len(recorded_paths) != 3 * len(expected):
+        raise ValueError("Every control graph, native log and profile must be retained")
+    return {"status": "passed", "controls": len(expected), "artifacts": len(recorded_paths),
+            "artifact_bytes": sum(item["bytes"] for item in evidence["artifacts"])}
+
+
+def qualify(output: Path) -> int:
+    started = time.monotonic()
+    output = output.resolve()
+    if output.exists() and (not output.is_dir() or any(output.iterdir())):
+        raise FileExistsError("Output directory must be absent or empty; previous evidence is preserved")
+    output.mkdir(parents=True, exist_ok=True)
+    receipt = {"schema_version": "hadamard-benchmark-qualification.v1", "status": "failed",
+               "design_qualified": False, "campaign_ready": False,
+               "started_utc": datetime.now(timezone.utc).isoformat(), "output_directory": str(output)}
+    before = None
+    try:
+        from benchmarks.contract import validate_manifest
+
+        before = _source_hashes()
+        receipt["source_sha256_before"] = before
+        manifest = json.loads(MANIFEST.read_text())
+        receipt["manifest_validation"] = validate_manifest(manifest)
+        receipt["readiness"] = _campaign_readiness(manifest)
+        receipt["environment"] = _environment()
+        _check_environment(receipt["environment"], manifest)
+        deadline = started + manifest["budgets"]["generated_controls_seconds"]
+        child = _run_bounded(output, deadline, manifest["budgets"]["generated_controls_memory_bytes"])
+        receipt["bounded_process"] = child
+        worker_path = output / "worker-result.json"
+        if worker_path.is_file():
+            receipt["worker"] = json.loads(worker_path.read_text())
+            receipt["worker_result_sha256"] = _sha256(worker_path)
+        if child["returncode"] != 0 or child["stopped_for"] or receipt.get("worker", {}).get("status") != "passed":
+            raise RuntimeError("The bounded qualification worker did not pass; retained logs describe the failure")
+        if receipt["worker"]["peak_worker_rss_bytes"] > manifest["budgets"]["generated_controls_memory_bytes"]:
+            raise RuntimeError("The worker's measured peak RSS exceeded its budget")
+        receipt["control_evidence_verification"] = _verify_controls(receipt["worker"]["controls"], output, manifest)
+        if time.monotonic() >= deadline:
+            raise TimeoutError("The complete qualification exceeded its outer deadline")
+        receipt["status"], receipt["design_qualified"] = "design_qualified", True
+    except Exception as error:
+        receipt["error"] = {"type": type(error).__name__, "message": str(error)}
+        if not (output / "stdout.log").exists():
+            (output / "stdout.log").touch(exist_ok=False)
+        if not (output / "stderr.log").exists():
+            with (output / "stderr.log").open("x", encoding="utf-8") as stream:
+                stream.write(traceback.format_exc())
+        traceback.print_exc()
+    try:
+        after = _source_hashes()
+        receipt["source_sha256_after"] = after
+        receipt["inputs_unchanged"] = before is not None and before == after
+    except Exception as error:
+        receipt["inputs_unchanged"] = False
+        receipt["source_check_error"] = {"type": type(error).__name__, "message": str(error)}
+    if not receipt["inputs_unchanged"]:
+        receipt["status"], receipt["design_qualified"] = "failed", False
+    receipt["elapsed_seconds"] = time.monotonic() - started
+    receipt["claims"] = ["Generated-input format, numerical and CPU operator qualification only.",
+                         "No pretrained model, dataset, model-quality result or inference-cost improvement was measured.",
+                         "An operator profile does not prove a particular internal MLAS path."]
+    _write_json(output / "qualification.json", receipt)
+    print(json.dumps({"status": receipt["status"], "campaign_ready": False,
+                      "receipt": str(output / "qualification.json"), "elapsed_seconds": receipt["elapsed_seconds"]}))
+    return 0 if receipt["design_qualified"] else 1
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--worker", action="store_true", help=argparse.SUPPRESS)
+    arguments = parser.parse_args()
+    return _worker(arguments.output) if arguments.worker else qualify(arguments.output)
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

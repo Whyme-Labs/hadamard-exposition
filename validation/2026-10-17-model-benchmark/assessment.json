@@ -1,0 +1,78 @@
+{
+  "accepted_receipt": "qualification.json",
+  "attempts": [
+    {
+      "accepted": false,
+      "bound_source_count": 9,
+      "historical_source_overrides": [
+        {
+          "sha256": "7481905840254edc12cdfa43a92ea3d2a105955eb25f118604e5553bacfeab09",
+          "snapshot": "failed-precheck-qualify.py.txt",
+          "source": "benchmarks/qualify.py"
+        },
+        {
+          "sha256": "ab358603cd2687cf752944ece56af38b3e1fbd4ea2518cf63234d63a739a02a3",
+          "snapshot": "failed-precheck-protocol.md.txt",
+          "source": "docs/experiments/model-benchmark-v1.md"
+        }
+      ],
+      "reason": "Stopped before worker launch because headroom-only accounting treated file cache as unavailable.",
+      "receipt": "failed-precheck.json",
+      "sha256": "90473df22374654632925ee235a6f5e2c2cccc926e0b22f98eca51de97974ba9"
+    },
+    {
+      "accepted": false,
+      "bound_source_count": 10,
+      "historical_source_overrides": [
+        {
+          "sha256": "1d20ee906e3a776729d1eed2bfceed660aa87ee2f59e1a22e2ddc433beed2047",
+          "snapshot": "unqualified-rss-qualify.py.txt",
+          "source": "benchmarks/qualify.py"
+        },
+        {
+          "sha256": "290491a4a8a76263deb6ca079ca9e43bba1afb2d7063d8f9f8a827dc52118a29",
+          "snapshot": "unqualified-rss-test_qualify.py.txt",
+          "source": "benchmarks/test_qualify.py"
+        },
+        {
+          "sha256": "1cdf8386d65eba8d38be98d6222c64d9bf44f237d22755f1108b0d7075c87f9f",
+          "snapshot": "unqualified-rss-model-benchmark-v1.md.txt",
+          "source": "docs/experiments/model-benchmark-v1.md"
+        }
+      ],
+      "numerical_controls_passed": true,
+      "reason": "Original automated success status is rejected: zero valid parent RSS observations because namespace PID differed from procfs PID.",
+      "receipt": "unqualified-rss.json",
+      "sha256": "cf051a6b0cf9414b526bfd1bae79e9abaa3ef70df407217ae2f484f97187031f"
+    },
+    {
+      "accepted": true,
+      "bound_source_count": 10,
+      "historical_source_overrides": [],
+      "reason": "All focused tests and runtime controls passed with bound worker identity, positive RSS samples, valid resource limits and unchanged inputs.",
+      "receipt": "qualification.json",
+      "sha256": "99d3df384f1bb3c56582cbf4c4cb7d0c39ffd0966ee2a28056fcb5bdb382a6e1"
+    }
+  ],
+  "campaign_ready": false,
+  "claims": [
+    "Generated-input format, numerical and CPU operator conformance only.",
+    "No pretrained-model quality or inference improvement measured."
+  ],
+  "current_source_hashes_verified": 10,
+  "runtime_archives": [
+    {
+      "generated_graphs_omitted": 20,
+      "path": "runtime-evidence.tar.gz",
+      "runtime_members_verified_against_receipt": 40,
+      "sha256": "d5bafcf78fa810724871d496269d1a9b09e60d655a2c7b7ef56dc7e24277e56c"
+    },
+    {
+      "generated_graphs_omitted": 20,
+      "path": "unqualified-rss-runtime-evidence.tar.gz",
+      "runtime_members_verified_against_receipt": 40,
+      "sha256": "e6fb05a851da62d8d5d6936d5b7d7412bad07e346eae480e3f4009bac81fce07"
+    }
+  ],
+  "schema_version": "hadamard-benchmark-evidence-assessment.v1"
+}
