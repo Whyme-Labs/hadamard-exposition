@@ -1,0 +1,43 @@
+name: Last-resort private source recovery
+# Local computation works. Direct source download fails DNS in the assistant
+# container. Home run 39463443466 remained queued without executing a step.
+# This one-shot transfer does not change the normal local -> home -> Blacksmith
+# execution policy, publish the repository, or imply validation acceptance.
+on:
+  pull_request:
+    paths: ['.github/workflows/source-recovery-last-resort.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: exposition-release-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  recover:
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: blacksmith-2vcpu-ubuntu-2404
+    timeout-minutes: 5
+    env:
+      EXPECTED_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ env.EXPECTED_SHA }}
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Export exact private Git objects for local validation
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$EXPECTED_SHA"
+          mkdir -p build
+          git bundle create build/hadamard-source.bundle HEAD
+          sha256sum build/hadamard-source.bundle > build/hadamard-source.bundle.sha256
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: private-source-${{ env.EXPECTED_SHA }}
+          path: |
+            build/hadamard-source.bundle
+            build/hadamard-source.bundle.sha256
+          if-no-files-found: error
+          retention-days: 1
