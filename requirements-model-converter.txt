@@ -1,0 +1,22 @@
+# Isolated CPU converter. Do not combine with requirements-benchmark.txt:
+# Torch 2.5.1 on Python 3.12 requires SymPy 1.13.1, not runtime 1.14.0.
+# Resolve torch from the official CPU wheel index, then install from the
+# reviewed URL/SHA256 lock produced by benchmarks/dependency_lock.py.
+numpy==2.3.5
+onnx==1.19.1
+onnxruntime==1.23.2
+protobuf==6.33.0
+ml_dtypes==0.5.3
+flatbuffers==25.9.23
+sympy==1.13.1
+mpmath==1.3.0
+coloredlogs==15.0.1
+humanfriendly==10.0
+packaging==25.0
+typing_extensions==4.15.0
+torch==2.5.1+cpu
+transformers==4.46.3
+datasets==3.1.0
+safetensors==0.4.5
+huggingface-hub==0.26.2
+tokenizers==0.20.3

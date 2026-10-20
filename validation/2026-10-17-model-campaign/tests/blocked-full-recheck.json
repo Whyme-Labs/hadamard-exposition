@@ -1,0 +1,13 @@
+{
+  "schema_version": "hadamard-test-recheck-attempt.v1",
+  "status": "blocked",
+  "attempt": "build/model-offline-qualification-1",
+  "scope": "Proposed full offline suite rerun under the generated-control one-GiB launch allowance",
+  "required_available_memory_bytes": 1073741824,
+  "worker_started": false,
+  "error_type": "ValueError",
+  "error_message": "Conservative available-memory accounting is missing or below the generated-input memory budget",
+  "limitation": "The initial parent script raised before writing the concrete host counters. No counter values or accepted resource observation are reconstructed for that attempt.",
+  "source_snapshot": "full-suite-worker.py.txt",
+  "campaign_ready": false
+}

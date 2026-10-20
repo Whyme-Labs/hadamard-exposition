@@ -1,0 +1,862 @@
+{
+  "accepted_attempt": 4,
+  "accepted_summary": {
+    "all_full_request_vs_cached_request_passed": true,
+    "all_future_token_causal_controls_passed": true,
+    "arms": 6,
+    "budget_seconds": 180,
+    "dimensions": {
+      "context": 64,
+      "head_width": 8,
+      "heads": 4,
+      "hidden": 32,
+      "intermediate": 64,
+      "layers": 6,
+      "vocabulary": 97
+    },
+    "dynamic_cases": 24,
+    "elapsed_seconds_parent_including_imports": 4.7081630710017635,
+    "elapsed_seconds_probe_after_imports": 2.042872362995695,
+    "full_pythia_parity_established": false,
+    "max_absolute_error": 1.9371509552001953e-07,
+    "max_relative_frobenius_error": 5.170438578475888e-07,
+    "memory_limit_bytes": 1073741824,
+    "model": "Randomly initialized GPTNeoXForCausalLM",
+    "named_parameter_orientation_verified": true,
+    "observed_cache_and_output_bytes": 4080225,
+    "os_worker_peak_rss_bytes": 357396480,
+    "outputs_per_comparison": 13,
+    "past_cache_prefixes_exact": true,
+    "prefill_and_decode_comparisons": 36,
+    "production_config_guard_rejected_small_model": true,
+    "recorded_output_comparisons": 780,
+    "sampled_peak_worker_rss_bytes": 357109760,
+    "scalar_normalizations": [
+      {
+        "node": "/model/gpt_neox/layers.0/attention/Constant_72",
+        "original_dtype": "DOUBLE",
+        "original_tensor_proto_hex": "100b4a08000000000000f03f",
+        "original_tensor_sha256": "ced72d67dfbfd37560506315103244718c4db09f01af91e0dfc2dafee18285a6",
+        "original_value": 1.0,
+        "reason": "Scalar storage normalization; all numerical consumers already used Cast(FLOAT).",
+        "stored_dtype": "FLOAT",
+        "stored_float32_hex": "0000803f",
+        "stored_value": 1.0,
+        "unchanged_cast_consumers": [
+          "/model/gpt_neox/layers.0/attention/Cast_5",
+          "/model/gpt_neox/layers.1/attention/Cast_5",
+          "/model/gpt_neox/layers.2/attention/Cast_5",
+          "/model/gpt_neox/layers.3/attention/Cast_5",
+          "/model/gpt_neox/layers.4/attention/Cast_5",
+          "/model/gpt_neox/layers.5/attention/Cast_5"
+        ]
+      },
+      {
+        "node": "/model/gpt_neox/layers.0/attention/Constant_73",
+        "original_dtype": "DOUBLE",
+        "original_tensor_proto_hex": "100b4a08cd3b7f669ea0d63f",
+        "original_tensor_sha256": "30cc0daa7a31fc99d9b365f3f33fb89f0dbb0ef61d74f91ad04bdbb774b6192e",
+        "original_value": 0.3535533905932738,
+        "reason": "Scalar storage normalization; all numerical consumers already used Cast(FLOAT).",
+        "stored_dtype": "FLOAT",
+        "stored_float32_hex": "f304b53e",
+        "stored_value": 0.3535533845424652,
+        "unchanged_cast_consumers": [
+          "/model/gpt_neox/layers.0/attention/Cast_4",
+          "/model/gpt_neox/layers.1/attention/Cast_4",
+          "/model/gpt_neox/layers.2/attention/Cast_4",
+          "/model/gpt_neox/layers.3/attention/Cast_4",
+          "/model/gpt_neox/layers.4/attention/Cast_4",
+          "/model/gpt_neox/layers.5/attention/Cast_4"
+        ]
+      }
+    ],
+    "valid_rss_samples": 91,
+    "verified_exit_transition_observations": 0,
+    "versions": {
+      "numpy": "2.3.5",
+      "onnx": "1.19.1",
+      "onnxruntime": "1.23.2",
+      "torch": "2.5.1+cpu",
+      "transformers": "4.46.3"
+    }
+  },
+  "attempt3_to_4_graph_hashes_identical": true,
+  "attempts": [
+    {
+      "accepted": false,
+      "attempt": 1,
+      "classification": "rejected_wrapper_import_failure",
+      "elapsed_seconds": 0.2032156400018721,
+      "memory_limit_bytes": 1073741824,
+      "missing_probe_receipt_reason": "Execution failed before a numerical probe receipt was emitted.",
+      "monitor_error": null,
+      "monitor_stop_reason": null,
+      "numerical_probe_status": null,
+      "observed_cache_and_output_bytes": 2063,
+      "omitted_artifacts": [],
+      "original_directory": "build/pinned-export-probe-1",
+      "os_worker_peak_rss_bytes": 56975360,
+      "parent_status": "failed",
+      "process_returncode": 1,
+      "reason": "The runpy wrapper omitted the benchmarks directory from sys.path, so model_export could not be imported. No ONNX model or per-arm probe receipt was emitted.",
+      "recorded_source_bindings": [
+        {
+          "contemporaneously_bound": true,
+          "logical_path": "benchmarks/contract.py",
+          "recorded_sha256": "cc1b0b842917ce84cf10def8ba71aeea99c1630207e8a64abe26abe8b290ea7a",
+          "snapshot_archive": "raw-evidence.tar.gz",
+          "snapshot_archive_member": "source-snapshots/contract-cc1b0b842917ce84cf10def8ba71aeea99c1630207e8a64abe26abe8b290ea7a.py.txt",
+          "snapshot_bytes": 23588,
+          "snapshot_verified": true
+        },
+        {
+          "contemporaneously_bound": true,
+          "logical_path": "benchmarks/model_export.py",
+          "recorded_sha256": "03ba5ebb9a78b7b1154c7ca4ade1ff93b6a784ef79ebbb41bb56bbcb4fdcfeb6",
+          "snapshot_archive": "raw-evidence.tar.gz",
+          "snapshot_archive_member": "source-snapshots/model_export-03ba5ebb9a78b7b1154c7ca4ade1ff93b6a784ef79ebbb41bb56bbcb4fdcfeb6.py.txt",
+          "snapshot_bytes": 33630,
+          "snapshot_verified": true
+        },
+        {
+          "contemporaneously_bound": true,
+          "logical_path": "benchmarks/onnx_controls.py",
+          "recorded_sha256": "672b35f8816d4b5aaa34fc8eddb0252d18c5850ad9c4c97e434be1ceeba0f3ce",
+          "snapshot_archive": "raw-evidence.tar.gz",
+          "snapshot_archive_member": "source-snapshots/onnx_controls-672b35f8816d4b5aaa34fc8eddb0252d18c5850ad9c4c97e434be1ceeba0f3ce.py.txt",
+          "snapshot_bytes": 27631,
+          "snapshot_verified": true
+        },
+        {
+          "contemporaneously_bound": true,
+          "logical_path": "benchmarks/test_model_export.py",
+          "recorded_sha256": "e21203c5968ebfd3ef725ac53a1f3ee059133f607ddaea44ddbd24f92dfb5bf5",
+          "snapshot_archive": "raw-evidence.tar.gz",
+          "snapshot_archive_member": "source-snapshots/test_model_export-e21203c5968ebfd3ef725ac53a1f3ee059133f607ddaea44ddbd24f92dfb5bf5.py.txt",
+          "snapshot_bytes": 23103,
+          "snapshot_verified": true
+        }
+      ],
+      "retained_files": [
+        {
+          "archive": "raw-evidence.tar.gz",
+          "archive_member": "attempt-1/task-receipt.json",
+          "bytes": 2676,
+          "sha256": "beeee3fac5bc04558565febfd3c21eeee914aa4905e94a9392f6f131138bafb1"
+        },
+        {
+          "archive": "raw-evidence.tar.gz",
+          "archive_member": "attempt-1/worker-result.json",
+          "bytes": 1313,
+          "sha256": "317eb525d1d65f1a3c2b1b01212d38e8d7529c3414d91a0246a5c894374b6398"
+        },
+        {
+          "archive": "raw-evidence.tar.gz",
+          "archive_member": "attempt-1/worker-identity.json",
+          "bytes": 125,
+          "sha256": "39f2c8f8153565bcd6bcc454b0630f64234d0c42cdf3ac21a024725e4aff18d4"
+        },
+        {
+          "archive": "raw-evidence.tar.gz",
+          "archive_member": "attempt-1/stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "archive": "raw-evidence.tar.gz",
+          "archive_member": "attempt-1/stderr.log",
+          "bytes": 625,
+          "sha256": "f2dc83ed2cc4a5ed3d4f5d03351111df2f8fbb281b9f8d682f668433bfdc815c"
+        }
+      ],
+      "rss_sampling_interval_seconds": 0.05,
+      "sampled_peak_worker_rss_bytes": 57094144,
+      "supplemental_source_snapshots": [
+        {
+          "archival_sha256": "a65a48411a90b650f98d87cbf8ee1eeb3f94c20456ce0c58325fda94fc587db8",
+          "contemporaneously_bound": false,
+          "logical_path": "build/pinned-export-probe-worker.py",
+          "provenance": "Retained historical snapshot",
+          "snapshot_archive": "raw-evidence.tar.gz",
+          "snapshot_archive_member": "source-snapshots/pinned-export-probe-worker-a65a48411a90b650f98d87cbf8ee1eeb3f94c20456ce0c58325fda94fc587db8.py.txt",
+          "snapshot_bytes": 1724,
+          "snapshot_verified": true
+        },
+        {
+          "archival_sha256": "df060af787adcff925e8b82a6c0e43b789d25c9dfb134dc2e6f19c271c2d1a29",
+          "contemporaneously_bound": false,
+          "logical_path": "benchmarks/campaign_guard.py",
+          "provenance": "Retained historical snapshot",
+          "snapshot_archive": "raw-evidence.tar.gz",
+          "snapshot_archive_member": "source-snapshots/campaign_guard-df060af787adcff925e8b82a6c0e43b789d25c9dfb134dc2e6f19c271c2d1a29.py.txt",
+          "snapshot_bytes": 16744,
+          "snapshot_verified": true
+        },
+        {
+          "archival_sha256": "658bb41dabacffe23402873318fb3187a8bfbaf9ec430c3c30b1986a1a64f7ce",
+          "contemporaneously_bound": false,
+          "logical_path": "benchmarks/qualify.py",
+          "provenance": "Unchanged helper source also bound by attempts2-4; not present in attempt1 source list",
+          "snapshot_archive": "raw-evidence.tar.gz",
+          "snapshot_archive_member": "source-snapshots/qualify-658bb41dabacffe23402873318fb3187a8bfbaf9ec430c3c30b1986a1a64f7ce.py.txt",
+          "snapshot_bytes": 22635,
+          "snapshot_verified": true
+        }
+      ],
+      "valid_rss_samples": 2,
+      "worker_source_hashes_unchanged": true,
+      "worker_status": "failed"
+    },
+    {
+      "accepted": false,
+      "attempt": 2,
+      "classification": "rejected_export_precision_audit",
+      "elapsed_seconds": 3.687049136002315,
+      "memory_limit_bytes": 1073741824,
+      "missing_probe_receipt_reason": "Execution failed before a numerical probe receipt was emitted.",
+      "monitor_error": null,
+      "monitor_stop_reason": null,
+      "numerical_probe_status": null,
+      "observed_cache_and_output_bytes": 586022,
+      "omitted_artifacts": [
+        {
+          "bytes": 1,
+          "hash_binding": "Computed when assembling this archive",
+          "original_path": "hf-cache/version.txt",
+          "reason": "Incidental Hugging Face cache-format marker; no model or dataset content.",
+          "sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+        },
+        {
+          "bytes": 579534,
+          "hash_binding": "Computed when assembling this archive; no per-arm graph receipt was emitted before failure",
+          "original_path": "probe/fp32_original.onnx",
+          "reason": "Deterministically regenerated small ONNX model; binary omitted from publication.",
+          "sha256": "56d0dbf054c7002de8bc67ffaae7f9e91462e9560a9bbb37e4c454eb7240b3f9"
+        }
+      ],
+      "original_directory": "build/pinned-export-probe-2",
+      "os_worker_peak_rss_bytes": 342974464,
+      "parent_status": "failed",
+      "process_returncode": 1,
+      "reason": "Torch emitted two FP64 scalar constants used exclusively by Cast(FLOAT) before attention arithmetic. The original precision audit rejected their stored dtype. The correction stores each exact FP32 cast result and retains all Cast consumers.",
+      "recorded_source_bindings": [
+        {
+          "contemporaneously_bound": true,
+          "logical_path": "benchmarks/campaign_guard.py",
+          "recorded_sha256": "df060af787adcff925e8b82a6c0e43b789d25c9dfb134dc2e6f19c271c2d1a29",
+          "snapshot_archive": "raw-evidence.tar.gz",
+          "snapshot_archive_member": "source-snapshots/campaign_guard-df060af787adcff925e8b82a6c0e43b789d25c9dfb134dc2e6f19c271c2d1a29.py.txt",
+          "snapshot_bytes": 16744,
+          "snapshot_verified": true
+        },
+        {
+          "contemporaneously_bound": true,
+          "logical_path": "benchmarks/contract.py",
+          "recorded_sha256": "cc1b0b842917ce84cf10def8ba71aeea99c1630207e8a64abe26abe8b290ea7a",
+          "snapshot_archive": "raw-evidence.tar.gz",
+          "snapshot_archive_member": "source-snapshots/contract-cc1b0b842917ce84cf10def8ba71aeea99c1630207e8a64abe26abe8b290ea7a.py.txt",
+          "snapshot_bytes": 23588,
+          "snapshot_verified": true
+        },
+        {
+          "contemporaneously_bound": true,
+          "logical_path": "benchmarks/model_export.py",
+          "recorded_sha256": "03ba5ebb9a78b7b1154c7ca4ade1ff93b6a784ef79ebbb41bb56bbcb4fdcfeb6",
+          "snapshot_archive": "raw-evidence.tar.gz",
+          "snapshot_archive_member": "source-snapshots/model_export-03ba5ebb9a78b7b1154c7ca4ade1ff93b6a784ef79ebbb41bb56bbcb4fdcfeb6.py.txt",
+          "snapshot_bytes": 33630,
+          "snapshot_verified": true
+        },
+        {
+          "contemporaneously_bound": true,
+          "logical_path": "benchmarks/onnx_controls.py",
+          "recorded_sha256": "672b35f8816d4b5aaa34fc8eddb0252d18c5850ad9c4c97e434be1ceeba0f3ce",
+          "snapshot_archive": "raw-evidence.tar.gz",
+          "snapshot_archive_member": "source-snapshots/onnx_controls-672b35f8816d4b5aaa34fc8eddb0252d18c5850ad9c4c97e434be1ceeba0f3ce.py.txt",
+          "snapshot_bytes": 27631,
+          "snapshot_verified": true
+        },
+        {
+          "contemporaneously_bound": true,
+          "logical_path": "benchmarks/qualify.py",
+          "recorded_sha256": "658bb41dabacffe23402873318fb3187a8bfbaf9ec430c3c30b1986a1a64f7ce",
+          "snapshot_archive": "raw-evidence.tar.gz",
+          "snapshot_archive_member": "source-snapshots/qualify-658bb41dabacffe23402873318fb3187a8bfbaf9ec430c3c30b1986a1a64f7ce.py.txt",
+          "snapshot_bytes": 22635,
+          "snapshot_verified": true
+        },
+        {
+          "contemporaneously_bound": true,
+          "logical_path": "benchmarks/test_model_export.py",
+          "recorded_sha256": "e21203c5968ebfd3ef725ac53a1f3ee059133f607ddaea44ddbd24f92dfb5bf5",
+          "snapshot_archive": "raw-evidence.tar.gz",
+          "snapshot_archive_member": "source-snapshots/test_model_export-e21203c5968ebfd3ef725ac53a1f3ee059133f607ddaea44ddbd24f92dfb5bf5.py.txt",
+          "snapshot_bytes": 23103,
+          "snapshot_verified": true
+        },
+        {
+          "contemporaneously_bound": true,
+          "logical_path": "build/pinned-export-probe-worker.py",
+          "recorded_sha256": "0ec5c4f42ea9f58e99bc79ec6cc3187a58d1153999d6984fce5b88f900fc5f8f",
+          "snapshot_archive": "raw-evidence.tar.gz",
+          "snapshot_archive_member": "source-snapshots/pinned-export-probe-worker-0ec5c4f42ea9f58e99bc79ec6cc3187a58d1153999d6984fce5b88f900fc5f8f.py.txt",
+          "snapshot_bytes": 1881,
+          "snapshot_verified": true
+        }
+      ],
+      "retained_files": [
+        {
+          "archive": "raw-evidence.tar.gz",
+          "archive_member": "attempt-2/task-receipt.json",
+          "bytes": 3333,
+          "sha256": "b86ec8f01cf6591ac0b3486596375c5032d92258d28a7b13ce2439563886b75e"
+        },
+        {
+          "archive": "raw-evidence.tar.gz",
+          "archive_member": "attempt-2/worker-result.json",
+          "bytes": 1955,
+          "sha256": "06973ac916cd3044594a64d06d129347fc8d6807acc6d73a812bc04bafe92974"
+        },
+        {
+          "archive": "raw-evidence.tar.gz",
+          "archive_member": "attempt-2/worker-identity.json",
+          "bytes": 125,
+          "sha256": "409086818fd5fed1be6e82d57c053236fb625294d925d6a3fad7ccbc9fcb7184"
+        },
+        {
+          "archive": "raw-evidence.tar.gz",
+          "archive_member": "attempt-2/stdout.log",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "archive": "raw-evidence.tar.gz",
+          "archive_member": "attempt-2/stderr.log",
+          "bytes": 4407,
+          "sha256": "664bd522314945625a0446662b8c13332d25c6f404ec3bc8ada306820f87321b"
+        },
+        {
+          "archive": "raw-evidence.tar.gz",
+          "archive_member": "attempt-2/original-source-snapshot-ledger.json",
+          "bytes": 266,
+          "sha256": "23032dcb471ce2f76deca0bc02d56e035f2fe999fe4341736954d1c2c520fd7f"
+        }
+      ],
+      "rss_sampling_interval_seconds": 0.05,
+      "sampled_peak_worker_rss_bytes": 342507520,
+      "supplemental_source_snapshots": [],
+      "valid_rss_samples": 71,
+      "worker_source_hashes_unchanged": true,
+      "worker_status": "failed"
+    },
+    {
+      "accepted": false,
+      "attempt": 3,
+      "classification": "rejected_resource_monitor",
+      "elapsed_seconds": 4.360998438998649,
+      "memory_limit_bytes": 1073741824,
+      "missing_probe_receipt_reason": null,
+      "monitor_error": {
+        "message": "Worker has no live procfs RSS reading",
+        "type": "ProcessLookupError"
+      },
+      "monitor_stop_reason": "resource_monitor",
+      "numerical_probe_status": "passed",
+      "observed_cache_and_output_bytes": 4080223,
+      "omitted_artifacts": [
+        {
+          "bytes": 1,
+          "hash_binding": "Computed when assembling this archive",
+          "original_path": "hf-cache/version.txt",
+          "reason": "Incidental Hugging Face cache-format marker; no model or dataset content.",
+          "sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+        },
+        {
+          "bytes": 581072,
+          "hash_binding": "Matches contemporaneous probe graph hash and byte count",
+          "original_path": "probe/fp32_original.onnx",
+          "reason": "Deterministically regenerated small ONNX model; binary omitted from publication.",
+          "recorded_sha256": "90b8329b9eb916472a5c041d8801d3d53e5378c368d129612a20968e3aa5a97a",
+          "sha256": "90b8329b9eb916472a5c041d8801d3d53e5378c368d129612a20968e3aa5a97a"
+        },
+        {
+          "bytes": 622010,
+          "hash_binding": "Matches contemporaneous probe graph hash and byte count",
+          "original_path": "probe/fp32_rotated.onnx",
+          "reason": "Deterministically regenerated small ONNX model; binary omitted from publication.",
+          "recorded_sha256": "62d422833a5ed6fefcb2d16f1436f6a555925d4a34a626c1b21c91d7687cb54f",
+          "sha256": "62d422833a5ed6fefcb2d16f1436f6a555925d4a34a626c1b21c91d7687cb54f"
+        },
+        {
+          "bytes": 541323,
+          "hash_binding": "Matches contemporaneous probe graph hash and byte count",
+          "original_path": "probe/w4a32_g16_original.onnx",
+          "reason": "Deterministically regenerated small ONNX model; binary omitted from publication.",
+          "recorded_sha256": "788344a11b103f0ce5f6eb7f5603b18a9d1ee98f20b8b782c2f3b11830778679",
+          "sha256": "788344a11b103f0ce5f6eb7f5603b18a9d1ee98f20b8b782c2f3b11830778679"
+        },
+        {
+          "bytes": 582261,
+          "hash_binding": "Matches contemporaneous probe graph hash and byte count",
+          "original_path": "probe/w4a32_g16_rotated.onnx",
+          "reason": "Deterministically regenerated small ONNX model; binary omitted from publication.",
+          "recorded_sha256": "463012d703c6d1a64a1a500d27f35b57aa931a34f26a94ecd0ace7e5d852bc0f",
+          "sha256": "463012d703c6d1a64a1a500d27f35b57aa931a34f26a94ecd0ace7e5d852bc0f"
+        },
+        {
+          "bytes": 539787,
+          "hash_binding": "Matches contemporaneous probe graph hash and byte count",
+          "original_path": "probe/w4a32_g32_original.onnx",
+          "reason": "Deterministically regenerated small ONNX model; binary omitted from publication.",
+          "recorded_sha256": "0dfdd143ebaf299c640b3557e3d73d2bf108eadb62bee3fedeba7e3ed88458c1",
+          "sha256": "0dfdd143ebaf299c640b3557e3d73d2bf108eadb62bee3fedeba7e3ed88458c1"
+        },
+        {
+          "bytes": 580725,
+          "hash_binding": "Matches contemporaneous probe graph hash and byte count",
+          "original_path": "probe/w4a32_g32_rotated.onnx",
+          "reason": "Deterministically regenerated small ONNX model; binary omitted from publication.",
+          "recorded_sha256": "5dca618defddda6a2818868523d412e988bd8e032cc4a94442e13f71964d3f27",
+          "sha256": "5dca618defddda6a2818868523d412e988bd8e032cc4a94442e13f71964d3f27"
+        }
+      ],
+      "original_directory": "build/pinned-export-probe-3",
+      "os_worker_peak_rss_bytes": 358494208,
+      "parent_status": "failed",
+      "process_returncode": 0,
+      "reason": "The worker and numerical probe passed, but the parent rejected the run after a missing live VmRSS reading during process exit. The parent status remains failed; the later terminal-state/identity correction does not reclassify this attempt.",
+      "recorded_source_bindings": [
+        {
+          "contemporaneously_bound": true,
+          "logical_path": "benchmarks/campaign_guard.py",
+          "recorded_sha256": "9c132a27fb5f2ab352758b1be5f444345b1b70f23c94d8b2b1ca3d0225c6d5e4",
+          "snapshot_archive": "raw-evidence.tar.gz",
+          "snapshot_archive_member": "source-snapshots/campaign_guard-9c132a27fb5f2ab352758b1be5f444345b1b70f23c94d8b2b1ca3d0225c6d5e4.py.txt",
+          "snapshot_bytes": 17288,
+          "snapshot_verified": true
+        },
+        {
+          "contemporaneously_bound": true,
+          "logical_path": "benchmarks/contract.py",
+          "recorded_sha256": "cc1b0b842917ce84cf10def8ba71aeea99c1630207e8a64abe26abe8b290ea7a",
+          "snapshot_archive": "raw-evidence.tar.gz",
+          "snapshot_archive_member": "source-snapshots/contract-cc1b0b842917ce84cf10def8ba71aeea99c1630207e8a64abe26abe8b290ea7a.py.txt",
+          "snapshot_bytes": 23588,
+          "snapshot_verified": true
+        },
+        {
+          "contemporaneously_bound": true,
+          "logical_path": "benchmarks/model_export.py",
+          "recorded_sha256": "87d8e2f54b2a876dd9b47bd38b0bb6f59dda2a4aaa3046fe6ee16262c72815b7",
+          "snapshot_archive": "raw-evidence.tar.gz",
+          "snapshot_archive_member": "source-snapshots/model_export-87d8e2f54b2a876dd9b47bd38b0bb6f59dda2a4aaa3046fe6ee16262c72815b7.py.txt",
+          "snapshot_bytes": 37041,
+          "snapshot_verified": true
+        },
+        {
+          "contemporaneously_bound": true,
+          "logical_path": "benchmarks/onnx_controls.py",
+          "recorded_sha256": "672b35f8816d4b5aaa34fc8eddb0252d18c5850ad9c4c97e434be1ceeba0f3ce",
+          "snapshot_archive": "raw-evidence.tar.gz",
+          "snapshot_archive_member": "source-snapshots/onnx_controls-672b35f8816d4b5aaa34fc8eddb0252d18c5850ad9c4c97e434be1ceeba0f3ce.py.txt",
+          "snapshot_bytes": 27631,
+          "snapshot_verified": true
+        },
+        {
+          "contemporaneously_bound": true,
+          "logical_path": "benchmarks/qualify.py",
+          "recorded_sha256": "658bb41dabacffe23402873318fb3187a8bfbaf9ec430c3c30b1986a1a64f7ce",
+          "snapshot_archive": "raw-evidence.tar.gz",
+          "snapshot_archive_member": "source-snapshots/qualify-658bb41dabacffe23402873318fb3187a8bfbaf9ec430c3c30b1986a1a64f7ce.py.txt",
+          "snapshot_bytes": 22635,
+          "snapshot_verified": true
+        },
+        {
+          "contemporaneously_bound": true,
+          "logical_path": "benchmarks/test_model_export.py",
+          "recorded_sha256": "9c8467cfcfadd05479b3155e81b655679b78c462ec4bddc48296e62eb1d6af3e",
+          "snapshot_archive": "raw-evidence.tar.gz",
+          "snapshot_archive_member": "source-snapshots/test_model_export-9c8467cfcfadd05479b3155e81b655679b78c462ec4bddc48296e62eb1d6af3e.py.txt",
+          "snapshot_bytes": 26113,
+          "snapshot_verified": true
+        },
+        {
+          "contemporaneously_bound": true,
+          "logical_path": "build/pinned-export-probe-worker.py",
+          "recorded_sha256": "0ec5c4f42ea9f58e99bc79ec6cc3187a58d1153999d6984fce5b88f900fc5f8f",
+          "snapshot_archive": "raw-evidence.tar.gz",
+          "snapshot_archive_member": "source-snapshots/pinned-export-probe-worker-0ec5c4f42ea9f58e99bc79ec6cc3187a58d1153999d6984fce5b88f900fc5f8f.py.txt",
+          "snapshot_bytes": 1881,
+          "snapshot_verified": true
+        }
+      ],
+      "retained_files": [
+        {
+          "archive": "raw-evidence.tar.gz",
+          "archive_member": "attempt-3/task-receipt.json",
+          "bytes": 349810,
+          "sha256": "335069bce2d5ea1ae76337299bd3c059b933a26172a85d9adb4380796798f5e1"
+        },
+        {
+          "archive": "raw-evidence.tar.gz",
+          "archive_member": "attempt-3/worker-result.json",
+          "bytes": 326647,
+          "sha256": "fb7e1b9b81857d735e28dc58373cdb8af6548ed13dac3fbdf3413b339193e7e3"
+        },
+        {
+          "archive": "raw-evidence.tar.gz",
+          "archive_member": "attempt-3/worker-identity.json",
+          "bytes": 125,
+          "sha256": "3f9ba2bdc9099feeacda49dcd73a648ccaacb640a72e8007c286495f108f2162"
+        },
+        {
+          "archive": "raw-evidence.tar.gz",
+          "archive_member": "attempt-3/stdout.log",
+          "bytes": 211,
+          "sha256": "33efd23ef06ec08bc394f709be56ff29382729007e061e01bb349b9fc68be5a4"
+        },
+        {
+          "archive": "raw-evidence.tar.gz",
+          "archive_member": "attempt-3/stderr.log",
+          "bytes": 2946,
+          "sha256": "c084fa89ddab6091e9e4322d35dff3807120f83f42b95143e57d83f44ab6dab9"
+        },
+        {
+          "archive": "raw-evidence.tar.gz",
+          "archive_member": "attempt-3/probe.json",
+          "bytes": 303115,
+          "sha256": "f1667466262187954f4733658727a889ba7a5da20b303e24f0060353e234adbb"
+        }
+      ],
+      "rss_sampling_interval_seconds": 0.05,
+      "sampled_peak_worker_rss_bytes": 358752256,
+      "supplemental_source_snapshots": [],
+      "valid_rss_samples": 84,
+      "worker_source_hashes_unchanged": true,
+      "worker_status": "passed"
+    },
+    {
+      "accepted": true,
+      "attempt": 4,
+      "classification": "accepted_generated_export_qualification",
+      "elapsed_seconds": 4.7081630710017635,
+      "memory_limit_bytes": 1073741824,
+      "missing_probe_receipt_reason": null,
+      "monitor_error": null,
+      "monitor_stop_reason": null,
+      "numerical_probe_status": "passed",
+      "observed_cache_and_output_bytes": 4080225,
+      "omitted_artifacts": [
+        {
+          "bytes": 1,
+          "hash_binding": "Computed when assembling this archive",
+          "original_path": "hf-cache/version.txt",
+          "reason": "Incidental Hugging Face cache-format marker; no model or dataset content.",
+          "sha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b"
+        },
+        {
+          "bytes": 581072,
+          "hash_binding": "Matches contemporaneous probe graph hash and byte count",
+          "original_path": "probe/fp32_original.onnx",
+          "reason": "Deterministically regenerated small ONNX model; binary omitted from publication.",
+          "recorded_sha256": "90b8329b9eb916472a5c041d8801d3d53e5378c368d129612a20968e3aa5a97a",
+          "sha256": "90b8329b9eb916472a5c041d8801d3d53e5378c368d129612a20968e3aa5a97a"
+        },
+        {
+          "bytes": 622010,
+          "hash_binding": "Matches contemporaneous probe graph hash and byte count",
+          "original_path": "probe/fp32_rotated.onnx",
+          "reason": "Deterministically regenerated small ONNX model; binary omitted from publication.",
+          "recorded_sha256": "62d422833a5ed6fefcb2d16f1436f6a555925d4a34a626c1b21c91d7687cb54f",
+          "sha256": "62d422833a5ed6fefcb2d16f1436f6a555925d4a34a626c1b21c91d7687cb54f"
+        },
+        {
+          "bytes": 541323,
+          "hash_binding": "Matches contemporaneous probe graph hash and byte count",
+          "original_path": "probe/w4a32_g16_original.onnx",
+          "reason": "Deterministically regenerated small ONNX model; binary omitted from publication.",
+          "recorded_sha256": "788344a11b103f0ce5f6eb7f5603b18a9d1ee98f20b8b782c2f3b11830778679",
+          "sha256": "788344a11b103f0ce5f6eb7f5603b18a9d1ee98f20b8b782c2f3b11830778679"
+        },
+        {
+          "bytes": 582261,
+          "hash_binding": "Matches contemporaneous probe graph hash and byte count",
+          "original_path": "probe/w4a32_g16_rotated.onnx",
+          "reason": "Deterministically regenerated small ONNX model; binary omitted from publication.",
+          "recorded_sha256": "463012d703c6d1a64a1a500d27f35b57aa931a34f26a94ecd0ace7e5d852bc0f",
+          "sha256": "463012d703c6d1a64a1a500d27f35b57aa931a34f26a94ecd0ace7e5d852bc0f"
+        },
+        {
+          "bytes": 539787,
+          "hash_binding": "Matches contemporaneous probe graph hash and byte count",
+          "original_path": "probe/w4a32_g32_original.onnx",
+          "reason": "Deterministically regenerated small ONNX model; binary omitted from publication.",
+          "recorded_sha256": "0dfdd143ebaf299c640b3557e3d73d2bf108eadb62bee3fedeba7e3ed88458c1",
+          "sha256": "0dfdd143ebaf299c640b3557e3d73d2bf108eadb62bee3fedeba7e3ed88458c1"
+        },
+        {
+          "bytes": 580725,
+          "hash_binding": "Matches contemporaneous probe graph hash and byte count",
+          "original_path": "probe/w4a32_g32_rotated.onnx",
+          "reason": "Deterministically regenerated small ONNX model; binary omitted from publication.",
+          "recorded_sha256": "5dca618defddda6a2818868523d412e988bd8e032cc4a94442e13f71964d3f27",
+          "sha256": "5dca618defddda6a2818868523d412e988bd8e032cc4a94442e13f71964d3f27"
+        }
+      ],
+      "original_directory": "build/pinned-export-probe-4",
+      "os_worker_peak_rss_bytes": 357396480,
+      "parent_status": "passed",
+      "process_returncode": 0,
+      "reason": "Fresh run with corrected scalar storage and the corrected process-exit monitor; numerical comparisons, source identity, deadline and RSS observations all passed.",
+      "recorded_source_bindings": [
+        {
+          "contemporaneously_bound": true,
+          "logical_path": "benchmarks/campaign_guard.py",
+          "recorded_sha256": "25bc1b76041de7940d6581536ef29a53a14bed6b240037ce7f53cc43818a9401",
+          "snapshot_archive": "raw-evidence.tar.gz",
+          "snapshot_archive_member": "source-snapshots/campaign_guard-25bc1b76041de7940d6581536ef29a53a14bed6b240037ce7f53cc43818a9401.py.txt",
+          "snapshot_bytes": 18734,
+          "snapshot_verified": true
+        },
+        {
+          "contemporaneously_bound": true,
+          "logical_path": "benchmarks/contract.py",
+          "recorded_sha256": "cc1b0b842917ce84cf10def8ba71aeea99c1630207e8a64abe26abe8b290ea7a",
+          "snapshot_archive": "raw-evidence.tar.gz",
+          "snapshot_archive_member": "source-snapshots/contract-cc1b0b842917ce84cf10def8ba71aeea99c1630207e8a64abe26abe8b290ea7a.py.txt",
+          "snapshot_bytes": 23588,
+          "snapshot_verified": true
+        },
+        {
+          "contemporaneously_bound": true,
+          "logical_path": "benchmarks/model_export.py",
+          "recorded_sha256": "87d8e2f54b2a876dd9b47bd38b0bb6f59dda2a4aaa3046fe6ee16262c72815b7",
+          "snapshot_archive": "raw-evidence.tar.gz",
+          "snapshot_archive_member": "source-snapshots/model_export-87d8e2f54b2a876dd9b47bd38b0bb6f59dda2a4aaa3046fe6ee16262c72815b7.py.txt",
+          "snapshot_bytes": 37041,
+          "snapshot_verified": true
+        },
+        {
+          "contemporaneously_bound": true,
+          "logical_path": "benchmarks/onnx_controls.py",
+          "recorded_sha256": "672b35f8816d4b5aaa34fc8eddb0252d18c5850ad9c4c97e434be1ceeba0f3ce",
+          "snapshot_archive": "raw-evidence.tar.gz",
+          "snapshot_archive_member": "source-snapshots/onnx_controls-672b35f8816d4b5aaa34fc8eddb0252d18c5850ad9c4c97e434be1ceeba0f3ce.py.txt",
+          "snapshot_bytes": 27631,
+          "snapshot_verified": true
+        },
+        {
+          "contemporaneously_bound": true,
+          "logical_path": "benchmarks/qualify.py",
+          "recorded_sha256": "658bb41dabacffe23402873318fb3187a8bfbaf9ec430c3c30b1986a1a64f7ce",
+          "snapshot_archive": "raw-evidence.tar.gz",
+          "snapshot_archive_member": "source-snapshots/qualify-658bb41dabacffe23402873318fb3187a8bfbaf9ec430c3c30b1986a1a64f7ce.py.txt",
+          "snapshot_bytes": 22635,
+          "snapshot_verified": true
+        },
+        {
+          "contemporaneously_bound": true,
+          "logical_path": "benchmarks/test_model_export.py",
+          "recorded_sha256": "9c8467cfcfadd05479b3155e81b655679b78c462ec4bddc48296e62eb1d6af3e",
+          "snapshot_archive": "raw-evidence.tar.gz",
+          "snapshot_archive_member": "source-snapshots/test_model_export-9c8467cfcfadd05479b3155e81b655679b78c462ec4bddc48296e62eb1d6af3e.py.txt",
+          "snapshot_bytes": 26113,
+          "snapshot_verified": true
+        },
+        {
+          "contemporaneously_bound": true,
+          "logical_path": "build/pinned-export-probe-worker.py",
+          "recorded_sha256": "0ec5c4f42ea9f58e99bc79ec6cc3187a58d1153999d6984fce5b88f900fc5f8f",
+          "snapshot_archive": "raw-evidence.tar.gz",
+          "snapshot_archive_member": "source-snapshots/pinned-export-probe-worker-0ec5c4f42ea9f58e99bc79ec6cc3187a58d1153999d6984fce5b88f900fc5f8f.py.txt",
+          "snapshot_bytes": 1881,
+          "snapshot_verified": true
+        }
+      ],
+      "retained_files": [
+        {
+          "archive": "raw-evidence.tar.gz",
+          "archive_member": "attempt-4/task-receipt.json",
+          "bytes": 349755,
+          "sha256": "3592c7c773f9612f2d67f364ea00f6368a7a861bc37304706660e027610bec7b"
+        },
+        {
+          "archive": "raw-evidence.tar.gz",
+          "archive_member": "attempt-4/worker-result.json",
+          "bytes": 326649,
+          "sha256": "96d69b2fd8f3b063e88145d0fb7ca1a3a4d29421fe9685cf3f38bcff00da5f28"
+        },
+        {
+          "archive": "raw-evidence.tar.gz",
+          "archive_member": "attempt-4/worker-identity.json",
+          "bytes": 125,
+          "sha256": "0ada09539e886396a39700f2595f57d65e11d694388ea706a28408ff47aaeaf3"
+        },
+        {
+          "archive": "raw-evidence.tar.gz",
+          "archive_member": "attempt-4/stdout.log",
+          "bytes": 211,
+          "sha256": "2ed3902108540d28a3c3fb6cde14d4723c5866fbb28542814371e3bc80553d12"
+        },
+        {
+          "archive": "raw-evidence.tar.gz",
+          "archive_member": "attempt-4/stderr.log",
+          "bytes": 2946,
+          "sha256": "c084fa89ddab6091e9e4322d35dff3807120f83f42b95143e57d83f44ab6dab9"
+        },
+        {
+          "archive": "raw-evidence.tar.gz",
+          "archive_member": "attempt-4/probe.json",
+          "bytes": 303115,
+          "sha256": "5e75c0e4be34775deca6ef2ab20d4d3db8f0177a5f4e859e6e282a9d6cf10156"
+        }
+      ],
+      "rss_sampling_interval_seconds": 0.05,
+      "sampled_peak_worker_rss_bytes": 357109760,
+      "supplemental_source_snapshots": [],
+      "valid_rss_samples": 91,
+      "worker_source_hashes_unchanged": true,
+      "worker_status": "passed"
+    }
+  ],
+  "campaign_ready": false,
+  "classification_policy": "The parent task receipt controls resource acceptance. A passed numerical worker does not override a failed parent monitor.",
+  "dataset_downloaded": false,
+  "full_pythia_parity_established": false,
+  "limitations": [
+    "These measurements concern an untrained small six-layer GPTNeoX and establish no pretrained Pythia quality, speedup, memory improvement or commercial saving.",
+    "A sampled RSS guard is an observation-and-termination mechanism, not an instantaneous kernel allocation cap.",
+    "Attempt1 originally bound only four numerical source files; its available wrapper, guard and identity-helper snapshots are marked supplemental, not retroactively bound.",
+    "Hashes of the attempted2 failed baseline graph and incidental cache markers were computed during archive assembly because those paths had no contemporaneous artifact-hash receipt.",
+    "ONNX binaries are omitted. Their exact bytes/hashes are inventoried; attempts3-4 hashes are verified against original per-arm receipts. Dependency environments are archived elsewhere in this milestone.",
+    "Elapsed times, process identities and memory measurements are observations; reruns create new receipts and must preserve these attempts."
+  ],
+  "prepared_utc": "2026-10-17T17:57:39.045194+00:00",
+  "pretrained_model_downloaded": false,
+  "raw_evidence": {
+    "bytes": 200193,
+    "inventory_path": "archive-inventory.json",
+    "inventory_sha256": "65505bbcd2868c60b8e01e490adb4487ecfe25c3145a0eda3fc8bcf249243844",
+    "member_count": 35,
+    "original_local_snapshot_commit": "9df946fef11672594cbc075b2445f2fd050f7cc2",
+    "packaging_scope": "Only storage and index references changed. All raw evidence bytes, recorded outcomes, numerical observations, contemporaneous source bindings, supplemental provenance and omitted-artifact inventories are preserved.",
+    "path": "raw-evidence.tar.gz",
+    "reference_semantics": "retained_files.archive_member and snapshot_archive_member name regular-file members inside their specified archive, not loose publication files.",
+    "sha256": "7c8735dc370cfbe99e267272f52c886b664e8395f78e7856b43ae5f5e724ae1d",
+    "uncompressed_member_bytes": 2230592
+  },
+  "schema_version": "hadamard-export-probe-archive.v2",
+  "scope": "Generated small GPTNeoX export/cache conformance only.",
+  "sources": [
+    {
+      "contemporaneously_bound": true,
+      "logical_path": "benchmarks/campaign_guard.py",
+      "recorded_sha256": "25bc1b76041de7940d6581536ef29a53a14bed6b240037ce7f53cc43818a9401",
+      "snapshot_archive": "raw-evidence.tar.gz",
+      "snapshot_archive_member": "source-snapshots/campaign_guard-25bc1b76041de7940d6581536ef29a53a14bed6b240037ce7f53cc43818a9401.py.txt",
+      "snapshot_bytes": 18734,
+      "snapshot_verified": true
+    },
+    {
+      "contemporaneously_bound": true,
+      "logical_path": "benchmarks/campaign_guard.py",
+      "recorded_sha256": "9c132a27fb5f2ab352758b1be5f444345b1b70f23c94d8b2b1ca3d0225c6d5e4",
+      "snapshot_archive": "raw-evidence.tar.gz",
+      "snapshot_archive_member": "source-snapshots/campaign_guard-9c132a27fb5f2ab352758b1be5f444345b1b70f23c94d8b2b1ca3d0225c6d5e4.py.txt",
+      "snapshot_bytes": 17288,
+      "snapshot_verified": true
+    },
+    {
+      "contemporaneously_bound": true,
+      "logical_path": "benchmarks/campaign_guard.py",
+      "recorded_sha256": "df060af787adcff925e8b82a6c0e43b789d25c9dfb134dc2e6f19c271c2d1a29",
+      "snapshot_archive": "raw-evidence.tar.gz",
+      "snapshot_archive_member": "source-snapshots/campaign_guard-df060af787adcff925e8b82a6c0e43b789d25c9dfb134dc2e6f19c271c2d1a29.py.txt",
+      "snapshot_bytes": 16744,
+      "snapshot_verified": true
+    },
+    {
+      "contemporaneously_bound": true,
+      "logical_path": "benchmarks/contract.py",
+      "recorded_sha256": "cc1b0b842917ce84cf10def8ba71aeea99c1630207e8a64abe26abe8b290ea7a",
+      "snapshot_archive": "raw-evidence.tar.gz",
+      "snapshot_archive_member": "source-snapshots/contract-cc1b0b842917ce84cf10def8ba71aeea99c1630207e8a64abe26abe8b290ea7a.py.txt",
+      "snapshot_bytes": 23588,
+      "snapshot_verified": true
+    },
+    {
+      "contemporaneously_bound": true,
+      "logical_path": "benchmarks/model_export.py",
+      "recorded_sha256": "03ba5ebb9a78b7b1154c7ca4ade1ff93b6a784ef79ebbb41bb56bbcb4fdcfeb6",
+      "snapshot_archive": "raw-evidence.tar.gz",
+      "snapshot_archive_member": "source-snapshots/model_export-03ba5ebb9a78b7b1154c7ca4ade1ff93b6a784ef79ebbb41bb56bbcb4fdcfeb6.py.txt",
+      "snapshot_bytes": 33630,
+      "snapshot_verified": true
+    },
+    {
+      "contemporaneously_bound": true,
+      "logical_path": "benchmarks/model_export.py",
+      "recorded_sha256": "87d8e2f54b2a876dd9b47bd38b0bb6f59dda2a4aaa3046fe6ee16262c72815b7",
+      "snapshot_archive": "raw-evidence.tar.gz",
+      "snapshot_archive_member": "source-snapshots/model_export-87d8e2f54b2a876dd9b47bd38b0bb6f59dda2a4aaa3046fe6ee16262c72815b7.py.txt",
+      "snapshot_bytes": 37041,
+      "snapshot_verified": true
+    },
+    {
+      "contemporaneously_bound": true,
+      "logical_path": "benchmarks/onnx_controls.py",
+      "recorded_sha256": "672b35f8816d4b5aaa34fc8eddb0252d18c5850ad9c4c97e434be1ceeba0f3ce",
+      "snapshot_archive": "raw-evidence.tar.gz",
+      "snapshot_archive_member": "source-snapshots/onnx_controls-672b35f8816d4b5aaa34fc8eddb0252d18c5850ad9c4c97e434be1ceeba0f3ce.py.txt",
+      "snapshot_bytes": 27631,
+      "snapshot_verified": true
+    },
+    {
+      "contemporaneously_bound": true,
+      "logical_path": "benchmarks/qualify.py",
+      "recorded_sha256": "658bb41dabacffe23402873318fb3187a8bfbaf9ec430c3c30b1986a1a64f7ce",
+      "snapshot_archive": "raw-evidence.tar.gz",
+      "snapshot_archive_member": "source-snapshots/qualify-658bb41dabacffe23402873318fb3187a8bfbaf9ec430c3c30b1986a1a64f7ce.py.txt",
+      "snapshot_bytes": 22635,
+      "snapshot_verified": true
+    },
+    {
+      "contemporaneously_bound": true,
+      "logical_path": "benchmarks/test_model_export.py",
+      "recorded_sha256": "9c8467cfcfadd05479b3155e81b655679b78c462ec4bddc48296e62eb1d6af3e",
+      "snapshot_archive": "raw-evidence.tar.gz",
+      "snapshot_archive_member": "source-snapshots/test_model_export-9c8467cfcfadd05479b3155e81b655679b78c462ec4bddc48296e62eb1d6af3e.py.txt",
+      "snapshot_bytes": 26113,
+      "snapshot_verified": true
+    },
+    {
+      "contemporaneously_bound": true,
+      "logical_path": "benchmarks/test_model_export.py",
+      "recorded_sha256": "e21203c5968ebfd3ef725ac53a1f3ee059133f607ddaea44ddbd24f92dfb5bf5",
+      "snapshot_archive": "raw-evidence.tar.gz",
+      "snapshot_archive_member": "source-snapshots/test_model_export-e21203c5968ebfd3ef725ac53a1f3ee059133f607ddaea44ddbd24f92dfb5bf5.py.txt",
+      "snapshot_bytes": 23103,
+      "snapshot_verified": true
+    },
+    {
+      "contemporaneously_bound": true,
+      "logical_path": "build/pinned-export-probe-worker.py",
+      "recorded_sha256": "0ec5c4f42ea9f58e99bc79ec6cc3187a58d1153999d6984fce5b88f900fc5f8f",
+      "snapshot_archive": "raw-evidence.tar.gz",
+      "snapshot_archive_member": "source-snapshots/pinned-export-probe-worker-0ec5c4f42ea9f58e99bc79ec6cc3187a58d1153999d6984fce5b88f900fc5f8f.py.txt",
+      "snapshot_bytes": 1881,
+      "snapshot_verified": true
+    },
+    {
+      "archival_sha256": "a65a48411a90b650f98d87cbf8ee1eeb3f94c20456ce0c58325fda94fc587db8",
+      "contemporaneously_bound": false,
+      "logical_path": "build/pinned-export-probe-worker.py",
+      "provenance": "Retained historical snapshot",
+      "snapshot_archive": "raw-evidence.tar.gz",
+      "snapshot_archive_member": "source-snapshots/pinned-export-probe-worker-a65a48411a90b650f98d87cbf8ee1eeb3f94c20456ce0c58325fda94fc587db8.py.txt",
+      "snapshot_bytes": 1724,
+      "snapshot_verified": true
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "cache_environment_note": "ABI imports warned about unwritable default cache directories. Future child environments must set HF_HOME/TRANSFORMERS_CACHE and MPLCONFIGDIR under their scoped build root.",
+  "campaign_ready": false,
+  "complete_package_counts": {
+    "converter": 47,
+    "runtime": 21
+  },
+  "dependency_effort": {
+    "byte_limit": 1073741824,
+    "deadline_seconds": 600,
+    "elapsed_seconds": 88.53921470799833,
+    "https_received_bytes": 370456444,
+    "model_calls": 0,
+    "model_data_download_bytes": 0,
+    "results": [
+      {
+        "environment": "converter",
+        "exit_code": 0,
+        "report": "converter-install-report.json",
+        "transfer_receipt": "transfer-converter-2.json"
+      },
+      {
+        "environment": "runtime",
+        "exit_code": 0,
+        "report": "runtime-install-report.json",
+        "transfer_receipt": "transfer-runtime-1.json"
+      }
+    ],
+    "schema_version": "hadamard-dependency-effort.v1",
+    "script_sha256": {
+      "bootstrap.py": "c22210ce611dcc225db29078c6248cb78062af57932b6707d0d4d610def23db1",
+      "pip_meter.py": "ecabb28c1a64ca0e156c7510c0408368ae8db11867fdf35629e5fad14d3bd3a9"
+    },
+    "status": "complete"
+  },
+  "evidence": {
+    "abi_probe.py": {
+      "bytes": 3741,
+      "sha256": "79bb1d354aa8b00b094e44a3a9eb46afa0fadc429b19804305ab860ad50896b4"
+    },
+    "bootstrap.py": {
+      "bytes": 4367,
+      "sha256": "c22210ce611dcc225db29078c6248cb78062af57932b6707d0d4d610def23db1"
+    },
+    "converter-abi.json": {
+      "bytes": 1836,
+      "sha256": "9b59bbf0b68072a7e96d326416eb2b72169d1f4fcfcb52f081bdb0a86c280a68"
+    },
+    "converter-install-report.json": {
+      "bytes": 810983,
+      "sha256": "097159906d7848b6b144e52ac67c8f46a6411d9dcd98b629879197ff710ddf2f"
+    },
+    "converter-installed-verification-final.json": {
+      "bytes": 469,
+      "sha256": "ddfa099db81991c8ebfc2d7ef43df3f6f040fdfb41e4c4f23516277db7561198"
+    },
+    "converter-locked-requirements.txt": {
+      "bytes": 11714,
+      "sha256": "9aa948fa3a9f3d1455a04b7cba936d1acb0f8f8029b09081ccb7de4097e130a1"
+    },
+    "dependency-lock.json": {
+      "bytes": 108745,
+      "sha256": "f4b045d55bb3de7d8673c2a1e89ee15ec3dcd398097df381d3faa0761c67878b"
+    },
+    "effort-result-1.json": {
+      "bytes": 622,
+      "sha256": "ca957f146517494aa29a552eee1106ef669e853e76378d0dcdbaf30894c069f9"
+    },
+    "effort-result-2.json": {
+      "bytes": 824,
+      "sha256": "3f243dc4b6089069146ccb9b100cb77a71d33078752bb2e46f28526329dd0ff6"
+    },
+    "effort-start.json": {
+      "bytes": 158,
+      "sha256": "e2a5044ac9ed298a54fa10bf01fd188f74ec78fd770571520f73bb5274356111"
+    },
+    "pip_meter.py": {
+      "bytes": 1954,
+      "sha256": "ecabb28c1a64ca0e156c7510c0408368ae8db11867fdf35629e5fad14d3bd3a9"
+    },
+    "runtime-abi.json": {
+      "bytes": 1060,
+      "sha256": "b0884b1e053081408ba56bdc2ca7a692b655b2f7a55387065ec3f3ec6fe42262"
+    },
+    "runtime-install-report.json": {
+      "bytes": 373249,
+      "sha256": "e371754c2c7620d2db9bc81ec5dccd01176ea4287a9f4e67e45526c33e557bf7"
+    },
+    "runtime-installed-verification-final.json": {
+      "bytes": 423,
+      "sha256": "5a3235049aff0e66da5bba9bce7a5a0c24cdcd7f026844ce11fe288607a25bad"
+    },
+    "runtime-locked-requirements.txt": {
+      "bytes": 5283,
+      "sha256": "3753da8da214a00a8a90200843c70988d1a3e3723b6b9723daf6cfd506f7dc3e"
+    },
+    "transfer-converter-1.json": {
+      "bytes": 561,
+      "sha256": "ec6f0c5e6debfbe07a9f04733b04b1889edae4d58e4520f272a649bb2b41dcc1"
+    },
+    "transfer-converter-2.json": {
+      "bytes": 570,
+      "sha256": "3751f0fc8408501effdeeae6a53ddf70421da7eca7cd0a90d815027ac0d2e64f"
+    },
+    "transfer-runtime-1.json": {
+      "bytes": 566,
+      "sha256": "72c2a95c1a5de1c43cbc70c8a7f3ff265311816aa75c35934b523d64eb8809f1"
+    }
+  },
+  "hash_evidence_note": "All 55 unique wheel bodies were found under pip HTTP cache keys for the exact reported official URLs, hashed, and checked against their own distribution metadata. Reported hashes also matched wherever supplied. PyTorch Jinja2 omitted a report hash; its retained 134899-byte wheel supplied measured SHA256 85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67. Original pip reports are unmodified.",
+  "model_calls": 0,
+  "model_data_download_bytes": 0,
+  "qualification_elapsed_from_effort_start_seconds": 493.76497556600225,
+  "schema_version": "hadamard-dependency-qualification.v1",
+  "scope": "Complete dependency provenance, closure, installed identities and tiny generated-array ABI only. No full-model adapter parity, pretrained inputs or campaign feasibility claim.",
+  "source_sha256": {
+    "benchmarks/dependency_lock.py": "a57dc27ebfd61fb0c8a1cd1d2028cb6b60bb3aeae356146d441d1a1030d5dc76",
+    "benchmarks/test_dependency_lock.py": "47c682fb66b8d243dcef1b4506ed4f76cacd231133bb2f2d072794accde3a6b7",
+    "requirements-benchmark.txt": "f243ef93135a9366162c78ded77c844e06e9c43f0b2e8618e7d9024a7f2b64bd",
+    "requirements-model-converter.txt": "1908dde46497025834d6a65ecc0aec65cc2db1e895b2a6e5d0bea93f03e477b0",
+    "requirements.txt": "4c40934e438ae009a1eb0b5a9322cce029fba6ca1af6e314c088c1957cee0c04"
+  },
+  "status": "dependency_qualified",
+  "unique_wheel_count": 55,
+  "unique_wheel_payload_bytes": 357478998,
+  "validation": {
+    "converter_abi": "passed",
+    "converter_installation": "passed",
+    "runtime_abi": "passed",
+    "runtime_installation": "passed",
+    "unit_test_status": "passed",
+    "unit_tests": 11
+  }
+}

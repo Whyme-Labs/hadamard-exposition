@@ -1,0 +1,19 @@
+test_active_cache_cannot_rescue_failed_memory_gate (benchmarks.test_campaign_guard.GuardTests.test_active_cache_cannot_rescue_failed_memory_gate) ... ok
+test_atomic_evidence_and_directories_do_not_overwrite (benchmarks.test_campaign_guard.GuardTests.test_atomic_evidence_and_directories_do_not_overwrite) ... ok
+test_atomic_publication_disappearance_does_not_mask_process_errors (benchmarks.test_campaign_guard.GuardTests.test_atomic_publication_disappearance_does_not_mask_process_errors) ... ok
+test_bound_files_detect_tamper_and_path_escape (benchmarks.test_campaign_guard.GuardTests.test_bound_files_detect_tamper_and_path_escape) ... ok
+test_cpu_runtime_and_disk_errors_are_all_reported (benchmarks.test_campaign_guard.GuardTests.test_cpu_runtime_and_disk_errors_are_all_reported) ... ok
+test_exact_host_can_pass_without_claiming_campaign_ready (benchmarks.test_campaign_guard.GuardTests.test_exact_host_can_pass_without_claiming_campaign_ready) ... ok
+test_execution_lock_rejects_placeholder_receipts (benchmarks.test_campaign_guard.GuardTests.test_execution_lock_rejects_placeholder_receipts) ... ok
+test_exit_race_requires_matching_pid_start_and_terminal_state (benchmarks.test_campaign_guard.GuardTests.test_exit_race_requires_matching_pid_start_and_terminal_state) ... ok
+test_host_cap_dirty_cache_and_missing_counters_fail_closed (benchmarks.test_campaign_guard.GuardTests.test_host_cap_dirty_cache_and_missing_counters_fail_closed) ... ok
+test_real_worker_is_identity_bound_and_sampled (benchmarks.test_campaign_guard.GuardTests.test_real_worker_is_identity_bound_and_sampled) ... ok
+test_review_is_bound_to_both_axes_and_exact_source (benchmarks.test_campaign_guard.GuardTests.test_review_is_bound_to_both_axes_and_exact_source) ... ok
+test_symlinks_do_not_hide_output_or_replace_evidence (benchmarks.test_campaign_guard.GuardTests.test_symlinks_do_not_hide_output_or_replace_evidence) ... ok
+test_worker_cache_limit_is_observed_during_execution (benchmarks.test_campaign_guard.GuardTests.test_worker_cache_limit_is_observed_during_execution) ... ok
+test_worker_deadline_retains_failed_observation (benchmarks.test_campaign_guard.GuardTests.test_worker_deadline_retains_failed_observation) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.773s
+
+OK
