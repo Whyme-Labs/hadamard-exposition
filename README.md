@@ -4,6 +4,12 @@ A reproducible exposition on Hadamard matrices, changes of basis and quantizatio
 
 Open [exposition.html](exposition.html) in a browser after downloading or cloning the repository. It contains the illustrated article, native MathML equations and an interactive four-coordinate calculator. All of its display assets are embedded. The editable manuscript is [article.md](article.md).
 
+## Award submission status
+
+The fixed exposition is packaged for the Exposition category of Justin Sun Prize problem JSP-000013, the Hadamard matrix conjecture. The [submission dossier](docs/awards/README.md) records authorship, exact artifact identities, original contributions, review evidence, reproduction instructions, and claim limits.
+
+No claim, candidate status, committee decision, award, or payment is asserted. As checked on 20 October 2026, the repository is private and the official MathDB pilot rollout is still marked `prepared`. A stable public artifact and independently verifiable UTC publication date remain required before official submission.
+
 ## Research question
 
 An orthogonal change of basis preserves the exact linear product. Rounding depends on the representation and the quantizer's scale groups. This project proves the elementary identities and measures their consequences in small synthetic experiments.
@@ -120,6 +126,7 @@ The calculator check executes its actual JavaScript with a small DOM stub. It te
 - [CONTEXT.md](CONTEXT.md) defines the research vocabulary and boundaries.
 - [docs/reference-import.json](docs/reference-import.json) records the original package and imported file hashes. It identifies the imported snapshot; later article and tooling edits have their own Git history.
 - [sources.json](sources.json) records the primary references and the claims they support.
+- [docs/awards/README.md](docs/awards/README.md) records the JSP-000013 exposition submission package and the remaining publication gates.
 
 The reference and group-size results are synthetic error simulations in float64. The model-benchmark design adds actual packed-operator conformance checks on generated inputs. The project has not measured pretrained language-model quality or model inference improvements. It makes no claim of solving the general Hadamard conjecture or receiving a prize.
 
