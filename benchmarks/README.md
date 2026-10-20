@@ -22,6 +22,8 @@ Every attempt requires a fresh output path. The command refuses a failed host ga
 
 The [implementation and launch evidence](../validation/2026-10-17-model-campaign/README.md) distinguish installed dependencies and generated-model conformance from actual Pythia results. The real pinned Torch/Transformers export probe checks six variants, dynamic/cache paths and independent numerical references on a small untrained GPTNeoX. Its result does not substitute for the two-article pretrained development gate.
 
+The [fresh environment and complete-suite qualification](../validation/2026-10-18-environment-recovery/README.md) restores both exact dependency closures and records all 135 current offline tests passing within the original generated-input limits. Its raw archives, source identities and observed fixture-retention discrepancy are preserved. The fresh campaign preflight passes runtime metadata checks and remains blocked by the unchanged 6 GiB memory requirement.
+
 ## Reproduce the local qualification
 
 Use Python 3.12.14 in an isolated environment and install the pinned CPU dependencies from the repository root:

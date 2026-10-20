@@ -1,0 +1,66 @@
+{
+  "campaign_preflight": {
+    "conservative_available_memory_bytes": 2844090368,
+    "remaining_error": "Conservative available memory is below the required 6 GiB or cannot be established",
+    "required_memory_bytes": 6442450944,
+    "started_utc": "2026-10-18T05:05:16.288598+00:00",
+    "status": "blocked"
+  },
+  "campaign_ready": false,
+  "dependency_effort": {
+    "abi_status": {
+      "converter": "passed",
+      "runtime": "passed"
+    },
+    "elapsed_seconds": 74.979776467997,
+    "https_received_bytes": 357544851,
+    "packages": {
+      "converter": 47,
+      "runtime": 21
+    }
+  },
+  "durable_checkpoint": "https://github.com/Whyme-Labs/hadamard-exposition/issues/6#issuecomment-6246816407",
+  "fixture_observations": {
+    "cause": "unresolved",
+    "later_inspection_regular_file_bytes": 1211743,
+    "later_inspection_regular_files": 199,
+    "qualification_reported_regular_files": 0,
+    "scope": "Temporary fixture peak disk usage was explicitly outside the observed retained-output tree. No cleanup guarantee is established."
+  },
+  "helper_hashes_reported": {
+    "full-suite-worker.py": "068ab1ce700cd12ce9f1b2c684577c0504f18675689076c6b6012171cb2b0b72",
+    "pip-worker.py": "4703e7f8d0d83b4faf72d05a2060d809c9fe4b4a2cee69803236618cb41a0f48",
+    "pip_meter.py": "ecabb28c1a64ca0e156c7510c0408368ae8db11867fdf35629e5fad14d3bd3a9",
+    "run-recovery.py": "6f35730a535896008a2fa9aa1e6235d9e3f0ef77c94785bdc13b53e15ea37ac2"
+  },
+  "model_calls": 0,
+  "model_data_download_bytes": 0,
+  "offline_suite": {
+    "errors": 0,
+    "failures": 0,
+    "os_peak_worker_rss_bytes": 245907456,
+    "qualification_elapsed_seconds": 6.309348972001317,
+    "sampled_peak_worker_rss_bytes": 224423936,
+    "skipped": 0,
+    "task_elapsed_seconds": 6.19880451499921,
+    "tests": 135,
+    "valid_rss_samples": 122
+  },
+  "packaging_attempt": {
+    "error_type": "ValueError",
+    "exit_code": 1,
+    "message": "Temporary fixture cleanup observation differs",
+    "status": "failed"
+  },
+  "reported_status": "passed",
+  "retention_incident": {
+    "first_error": "exec-server transport disconnected; failed to resume exec-server session: recovery timed out after 25s",
+    "later_error": "409 Conflict, environment_offline: Environment is not connected.",
+    "recovery_observation": "Shell access returned with the earlier work/issue5-model-campaign checkout; the newly written validation directory and both qualification paths were absent."
+  },
+  "reviewed_source_commit": "8237ea186603b1b34aadbfdc9133bd956db41c05",
+  "schema_version": "hadamard-recovery-secondary-observation.v1",
+  "scope": "Secondary summary transcribed from completed tool outputs. Original local raw receipts, logs, new helper sources and restored venvs were unavailable after the execution service resumed an older workspace snapshot. This is not a substitute raw qualification.",
+  "source_commit": "a72bb30a4b65a6adce751b5c6b136d6880f2d43b",
+  "source_map_sha256": "1dd75e9af0736795e4d83c26f866d15d9f7a3fe55003e399ddbd36951ab2d69e"
+}
