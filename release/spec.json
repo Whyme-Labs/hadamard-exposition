@@ -1,0 +1,33 @@
+{
+  "schema": "hadamard-release-spec.v1",
+  "source_commit": "280ab929e206d263a5928585b13e09558ad445da",
+  "files": {
+    "article.md": "c35b5a157cec7c96b23d5ec94969ea934b881380",
+    "exposition.html": "9c36728e24ca82f528fe8205b849762f30bfc806",
+    "sources.json": "e250d105d1ed2cc9eab79811ff86d3db87c79cab",
+    "coordinate-example.png": "ff157b7e6520c2db0a8cafa66ff7ec381b46b289",
+    "coordinate-example.svg": "0293b9686b73e09a88e28c3c5a17c1deed0bb5ed",
+    "quantization-results.png": "d38c5734f64c18f62e0b032a2a65e5e7ccc4d64e",
+    "quantization-results.svg": "797da5a5488f170fb48e4ac7409eb4e2673c331c",
+    "group-size-results.png": "8951e3696f5f8be232a0ade82b0fdfc8bc62af43",
+    "group-size-results.svg": "8492a91c293c4a84ab35d457ae4e09852e9bdef2",
+    "style.css": "e802b3c2881f764dd6a6fef70e8c4c43a7b07ee4",
+    "calculator.html": "1b0c33b3fb45fa4a9adb79360cd1a28cd9178e96",
+    "calculator-verification.json": "9764c1ed7b4e7ce5ec76b5dc8fe33f6e4828f838",
+    "experiment.py": "e484c74b01130bc3617d9d9a86e9a32adbfcdc7f",
+    "group_experiment.py": "7a8cb2590666faa470d2bea5cce8b1e420437c80",
+    "results.json": "bb786e40925dd1a884644c64ff850ab64dd25845",
+    "group-results.json": "a78bbbd1263288e256865aee27e2dbc3cb035049",
+    "requirements.txt": "def132cbbdc1f2b65bc65dddf97bcff597a78faf",
+    "test_verify_results.py": "f65fddd6ec6a6ef178d5c850f98ad8504c4dc225",
+    "test_group_experiment.py": "2254212aad423044c6d93d7fc368d4cf0b4ec3a9",
+    "verify-calculator.cjs": "ce2cbd2c44241ae2fbe8d803b68a2f235988c3cc",
+    "scripts/build_article.py": "800d40322510fdf33334c7032d220d06ec35cb93",
+    "scripts/validate.py": "da071041603d85d02f44c5cf361e8f4c7a8f3ba4",
+    "scripts/verify_results.py": "3b451a4bf45f258ba639962264618d46b6453232",
+    "docs/experiments/group-size-v1.md": "b1a2205270cf1b8d1e0782d993ac47ed38e94993",
+    "docs/reference-import.json": "1b90e80d6d35ecd649a5a30ad2bf151dd6a777bd",
+    "validation/2026-10-17-group-size.json": "4260e06f4c40ba105f1e5959a0c38d89c940a170"
+  },
+  "approval": "User approved continuing from the proposed curated mirror and CC BY 4.0 / MIT split. No private repository visibility change is authorized."
+}

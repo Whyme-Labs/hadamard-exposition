@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "Cite the fixed public commit and MANIFEST.json with this exposition."
+title: "What changes when the answer stays the same"
+type: software
+version: "exposition-v1"
+authors:
+  - family-names: "Soh"
+    given-names: "Wei Meng"
+    affiliation: "Whyme Labs"
+license:
+  - MIT
+  - CC-BY-4.0
+abstract: >-
+  An AI-assisted exposition on Hadamard matrices and representation-dependent
+  quantization error, with exact counterexamples, synthetic experiments and
+  verification code. Not a solution of the Hadamard conjecture or a completed
+  pretrained-model performance result. See LICENSE.md for the license split.
+keywords:
+  - Hadamard matrices
+  - quantization
+  - mathematical exposition
