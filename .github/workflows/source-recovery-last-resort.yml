@@ -1,14 +1,15 @@
-name: Last-resort private source recovery
-# Local computation works. Direct source download fails DNS in the assistant
-# container. Home run 39463443466 remained queued without executing a step.
-# This transfer does not change the normal local -> home -> Blacksmith policy,
-# publish the repository, or imply validation acceptance.
+name: Last-resort exact release validation
+# Local fresh-seed research passed. Direct full-source download fails locally.
+# Home run 39463443466 did not start. Blacksmith run 39465577952 checked out
+# the source successfully but Actions artifact storage quota blocked transfer.
+# This explicit fallback validates the unmodified payload and retains only its
+# approved archive and receipts on a new private evidence branch. No publication.
 on:
   pull_request:
     paths: ['.github/workflows/source-recovery-last-resort.yml']
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 concurrency:
   group: exposition-source-recovery-${{ github.ref }}
   cancel-in-progress: true
@@ -16,28 +17,70 @@ jobs:
   recover:
     if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
     runs-on: blacksmith-2vcpu-ubuntu-2404
-    timeout-minutes: 5
+    timeout-minutes: 10
     env:
       EXPECTED_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           ref: ${{ env.EXPECTED_SHA }}
           fetch-depth: 0
           persist-credentials: false
-      - name: Export exact private Git objects for local validation
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12.14'
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22.16.0'
+      - name: Qualify release code and install only synthetic dependencies
         shell: bash
         run: |
           set -euo pipefail
           test "$(git rev-parse HEAD)" = "$EXPECTED_SHA"
-          mkdir -p build
-          git bundle create build/hadamard-source.bundle HEAD
-          sha256sum build/hadamard-source.bundle > build/hadamard-source.bundle.sha256
-      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
-        with:
-          name: private-source-${{ env.EXPECTED_SHA }}
-          path: |
-            build/hadamard-source.bundle
-            build/hadamard-source.bundle.sha256
-          if-no-files-found: error
-          retention-days: 1
+          python -m unittest discover -s release -p 'test_*.py' -v
+          python -m pip install --disable-pip-version-check -r requirements.txt
+      - name: Build and reproduce the unmodified complete public payload
+        run: python release/build_bundle.py
+      - name: Retain accepted archive and receipts on a new private evidence branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          python - <<'PY'
+          import base64,json,os,pathlib,urllib.request
+          root=pathlib.Path('build/public-release-v1')
+          report=json.loads((root/'build-report.json').read_text())
+          if report['status']!='passed' or report['publication_performed'] is not False:
+              raise SystemExit('Accepted unpublished build required')
+          repo=os.environ['GITHUB_REPOSITORY']
+          if repo!='Whyme-Labs/hadamard-exposition':
+              raise SystemExit('Unexpected repository')
+          def request(path,data):
+              req=urllib.request.Request('https://api.github.com/repos/'+repo+path,
+                  data=json.dumps(data).encode(),method='POST',headers={
+                  'Authorization':'Bearer '+os.environ['GH_TOKEN'],
+                  'Accept':'application/vnd.github+json','Content-Type':'application/json'})
+              with urllib.request.urlopen(req,timeout=60) as response:
+                  return json.load(response)
+          entries=[]
+          for name in ('build-report.json','validation.json','validation.stdout.log','validation.stderr.log','hadamard-exposition-v1.zip'):
+              data=(root/name).read_bytes()
+              blob=request('/git/blobs',{'content':base64.b64encode(data).decode(),'encoding':'base64'})
+              entries.append({'path':name,'mode':'100644','type':'blob','sha':blob['sha']})
+          tree=request('/git/trees',{'tree':entries})
+          commit=request('/git/commits',{'message':'Retain validated exposition v1 archive and source-bound receipts, run '+os.environ['GITHUB_RUN_ID'],
+              'tree':tree['sha'],'parents':[]})
+          branch='evidence/release-v1-'+os.environ['GITHUB_RUN_ID']
+          request('/git/refs',{'ref':'refs/heads/'+branch,'sha':commit['sha']})
+          print(json.dumps({'private_evidence_branch':branch,'commit':commit['sha'],'build_report':report},indent=2))
+          PY
+      - name: Print exact validation receipt even if acceptance fails
+        if: always()
+        shell: bash
+        run: |
+          for path in build/public-release-v1/build-report.json build/public-release-v1/validation.json build/public-release-v1/validation.stdout.log build/public-release-v1/validation.stderr.log; do
+            if test -f "$path"; then printf '\nRETAINED %s\n' "$path"; cat "$path"; fi
+          done
