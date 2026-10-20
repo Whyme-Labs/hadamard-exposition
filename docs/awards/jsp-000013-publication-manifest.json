@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "generated_on": "2026-10-20",
+  "problem": {
+    "jsp_id": "JSP-000013",
+    "name": "Hadamard matrix conjecture",
+    "mathdb_id": 315867,
+    "mathdb_slug": "hadamard-conjecture"
+  },
+  "submission": {
+    "category": "Exposition",
+    "title": "What changes when the answer stays the same",
+    "subtitle": "Hadamard matrices, quantization, and the price of a representation",
+    "authors": [
+      {
+        "name": "Wei Meng Soh",
+        "github_login": "wms2537",
+        "affiliation": "Whyme Labs"
+      }
+    ]
+  },
+  "fixed_scientific_source": {
+    "repository": "Whyme-Labs/hadamard-exposition",
+    "repository_visibility_as_checked": "private",
+    "commit_sha": "5ec28b8f5a0dbed51630fc94e270a2a2462c37f3",
+    "tree_sha": "d0490c2647f8c067dfc6b5fde1d69730fa7ab932",
+    "integrated_at_utc": "2026-10-20T15:23:55Z",
+    "first_reviewed_article_commit_sha": "554beb2647eb5430de20bddeea3df100c163725c",
+    "first_reviewed_article_tree_sha": "9d03c1020264ffc1b1abedf73f25a640e250588c"
+  },
+  "artifacts": [
+    {
+      "path": "exposition.html",
+      "role": "standalone illustrated exposition and interactive calculator",
+      "git_blob_sha1": "9c36728e24ca82f528fe8205b849762f30bfc806",
+      "bytes": 798821
+    },
+    {
+      "path": "article.md",
+      "role": "editable manuscript",
+      "git_blob_sha1": "c35b5a157cec7c96b23d5ec94969ea934b881380",
+      "bytes": 28500
+    },
+    {
+      "path": "sources.json",
+      "role": "source-to-claim map",
+      "git_blob_sha1": "e250d105d1ed2cc9eab79811ff86d3db87c79cab",
+      "bytes": 2960
+    },
+    {
+      "path": "results.json",
+      "role": "retained reference experiment results",
+      "git_blob_sha1": "bb786e40925dd1a884644c64ff850ab64dd25845",
+      "bytes": 72997
+    },
+    {
+      "path": "group-results.json",
+      "role": "retained group-size sensitivity results",
+      "git_blob_sha1": "a78bbbd1263288e256865aee27e2dbc3cb035049",
+      "bytes": 337044
+    },
+    {
+      "path": "validation/2026-10-17-group-size.json",
+      "role": "retained exposition and reproduction validation receipt",
+      "git_blob_sha1": "4260e06f4c40ba105f1e5959a0c38d89c940a170",
+      "bytes": 18180
+    }
+  ],
+  "history": {
+    "date_displayed_in_manuscript": "2026-10-17",
+    "private_repository_history_date": "2026-10-17",
+    "public_publication_date_utc": null,
+    "public_release_commit_sha": null,
+    "public_release_tag": null,
+    "stable_public_material_url": null,
+    "note": "Private repository history is not represented as independently verifiable public priority. Fill public fields only after immutable public release."
+  },
+  "review_evidence": [
+    {
+      "kind": "internal_agent_standards_review",
+      "scope": "exposition, evidence preservation, failure handling, source identities, verifier separation",
+      "bound_tree_sha": "9d03c1020264ffc1b1abedf73f25a640e250588c",
+      "external_academic_peer_review": false,
+      "prize_committee_review": false
+    },
+    {
+      "kind": "internal_agent_specification_review",
+      "scope": "arithmetic, all reported settings, uncertainty calculations, scale counts, independent exact-integer Hadamard construction",
+      "bound_tree_sha": "9d03c1020264ffc1b1abedf73f25a640e250588c",
+      "external_academic_peer_review": false,
+      "prize_committee_review": false
+    }
+  ],
+  "claim_limits": [
+    "No solution of the general Hadamard conjecture is claimed.",
+    "No complete Lean formalization is claimed.",
+    "No universal quantization improvement is claimed.",
+    "No pretrained language-model quality or inference-cost result is claimed.",
+    "No candidate status, committee decision, award, or payment is claimed."
+  ],
+  "official_status_as_checked_2026_10_20": {
+    "mathdb_pilot_rollout": "prepared",
+    "jsp_000013_exposition_register_status": null,
+    "automatic_claims_active": false
+  },
+  "readiness": {
+    "scientific_content_ready": true,
+    "submission_dossier_ready": true,
+    "immutable_public_release_ready": false,
+    "authorized_content_review_complete": false,
+    "committee_selection_complete": false,
+    "ready_for_official_claim": false
+  }
+}
