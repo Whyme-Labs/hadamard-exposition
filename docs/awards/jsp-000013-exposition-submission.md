@@ -76,7 +76,7 @@ This submission claims an exposition, not a solution.
 
 ## Review evidence
 
-The original exposition and group-size milestone was reviewed on two separate axes before publication in pull request 3:
+The original exposition and group-size milestone were reviewed on two separate axes before publication in pull request 3:
 
 - A standards review checked preservation, failure handling, source identities, and separation between result production and verification.
 - A specification review checked arithmetic, reported settings, uncertainty calculations, scale counts, and an independent exact-integer Hadamard construction.
