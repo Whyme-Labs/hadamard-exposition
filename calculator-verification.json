@@ -1,0 +1,42 @@
+{
+  "actual_bundled_javascript_executed": true,
+  "update_events_checked": true,
+  "exact_counterexample_matches_rational_result": true,
+  "all_assets_embedded": true,
+  "mathml_equations": 67,
+  "embedded_images": 3,
+  "screenshot_verification": false,
+  "screenshot_limitation": "This check executes the bundled JavaScript with a DOM stub. It does not perform browser screenshot verification.",
+  "cases": [
+    {
+      "case": "exact_rational_counterexample",
+      "original": "0.0000%",
+      "rotated": "0.3301%",
+      "summary": "This vector rounds more accurately in its original basis."
+    },
+    {
+      "case": "outlier_example",
+      "original": "0.5480%",
+      "rotated": "0.0078%",
+      "summary": "This vector rounds more accurately in the Hadamard basis."
+    },
+    {
+      "case": "equal_coordinates",
+      "original": "0.0000%",
+      "rotated": "0.0000%",
+      "summary": "Both representations give the same error."
+    },
+    {
+      "case": "zero_vector",
+      "original": "Undefined",
+      "rotated": "Undefined",
+      "summary": "The zero vector has zero absolute error; relative error is undefined."
+    },
+    {
+      "case": "bit_count_control",
+      "original": "0.0002%",
+      "rotated": "0.0007%",
+      "summary": "This vector rounds more accurately in its original basis."
+    }
+  ]
+}

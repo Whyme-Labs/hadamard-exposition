@@ -1,0 +1,76 @@
+{
+  "schema": "hadamard-reference-import.v1",
+  "source_package_sha256": "2a00ae547947a087c3799140af347b82337ae2e2827e0c419dadee92802dc732",
+  "imported_files": [
+    {
+      "path": "experiment.py",
+      "sha256": "b1c76633c73ecda248af1d5fc868db41fb6b9302e1a5f63a0d1b63edde323525",
+      "bytes": 15569
+    },
+    {
+      "path": "results.json",
+      "sha256": "28c0c37a0e6e053384cbe6a54eec99741e67f6f65057705dc1121a7db4032d03",
+      "bytes": 72997
+    },
+    {
+      "path": "article.md",
+      "sha256": "5096c69bebabce2a8310a3901d1af81372449be358a8326913048c0f32f22544",
+      "bytes": 21227
+    },
+    {
+      "path": "exposition.html",
+      "sha256": "1d68d9d5cfa520370232196b632061424fa318a338601b58d5984ad5dc1a3154",
+      "bytes": 453609
+    },
+    {
+      "path": "style.css",
+      "sha256": "73130938602642abaff4b5290821a64adf4bab62d55e114e4d11d82fb41f0c45",
+      "bytes": 4824
+    },
+    {
+      "path": "calculator.html",
+      "sha256": "3291a3f85d7f0ce981930bdf80f908003e37e03f3da791c284870d6a35bd5b7f",
+      "bytes": 4951
+    },
+    {
+      "path": "verify-calculator.cjs",
+      "sha256": "f01ed10683a0a927c253ed94c6b74055ea9f410ca326f988bcb7c131c7e45cb7",
+      "bytes": 3344
+    },
+    {
+      "path": "calculator-verification.json",
+      "sha256": "dd07d4a84d55e10378a6ef79aa56278b2ff7232e4bf857ea7ce1815959ddfd01",
+      "bytes": 1368
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "4c40934e438ae009a1eb0b5a9322cce029fba6ca1af6e314c088c1957cee0c04",
+      "bytes": 32
+    },
+    {
+      "path": "sources.json",
+      "sha256": "653056a589002f6b66b0887bd60139c58d7585b8d65bc25837e91f59c945758b",
+      "bytes": 2960
+    },
+    {
+      "path": "quantization-results.png",
+      "sha256": "5df5073d2379dd59a0b3f3f05339e83c85827e3f77fcb5c9797af1622d9f2c9e",
+      "bytes": 187557
+    },
+    {
+      "path": "quantization-results.svg",
+      "sha256": "f8593e6f131aca5a79ab4d4aab39c4c2b49ac3292d5c9dfaa26324e874b32a13",
+      "bytes": 136055
+    },
+    {
+      "path": "coordinate-example.png",
+      "sha256": "f129d723fba5783be9f68783af552b30351c2aab55b3789de9cb33fdd134444f",
+      "bytes": 110465
+    },
+    {
+      "path": "coordinate-example.svg",
+      "sha256": "64b9abb28d312fe5b672295ec32046fad4917fe954dffe822e40eba943fe57f4",
+      "bytes": 112119
+    }
+  ]
+}
