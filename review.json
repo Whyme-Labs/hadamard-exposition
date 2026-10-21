@@ -1,0 +1,873 @@
+{
+  "schema": "hadamard-publication-findings-review.v1",
+  "started_utc": "2026-10-21T05:32:44.201071+00:00",
+  "source_commit": "e88a4f254b77445547dab85f667413b025b438a6",
+  "public_metadata": [
+    {
+      "archive_blob": "4fa8471dc08aa7cf93724e59a86a89b75a63a6a0",
+      "member": "reports/converter-install-report.json",
+      "package": "mpmath",
+      "version": "1.3.0",
+      "source": "https://pypi.org/pypi/mpmath/1.3.0/json",
+      "matching_fields": [
+        ".author_email",
+        ".description"
+      ],
+      "indicator_count": 16,
+      "publicly_verified_count": 16,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "8f5c70bf66cb2653d0a81263eda5abeb9858d3bc84d264158b98f8a3b317fa08"
+    },
+    {
+      "archive_blob": "4fa8471dc08aa7cf93724e59a86a89b75a63a6a0",
+      "member": "reports/converter-install-report.json",
+      "package": "typing_extensions",
+      "version": "4.15.0",
+      "source": "https://pypi.org/pypi/typing_extensions/4.15.0/json",
+      "matching_fields": [
+        ".author_email"
+      ],
+      "indicator_count": 1,
+      "publicly_verified_count": 1,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "2a1282977b00ecc331ab7de1038da6dae0a7b4b4d261e43420cbbe3c6539d319"
+    },
+    {
+      "archive_blob": "4fa8471dc08aa7cf93724e59a86a89b75a63a6a0",
+      "member": "reports/converter-install-report.json",
+      "package": "huggingface-hub",
+      "version": "0.26.2",
+      "source": "https://pypi.org/pypi/huggingface-hub/0.26.2/json",
+      "matching_fields": [
+        ".description"
+      ],
+      "indicator_count": 1,
+      "publicly_verified_count": 1,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "d8694c30233720cf23375e34056c5f88b66ce301564936d9c9a0c60a7871356b"
+    },
+    {
+      "archive_blob": "4fa8471dc08aa7cf93724e59a86a89b75a63a6a0",
+      "member": "reports/converter-install-report.json",
+      "package": "tokenizers",
+      "version": "0.20.3",
+      "source": "https://pypi.org/pypi/tokenizers/0.20.3/json",
+      "matching_fields": [
+        ".author",
+        ".author_email"
+      ],
+      "indicator_count": 2,
+      "publicly_verified_count": 2,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "6b87e532f85f1c421deb916c22f284d8a1e0335bd19bd5a8cde2b56e72c6cfc5"
+    },
+    {
+      "archive_blob": "4fa8471dc08aa7cf93724e59a86a89b75a63a6a0",
+      "member": "reports/converter-install-report.json",
+      "package": "safetensors",
+      "version": "0.4.5",
+      "source": "https://pypi.org/pypi/safetensors/0.4.5/json",
+      "matching_fields": [
+        ".author_email"
+      ],
+      "indicator_count": 1,
+      "publicly_verified_count": 1,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "5d712650a97353b21e9b71239fb37bf76dcc86190144a64be371d735d506eab6"
+    },
+    {
+      "archive_blob": "4fa8471dc08aa7cf93724e59a86a89b75a63a6a0",
+      "member": "reports/converter-install-report.json",
+      "package": "multidict",
+      "version": "7.1.0",
+      "source": "https://pypi.org/pypi/multidict/7.1.0/json",
+      "matching_fields": [
+        ".author_email"
+      ],
+      "indicator_count": 1,
+      "publicly_verified_count": 1,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "f714c3360e67220a11a96f355a219639756190eb1d9ce4c8409ead2db75c2300"
+    },
+    {
+      "archive_blob": "4fa8471dc08aa7cf93724e59a86a89b75a63a6a0",
+      "member": "reports/converter-install-report.json",
+      "package": "yarl",
+      "version": "1.25.1",
+      "source": "https://pypi.org/pypi/yarl/1.25.1/json",
+      "matching_fields": [
+        ".author_email"
+      ],
+      "indicator_count": 1,
+      "publicly_verified_count": 1,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "234c2bd5e6cedb95983dfd2c4015ecb81b6577c46a8cd8f330f901a84ba6dcbe"
+    },
+    {
+      "archive_blob": "4fa8471dc08aa7cf93724e59a86a89b75a63a6a0",
+      "member": "reports/converter-install-report.json",
+      "package": "propcache",
+      "version": "0.5.4",
+      "source": "https://pypi.org/pypi/propcache/0.5.4/json",
+      "matching_fields": [
+        ".author_email"
+      ],
+      "indicator_count": 1,
+      "publicly_verified_count": 1,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "6ae424ad3ef569e3abe6a60551d5b94cd4e53ea5dbffb654274f5f80fb9124a6"
+    },
+    {
+      "archive_blob": "4fa8471dc08aa7cf93724e59a86a89b75a63a6a0",
+      "member": "reports/converter-install-report.json",
+      "package": "requests",
+      "version": "2.34.2",
+      "source": "https://pypi.org/pypi/requests/2.34.2/json",
+      "matching_fields": [
+        ".maintainer_email"
+      ],
+      "indicator_count": 2,
+      "publicly_verified_count": 2,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "edf085f92b79609aaeff6fb8f19413d823b1a5407c16a2f57656a894ee5fbe47"
+    },
+    {
+      "archive_blob": "4fa8471dc08aa7cf93724e59a86a89b75a63a6a0",
+      "member": "reports/converter-install-report.json",
+      "package": "charset-normalizer",
+      "version": "3.5.2",
+      "source": "https://pypi.org/pypi/charset-normalizer/3.5.2/json",
+      "matching_fields": [
+        ".description"
+      ],
+      "indicator_count": 1,
+      "publicly_verified_count": 1,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "0bc3f3f7d92825349fb5a73c9778e7caa8c65aa6d2373e38b99e89a641f02c77"
+    },
+    {
+      "archive_blob": "4fa8471dc08aa7cf93724e59a86a89b75a63a6a0",
+      "member": "reports/converter-install-report.json",
+      "package": "urllib3",
+      "version": "2.8.0",
+      "source": "https://pypi.org/pypi/urllib3/2.8.0/json",
+      "matching_fields": [
+        ".maintainer_email"
+      ],
+      "indicator_count": 2,
+      "publicly_verified_count": 2,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "70db934144bfeb5c33aea81aac2900640a6ed7f9ff7a49054965cdc38e766875"
+    },
+    {
+      "archive_blob": "4fa8471dc08aa7cf93724e59a86a89b75a63a6a0",
+      "member": "reports/converter-install-report.json",
+      "package": "filelock",
+      "version": "4.2.1",
+      "source": "https://pypi.org/pypi/filelock/4.2.1/json",
+      "matching_fields": [
+        ".maintainer_email"
+      ],
+      "indicator_count": 1,
+      "publicly_verified_count": 1,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "ecda767dbb7b875efa7aace5cb4921e9d9a393e83b2a2a4011d137647cf78f57"
+    },
+    {
+      "archive_blob": "4fa8471dc08aa7cf93724e59a86a89b75a63a6a0",
+      "member": "reports/converter-install-report.json",
+      "package": "xxhash",
+      "version": "4.0.1",
+      "source": "https://pypi.org/pypi/xxhash/4.0.1/json",
+      "matching_fields": [
+        ".author_email"
+      ],
+      "indicator_count": 1,
+      "publicly_verified_count": 1,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "0eefdc6f4d0ef93be83cc5358084aad749c45d16443e69c16d3c578acddc235e"
+    },
+    {
+      "archive_blob": "4fa8471dc08aa7cf93724e59a86a89b75a63a6a0",
+      "member": "reports/runtime-install-report.json",
+      "package": "mpmath",
+      "version": "1.3.0",
+      "source": "https://pypi.org/pypi/mpmath/1.3.0/json",
+      "matching_fields": [
+        ".author_email",
+        ".description"
+      ],
+      "indicator_count": 16,
+      "publicly_verified_count": 16,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "8f5c70bf66cb2653d0a81263eda5abeb9858d3bc84d264158b98f8a3b317fa08"
+    },
+    {
+      "archive_blob": "4fa8471dc08aa7cf93724e59a86a89b75a63a6a0",
+      "member": "reports/runtime-install-report.json",
+      "package": "typing_extensions",
+      "version": "4.15.0",
+      "source": "https://pypi.org/pypi/typing_extensions/4.15.0/json",
+      "matching_fields": [
+        ".author_email"
+      ],
+      "indicator_count": 1,
+      "publicly_verified_count": 1,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "2a1282977b00ecc331ab7de1038da6dae0a7b4b4d261e43420cbbe3c6539d319"
+    },
+    {
+      "archive_blob": "4fa8471dc08aa7cf93724e59a86a89b75a63a6a0",
+      "member": "reports/runtime-install-report.json",
+      "package": "contourpy",
+      "version": "1.4.0",
+      "source": "https://pypi.org/pypi/contourpy/1.4.0/json",
+      "matching_fields": [
+        ".author_email"
+      ],
+      "indicator_count": 1,
+      "publicly_verified_count": 1,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "6ceeb6af9e8ad6034ae8e534ccf5711396914058565077ce426a638fb5b6669f"
+    },
+    {
+      "archive_blob": "4fa8471dc08aa7cf93724e59a86a89b75a63a6a0",
+      "member": "reports/runtime-install-report.json",
+      "package": "kiwisolver",
+      "version": "1.5.1",
+      "source": "https://pypi.org/pypi/kiwisolver/1.5.1/json",
+      "matching_fields": [
+        ".author_email",
+        ".maintainer_email"
+      ],
+      "indicator_count": 2,
+      "publicly_verified_count": 2,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "e439e37def4ff3268103d93dbe79f6dd0fb41264203aeccfdbefb9566f933ca8"
+    },
+    {
+      "archive_blob": "4fa8471dc08aa7cf93724e59a86a89b75a63a6a0",
+      "member": "reports/runtime-install-report.json",
+      "package": "pyparsing",
+      "version": "3.3.3",
+      "source": "https://pypi.org/pypi/pyparsing/3.3.3/json",
+      "matching_fields": [
+        ".author_email"
+      ],
+      "indicator_count": 1,
+      "publicly_verified_count": 1,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "439077ce324039dd1af0f649a3826c093c14bcfed6a6ea950826d394f10d377f"
+    },
+    {
+      "archive_blob": "a9eac9bb5e7fc4e5ea5d15ce17c2a2300c65264a",
+      "member": "converter-install-report.json",
+      "package": "charset-normalizer",
+      "version": "3.5.2",
+      "source": "https://pypi.org/pypi/charset-normalizer/3.5.2/json",
+      "matching_fields": [
+        ".description"
+      ],
+      "indicator_count": 1,
+      "publicly_verified_count": 1,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "0bc3f3f7d92825349fb5a73c9778e7caa8c65aa6d2373e38b99e89a641f02c77"
+    },
+    {
+      "archive_blob": "a9eac9bb5e7fc4e5ea5d15ce17c2a2300c65264a",
+      "member": "converter-install-report.json",
+      "package": "filelock",
+      "version": "4.2.1",
+      "source": "https://pypi.org/pypi/filelock/4.2.1/json",
+      "matching_fields": [
+        ".maintainer_email"
+      ],
+      "indicator_count": 1,
+      "publicly_verified_count": 1,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "ecda767dbb7b875efa7aace5cb4921e9d9a393e83b2a2a4011d137647cf78f57"
+    },
+    {
+      "archive_blob": "a9eac9bb5e7fc4e5ea5d15ce17c2a2300c65264a",
+      "member": "converter-install-report.json",
+      "package": "huggingface-hub",
+      "version": "0.26.2",
+      "source": "https://pypi.org/pypi/huggingface-hub/0.26.2/json",
+      "matching_fields": [
+        ".description"
+      ],
+      "indicator_count": 1,
+      "publicly_verified_count": 1,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "d8694c30233720cf23375e34056c5f88b66ce301564936d9c9a0c60a7871356b"
+    },
+    {
+      "archive_blob": "a9eac9bb5e7fc4e5ea5d15ce17c2a2300c65264a",
+      "member": "converter-install-report.json",
+      "package": "mpmath",
+      "version": "1.3.0",
+      "source": "https://pypi.org/pypi/mpmath/1.3.0/json",
+      "matching_fields": [
+        ".author_email",
+        ".description"
+      ],
+      "indicator_count": 16,
+      "publicly_verified_count": 16,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "8f5c70bf66cb2653d0a81263eda5abeb9858d3bc84d264158b98f8a3b317fa08"
+    },
+    {
+      "archive_blob": "a9eac9bb5e7fc4e5ea5d15ce17c2a2300c65264a",
+      "member": "converter-install-report.json",
+      "package": "multidict",
+      "version": "7.1.0",
+      "source": "https://pypi.org/pypi/multidict/7.1.0/json",
+      "matching_fields": [
+        ".author_email"
+      ],
+      "indicator_count": 1,
+      "publicly_verified_count": 1,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "f714c3360e67220a11a96f355a219639756190eb1d9ce4c8409ead2db75c2300"
+    },
+    {
+      "archive_blob": "a9eac9bb5e7fc4e5ea5d15ce17c2a2300c65264a",
+      "member": "converter-install-report.json",
+      "package": "propcache",
+      "version": "0.5.4",
+      "source": "https://pypi.org/pypi/propcache/0.5.4/json",
+      "matching_fields": [
+        ".author_email"
+      ],
+      "indicator_count": 1,
+      "publicly_verified_count": 1,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "6ae424ad3ef569e3abe6a60551d5b94cd4e53ea5dbffb654274f5f80fb9124a6"
+    },
+    {
+      "archive_blob": "a9eac9bb5e7fc4e5ea5d15ce17c2a2300c65264a",
+      "member": "converter-install-report.json",
+      "package": "requests",
+      "version": "2.34.2",
+      "source": "https://pypi.org/pypi/requests/2.34.2/json",
+      "matching_fields": [
+        ".maintainer_email"
+      ],
+      "indicator_count": 2,
+      "publicly_verified_count": 2,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "edf085f92b79609aaeff6fb8f19413d823b1a5407c16a2f57656a894ee5fbe47"
+    },
+    {
+      "archive_blob": "a9eac9bb5e7fc4e5ea5d15ce17c2a2300c65264a",
+      "member": "converter-install-report.json",
+      "package": "safetensors",
+      "version": "0.4.5",
+      "source": "https://pypi.org/pypi/safetensors/0.4.5/json",
+      "matching_fields": [
+        ".author_email"
+      ],
+      "indicator_count": 1,
+      "publicly_verified_count": 1,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "5d712650a97353b21e9b71239fb37bf76dcc86190144a64be371d735d506eab6"
+    },
+    {
+      "archive_blob": "a9eac9bb5e7fc4e5ea5d15ce17c2a2300c65264a",
+      "member": "converter-install-report.json",
+      "package": "tokenizers",
+      "version": "0.20.3",
+      "source": "https://pypi.org/pypi/tokenizers/0.20.3/json",
+      "matching_fields": [
+        ".author",
+        ".author_email"
+      ],
+      "indicator_count": 2,
+      "publicly_verified_count": 2,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "6b87e532f85f1c421deb916c22f284d8a1e0335bd19bd5a8cde2b56e72c6cfc5"
+    },
+    {
+      "archive_blob": "a9eac9bb5e7fc4e5ea5d15ce17c2a2300c65264a",
+      "member": "converter-install-report.json",
+      "package": "typing_extensions",
+      "version": "4.15.0",
+      "source": "https://pypi.org/pypi/typing_extensions/4.15.0/json",
+      "matching_fields": [
+        ".author_email"
+      ],
+      "indicator_count": 1,
+      "publicly_verified_count": 1,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "2a1282977b00ecc331ab7de1038da6dae0a7b4b4d261e43420cbbe3c6539d319"
+    },
+    {
+      "archive_blob": "a9eac9bb5e7fc4e5ea5d15ce17c2a2300c65264a",
+      "member": "converter-install-report.json",
+      "package": "urllib3",
+      "version": "2.8.0",
+      "source": "https://pypi.org/pypi/urllib3/2.8.0/json",
+      "matching_fields": [
+        ".maintainer_email"
+      ],
+      "indicator_count": 2,
+      "publicly_verified_count": 2,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "70db934144bfeb5c33aea81aac2900640a6ed7f9ff7a49054965cdc38e766875"
+    },
+    {
+      "archive_blob": "a9eac9bb5e7fc4e5ea5d15ce17c2a2300c65264a",
+      "member": "converter-install-report.json",
+      "package": "xxhash",
+      "version": "4.0.1",
+      "source": "https://pypi.org/pypi/xxhash/4.0.1/json",
+      "matching_fields": [
+        ".author_email"
+      ],
+      "indicator_count": 1,
+      "publicly_verified_count": 1,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "0eefdc6f4d0ef93be83cc5358084aad749c45d16443e69c16d3c578acddc235e"
+    },
+    {
+      "archive_blob": "a9eac9bb5e7fc4e5ea5d15ce17c2a2300c65264a",
+      "member": "converter-install-report.json",
+      "package": "yarl",
+      "version": "1.25.1",
+      "source": "https://pypi.org/pypi/yarl/1.25.1/json",
+      "matching_fields": [
+        ".author_email"
+      ],
+      "indicator_count": 1,
+      "publicly_verified_count": 1,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "234c2bd5e6cedb95983dfd2c4015ecb81b6577c46a8cd8f330f901a84ba6dcbe"
+    },
+    {
+      "archive_blob": "a9eac9bb5e7fc4e5ea5d15ce17c2a2300c65264a",
+      "member": "runtime-install-report.json",
+      "package": "contourpy",
+      "version": "1.4.0",
+      "source": "https://pypi.org/pypi/contourpy/1.4.0/json",
+      "matching_fields": [
+        ".author_email"
+      ],
+      "indicator_count": 1,
+      "publicly_verified_count": 1,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "6ceeb6af9e8ad6034ae8e534ccf5711396914058565077ce426a638fb5b6669f"
+    },
+    {
+      "archive_blob": "a9eac9bb5e7fc4e5ea5d15ce17c2a2300c65264a",
+      "member": "runtime-install-report.json",
+      "package": "kiwisolver",
+      "version": "1.5.1",
+      "source": "https://pypi.org/pypi/kiwisolver/1.5.1/json",
+      "matching_fields": [
+        ".author_email",
+        ".maintainer_email"
+      ],
+      "indicator_count": 2,
+      "publicly_verified_count": 2,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "e439e37def4ff3268103d93dbe79f6dd0fb41264203aeccfdbefb9566f933ca8"
+    },
+    {
+      "archive_blob": "a9eac9bb5e7fc4e5ea5d15ce17c2a2300c65264a",
+      "member": "runtime-install-report.json",
+      "package": "mpmath",
+      "version": "1.3.0",
+      "source": "https://pypi.org/pypi/mpmath/1.3.0/json",
+      "matching_fields": [
+        ".author_email",
+        ".description"
+      ],
+      "indicator_count": 16,
+      "publicly_verified_count": 16,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "8f5c70bf66cb2653d0a81263eda5abeb9858d3bc84d264158b98f8a3b317fa08"
+    },
+    {
+      "archive_blob": "a9eac9bb5e7fc4e5ea5d15ce17c2a2300c65264a",
+      "member": "runtime-install-report.json",
+      "package": "pyparsing",
+      "version": "3.3.3",
+      "source": "https://pypi.org/pypi/pyparsing/3.3.3/json",
+      "matching_fields": [
+        ".author_email"
+      ],
+      "indicator_count": 1,
+      "publicly_verified_count": 1,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "439077ce324039dd1af0f649a3826c093c14bcfed6a6ea950826d394f10d377f"
+    },
+    {
+      "archive_blob": "a9eac9bb5e7fc4e5ea5d15ce17c2a2300c65264a",
+      "member": "runtime-install-report.json",
+      "package": "typing_extensions",
+      "version": "4.15.0",
+      "source": "https://pypi.org/pypi/typing_extensions/4.15.0/json",
+      "matching_fields": [
+        ".author_email"
+      ],
+      "indicator_count": 1,
+      "publicly_verified_count": 1,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "2a1282977b00ecc331ab7de1038da6dae0a7b4b4d261e43420cbbe3c6539d319"
+    },
+    {
+      "archive_blob": "42ba9f23973854df68832a3448270b360d2080cb",
+      "member": "converter-install-report.json",
+      "package": "charset-normalizer",
+      "version": "3.5.2",
+      "source": "https://pypi.org/pypi/charset-normalizer/3.5.2/json",
+      "matching_fields": [
+        ".description"
+      ],
+      "indicator_count": 1,
+      "publicly_verified_count": 1,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "0bc3f3f7d92825349fb5a73c9778e7caa8c65aa6d2373e38b99e89a641f02c77"
+    },
+    {
+      "archive_blob": "42ba9f23973854df68832a3448270b360d2080cb",
+      "member": "converter-install-report.json",
+      "package": "filelock",
+      "version": "4.2.1",
+      "source": "https://pypi.org/pypi/filelock/4.2.1/json",
+      "matching_fields": [
+        ".maintainer_email"
+      ],
+      "indicator_count": 1,
+      "publicly_verified_count": 1,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "ecda767dbb7b875efa7aace5cb4921e9d9a393e83b2a2a4011d137647cf78f57"
+    },
+    {
+      "archive_blob": "42ba9f23973854df68832a3448270b360d2080cb",
+      "member": "converter-install-report.json",
+      "package": "huggingface-hub",
+      "version": "0.26.2",
+      "source": "https://pypi.org/pypi/huggingface-hub/0.26.2/json",
+      "matching_fields": [
+        ".description"
+      ],
+      "indicator_count": 1,
+      "publicly_verified_count": 1,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "d8694c30233720cf23375e34056c5f88b66ce301564936d9c9a0c60a7871356b"
+    },
+    {
+      "archive_blob": "42ba9f23973854df68832a3448270b360d2080cb",
+      "member": "converter-install-report.json",
+      "package": "mpmath",
+      "version": "1.3.0",
+      "source": "https://pypi.org/pypi/mpmath/1.3.0/json",
+      "matching_fields": [
+        ".author_email",
+        ".description"
+      ],
+      "indicator_count": 16,
+      "publicly_verified_count": 16,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "8f5c70bf66cb2653d0a81263eda5abeb9858d3bc84d264158b98f8a3b317fa08"
+    },
+    {
+      "archive_blob": "42ba9f23973854df68832a3448270b360d2080cb",
+      "member": "converter-install-report.json",
+      "package": "multidict",
+      "version": "7.1.0",
+      "source": "https://pypi.org/pypi/multidict/7.1.0/json",
+      "matching_fields": [
+        ".author_email"
+      ],
+      "indicator_count": 1,
+      "publicly_verified_count": 1,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "f714c3360e67220a11a96f355a219639756190eb1d9ce4c8409ead2db75c2300"
+    },
+    {
+      "archive_blob": "42ba9f23973854df68832a3448270b360d2080cb",
+      "member": "converter-install-report.json",
+      "package": "propcache",
+      "version": "0.5.4",
+      "source": "https://pypi.org/pypi/propcache/0.5.4/json",
+      "matching_fields": [
+        ".author_email"
+      ],
+      "indicator_count": 1,
+      "publicly_verified_count": 1,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "6ae424ad3ef569e3abe6a60551d5b94cd4e53ea5dbffb654274f5f80fb9124a6"
+    },
+    {
+      "archive_blob": "42ba9f23973854df68832a3448270b360d2080cb",
+      "member": "converter-install-report.json",
+      "package": "requests",
+      "version": "2.34.2",
+      "source": "https://pypi.org/pypi/requests/2.34.2/json",
+      "matching_fields": [
+        ".maintainer_email"
+      ],
+      "indicator_count": 2,
+      "publicly_verified_count": 2,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "edf085f92b79609aaeff6fb8f19413d823b1a5407c16a2f57656a894ee5fbe47"
+    },
+    {
+      "archive_blob": "42ba9f23973854df68832a3448270b360d2080cb",
+      "member": "converter-install-report.json",
+      "package": "safetensors",
+      "version": "0.4.5",
+      "source": "https://pypi.org/pypi/safetensors/0.4.5/json",
+      "matching_fields": [
+        ".author_email"
+      ],
+      "indicator_count": 1,
+      "publicly_verified_count": 1,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "5d712650a97353b21e9b71239fb37bf76dcc86190144a64be371d735d506eab6"
+    },
+    {
+      "archive_blob": "42ba9f23973854df68832a3448270b360d2080cb",
+      "member": "converter-install-report.json",
+      "package": "tokenizers",
+      "version": "0.20.3",
+      "source": "https://pypi.org/pypi/tokenizers/0.20.3/json",
+      "matching_fields": [
+        ".author",
+        ".author_email"
+      ],
+      "indicator_count": 2,
+      "publicly_verified_count": 2,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "6b87e532f85f1c421deb916c22f284d8a1e0335bd19bd5a8cde2b56e72c6cfc5"
+    },
+    {
+      "archive_blob": "42ba9f23973854df68832a3448270b360d2080cb",
+      "member": "converter-install-report.json",
+      "package": "typing_extensions",
+      "version": "4.15.0",
+      "source": "https://pypi.org/pypi/typing_extensions/4.15.0/json",
+      "matching_fields": [
+        ".author_email"
+      ],
+      "indicator_count": 1,
+      "publicly_verified_count": 1,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "2a1282977b00ecc331ab7de1038da6dae0a7b4b4d261e43420cbbe3c6539d319"
+    },
+    {
+      "archive_blob": "42ba9f23973854df68832a3448270b360d2080cb",
+      "member": "converter-install-report.json",
+      "package": "urllib3",
+      "version": "2.8.0",
+      "source": "https://pypi.org/pypi/urllib3/2.8.0/json",
+      "matching_fields": [
+        ".maintainer_email"
+      ],
+      "indicator_count": 2,
+      "publicly_verified_count": 2,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "70db934144bfeb5c33aea81aac2900640a6ed7f9ff7a49054965cdc38e766875"
+    },
+    {
+      "archive_blob": "42ba9f23973854df68832a3448270b360d2080cb",
+      "member": "converter-install-report.json",
+      "package": "xxhash",
+      "version": "4.0.1",
+      "source": "https://pypi.org/pypi/xxhash/4.0.1/json",
+      "matching_fields": [
+        ".author_email"
+      ],
+      "indicator_count": 1,
+      "publicly_verified_count": 1,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "0eefdc6f4d0ef93be83cc5358084aad749c45d16443e69c16d3c578acddc235e"
+    },
+    {
+      "archive_blob": "42ba9f23973854df68832a3448270b360d2080cb",
+      "member": "converter-install-report.json",
+      "package": "yarl",
+      "version": "1.25.1",
+      "source": "https://pypi.org/pypi/yarl/1.25.1/json",
+      "matching_fields": [
+        ".author_email"
+      ],
+      "indicator_count": 1,
+      "publicly_verified_count": 1,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "234c2bd5e6cedb95983dfd2c4015ecb81b6577c46a8cd8f330f901a84ba6dcbe"
+    },
+    {
+      "archive_blob": "42ba9f23973854df68832a3448270b360d2080cb",
+      "member": "runtime-install-report.json",
+      "package": "contourpy",
+      "version": "1.4.0",
+      "source": "https://pypi.org/pypi/contourpy/1.4.0/json",
+      "matching_fields": [
+        ".author_email"
+      ],
+      "indicator_count": 1,
+      "publicly_verified_count": 1,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "6ceeb6af9e8ad6034ae8e534ccf5711396914058565077ce426a638fb5b6669f"
+    },
+    {
+      "archive_blob": "42ba9f23973854df68832a3448270b360d2080cb",
+      "member": "runtime-install-report.json",
+      "package": "kiwisolver",
+      "version": "1.5.1",
+      "source": "https://pypi.org/pypi/kiwisolver/1.5.1/json",
+      "matching_fields": [
+        ".author_email",
+        ".maintainer_email"
+      ],
+      "indicator_count": 2,
+      "publicly_verified_count": 2,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "e439e37def4ff3268103d93dbe79f6dd0fb41264203aeccfdbefb9566f933ca8"
+    },
+    {
+      "archive_blob": "42ba9f23973854df68832a3448270b360d2080cb",
+      "member": "runtime-install-report.json",
+      "package": "mpmath",
+      "version": "1.3.0",
+      "source": "https://pypi.org/pypi/mpmath/1.3.0/json",
+      "matching_fields": [
+        ".author_email",
+        ".description"
+      ],
+      "indicator_count": 16,
+      "publicly_verified_count": 16,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "8f5c70bf66cb2653d0a81263eda5abeb9858d3bc84d264158b98f8a3b317fa08"
+    },
+    {
+      "archive_blob": "42ba9f23973854df68832a3448270b360d2080cb",
+      "member": "runtime-install-report.json",
+      "package": "pyparsing",
+      "version": "3.3.3",
+      "source": "https://pypi.org/pypi/pyparsing/3.3.3/json",
+      "matching_fields": [
+        ".author_email"
+      ],
+      "indicator_count": 1,
+      "publicly_verified_count": 1,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "439077ce324039dd1af0f649a3826c093c14bcfed6a6ea950826d394f10d377f"
+    },
+    {
+      "archive_blob": "42ba9f23973854df68832a3448270b360d2080cb",
+      "member": "runtime-install-report.json",
+      "package": "typing_extensions",
+      "version": "4.15.0",
+      "source": "https://pypi.org/pypi/typing_extensions/4.15.0/json",
+      "matching_fields": [
+        ".author_email"
+      ],
+      "indicator_count": 1,
+      "publicly_verified_count": 1,
+      "all_indicators_present_in_public_metadata": true,
+      "public_metadata_sha256": "2a1282977b00ecc331ab7de1038da6dae0a7b4b4d261e43420cbbe3c6539d319"
+    }
+  ],
+  "footer_removals": [
+    {
+      "pull_request": 15,
+      "prior_body_sha256": "07c7d6520d6d555cfffe11d0966af4fd0fd990aec8701fb437eb3c258072a4f6",
+      "new_body_sha256": "cf416eded574f44b2713c310763cd08c697c8a17c208bd73385ffdd2546503ae",
+      "exact_nonfooter_content_preserved": true,
+      "signed_footer_absent_on_readback": true
+    },
+    {
+      "pull_request": 12,
+      "prior_body_sha256": "06d86ce4d0c0bf9059254e7dd38cad773daab1c82b350f0d135848a512362645",
+      "new_body_sha256": "dc71c0958574b391773dd0338043efccd5d700abb593a2ea5321d24d44272c29",
+      "exact_nonfooter_content_preserved": true,
+      "signed_footer_absent_on_readback": true
+    },
+    {
+      "pull_request": 10,
+      "prior_body_sha256": "b809104eae753cf9b5f3bc3dc6dd55b317e5202b2065dd0bd22ab075ce059e55",
+      "new_body_sha256": "21a2dfa83fc905a1686532158702d5952e5c24f344128cd04b04cc08ac56e586",
+      "exact_nonfooter_content_preserved": true,
+      "signed_footer_absent_on_readback": true
+    },
+    {
+      "pull_request": 9,
+      "prior_body_sha256": "d54f9ecf0ef1e2bc522f680eb7d201d24533a7bf13e1a2ee91b9ea9dd8f48cea",
+      "new_body_sha256": "b2df3ba1a88a62ea6c00783ac7da26f13f5afa7d7a016cd673b4dcd45bbf0a9e",
+      "exact_nonfooter_content_preserved": true,
+      "signed_footer_absent_on_readback": true
+    },
+    {
+      "pull_request": 8,
+      "prior_body_sha256": "a5563caa1203e8fb5acd85f64329081f827bf127b280dd24df18f667662a0f00",
+      "new_body_sha256": "574a3e2368f07adc51273387752cdac50aa714190438ad07b1bf93686ab2b247",
+      "exact_nonfooter_content_preserved": true,
+      "signed_footer_absent_on_readback": true
+    },
+    {
+      "pull_request": 7,
+      "prior_body_sha256": "9254f2c063598cf0af3389f2f3ecc1d28cf09d65e0d7332d91468312fdd9bd23",
+      "new_body_sha256": "eaf9c938e362c483959e654c175ae652e39909e59c16ee1b5419e9b62fd5e0fd",
+      "exact_nonfooter_content_preserved": true,
+      "signed_footer_absent_on_readback": true
+    },
+    {
+      "pull_request": 4,
+      "prior_body_sha256": "aaad4e94f7094eedd6374d5dc181b588b9e053cf67fb177d52f4119facf69e04",
+      "new_body_sha256": "19ad8eaf1d14b551134265bce1578c433bbcdce3fd1a53e29a466f33beb16d09",
+      "exact_nonfooter_content_preserved": true,
+      "signed_footer_absent_on_readback": true
+    },
+    {
+      "pull_request": 3,
+      "prior_body_sha256": "3be8810b71af64483f2199f10a5edd9204752c73996ff969be8662ac144ca16a",
+      "new_body_sha256": "6a70b51c6832b08fb31ad4a1ba7c073c4f00f0bbe6020170d4914eec544b10d9",
+      "exact_nonfooter_content_preserved": true,
+      "signed_footer_absent_on_readback": true
+    }
+  ],
+  "queued_run_actions": [
+    {
+      "run_id": 39536825246,
+      "observed_status": "queued",
+      "zero_step_unassigned_jobs": true,
+      "cancel_requested": true
+    },
+    {
+      "run_id": 39466379796,
+      "observed_status": "pending",
+      "zero_step_unassigned_jobs": true,
+      "cancel_requested": false
+    },
+    {
+      "run_id": 39465140698,
+      "observed_status": "queued",
+      "zero_step_unassigned_jobs": true,
+      "cancel_requested": true
+    }
+  ],
+  "errors": [],
+  "public_visibility_changed": false,
+  "limitations": [
+    "PR edit histories are not erased by current-body edits.",
+    "No signed action URL was requested or exercised.",
+    "No repository history or scientific file was changed.",
+    "This is bounded publication hygiene, not a security certification."
+  ],
+  "remaining_current_pr_signed_footers": [
+    15,
+    12,
+    10,
+    9,
+    8,
+    7,
+    4,
+    3
+  ],
+  "finished_utc": "2026-10-21T05:33:06.766149+00:00",
+  "review_status": "review_required"
+}
