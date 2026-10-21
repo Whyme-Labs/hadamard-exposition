@@ -33,7 +33,11 @@ The public package's [README template](release/v2/README.md), [submission note](
 
 ## Publication and claim limits
 
-[Issue 11](https://github.com/Whyme-Labs/hadamard-exposition/issues/11) owns the public mirror and authorized submission. The local package has passed its acceptance checks. A stable public release, observable publication date, authorized content review and committee selection have not happened. A private commit or passing test is not an award claim.
+Use this existing repository, not a second mirror, for the next release. The [publication audit and decision](publication/README.md) supersede the older mirror recommendation. The bounded review covered 60 commits, 352 file versions, nested archives and available workflow/discussion records. The [prepared release notes](publication/release-notes-v2.md) pin the exact candidate assets and scientific source commit.
+
+The code/archive review found no confirmed credential leak. A live integration still restores signed Codesmith action footers after removal; its exposure policy remains unresolved. This is not a claim that those links are exploitable. The repository has not been made public, and the review does not certify that all possible confidential data is absent.
+
+[Issue 11](https://github.com/Whyme-Labs/hadamard-exposition/issues/11) owns publication in this repository and authorized submission. The local package has passed its acceptance checks. A stable public release, observable publication date, authorized content review and committee selection have not happened. A private commit or passing test is not an award claim.
 
 This work targets Exposition for JSP-000013. It claims neither a solution of the general Hadamard conjecture nor a complete Lean formalization. AI assistance is disclosed in the manuscript. Internal checks and self-review are not academic peer review or prize committee review.
 
@@ -41,4 +45,4 @@ This work targets Exposition for JSP-000013. It claims neither a solution of the
 
 The [previous README at its fixed commit](https://github.com/Whyme-Labs/hadamard-exposition/blob/12f0463020cfb6e81f9ce2178386668f9b60c27f/README.md) retains the full v1 results, reproduction instructions and Pythia campaign history. The frozen [v1 article](article.md), [standalone v1 HTML](exposition.html), [reference results](results.json), [group-size results](group-results.json) and source files are unchanged.
 
-The unfinished pretrained-model campaign remains in issue 5 and is not required for this exposition release. The historical v1 award dossier remains under `docs/awards/`; it does not supersede the current v2 acceptance record.
+The unfinished pretrained-model campaign remains in issue 5 and is not required for this exposition release. The historical v1 award dossier remains under `docs/awards/`; it does not supersede the current v2 acceptance record or the same-repository publication decision.

@@ -1,0 +1,70 @@
+name: Audit existing repository for publication
+# Run locally first. Dispatch only after recording a local blocker.
+# Bounded Blacksmith audit/review runs are retained as history, not a default.
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+  issues: read
+  pull-requests: read
+concurrency:
+  group: hadamard-publication-audit-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  audit:
+    runs-on: [self-hosted, Linux, X64]
+    timeout-minutes: 10
+    env:
+      EXPECTED_SHA: ${{ github.sha }}
+    steps:
+      - name: Require the home runner
+        run: test "$RUNNER_NAME" = home-ci-01
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ env.EXPECTED_SHA }}
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Fetch exposed history without persisting credentials
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import base64,os,subprocess
+          assert os.environ['GITHUB_REPOSITORY']=='Whyme-Labs/hadamard-exposition'
+          assert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()==os.environ['EXPECTED_SHA']
+          header='AUTHORIZATION: basic '+base64.b64encode(('x-access-token:'+os.environ['GH_TOKEN']).encode()).decode()
+          env={**os.environ,'GIT_CONFIG_COUNT':'1','GIT_CONFIG_KEY_0':'http.https://github.com/.extraheader','GIT_CONFIG_VALUE_0':header}
+          subprocess.run(['git','fetch','origin','+refs/heads/*:refs/audit/heads/*',
+              '+refs/tags/*:refs/tags/*','+refs/pull/*/head:refs/audit/pull/*'],env=env,check=True,timeout=120)
+          PY
+      - name: Test and audit without modifying history or visibility
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p build/publication-audit
+          python3 -W error::ResourceWarning -m unittest discover -s publication -p 'test_*.py' -v > build/publication-audit/tests.txt 2>&1
+          python3 publication/audit.py --repository . --remote --output build/publication-audit/report.json
+      - name: Preserve the redacted report on a new private evidence branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import base64,json,os,pathlib,urllib.request
+          repo=os.environ['GITHUB_REPOSITORY']
+          assert repo=='Whyme-Labs/hadamard-exposition'
+          root=pathlib.Path('build/publication-audit')
+          def post(path,data):
+              req=urllib.request.Request('https://api.github.com/repos/'+repo+path,data=json.dumps(data).encode(),method='POST',headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json','Content-Type':'application/json'})
+              with urllib.request.urlopen(req,timeout=45) as response:return json.load(response)
+          entries=[]
+          for name in ('report.json','tests.txt'):
+              blob=post('/git/blobs',{'content':base64.b64encode((root/name).read_bytes()).decode(),'encoding':'base64'})
+              entries.append({'path':name,'mode':'100644','type':'blob','sha':blob['sha']})
+          tree=post('/git/trees',{'tree':entries})
+          commit=post('/git/commits',{'message':'Retain redacted publication audit '+os.environ['GITHUB_RUN_ID'],'tree':tree['sha'],'parents':[]})
+          branch='evidence/publication-audit-'+os.environ['GITHUB_RUN_ID']+'-'+os.environ['GITHUB_RUN_ATTEMPT']
+          post('/git/refs',{'ref':'refs/heads/'+branch,'sha':commit['sha']})
+          print(json.dumps({'evidence_branch':branch,'commit':commit['sha'],'public_release':False},indent=2))
+          PY
