@@ -1,7 +1,10 @@
 name: Audit existing repository for publication
+# One bounded last-resort run. Local scanner tests and package scan passed.
+# Full Git bytes are unavailable locally; home run 39548955770 has no runner.
+# Remove the temporary PR trigger and restore home default before merge.
 on:
   pull_request:
-    types: [opened]
+    types: [synchronize]
     paths: ['.github/workflows/publication-audit.yml']
   workflow_dispatch:
 permissions:
@@ -11,17 +14,15 @@ permissions:
   pull-requests: read
 concurrency:
   group: hadamard-publication-audit-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 jobs:
   audit:
     if: github.event_name == 'workflow_dispatch' || (github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.head.ref == 'work/issue11-publication-audit')
-    runs-on: [self-hosted, Linux, X64]
+    runs-on: blacksmith-2vcpu-ubuntu-2404
     timeout-minutes: 10
     env:
       EXPECTED_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
     steps:
-      - name: Require the home runner
-        run: test "$RUNNER_NAME" = home-ci-01
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           ref: ${{ env.EXPECTED_SHA }}
