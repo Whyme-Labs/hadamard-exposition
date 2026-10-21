@@ -1,0 +1,1123 @@
+[
+  {
+    "case": "gaussian_outlier",
+    "multiplier": 1,
+    "group": 16,
+    "seeds": 100,
+    "arms": {
+      "original": {
+        "mean_error": 0.014572745280526203,
+        "mean_delta_vs_original": 0.0,
+        "paired_95_interval_vs_original": [
+          0.0,
+          0.0
+        ],
+        "wins_vs_original": 0,
+        "min_error": 0.013900208373697355,
+        "max_error": 0.015200638920877469
+      },
+      "randomized_hadamard": {
+        "mean_error": 0.01462032751295854,
+        "mean_delta_vs_original": 4.758223243233439e-05,
+        "paired_95_interval_vs_original": [
+          -1.4859120715052938e-06,
+          9.831366177022638e-05
+        ],
+        "wins_vs_original": 44,
+        "min_error": 0.014100764670365935,
+        "max_error": 0.015117367975287717
+      },
+      "haar_orthogonal": {
+        "mean_error": 0.014596282963436187,
+        "mean_delta_vs_original": 2.3537682909985697e-05,
+        "paired_95_interval_vs_original": [
+          -3.019203829048167e-05,
+          7.698626085229342e-05
+        ],
+        "wins_vs_original": 46,
+        "min_error": 0.014069270718125965,
+        "max_error": 0.015154529762316276
+      },
+      "signed_permutation": {
+        "mean_error": 0.014576098934695634,
+        "mean_delta_vs_original": 3.3536541694284897e-06,
+        "paired_95_interval_vs_original": [
+          -3.729467441031126e-05,
+          4.4242247505300395e-05
+        ],
+        "wins_vs_original": 53,
+        "min_error": 0.01403521430044418,
+        "max_error": 0.015120911672029894
+      }
+    },
+    "hadamard_minus_haar": {
+      "mean": 2.4044549522348695e-05,
+      "descriptive_paired_95_interval": [
+        -2.8770796429928216e-05,
+        7.767948667990875e-05
+      ]
+    }
+  },
+  {
+    "case": "gaussian_outlier",
+    "multiplier": 1,
+    "group": 32,
+    "seeds": 100,
+    "arms": {
+      "original": {
+        "mean_error": 0.018918406062421945,
+        "mean_delta_vs_original": 0.0,
+        "paired_95_interval_vs_original": [
+          0.0,
+          0.0
+        ],
+        "wins_vs_original": 0,
+        "min_error": 0.01825679124408683,
+        "max_error": 0.019745662773562343
+      },
+      "randomized_hadamard": {
+        "mean_error": 0.018994778236307196,
+        "mean_delta_vs_original": 7.637217388525185e-05,
+        "paired_95_interval_vs_original": [
+          2.9053171144941844e-06,
+          0.00014989409162528478
+        ],
+        "wins_vs_original": 43,
+        "min_error": 0.018093730497973914,
+        "max_error": 0.01966432200316455
+      },
+      "haar_orthogonal": {
+        "mean_error": 0.0189526657543748,
+        "mean_delta_vs_original": 3.425969195285376e-05,
+        "paired_95_interval_vs_original": [
+          -4.186862973680425e-05,
+          0.00010781330919211144
+        ],
+        "wins_vs_original": 46,
+        "min_error": 0.018168490917302594,
+        "max_error": 0.019716200284216997
+      },
+      "signed_permutation": {
+        "mean_error": 0.018925401624520038,
+        "mean_delta_vs_original": 6.995562098091705e-06,
+        "paired_95_interval_vs_original": [
+          -4.448129614256709e-05,
+          5.956311925913006e-05
+        ],
+        "wins_vs_original": 49,
+        "min_error": 0.017992661793532445,
+        "max_error": 0.01966860582274688
+      }
+    },
+    "hadamard_minus_haar": {
+      "mean": 4.21124819323981e-05,
+      "descriptive_paired_95_interval": [
+        -3.390740002193102e-05,
+        0.00011834709901985767
+      ]
+    }
+  },
+  {
+    "case": "gaussian_outlier",
+    "multiplier": 1,
+    "group": 128,
+    "seeds": 100,
+    "arms": {
+      "original": {
+        "mean_error": 0.027721753734746283,
+        "mean_delta_vs_original": 0.0,
+        "paired_95_interval_vs_original": [
+          0.0,
+          0.0
+        ],
+        "wins_vs_original": 0,
+        "min_error": 0.02636265368557568,
+        "max_error": 0.029073578755873825
+      },
+      "randomized_hadamard": {
+        "mean_error": 0.027819404771164468,
+        "mean_delta_vs_original": 9.765103641818942e-05,
+        "paired_95_interval_vs_original": [
+          -6.197725091699621e-05,
+          0.0002547435419421523
+        ],
+        "wins_vs_original": 50,
+        "min_error": 0.026507846986441607,
+        "max_error": 0.029040334585071978
+      },
+      "haar_orthogonal": {
+        "mean_error": 0.02773661077550612,
+        "mean_delta_vs_original": 1.4857040759839179e-05,
+        "paired_95_interval_vs_original": [
+          -0.00015290426140399558,
+          0.00017914090426430238
+        ],
+        "wins_vs_original": 46,
+        "min_error": 0.02587944028293202,
+        "max_error": 0.02924270259278029
+      },
+      "signed_permutation": {
+        "mean_error": 0.027721753734746283,
+        "mean_delta_vs_original": -1.0408340855860842e-19,
+        "paired_95_interval_vs_original": [
+          -5.204170427930421e-19,
+          3.4694469519536144e-19
+        ],
+        "wins_vs_original": 17,
+        "min_error": 0.026362653685575683,
+        "max_error": 0.029073578755873825
+      }
+    },
+    "hadamard_minus_haar": {
+      "mean": 8.279399565835025e-05,
+      "descriptive_paired_95_interval": [
+        -7.293813560089627e-05,
+        0.00024449339143275685
+      ]
+    }
+  },
+  {
+    "case": "gaussian_outlier",
+    "multiplier": 2,
+    "group": 16,
+    "seeds": 100,
+    "arms": {
+      "original": {
+        "mean_error": 0.014737663044380338,
+        "mean_delta_vs_original": 0.0,
+        "paired_95_interval_vs_original": [
+          0.0,
+          0.0
+        ],
+        "wins_vs_original": 0,
+        "min_error": 0.013925710407616424,
+        "max_error": 0.015238558244420237
+      },
+      "randomized_hadamard": {
+        "mean_error": 0.014601353358757833,
+        "mean_delta_vs_original": -0.00013630968562250388,
+        "paired_95_interval_vs_original": [
+          -0.00018284826432621824,
+          -8.870037985136387e-05
+        ],
+        "wins_vs_original": 75,
+        "min_error": 0.014129864319418038,
+        "max_error": 0.01507630330965414
+      },
+      "haar_orthogonal": {
+        "mean_error": 0.014598570412817893,
+        "mean_delta_vs_original": -0.00013909263156244302,
+        "paired_95_interval_vs_original": [
+          -0.00019113338873387881,
+          -8.602778032874625e-05
+        ],
+        "wins_vs_original": 70,
+        "min_error": 0.01398838892384521,
+        "max_error": 0.015012753244723835
+      },
+      "signed_permutation": {
+        "mean_error": 0.014758641559467423,
+        "mean_delta_vs_original": 2.0978515087086754e-05,
+        "paired_95_interval_vs_original": [
+          -1.6647568441046006e-05,
+          5.948068799063423e-05
+        ],
+        "wins_vs_original": 49,
+        "min_error": 0.014189340022862882,
+        "max_error": 0.015506585908087667
+      }
+    },
+    "hadamard_minus_haar": {
+      "mean": 2.782945939939167e-06,
+      "descriptive_paired_95_interval": [
+        -4.815328947780525e-05,
+        5.4005293097792424e-05
+      ]
+    }
+  },
+  {
+    "case": "gaussian_outlier",
+    "multiplier": 2,
+    "group": 32,
+    "seeds": 100,
+    "arms": {
+      "original": {
+        "mean_error": 0.019293234760806906,
+        "mean_delta_vs_original": 0.0,
+        "paired_95_interval_vs_original": [
+          0.0,
+          0.0
+        ],
+        "wins_vs_original": 0,
+        "min_error": 0.018442527824842632,
+        "max_error": 0.020311755826007766
+      },
+      "randomized_hadamard": {
+        "mean_error": 0.018963434933225234,
+        "mean_delta_vs_original": -0.0003297998275816705,
+        "paired_95_interval_vs_original": [
+          -0.0003971495187445814,
+          -0.0002627761629912221
+        ],
+        "wins_vs_original": 84,
+        "min_error": 0.018356316723265906,
+        "max_error": 0.01956115225910206
+      },
+      "haar_orthogonal": {
+        "mean_error": 0.018962012316232867,
+        "mean_delta_vs_original": -0.00033122244457403844,
+        "paired_95_interval_vs_original": [
+          -0.0004074482656146699,
+          -0.00025708139865075036
+        ],
+        "wins_vs_original": 79,
+        "min_error": 0.018105693817725345,
+        "max_error": 0.019657207714745918
+      },
+      "signed_permutation": {
+        "mean_error": 0.019308223165804397,
+        "mean_delta_vs_original": 1.4988404997494203e-05,
+        "paired_95_interval_vs_original": [
+          -3.4881069574832434e-05,
+          6.544666042611117e-05
+        ],
+        "wins_vs_original": 49,
+        "min_error": 0.01832932002568488,
+        "max_error": 0.02018235494418844
+      }
+    },
+    "hadamard_minus_haar": {
+      "mean": 1.4226169923679117e-06,
+      "descriptive_paired_95_interval": [
+        -6.923261364597085e-05,
+        7.367724508693655e-05
+      ]
+    }
+  },
+  {
+    "case": "gaussian_outlier",
+    "multiplier": 2,
+    "group": 128,
+    "seeds": 100,
+    "arms": {
+      "original": {
+        "mean_error": 0.02909592572696762,
+        "mean_delta_vs_original": 0.0,
+        "paired_95_interval_vs_original": [
+          0.0,
+          0.0
+        ],
+        "wins_vs_original": 0,
+        "min_error": 0.027352944465682223,
+        "max_error": 0.030717099418764337
+      },
+      "randomized_hadamard": {
+        "mean_error": 0.02776882378955554,
+        "mean_delta_vs_original": -0.001327101937412084,
+        "paired_95_interval_vs_original": [
+          -0.001504594823387261,
+          -0.0011547014467588193
+        ],
+        "wins_vs_original": 92,
+        "min_error": 0.026485244906671264,
+        "max_error": 0.02886529515476595
+      },
+      "haar_orthogonal": {
+        "mean_error": 0.027731075408704974,
+        "mean_delta_vs_original": -0.001364850318262652,
+        "paired_95_interval_vs_original": [
+          -0.0015490270907711449,
+          -0.0011837317181703046
+        ],
+        "wins_vs_original": 95,
+        "min_error": 0.02584155125027321,
+        "max_error": 0.029237743292843038
+      },
+      "signed_permutation": {
+        "mean_error": 0.02909592572696762,
+        "mean_delta_vs_original": -3.469446951953614e-20,
+        "paired_95_interval_vs_original": [
+          -5.204170427930421e-19,
+          4.510281037539699e-19
+        ],
+        "wins_vs_original": 20,
+        "min_error": 0.02735294446568222,
+        "max_error": 0.030717099418764333
+      }
+    },
+    "hadamard_minus_haar": {
+      "mean": 3.774838085056822e-05,
+      "descriptive_paired_95_interval": [
+        -0.00011827964863560071,
+        0.00019597436745194156
+      ]
+    }
+  },
+  {
+    "case": "gaussian_outlier",
+    "multiplier": 4,
+    "group": 16,
+    "seeds": 100,
+    "arms": {
+      "original": {
+        "mean_error": 0.01604201276008419,
+        "mean_delta_vs_original": 0.0,
+        "paired_95_interval_vs_original": [
+          0.0,
+          0.0
+        ],
+        "wins_vs_original": 0,
+        "min_error": 0.014779017685274957,
+        "max_error": 0.017321694415605292
+      },
+      "randomized_hadamard": {
+        "mean_error": 0.014489430762126497,
+        "mean_delta_vs_original": -0.001552581997957695,
+        "paired_95_interval_vs_original": [
+          -0.0016196705808889543,
+          -0.0014844830794791379
+        ],
+        "wins_vs_original": 100,
+        "min_error": 0.013601979112850106,
+        "max_error": 0.015485215259048701
+      },
+      "haar_orthogonal": {
+        "mean_error": 0.014599916908131132,
+        "mean_delta_vs_original": -0.0014420958519530639,
+        "paired_95_interval_vs_original": [
+          -0.0015142366497576736,
+          -0.0013677032638874929
+        ],
+        "wins_vs_original": 100,
+        "min_error": 0.013762191667828353,
+        "max_error": 0.01553722161809064
+      },
+      "signed_permutation": {
+        "mean_error": 0.016033326217127334,
+        "mean_delta_vs_original": -8.686542956857624e-06,
+        "paired_95_interval_vs_original": [
+          -7.228233155600446e-05,
+          5.4377551981888824e-05
+        ],
+        "wins_vs_original": 54,
+        "min_error": 0.015193041852615573,
+        "max_error": 0.017338665038237628
+      }
+    },
+    "hadamard_minus_haar": {
+      "mean": -0.00011048614600463087,
+      "descriptive_paired_95_interval": [
+        -0.00017553539673689257,
+        -4.553147355243611e-05
+      ]
+    }
+  },
+  {
+    "case": "gaussian_outlier",
+    "multiplier": 4,
+    "group": 32,
+    "seeds": 100,
+    "arms": {
+      "original": {
+        "mean_error": 0.022370052535666075,
+        "mean_delta_vs_original": 0.0,
+        "paired_95_interval_vs_original": [
+          0.0,
+          0.0
+        ],
+        "wins_vs_original": 0,
+        "min_error": 0.02095839145205804,
+        "max_error": 0.02416223233844693
+      },
+      "randomized_hadamard": {
+        "mean_error": 0.018782267406984174,
+        "mean_delta_vs_original": -0.003587785128681903,
+        "paired_95_interval_vs_original": [
+          -0.0036884061450791258,
+          -0.0034883224011738423
+        ],
+        "wins_vs_original": 100,
+        "min_error": 0.017614171340581776,
+        "max_error": 0.019952080518284454
+      },
+      "haar_orthogonal": {
+        "mean_error": 0.01892689242587698,
+        "mean_delta_vs_original": -0.0034431601097890973,
+        "paired_95_interval_vs_original": [
+          -0.0035547914025408096,
+          -0.003333403798990069
+        ],
+        "wins_vs_original": 100,
+        "min_error": 0.01771630971450266,
+        "max_error": 0.02026921847845231
+      },
+      "signed_permutation": {
+        "mean_error": 0.022290536328431657,
+        "mean_delta_vs_original": -7.951620723442035e-05,
+        "paired_95_interval_vs_original": [
+          -0.00014724290948918916,
+          -1.1089605577110908e-05
+        ],
+        "wins_vs_original": 59,
+        "min_error": 0.02094642554355645,
+        "max_error": 0.02430876538367013
+      }
+    },
+    "hadamard_minus_haar": {
+      "mean": -0.00014462501889280475,
+      "descriptive_paired_95_interval": [
+        -0.0002279331546735607,
+        -6.151569118097633e-05
+      ]
+    }
+  },
+  {
+    "case": "gaussian_outlier",
+    "multiplier": 4,
+    "group": 128,
+    "seeds": 100,
+    "arms": {
+      "original": {
+        "mean_error": 0.042599698323501085,
+        "mean_delta_vs_original": 0.0,
+        "paired_95_interval_vs_original": [
+          0.0,
+          0.0
+        ],
+        "wins_vs_original": 0,
+        "min_error": 0.038219040810562446,
+        "max_error": 0.046689449365782586
+      },
+      "randomized_hadamard": {
+        "mean_error": 0.027414809211835603,
+        "mean_delta_vs_original": -0.01518488911166548,
+        "paired_95_interval_vs_original": [
+          -0.01551182071189475,
+          -0.01486006898110029
+        ],
+        "wins_vs_original": 100,
+        "min_error": 0.02486950477710496,
+        "max_error": 0.0291873866771095
+      },
+      "haar_orthogonal": {
+        "mean_error": 0.027660805942320326,
+        "mean_delta_vs_original": -0.014938892381180756,
+        "paired_95_interval_vs_original": [
+          -0.01527510322803602,
+          -0.014613134108273331
+        ],
+        "wins_vs_original": 100,
+        "min_error": 0.025379172355603722,
+        "max_error": 0.03053473140909359
+      },
+      "signed_permutation": {
+        "mean_error": 0.042599698323501085,
+        "mean_delta_vs_original": -2.7755575615628914e-19,
+        "paired_95_interval_vs_original": [
+          -1.1102230246251566e-18,
+          4.85722573273506e-19
+        ],
+        "wins_vs_original": 12,
+        "min_error": 0.038219040810562446,
+        "max_error": 0.046689449365782586
+      }
+    },
+    "hadamard_minus_haar": {
+      "mean": -0.00024599673048472583,
+      "descriptive_paired_95_interval": [
+        -0.00041564676191808015,
+        -7.003884452252758e-05
+      ]
+    }
+  },
+  {
+    "case": "gaussian_outlier",
+    "multiplier": 8,
+    "group": 16,
+    "seeds": 100,
+    "arms": {
+      "original": {
+        "mean_error": 0.019843046308166547,
+        "mean_delta_vs_original": 0.0,
+        "paired_95_interval_vs_original": [
+          0.0,
+          0.0
+        ],
+        "wins_vs_original": 0,
+        "min_error": 0.01752411740269099,
+        "max_error": 0.023655785128825248
+      },
+      "randomized_hadamard": {
+        "mean_error": 0.013877699112341726,
+        "mean_delta_vs_original": -0.005965347195824822,
+        "paired_95_interval_vs_original": [
+          -0.006135999861305477,
+          -0.005797275758709774
+        ],
+        "wins_vs_original": 100,
+        "min_error": 0.011855277709755056,
+        "max_error": 0.016543674813024527
+      },
+      "haar_orthogonal": {
+        "mean_error": 0.014586889479684093,
+        "mean_delta_vs_original": -0.0052561568284824585,
+        "paired_95_interval_vs_original": [
+          -0.005420274885347506,
+          -0.005094479516453237
+        ],
+        "wins_vs_original": 100,
+        "min_error": 0.012431045616377858,
+        "max_error": 0.01728648289310488
+      },
+      "signed_permutation": {
+        "mean_error": 0.019870867529337182,
+        "mean_delta_vs_original": 2.7821221170634646e-05,
+        "paired_95_interval_vs_original": [
+          -0.00015247678266628751,
+          0.00020156203493166554
+        ],
+        "wins_vs_original": 50,
+        "min_error": 0.016899485734324555,
+        "max_error": 0.023245441755807752
+      }
+    },
+    "hadamard_minus_haar": {
+      "mean": -0.0007091903673423647,
+      "descriptive_paired_95_interval": [
+        -0.0008329060980763347,
+        -0.0005852104827604902
+      ]
+    }
+  },
+  {
+    "case": "gaussian_outlier",
+    "multiplier": 8,
+    "group": 32,
+    "seeds": 100,
+    "arms": {
+      "original": {
+        "mean_error": 0.03159412544452074,
+        "mean_delta_vs_original": 0.0,
+        "paired_95_interval_vs_original": [
+          0.0,
+          0.0
+        ],
+        "wins_vs_original": 0,
+        "min_error": 0.02787216105294967,
+        "max_error": 0.03687803823023882
+      },
+      "randomized_hadamard": {
+        "mean_error": 0.017887902465188527,
+        "mean_delta_vs_original": -0.013706222979332215,
+        "paired_95_interval_vs_original": [
+          -0.013988313944411718,
+          -0.013434731871463339
+        ],
+        "wins_vs_original": 100,
+        "min_error": 0.01483796599038942,
+        "max_error": 0.020815668845747873
+      },
+      "haar_orthogonal": {
+        "mean_error": 0.018874059940964184,
+        "mean_delta_vs_original": -0.012720065503556558,
+        "paired_95_interval_vs_original": [
+          -0.013004465916608227,
+          -0.012441718651345758
+        ],
+        "wins_vs_original": 100,
+        "min_error": 0.016060167922129522,
+        "max_error": 0.022478377875858914
+      },
+      "signed_permutation": {
+        "mean_error": 0.03149351659038338,
+        "mean_delta_vs_original": -0.0001006088541373645,
+        "paired_95_interval_vs_original": [
+          -0.00031017858664003563,
+          0.0001107652081797559
+        ],
+        "wins_vs_original": 51,
+        "min_error": 0.02799369753551291,
+        "max_error": 0.037841363898337116
+      }
+    },
+    "hadamard_minus_haar": {
+      "mean": -0.000986157475775657,
+      "descriptive_paired_95_interval": [
+        -0.0011662032869645378,
+        -0.0008041709068467699
+      ]
+    }
+  },
+  {
+    "case": "gaussian_outlier",
+    "multiplier": 8,
+    "group": 128,
+    "seeds": 100,
+    "arms": {
+      "original": {
+        "mean_error": 0.08565508979938924,
+        "mean_delta_vs_original": 0.0,
+        "paired_95_interval_vs_original": [
+          0.0,
+          0.0
+        ],
+        "wins_vs_original": 0,
+        "min_error": 0.07367518805181536,
+        "max_error": 0.10013577245353578
+      },
+      "randomized_hadamard": {
+        "mean_error": 0.025708979045313517,
+        "mean_delta_vs_original": -0.059946110754075715,
+        "paired_95_interval_vs_original": [
+          -0.060923998120714855,
+          -0.05898664578427523
+        ],
+        "wins_vs_original": 100,
+        "min_error": 0.021276406467506878,
+        "max_error": 0.030272449836463062
+      },
+      "haar_orthogonal": {
+        "mean_error": 0.027515794585702854,
+        "mean_delta_vs_original": -0.05813929521368638,
+        "paired_95_interval_vs_original": [
+          -0.05909678948930685,
+          -0.05721943462291843
+        ],
+        "wins_vs_original": 100,
+        "min_error": 0.023592108029057632,
+        "max_error": 0.03397535435895722
+      },
+      "signed_permutation": {
+        "mean_error": 0.08565508979938924,
+        "mean_delta_vs_original": 4.163336342344337e-19,
+        "paired_95_interval_vs_original": [
+          -9.71445146547012e-19,
+          1.942890293094024e-18
+        ],
+        "wins_vs_original": 6,
+        "min_error": 0.07367518805181536,
+        "max_error": 0.10013577245353578
+      }
+    },
+    "hadamard_minus_haar": {
+      "mean": -0.0018068155403893405,
+      "descriptive_paired_95_interval": [
+        -0.0020720221690531506,
+        -0.0015342776074751337
+      ]
+    }
+  },
+  {
+    "case": "gaussian_outlier",
+    "multiplier": 16,
+    "group": 16,
+    "seeds": 100,
+    "arms": {
+      "original": {
+        "mean_error": 0.021585720248201067,
+        "mean_delta_vs_original": 0.0,
+        "paired_95_interval_vs_original": [
+          0.0,
+          0.0
+        ],
+        "wins_vs_original": 0,
+        "min_error": 0.01631085136136133,
+        "max_error": 0.030533424126284174
+      },
+      "randomized_hadamard": {
+        "mean_error": 0.01229390370118598,
+        "mean_delta_vs_original": -0.00929181654701509,
+        "paired_95_interval_vs_original": [
+          -0.009672642338322508,
+          -0.008924633133701305
+        ],
+        "wins_vs_original": 100,
+        "min_error": 0.008823923166123787,
+        "max_error": 0.017143999642408297
+      },
+      "haar_orthogonal": {
+        "mean_error": 0.014587681940198242,
+        "mean_delta_vs_original": -0.00699803830800283,
+        "paired_95_interval_vs_original": [
+          -0.007327186470603503,
+          -0.006670410977747586
+        ],
+        "wins_vs_original": 100,
+        "min_error": 0.010755422023237048,
+        "max_error": 0.021421637932931968
+      },
+      "signed_permutation": {
+        "mean_error": 0.021619617042521137,
+        "mean_delta_vs_original": 3.3896794320066626e-05,
+        "paired_95_interval_vs_original": [
+          -0.00024852670059886814,
+          0.0003043215547145956
+        ],
+        "wins_vs_original": 49,
+        "min_error": 0.01615644938342019,
+        "max_error": 0.028976980792593064
+      }
+    },
+    "hadamard_minus_haar": {
+      "mean": -0.0022937782390122616,
+      "descriptive_paired_95_interval": [
+        -0.002544048505304302,
+        -0.002043210078222739
+      ]
+    }
+  },
+  {
+    "case": "gaussian_outlier",
+    "multiplier": 16,
+    "group": 32,
+    "seeds": 100,
+    "arms": {
+      "original": {
+        "mean_error": 0.0372569483051845,
+        "mean_delta_vs_original": 0.0,
+        "paired_95_interval_vs_original": [
+          0.0,
+          0.0
+        ],
+        "wins_vs_original": 0,
+        "min_error": 0.027421719884819618,
+        "max_error": 0.049949937319506275
+      },
+      "randomized_hadamard": {
+        "mean_error": 0.0157225289356915,
+        "mean_delta_vs_original": -0.02153441936949301,
+        "paired_95_interval_vs_original": [
+          -0.022151274048185517,
+          -0.020933964383953164
+        ],
+        "wins_vs_original": 100,
+        "min_error": 0.011162889896794348,
+        "max_error": 0.021914451190833007
+      },
+      "haar_orthogonal": {
+        "mean_error": 0.018874762784562328,
+        "mean_delta_vs_original": -0.01838218552062218,
+        "paired_95_interval_vs_original": [
+          -0.018987784401106104,
+          -0.017786192961442224
+        ],
+        "wins_vs_original": 100,
+        "min_error": 0.014230416256959599,
+        "max_error": 0.02708061192510437
+      },
+      "signed_permutation": {
+        "mean_error": 0.037054171580316805,
+        "mean_delta_vs_original": -0.0002027767248677,
+        "paired_95_interval_vs_original": [
+          -0.0005347662939384621,
+          0.00013786584026136261
+        ],
+        "wins_vs_original": 57,
+        "min_error": 0.027634835158427476,
+        "max_error": 0.05085698391900155
+      }
+    },
+    "hadamard_minus_haar": {
+      "mean": -0.0031522338488708295,
+      "descriptive_paired_95_interval": [
+        -0.0035182871557419234,
+        -0.0027914782878276203
+      ]
+    }
+  },
+  {
+    "case": "gaussian_outlier",
+    "multiplier": 16,
+    "group": 128,
+    "seeds": 100,
+    "arms": {
+      "original": {
+        "mean_error": 0.11765628730357357,
+        "mean_delta_vs_original": 0.0,
+        "paired_95_interval_vs_original": [
+          0.0,
+          0.0
+        ],
+        "wins_vs_original": 0,
+        "min_error": 0.08568109770374678,
+        "max_error": 0.15653401720127735
+      },
+      "randomized_hadamard": {
+        "mean_error": 0.0220215417433063,
+        "mean_delta_vs_original": -0.09563474556026724,
+        "paired_95_interval_vs_original": [
+          -0.09800099089530107,
+          -0.0933458373193549
+        ],
+        "wins_vs_original": 100,
+        "min_error": 0.015296928369819678,
+        "max_error": 0.031044912792748715
+      },
+      "haar_orthogonal": {
+        "mean_error": 0.027459332518789726,
+        "mean_delta_vs_original": -0.09019695478478383,
+        "paired_95_interval_vs_original": [
+          -0.09242510043425914,
+          -0.08803664596853708
+        ],
+        "wins_vs_original": 100,
+        "min_error": 0.01999141767200209,
+        "max_error": 0.040684731510242614
+      },
+      "signed_permutation": {
+        "mean_error": 0.11765628730357354,
+        "mean_delta_vs_original": -1.8041124150158794e-18,
+        "paired_95_interval_vs_original": [
+          -3.885780586188048e-18,
+          1.3877787807814457e-19
+        ],
+        "wins_vs_original": 13,
+        "min_error": 0.08568109770374678,
+        "max_error": 0.15653401720127735
+      }
+    },
+    "hadamard_minus_haar": {
+      "mean": -0.005437790775483421,
+      "descriptive_paired_95_interval": [
+        -0.006026704217178155,
+        -0.004839675374224492
+      ]
+    }
+  },
+  {
+    "case": "gaussian_outlier",
+    "multiplier": 32,
+    "group": 16,
+    "seeds": 100,
+    "arms": {
+      "original": {
+        "mean_error": 0.01551888538745125,
+        "mean_delta_vs_original": 0.0,
+        "paired_95_interval_vs_original": [
+          0.0,
+          0.0
+        ],
+        "wins_vs_original": 0,
+        "min_error": 0.010604036714746188,
+        "max_error": 0.024694481898558572
+      },
+      "randomized_hadamard": {
+        "mean_error": 0.010701634035184864,
+        "mean_delta_vs_original": -0.004817251352266384,
+        "paired_95_interval_vs_original": [
+          -0.005213374231374496,
+          -0.004434999482528937
+        ],
+        "wins_vs_original": 100,
+        "min_error": 0.006579821276639757,
+        "max_error": 0.01699063640877865
+      },
+      "haar_orthogonal": {
+        "mean_error": 0.01471312356924034,
+        "mean_delta_vs_original": -0.0008057618182109093,
+        "paired_95_interval_vs_original": [
+          -0.0011345653048807078,
+          -0.0004732394546340678
+        ],
+        "wins_vs_original": 68,
+        "min_error": 0.009783828993358378,
+        "max_error": 0.024742641835556172
+      },
+      "signed_permutation": {
+        "mean_error": 0.015519076177735024,
+        "mean_delta_vs_original": 1.90790283770767e-07,
+        "paired_95_interval_vs_original": [
+          -0.0002893697721153847,
+          0.0002774248022227925
+        ],
+        "wins_vs_original": 50,
+        "min_error": 0.010586923525684657,
+        "max_error": 0.022577057378693123
+      }
+    },
+    "hadamard_minus_haar": {
+      "mean": -0.004011489534055474,
+      "descriptive_paired_95_interval": [
+        -0.004377033238266616,
+        -0.0036539435027247848
+      ]
+    }
+  },
+  {
+    "case": "gaussian_outlier",
+    "multiplier": 32,
+    "group": 32,
+    "seeds": 100,
+    "arms": {
+      "original": {
+        "mean_error": 0.026061753740665536,
+        "mean_delta_vs_original": 0.0,
+        "paired_95_interval_vs_original": [
+          0.0,
+          0.0
+        ],
+        "wins_vs_original": 0,
+        "min_error": 0.01737045378059743,
+        "max_error": 0.0392668838314663
+      },
+      "randomized_hadamard": {
+        "mean_error": 0.013558977723082425,
+        "mean_delta_vs_original": -0.012502776017583117,
+        "paired_95_interval_vs_original": [
+          -0.01307422272561057,
+          -0.011942032422965532
+        ],
+        "wins_vs_original": 100,
+        "min_error": 0.0088117029267983,
+        "max_error": 0.021963881445229688
+      },
+      "haar_orthogonal": {
+        "mean_error": 0.018937155760594883,
+        "mean_delta_vs_original": -0.007124597980070657,
+        "paired_95_interval_vs_original": [
+          -0.0076537899451754226,
+          -0.006589518763394885
+        ],
+        "wins_vs_original": 99,
+        "min_error": 0.013055395292884176,
+        "max_error": 0.030779061113211402
+      },
+      "signed_permutation": {
+        "mean_error": 0.02577980894643409,
+        "mean_delta_vs_original": -0.00028194479423145394,
+        "paired_95_interval_vs_original": [
+          -0.0005861785921212384,
+          3.237302088701054e-05
+        ],
+        "wins_vs_original": 57,
+        "min_error": 0.017485251739677007,
+        "max_error": 0.0394511135269573
+      }
+    },
+    "hadamard_minus_haar": {
+      "mean": -0.0053781780375124575,
+      "descriptive_paired_95_interval": [
+        -0.005906317155237004,
+        -0.004864142406433527
+      ]
+    }
+  },
+  {
+    "case": "gaussian_outlier",
+    "multiplier": 32,
+    "group": 128,
+    "seeds": 100,
+    "arms": {
+      "original": {
+        "mean_error": 0.07807987119079353,
+        "mean_delta_vs_original": 0.0,
+        "paired_95_interval_vs_original": [
+          0.0,
+          0.0
+        ],
+        "wins_vs_original": 0,
+        "min_error": 0.05040042689598216,
+        "max_error": 0.11603574133238088
+      },
+      "randomized_hadamard": {
+        "mean_error": 0.018570531185869356,
+        "mean_delta_vs_original": -0.05950934000492418,
+        "paired_95_interval_vs_original": [
+          -0.06156795756724281,
+          -0.05747314502029691
+        ],
+        "wins_vs_original": 100,
+        "min_error": 0.011403925202905599,
+        "max_error": 0.03036562527291201
+      },
+      "haar_orthogonal": {
+        "mean_error": 0.027477178747449312,
+        "mean_delta_vs_original": -0.05060269244334423,
+        "paired_95_interval_vs_original": [
+          -0.05247102726665904,
+          -0.048778232346214014
+        ],
+        "wins_vs_original": 100,
+        "min_error": 0.017176955553714526,
+        "max_error": 0.04482259233680171
+      },
+      "signed_permutation": {
+        "mean_error": 0.07807987119079354,
+        "mean_delta_vs_original": -3.4694469519536144e-19,
+        "paired_95_interval_vs_original": [
+          -1.457167719820518e-18,
+          6.938893903907229e-19
+        ],
+        "wins_vs_original": 7,
+        "min_error": 0.05040042689598216,
+        "max_error": 0.11603574133238088
+      }
+    },
+    "hadamard_minus_haar": {
+      "mean": -0.00890664756157996,
+      "descriptive_paired_95_interval": [
+        -0.009797542616514797,
+        -0.008021427988363694
+      ]
+    }
+  },
+  {
+    "case": "quantizer_grid",
+    "multiplier": 0,
+    "group": 128,
+    "seeds": 100,
+    "arms": {
+      "original": {
+        "mean_error": 0.0,
+        "mean_delta_vs_original": 0.0,
+        "paired_95_interval_vs_original": [
+          0.0,
+          0.0
+        ],
+        "wins_vs_original": 0,
+        "min_error": 0.0,
+        "max_error": 0.0
+      },
+      "randomized_hadamard": {
+        "mean_error": 0.027421082296804324,
+        "mean_delta_vs_original": 0.027421082296804324,
+        "paired_95_interval_vs_original": [
+          0.027312148371516534,
+          0.027530425553697037
+        ],
+        "wins_vs_original": 0,
+        "min_error": 0.025818432882752432,
+        "max_error": 0.028686857921834015
+      },
+      "haar_orthogonal": {
+        "mean_error": 0.027076474953715127,
+        "mean_delta_vs_original": 0.027076474953715127,
+        "paired_95_interval_vs_original": [
+          0.026965378552726772,
+          0.027189583908229963
+        ],
+        "wins_vs_original": 0,
+        "min_error": 0.025915858409728876,
+        "max_error": 0.028731792390838187
+      },
+      "signed_permutation": {
+        "mean_error": 0.0,
+        "mean_delta_vs_original": 0.0,
+        "paired_95_interval_vs_original": [
+          0.0,
+          0.0
+        ],
+        "wins_vs_original": 0,
+        "min_error": 0.0,
+        "max_error": 0.0
+      }
+    },
+    "hadamard_minus_haar": {
+      "mean": 0.0003446073430891955,
+      "descriptive_paired_95_interval": [
+        0.00020959204670703763,
+        0.0004796221394320221
+      ]
+    }
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "schema": "hadamard-complete-audit.v1",
+  "status": "passed",
+  "raw_cells": 7600,
+  "settings": 19,
+  "reconstructed_scalar_summary_fields": 589,
+  "source_files_bound": 16,
+  "input_seed_records": 100,
+  "independent_order_12_determinant": 2985984,
+  "scope": "Integrity, source binding, complete raw coverage, all reported summary statistics and finite controls. Not proof of provenance or committee review."
+}

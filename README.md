@@ -1,5 +1,21 @@
 # Hadamard exposition
 
+## Read and verify the committed submission
+
+The [v2 submission source edition](submission/v2/README.md) is committed directly in this repository. It includes both manuscripts, all 7,600 raw measurements, the exact local-run receipt, source, tests, citation metadata and licenses. Its 41 copied files match the accepted archive byte for byte; the three additional files provide the reader entry point, source manifest and checksums. The rendered PDFs and HTML remain separate release assets, not files in this source edition.
+
+To verify the committed evidence without rerunning the experiment:
+
+```bash
+cd submission/v2
+python -m pip install -r requirements-v2.txt
+python -m unittest discover -s strengthening -p 'test_*.py' -v
+python strengthening/audit_study.py run-v2
+sha256sum -c SHA256SUMS
+```
+
+The raw-data audit checks all 19 settings and reconstructs 589 scalar summary fields. This directory is an immutable submission snapshot, not a second development copy. Make future scientific revisions under a new submission version rather than editing these recorded results.
+
 ## Current submission candidate
 
 **What the Hadamard conjecture promises** explains the conjecture through optimal coordinate spreading, determinant equality and an explicit Paley construction, then connects the mathematics to quantization error.

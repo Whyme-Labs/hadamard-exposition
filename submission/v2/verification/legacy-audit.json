@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "cells": 7600,
+  "settings": 19,
+  "independent_summary_checks": 228,
+  "scope": "Independent file integrity, complete coverage, mean, win-count and bootstrap-interval reconstruction from raw cells."
+}

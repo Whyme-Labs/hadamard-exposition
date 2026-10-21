@@ -1,0 +1,27 @@
+{
+  "scope": "Local Chromium rendering and interactive state checks, not learner or committee review.",
+  "viewports": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 1000,
+      "horizontal_document_overflow": false,
+      "page_errors": [],
+      "outside_viewport": [],
+      "mathml_equations": 152,
+      "interactive_change_checks": true
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "horizontal_document_overflow": false,
+      "page_errors": [],
+      "outside_viewport": [],
+      "mathml_equations": 152,
+      "interactive_change_checks": true
+    }
+  ],
+  "browser_version": "144.0.7559.96",
+  "status": "passed"
+}

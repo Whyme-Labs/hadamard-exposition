@@ -1,0 +1,35 @@
+{
+  "schema": "hadamard-strengthening-protocol.v2",
+  "purpose": "Strengthen the JSP-000013 Exposition submission, not claim a solution, new quantization algorithm, or committee approval.",
+  "execution_order": ["assistant_local", "home-ci-01", "blacksmith_last_resort"],
+  "baseline_scientific_commit": "280ab929e206d263a5928585b13e09558ad445da",
+  "prior_inspected_data_seeds": [0, 19],
+  "seeds": {"first": 1000, "last_inclusive": 1099},
+  "shape": {"activation_rows": 512, "input_features": 128, "output_features": 64},
+  "generator": "NumPy Generator PCG64(seed), standard_normal X then standard_normal W divided by sqrt(128)",
+  "outlier_multipliers": [1, 2, 4, 8, 16, 32],
+  "outlier_rule": "Multiply only activation column zero. Reuse each seed's Gaussian X and W across multipliers. No fit on evaluated values.",
+  "groups": [128, 32, 16],
+  "quantizer": "Symmetric four-bit maxabs, codes -7..7, round-to-nearest ties-to-even; activation row and weight output column grouped over contiguous input features; both operands quantized; float64 simulation.",
+  "arms": ["original", "randomized_hadamard", "haar_orthogonal", "signed_permutation"],
+  "transforms": {
+    "randomized_hadamard": "Q=diag(signs) H/sqrt(128), PCG64(seed+100000), signs choice from [-1.0,1.0]",
+    "haar_orthogonal": "QR of 128x128 iid standard_normal from PCG64(seed+300000); multiply each Q column by sign of corresponding R diagonal, using +1 at zero",
+    "signed_permutation": "PCG64(seed+400000), permutation(128) followed by choice signs from [-1.0,1.0]; Q=eye(128)[:,permutation] times signs per column"
+  },
+  "intervention": "Xr=XQ and Wr=Q.T W; original uses identity. Same X,W,Q within each seed across groups and multipliers.",
+  "primary_endpoint": {"multiplier": 32, "group": 32, "contrast": "randomized_hadamard minus original mean relative squared Frobenius output error"},
+  "primary_decision": "Confirm the earlier directional result within the specified synthetic family only if the upper end of the paired 95% bootstrap interval is below zero. Report a nonconfirmation without tuning or rerunning new seeds.",
+  "bootstrap": {"draws": 10000, "seed": 20261021, "unit": "whole paired seed", "interval": "2.5 and 97.5 percentiles, linear interpolation", "secondary_intervals": "descriptive, unadjusted; no familywise significance claims"},
+  "negative_control": {"case": "quantizer_grid", "group": 128, "seeds": "same 100 fresh seeds", "generator": "PCG64(seed+200000), integer X then W in [-7,7], force X[:,0]=7 and W[0,:]=7", "arms": "all four", "requirement": "original and signed-permutation errors zero to floating-point tolerance; do not omit rotation harm"},
+  "arithmetic_controls": {"full_precision_relative_norm_limit": 2e-13, "orthogonality_max_absolute_limit": 2e-13, "permutation_group128_error_invariance_absolute_limit": 2e-13, "rational_counterexample": "11/3332"},
+  "exact_conjecture_checks": {
+    "content": "Prove the flat-entry minimax equivalence to Hadamard existence, determinant equality, and prime-field Paley construction. These are expository derivations of known mathematics, not priority claims.",
+    "paley_primes": [3, 7, 11, 19, 23, 31, 43],
+    "checks": ["entries are +/-1", "integer HH.T=nI", "exact integer determinant magnitude n^(n/2)", "quadratic-character correlation identity", "invalid q rejection", "one-entry corruption rejected"],
+    "worked_example": "Publish the complete order-12 matrix from q=11; do not imply power-of-two construction covers order 12."
+  },
+  "resource_limits": {"outer_seconds": 180, "blas_threads": 1, "gpu": false, "network_during_experiment": false},
+  "retention": "Retain every cell, input/transform hashes, source/protocol hashes, environment, timings and negative outcomes. Never overwrite an existing run directory.",
+  "scope_limits": ["Fresh pseudorandom draws from the same constructed family are not real-model validation.", "No speed, memory-saving, award-probability, novelty-priority or conjecture-solution claim.", "Do not alter original article or retained v1 results silently."]
+}
