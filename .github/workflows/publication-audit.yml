@@ -1,6 +1,6 @@
 name: Audit existing repository for publication
 # Run locally first. Dispatch only after recording a local blocker.
-# The two bounded Blacksmith audit/review runs are retained as history, not a default.
+# Bounded Blacksmith audit/review runs are retained as history, not a default.
 on:
   workflow_dispatch:
 permissions:
@@ -34,8 +34,9 @@ jobs:
           assert os.environ['GITHUB_REPOSITORY']=='Whyme-Labs/hadamard-exposition'
           assert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()==os.environ['EXPECTED_SHA']
           header='AUTHORIZATION: basic '+base64.b64encode(('x-access-token:'+os.environ['GH_TOKEN']).encode()).decode()
-          subprocess.run(['git','-c','http.https://github.com/.extraheader='+header,'fetch','origin',
-              '+refs/heads/*:refs/audit/heads/*','+refs/tags/*:refs/tags/*','+refs/pull/*/head:refs/audit/pull/*'],check=True,timeout=120)
+          env={**os.environ,'GIT_CONFIG_COUNT':'1','GIT_CONFIG_KEY_0':'http.https://github.com/.extraheader','GIT_CONFIG_VALUE_0':header}
+          subprocess.run(['git','fetch','origin','+refs/heads/*:refs/audit/heads/*',
+              '+refs/tags/*:refs/tags/*','+refs/pull/*/head:refs/audit/pull/*'],env=env,check=True,timeout=120)
           PY
       - name: Test and audit without modifying history or visibility
         env:
