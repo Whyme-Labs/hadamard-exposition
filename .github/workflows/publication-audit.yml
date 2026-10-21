@@ -1,38 +1,51 @@
-name: Review publication audit findings
-# Temporary branch/path-scoped follow-up to audit run 39549217108.
-# Local tests pass; local full-history transfer and home execution remain blocked.
-# This trigger will be removed before merge. No visibility change occurs.
+name: Audit existing repository for publication
+# Run locally first. Dispatch only after recording a local blocker.
+# The two bounded Blacksmith audit/review runs are retained as history, not a default.
 on:
-  push:
-    branches: ['work/issue11-publication-audit']
-    paths: ['publication/review_findings.py']
   workflow_dispatch:
 permissions:
   contents: write
-  actions: write
+  actions: read
   issues: read
-  pull-requests: write
+  pull-requests: read
+concurrency:
+  group: hadamard-publication-audit-${{ github.ref }}
+  cancel-in-progress: false
 jobs:
-  review:
-    runs-on: blacksmith-2vcpu-ubuntu-2404
+  audit:
+    runs-on: [self-hosted, Linux, X64]
     timeout-minutes: 10
     env:
       EXPECTED_SHA: ${{ github.sha }}
     steps:
+      - name: Require the home runner
+        run: test "$RUNNER_NAME" = home-ci-01
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
-          ref: ${{ github.sha }}
+          ref: ${{ env.EXPECTED_SHA }}
           fetch-depth: 0
           persist-credentials: false
-      - name: Test and resolve the identified flags
+      - name: Fetch exposed history without persisting credentials
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import base64,os,subprocess
+          assert os.environ['GITHUB_REPOSITORY']=='Whyme-Labs/hadamard-exposition'
+          assert subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip()==os.environ['EXPECTED_SHA']
+          header='AUTHORIZATION: basic '+base64.b64encode(('x-access-token:'+os.environ['GH_TOKEN']).encode()).decode()
+          subprocess.run(['git','-c','http.https://github.com/.extraheader='+header,'fetch','origin',
+              '+refs/heads/*:refs/audit/heads/*','+refs/tags/*:refs/tags/*','+refs/pull/*/head:refs/audit/pull/*'],check=True,timeout=120)
+          PY
+      - name: Test and audit without modifying history or visibility
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          test "$(git rev-parse HEAD)" = "$EXPECTED_SHA"
-          python3 -W error::ResourceWarning -m unittest discover -s publication -p 'test_*.py' -v
-          python3 publication/review_findings.py
-      - name: Retain the redacted review record
+          mkdir -p build/publication-audit
+          python3 -W error::ResourceWarning -m unittest discover -s publication -p 'test_*.py' -v > build/publication-audit/tests.txt 2>&1
+          python3 publication/audit.py --repository . --remote --output build/publication-audit/report.json
+      - name: Preserve the redacted report on a new private evidence branch
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -40,14 +53,17 @@ jobs:
           import base64,json,os,pathlib,urllib.request
           repo=os.environ['GITHUB_REPOSITORY']
           assert repo=='Whyme-Labs/hadamard-exposition'
-          path=pathlib.Path('build/publication-review/review.json')
-          def post(endpoint,data):
-              req=urllib.request.Request('https://api.github.com/repos/'+repo+endpoint,data=json.dumps(data).encode(),method='POST',headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json','Content-Type':'application/json'})
+          root=pathlib.Path('build/publication-audit')
+          def post(path,data):
+              req=urllib.request.Request('https://api.github.com/repos/'+repo+path,data=json.dumps(data).encode(),method='POST',headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json','Content-Type':'application/json'})
               with urllib.request.urlopen(req,timeout=45) as response:return json.load(response)
-          blob=post('/git/blobs',{'content':base64.b64encode(path.read_bytes()).decode(),'encoding':'base64'})
-          tree=post('/git/trees',{'tree':[{'path':'review.json','mode':'100644','type':'blob','sha':blob['sha']}]})
-          commit=post('/git/commits',{'message':'Retain publication findings review '+os.environ['GITHUB_RUN_ID'],'tree':tree['sha'],'parents':[]})
-          branch='evidence/publication-review-'+os.environ['GITHUB_RUN_ID']+'-'+os.environ['GITHUB_RUN_ATTEMPT']
+          entries=[]
+          for name in ('report.json','tests.txt'):
+              blob=post('/git/blobs',{'content':base64.b64encode((root/name).read_bytes()).decode(),'encoding':'base64'})
+              entries.append({'path':name,'mode':'100644','type':'blob','sha':blob['sha']})
+          tree=post('/git/trees',{'tree':entries})
+          commit=post('/git/commits',{'message':'Retain redacted publication audit '+os.environ['GITHUB_RUN_ID'],'tree':tree['sha'],'parents':[]})
+          branch='evidence/publication-audit-'+os.environ['GITHUB_RUN_ID']+'-'+os.environ['GITHUB_RUN_ATTEMPT']
           post('/git/refs',{'ref':'refs/heads/'+branch,'sha':commit['sha']})
-          print(json.dumps({'evidence_branch':branch,'commit':commit['sha'],'status':json.loads(path.read_text())['review_status']},indent=2))
+          print(json.dumps({'evidence_branch':branch,'commit':commit['sha'],'public_release':False},indent=2))
           PY
