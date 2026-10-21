@@ -1,0 +1,141 @@
+{
+  "schema": "hadamard-v2-milestone.v1",
+  "completed_utc": "2026-10-21T02:58:40.935099+00:00",
+  "status": "local_release_candidate_validated",
+  "research_parent_commit": "12f0463020cfb6e81f9ce2178386668f9b60c27f",
+  "execution_surface": "assistant_local",
+  "runner_used": false,
+  "archive": {
+    "filename": "hadamard-exposition-v2.zip",
+    "sha256": "6074fcc3745e756765bd676be051d04b72c3c29314dd6094b64ef555af29b044",
+    "bytes": 470653,
+    "files": 49
+  },
+  "study": {
+    "status": "passed",
+    "cells": 7600,
+    "settings": 19,
+    "wall_seconds": 11.413118204000057,
+    "started_utc": "2026-10-21T02:58:07.410994+00:00",
+    "environment": {
+      "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+      "numpy": "2.3.5",
+      "platform": "Linux-6.18.55-x86_64-with-glibc2.41",
+      "thread_env": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "OMP_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1",
+        "VECLIB_MAXIMUM_THREADS": "1"
+      }
+    },
+    "primary": {
+      "case": "gaussian_outlier",
+      "multiplier": 32,
+      "group": 32,
+      "seeds": 100,
+      "arms": {
+        "original": {
+          "mean_error": 0.026061753740665536,
+          "mean_delta_vs_original": 0.0,
+          "paired_95_interval_vs_original": [0.0, 0.0],
+          "wins_vs_original": 0,
+          "min_error": 0.01737045378059743,
+          "max_error": 0.0392668838314663
+        },
+        "randomized_hadamard": {
+          "mean_error": 0.013558977723082425,
+          "mean_delta_vs_original": -0.012502776017583117,
+          "paired_95_interval_vs_original": [-0.01307422272561057, -0.011942032422965532],
+          "wins_vs_original": 100,
+          "min_error": 0.0088117029267983,
+          "max_error": 0.021963881445229688
+        },
+        "haar_orthogonal": {
+          "mean_error": 0.018937155760594883,
+          "mean_delta_vs_original": -0.007124597980070657,
+          "paired_95_interval_vs_original": [-0.0076537899451754226, -0.006589518763394885],
+          "wins_vs_original": 99,
+          "min_error": 0.013055395292884176,
+          "max_error": 0.030779061113211402
+        },
+        "signed_permutation": {
+          "mean_error": 0.02577980894643409,
+          "mean_delta_vs_original": -0.00028194479423145394,
+          "paired_95_interval_vs_original": [-0.0005861785921212384, 3.237302088701054e-05],
+          "wins_vs_original": 57,
+          "min_error": 0.017485251739677007,
+          "max_error": 0.0394511135269573
+        }
+      },
+      "hadamard_minus_haar": {
+        "mean": -0.0053781780375124575,
+        "descriptive_paired_95_interval": [-0.005906317155237004, -0.004864142406433527]
+      }
+    },
+    "receipt_sha256": "d6c62b8d1d64f755e01ab8e4adb54fdb29b1d50d93e2ac4044fbd94678386062",
+    "raw_cells_sha256": "1a23e8c7828cfa4bfdd4d1d6575cd3a450922e94b3550256701f715409359246",
+    "interpretation": "Same-protocol reproduction of the 100 registered v2 seeds, not a third independent sample."
+  },
+  "verification": {
+    "scientific_and_audit_tests_passed": 47,
+    "release_boundary_tests_passed": 8,
+    "extracted_archive_tests_passed": 47,
+    "extracted_checksum_entries_passed": 48,
+    "complete_audit": {
+      "schema": "hadamard-complete-audit.v1",
+      "status": "passed",
+      "raw_cells": 7600,
+      "settings": 19,
+      "reconstructed_scalar_summary_fields": 589,
+      "source_files_bound": 16,
+      "input_seed_records": 100,
+      "independent_order_12_determinant": 2985984,
+      "scope": "Integrity, source binding, complete raw coverage, all reported summary statistics and finite controls. Not proof of provenance or committee review."
+    },
+    "sylvester_exact_witnesses": 672,
+    "all_hadamard_exact_witnesses": 1280,
+    "calculator": {
+      "status": "passed",
+      "actual_bundled_javascript_executed": true,
+      "exact_python_witness_matches": 672,
+      "change_events_checked": true,
+      "rounding_ties_checked": true
+    },
+    "browser": {
+      "scope": "Local Chromium rendering and interactive state checks, not learner or committee review.",
+      "viewports": [
+        {"name": "desktop", "width": 1440, "height": 1000, "horizontal_document_overflow": false, "page_errors": [], "outside_viewport": [], "mathml_equations": 152, "interactive_change_checks": true},
+        {"name": "mobile", "width": 390, "height": 844, "horizontal_document_overflow": false, "page_errors": [], "outside_viewport": [], "mathml_equations": 152, "interactive_change_checks": true}
+      ],
+      "browser_version": "144.0.7559.96",
+      "status": "passed"
+    },
+    "visual_review": {
+      "scope": "Assistant visual self-review, not external review.",
+      "documents": [
+        {"name": "exposition-v2.pdf", "pages": 10, "sha256": "e62abb9986e895de7e6ac9662500daa0df3d967b9fa98656db64ae78e6277eb7", "replacement_characters": 0},
+        {"name": "all-hadamard-addendum.pdf", "pages": 3, "sha256": "538382f64bc93c60c650562683c64cd7d20d5cd1e1e0de2df0b43cfd70b99dfc", "replacement_characters": 0}
+      ],
+      "assistant_inspected": true,
+      "finding": "No visible clipping, unreadable equations or missing table content in the inspected documents and desktop/mobile screenshots."
+    },
+    "bounded_credential_scan": {"findings": [], "scope": "Text indicators only; not a comprehensive security audit."}
+  },
+  "new_source_sha256": {
+    "strengthening/audit_study.py": "e7ffd20b209b04cd6ccae3dcfeff3aeaf0d8c5b903fb886d6cdf66a9a85cb481",
+    "strengthening/test_audit.py": "6a36a843a4dc84ada0590242598337a299a3d357e1004dba44f939f5c8fdf8d6",
+    "strengthening/all_hadamard_checks.py": "edb4e6e185aa1c301a3bc95997756efcde23ae439957a80c2c3e130ca4679710",
+    "strengthening/test_all_hadamard.py": "9b05d98c85d1d388269928c4288858e4aa8cd014f0da983684dc2adf140d2eca",
+    "strengthening/all-hadamard-addendum.md": "21e68fa76e38fe9fb3de5246a52e5e04aa16e19beafdea7de07375bab229458a",
+    "strengthening/build_addendum.py": "989e111a30c9d50534b79b6d16ea97c47ae0d61f31ef9d6f4d30f2c76294ce59",
+    "release/build_v2.py": "f234a0c8561b3a3e6beb4a541bdcd571c426472d180fe5ec2b78e33b99dc08cf",
+    "release/test_v2.py": "286290a9e8341c43bfab868753732478be4a671ecb75eefbd12651b8d0814c9c",
+    "release/v2/README.md": "ae403e3708ee968677cfd41a124c8e6850198754c70d4da66448d0188199e857",
+    "release/v2/SUBMISSION.md": "6b9da67e2124cdbf42e060e567830abc411f0a932db1886bed0369b0a35f5277",
+    "release/v2/CITATION.cff": "8a5de5a90d70fc38979d90d9192347cf3f2dbc63cf68b90d298f5df3186b963e",
+    "release/v2/LICENSE.md": "b38b17ac3bda6087fc7330d3f37d6d955eba48cd55f1b397f50b32d1493db662",
+    "release/v2/LICENSE-CC-BY-4.0.md": "f2d31e03ac4544ada38ae68d40db0868d564188b246fd05de644a708d6fc91b1"
+  },
+  "public_state": {"public_mirror_created": false, "official_submission_sent": false, "committee_review_complete": false, "award_claimed": false},
+  "review_kind": "Assistant self-review and automated checks, not independent academic peer review or committee review."
+}

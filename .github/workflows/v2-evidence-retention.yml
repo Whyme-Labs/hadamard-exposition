@@ -1,0 +1,78 @@
+name: Retain v2 reproduction evidence
+# Local validation is the first choice. Run this manually only when hosted
+# execution or durable private evidence retention is actually needed.
+# No automatic Blacksmith fallback. Record a concrete home-runner blocker
+# before deliberately choosing a separate last-resort Blacksmith run.
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: hadamard-v2-evidence-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  preserve:
+    runs-on: [self-hosted, Linux, X64]
+    timeout-minutes: 10
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
+    steps:
+      - name: Require the authorized home runner
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$RUNNER_NAME" = home-ci-01
+          test "$RUNNER_OS" = Linux
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.13.5'
+      - name: Reproduce and audit on the selected source
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          python -m pip install --disable-pip-version-check -r requirements-v2.txt
+          mkdir -p build/v2-reproduction-evidence
+          python -m unittest discover -s strengthening -p 'test_*.py' -v 2>&1 | tee build/v2-reproduction-evidence/tests.txt
+          timeout 180s python strengthening/study.py --output build/v2-reproduction-evidence/run > build/v2-reproduction-evidence/study-console.txt
+          python strengthening/audit_study.py build/v2-reproduction-evidence/run > build/v2-reproduction-evidence/complete-audit.json
+          python strengthening/counterexample_family.py > build/v2-reproduction-evidence/family-checks.json
+          python strengthening/all_hadamard_checks.py > build/v2-reproduction-evidence/all-hadamard-checks.json
+      - name: Retain a separately labeled reproduction in the private repository
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          python - <<'PY'
+          import base64,json,os,pathlib,urllib.request
+          root=pathlib.Path('build/v2-reproduction-evidence')
+          repo=os.environ['GITHUB_REPOSITORY']
+          if repo!='Whyme-Labs/hadamard-exposition': raise SystemExit('Unexpected repository')
+          if json.loads((root/'complete-audit.json').read_text())['status']!='passed': raise SystemExit('Passing audit required')
+          (root/'retention.json').write_text(json.dumps({'source_commit':os.environ['GITHUB_SHA'],
+              'runner':os.environ['RUNNER_NAME'],'run_id':os.environ['GITHUB_RUN_ID'],
+              'scope':'Separate manual home-runner reproduction, not the original local run or a public release.'},indent=2)+'\n')
+          def post(path,data):
+              request=urllib.request.Request('https://api.github.com/repos/'+repo+path,data=json.dumps(data).encode(),method='POST',headers={
+                  'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json','Content-Type':'application/json'})
+              with urllib.request.urlopen(request,timeout=60) as response: return json.load(response)
+          names=['run/cells.csv','run/inputs.json','run/summary.json','run/exact-checks.json','run/receipt.json',
+                 'tests.txt','study-console.txt','complete-audit.json','family-checks.json','all-hadamard-checks.json','retention.json']
+          entries=[]
+          for name in names:
+              data=(root/name).read_bytes()
+              blob=post('/git/blobs',{'content':base64.b64encode(data).decode(),'encoding':'base64'})
+              entries.append({'path':name,'mode':'100644','type':'blob','sha':blob['sha']})
+          tree=post('/git/trees',{'tree':entries})
+          commit=post('/git/commits',{'message':'Retain manual home-runner v2 reproduction '+os.environ['GITHUB_RUN_ID'],
+                                    'tree':tree['sha'],'parents':[]})
+          branch='evidence/v2-home-'+os.environ['GITHUB_RUN_ID']+'-'+os.environ['GITHUB_RUN_ATTEMPT']
+          post('/git/refs',{'ref':'refs/heads/'+branch,'sha':commit['sha']})
+          print(json.dumps({'private_evidence_branch':branch,'commit':commit['sha'],'files':entries},indent=2))
+          PY

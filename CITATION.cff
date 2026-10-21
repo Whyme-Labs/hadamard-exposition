@@ -1,26 +1,20 @@
 cff-version: 1.2.0
-message: "Cite this repository and its fixed exposition version when using the article or experiments."
-title: "What changes when the answer stays the same"
+message: "Cite the author and exact version of this exposition and its experiments."
+title: "What the Hadamard conjecture promises"
 type: software
-version: "submission-candidate-1"
+version: "2-submission-candidate"
 authors:
   - family-names: "Soh"
     given-names: "Wei Meng"
-    alias: "wms2537"
     affiliation: "Whyme Labs"
 abstract: >-
-  A reproducible exposition on Hadamard matrices, orthogonal changes of basis,
-  and representation-dependent quantization error. The package contains an
-  illustrated standalone article, an exact counterexample to universal
-  improvement, paired synthetic experiments, a prespecified quantization
-  group-size study, retained results, and independent verification code. It
-  does not claim a solution of the Hadamard conjecture or a completed
-  pretrained-model performance result.
-repository-code: "https://github.com/Whyme-Labs/hadamard-exposition"
+  An exposition of the Hadamard conjecture, flat orthogonal matrices,
+  Paley construction and representation-dependent quantization. Includes
+  a proved counterexample family, exact interactive calculator and a
+  reproducible 100-seed synthetic study. No conjecture solution, model
+  performance result or prize committee acceptance is claimed.
 keywords:
-  - "Hadamard matrix"
   - "Hadamard conjecture"
-  - "orthogonal transformation"
-  - "quantization"
-  - "reproducible experiment"
   - "mathematical exposition"
+  - "quantization"
+  - "reproducibility"

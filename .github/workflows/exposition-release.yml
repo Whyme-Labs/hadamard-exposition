@@ -1,7 +1,7 @@
 name: Verify curated exposition release
+# Legacy v1 recovery/build workflow. Local execution comes first; launch this
+# home-runner fallback manually only after recording the concrete local blocker.
 on:
-  pull_request:
-    paths: ['release/**', '.github/workflows/exposition-release.yml']
   workflow_dispatch:
 permissions:
   contents: read
@@ -10,11 +10,10 @@ concurrency:
   cancel-in-progress: false
 jobs:
   verify:
-    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
     runs-on: [self-hosted, Linux, X64]
     timeout-minutes: 10
     env:
-      EXPECTED_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+      EXPECTED_SHA: ${{ github.sha }}
       OPENBLAS_NUM_THREADS: '1'
       OMP_NUM_THREADS: '1'
       MKL_NUM_THREADS: '1'
