@@ -1,0 +1,1173 @@
+{
+  "schema": "hadamard-publication-audit.v1",
+  "started_utc": "2026-10-21T05:23:02.421130+00:00",
+  "finished_utc": "2026-10-21T05:23:29.059004+00:00",
+  "scanner_sha256": "f1fb0560fb1f4ddbd29ed2ca5012bec22f3ccb1291ab90964551bd292e552240",
+  "scopes": {
+    "git": {
+      "head": "a64120aacb2983a5155b4384adc05fb0c836fb6d",
+      "refs": [
+        "ed6963b416d00d11f8c0adec5ad90d1db4970332 refs/audit/heads/evidence/release-v1-39466379866",
+        "ec2aac8ab33114d352b0441d6e45137e2eae9659 refs/audit/heads/evidence/v2-reproduction-39474617755",
+        "4eecf2fdcde85618429b9ce98dd8845affc62db0 refs/audit/heads/evidence/v2-reproduction-39536817779",
+        "911f9ad0840fe36521b51ce9038c2ed97c81f9c8 refs/audit/heads/main",
+        "14fd6e88326dddf3afecc800c56790046997fc9b refs/audit/heads/work/award-strengthening-v2",
+        "bf7cf67e64e9bcf90c424ac6f64c7bff9001d6ef refs/audit/heads/work/award-submission-v1",
+        "554beb2647eb5430de20bddeea3df100c163725c refs/audit/heads/work/issue1-group-size-sensitivity",
+        "a64120aacb2983a5155b4384adc05fb0c836fb6d refs/audit/heads/work/issue11-publication-audit",
+        "145341727c963c9768a4bac26bf0d470d93c0cd7 refs/audit/heads/work/issue11-release-bundle",
+        "a38ea0445fab7702392a963b91a6602a8b780f97 refs/audit/heads/work/issue2-benchmark-contract",
+        "a72bb30a4b65a6adce751b5c6b136d6880f2d43b refs/audit/heads/work/issue5-model-campaign",
+        "5d552e6a7e6aa1cfe0675daf0fa574cb945bc5da refs/audit/heads/work/issue5-operator-arithmetic",
+        "e26702bdd16242abbfe7dd34cdcf7529327f527a refs/audit/heads/work/issue6-campaign-development",
+        "1b501f564750d0938adbe0ece3314dc0960bbc26 refs/audit/heads/work/issue6-environment-qualification",
+        "9430216d2ff070a1818c2540a5157e82921b2ed5 refs/audit/heads/work/public-release-plan-v1",
+        "bf7cf67e64e9bcf90c424ac6f64c7bff9001d6ef refs/audit/pull/10",
+        "9430216d2ff070a1818c2540a5157e82921b2ed5 refs/audit/pull/12",
+        "145341727c963c9768a4bac26bf0d470d93c0cd7 refs/audit/pull/13",
+        "14fd6e88326dddf3afecc800c56790046997fc9b refs/audit/pull/14",
+        "a64120aacb2983a5155b4384adc05fb0c836fb6d refs/audit/pull/15",
+        "554beb2647eb5430de20bddeea3df100c163725c refs/audit/pull/3",
+        "a38ea0445fab7702392a963b91a6602a8b780f97 refs/audit/pull/4",
+        "a72bb30a4b65a6adce751b5c6b136d6880f2d43b refs/audit/pull/7",
+        "1b501f564750d0938adbe0ece3314dc0960bbc26 refs/audit/pull/8",
+        "e26702bdd16242abbfe7dd34cdcf7529327f527a refs/audit/pull/9",
+        "ed6963b416d00d11f8c0adec5ad90d1db4970332 refs/remotes/origin/evidence/release-v1-39466379866",
+        "ec2aac8ab33114d352b0441d6e45137e2eae9659 refs/remotes/origin/evidence/v2-reproduction-39474617755",
+        "4eecf2fdcde85618429b9ce98dd8845affc62db0 refs/remotes/origin/evidence/v2-reproduction-39536817779",
+        "911f9ad0840fe36521b51ce9038c2ed97c81f9c8 refs/remotes/origin/main",
+        "14fd6e88326dddf3afecc800c56790046997fc9b refs/remotes/origin/work/award-strengthening-v2",
+        "bf7cf67e64e9bcf90c424ac6f64c7bff9001d6ef refs/remotes/origin/work/award-submission-v1",
+        "554beb2647eb5430de20bddeea3df100c163725c refs/remotes/origin/work/issue1-group-size-sensitivity",
+        "a64120aacb2983a5155b4384adc05fb0c836fb6d refs/remotes/origin/work/issue11-publication-audit",
+        "145341727c963c9768a4bac26bf0d470d93c0cd7 refs/remotes/origin/work/issue11-release-bundle",
+        "a38ea0445fab7702392a963b91a6602a8b780f97 refs/remotes/origin/work/issue2-benchmark-contract",
+        "a72bb30a4b65a6adce751b5c6b136d6880f2d43b refs/remotes/origin/work/issue5-model-campaign",
+        "5d552e6a7e6aa1cfe0675daf0fa574cb945bc5da refs/remotes/origin/work/issue5-operator-arithmetic",
+        "e26702bdd16242abbfe7dd34cdcf7529327f527a refs/remotes/origin/work/issue6-campaign-development",
+        "1b501f564750d0938adbe0ece3314dc0960bbc26 refs/remotes/origin/work/issue6-environment-qualification",
+        "9430216d2ff070a1818c2540a5157e82921b2ed5 refs/remotes/origin/work/public-release-plan-v1"
+      ],
+      "unique_objects": 625,
+      "object_types": {
+        "commit": 60,
+        "tree": 213,
+        "blob": 352
+      },
+      "scope": "All objects reachable from fetched branches, tags and PR-head refs; not unreachable deleted GitHub objects."
+    },
+    "remote": {
+      "/issues?state=all": 15,
+      "reviews": 2,
+      "/issues/comments": 26,
+      "/pulls/comments": 0,
+      "/comments": 0,
+      "/releases": 0,
+      "workflow_runs": 16,
+      "current_audit_run_excluded": 1,
+      "no_step_attempts": 8,
+      "not_completed_runs": 3,
+      "log_archives_scanned": 4,
+      "artifacts": 0
+    }
+  },
+  "counts": {
+    "objects_or_members": 1814,
+    "bytes_inspected": 184261439,
+    "archives": 39,
+    "archive_members": 1342
+  },
+  "findings": [
+    {
+      "location": "git:c86818b96611e0d868a2233caf531a13aed6c6fd:benchmarks/test_dependency_lock.py",
+      "rule": "authenticated_url",
+      "count": 1,
+      "lines": [
+        41
+      ]
+    },
+    {
+      "location": "git:105174f7936379214125b643df09b5f0235bf6e8:publication/test_audit.py",
+      "rule": "credential_assignment",
+      "count": 1,
+      "lines": [
+        88
+      ]
+    },
+    {
+      "location": "git:4fa8471dc08aa7cf93724e59a86a89b75a63a6a0:validation/2026-10-17-model-campaign/dependencies/provenance.tar.gz!gunzip",
+      "rule": "authenticated_url",
+      "count": 1,
+      "lines": [
+        6225
+      ]
+    },
+    {
+      "location": "git:4fa8471dc08aa7cf93724e59a86a89b75a63a6a0:validation/2026-10-17-model-campaign/dependencies/provenance.tar.gz!gunzip",
+      "rule": "personal_email",
+      "count": 50,
+      "lines": [
+        690,
+        693,
+        959,
+        1729,
+        1730,
+        1989,
+        2466,
+        2530,
+        2886,
+        3112,
+        3267,
+        3523,
+        4178,
+        4693,
+        4696,
+        4962,
+        5013,
+        5268,
+        5269,
+        5414
+      ]
+    },
+    {
+      "location": "git:4fa8471dc08aa7cf93724e59a86a89b75a63a6a0:validation/2026-10-17-model-campaign/dependencies/provenance.tar.gz!gunzip",
+      "rule": "home_path",
+      "count": 2,
+      "lines": [
+        1547,
+        3181
+      ]
+    },
+    {
+      "location": "git:4fa8471dc08aa7cf93724e59a86a89b75a63a6a0:validation/2026-10-17-model-campaign/dependencies/provenance.tar.gz!gunzip!reports/converter-install-report.json",
+      "rule": "personal_email",
+      "count": 29,
+      "lines": [
+        393,
+        396,
+        662,
+        1432,
+        1433,
+        1692,
+        2169,
+        2233,
+        2589,
+        2815,
+        2970,
+        3226,
+        3881
+      ]
+    },
+    {
+      "location": "git:4fa8471dc08aa7cf93724e59a86a89b75a63a6a0:validation/2026-10-17-model-campaign/dependencies/provenance.tar.gz!gunzip!reports/converter-install-report.json",
+      "rule": "home_path",
+      "count": 2,
+      "lines": [
+        1250,
+        2884
+      ]
+    },
+    {
+      "location": "git:4fa8471dc08aa7cf93724e59a86a89b75a63a6a0:validation/2026-10-17-model-campaign/dependencies/provenance.tar.gz!gunzip!reports/runtime-install-report.json",
+      "rule": "personal_email",
+      "count": 21,
+      "lines": [
+        478,
+        481,
+        747,
+        798,
+        1053,
+        1054,
+        1199
+      ]
+    },
+    {
+      "location": "git:4fa8471dc08aa7cf93724e59a86a89b75a63a6a0:validation/2026-10-17-model-campaign/dependencies/provenance.tar.gz!gunzip!sources/benchmarks/test_dependency_lock.py",
+      "rule": "authenticated_url",
+      "count": 1,
+      "lines": [
+        41
+      ]
+    },
+    {
+      "location": "git:a9eac9bb5e7fc4e5ea5d15ce17c2a2300c65264a:validation/2026-10-18-campaign-development/diagnostic-environment-recovery/raw-evidence.tar.gz!gunzip",
+      "rule": "personal_email",
+      "count": 50,
+      "lines": [
+        1375,
+        2170,
+        2173,
+        2240,
+        2875,
+        3195,
+        3262,
+        3576,
+        3577,
+        4309,
+        4371,
+        4452,
+        4506,
+        8217,
+        8579,
+        8580,
+        8750,
+        8753,
+        9176,
+        9428
+      ]
+    },
+    {
+      "location": "git:a9eac9bb5e7fc4e5ea5d15ce17c2a2300c65264a:validation/2026-10-18-campaign-development/diagnostic-environment-recovery/raw-evidence.tar.gz!gunzip",
+      "rule": "home_path",
+      "count": 2,
+      "lines": [
+        959,
+        1709
+      ]
+    },
+    {
+      "location": "git:a9eac9bb5e7fc4e5ea5d15ce17c2a2300c65264a:validation/2026-10-18-campaign-development/diagnostic-environment-recovery/raw-evidence.tar.gz!gunzip!converter-install-report.json",
+      "rule": "personal_email",
+      "count": 29,
+      "lines": [
+        738,
+        1533,
+        1536,
+        1603,
+        2238,
+        2558,
+        2625,
+        2939,
+        2940,
+        3672,
+        3734,
+        3815,
+        3869
+      ]
+    },
+    {
+      "location": "git:a9eac9bb5e7fc4e5ea5d15ce17c2a2300c65264a:validation/2026-10-18-campaign-development/diagnostic-environment-recovery/raw-evidence.tar.gz!gunzip!converter-install-report.json",
+      "rule": "home_path",
+      "count": 2,
+      "lines": [
+        322,
+        1072
+      ]
+    },
+    {
+      "location": "git:a9eac9bb5e7fc4e5ea5d15ce17c2a2300c65264a:validation/2026-10-18-campaign-development/diagnostic-environment-recovery/raw-evidence.tar.gz!gunzip!runtime-install-report.json",
+      "rule": "personal_email",
+      "count": 21,
+      "lines": [
+        96,
+        458,
+        459,
+        629,
+        632,
+        1055,
+        1307
+      ]
+    },
+    {
+      "location": "git:42ba9f23973854df68832a3448270b360d2080cb:validation/2026-10-18-environment-recovery/dependencies/raw-evidence.tar.gz!gunzip",
+      "rule": "personal_email",
+      "count": 50,
+      "lines": [
+        1375,
+        2170,
+        2173,
+        2240,
+        2875,
+        3195,
+        3262,
+        3576,
+        3577,
+        4309,
+        4371,
+        4452,
+        4506,
+        8217,
+        8579,
+        8580,
+        8750,
+        8753,
+        9176,
+        9428
+      ]
+    },
+    {
+      "location": "git:42ba9f23973854df68832a3448270b360d2080cb:validation/2026-10-18-environment-recovery/dependencies/raw-evidence.tar.gz!gunzip",
+      "rule": "home_path",
+      "count": 2,
+      "lines": [
+        959,
+        1709
+      ]
+    },
+    {
+      "location": "git:42ba9f23973854df68832a3448270b360d2080cb:validation/2026-10-18-environment-recovery/dependencies/raw-evidence.tar.gz!gunzip!converter-install-report.json",
+      "rule": "personal_email",
+      "count": 29,
+      "lines": [
+        738,
+        1533,
+        1536,
+        1603,
+        2238,
+        2558,
+        2625,
+        2939,
+        2940,
+        3672,
+        3734,
+        3815,
+        3869
+      ]
+    },
+    {
+      "location": "git:42ba9f23973854df68832a3448270b360d2080cb:validation/2026-10-18-environment-recovery/dependencies/raw-evidence.tar.gz!gunzip!converter-install-report.json",
+      "rule": "home_path",
+      "count": 2,
+      "lines": [
+        322,
+        1072
+      ]
+    },
+    {
+      "location": "git:42ba9f23973854df68832a3448270b360d2080cb:validation/2026-10-18-environment-recovery/dependencies/raw-evidence.tar.gz!gunzip!runtime-install-report.json",
+      "rule": "personal_email",
+      "count": 21,
+      "lines": [
+        96,
+        458,
+        459,
+        629,
+        632,
+        1055,
+        1307
+      ]
+    },
+    {
+      "location": "api:/issues?state=all:5954827849",
+      "rule": "url_capability",
+      "count": 1,
+      "lines": [
+        1
+      ]
+    },
+    {
+      "location": "api:/issues?state=all:5944632776",
+      "rule": "url_capability",
+      "count": 1,
+      "lines": [
+        1
+      ]
+    },
+    {
+      "location": "api:/issues?state=all:5944515494",
+      "rule": "url_capability",
+      "count": 1,
+      "lines": [
+        1
+      ]
+    },
+    {
+      "location": "api:/issues?state=all:5913516009",
+      "rule": "url_capability",
+      "count": 1,
+      "lines": [
+        1
+      ]
+    },
+    {
+      "location": "api:/issues?state=all:5907228717",
+      "rule": "url_capability",
+      "count": 1,
+      "lines": [
+        1
+      ]
+    },
+    {
+      "location": "api:/issues?state=all:5905960709",
+      "rule": "url_capability",
+      "count": 1,
+      "lines": [
+        1
+      ]
+    },
+    {
+      "location": "api:/issues?state=all:5900774602",
+      "rule": "url_capability",
+      "count": 1,
+      "lines": [
+        1
+      ]
+    },
+    {
+      "location": "api:/issues?state=all:5898387176",
+      "rule": "url_capability",
+      "count": 1,
+      "lines": [
+        1
+      ]
+    },
+    {
+      "location": "run:39536817779:attempt:1.zip!0_preserve.txt",
+      "rule": "home_path",
+      "count": 10,
+      "lines": [
+        82,
+        86,
+        88,
+        89,
+        91,
+        105,
+        186,
+        497,
+        499
+      ]
+    },
+    {
+      "location": "run:39474617755:attempt:1.zip!0_preserve.txt",
+      "rule": "home_path",
+      "count": 10,
+      "lines": [
+        82,
+        86,
+        88,
+        89,
+        91,
+        105,
+        186,
+        471,
+        473
+      ]
+    },
+    {
+      "location": "run:39466379866:attempt:1.zip!0_recover.txt",
+      "rule": "home_path",
+      "count": 10,
+      "lines": [
+        83,
+        87,
+        89,
+        90,
+        92,
+        106,
+        223,
+        799,
+        801
+      ]
+    },
+    {
+      "location": "run:39465577952:attempt:1.zip!0_recover.txt",
+      "rule": "home_path",
+      "count": 9,
+      "lines": [
+        79,
+        83,
+        85,
+        86,
+        88,
+        102,
+        204,
+        213,
+        215
+      ]
+    }
+  ],
+  "gaps": [
+    {
+      "location": "run:39536825246",
+      "reason": "unfinished run; logs can change after this audit"
+    },
+    {
+      "location": "run:39466379796",
+      "reason": "unfinished run; logs can change after this audit"
+    },
+    {
+      "location": "run:39465140698",
+      "reason": "unfinished run; logs can change after this audit"
+    }
+  ],
+  "archives": [
+    {
+      "location": "git:1f50dd63717efa8d676f4185deb7f5601cf047cf:validation/2026-10-17-model-benchmark/runtime-evidence.tar.gz",
+      "members": 1,
+      "unpacked_bytes": 542720,
+      "sample_names": []
+    },
+    {
+      "location": "git:1f50dd63717efa8d676f4185deb7f5601cf047cf:validation/2026-10-17-model-benchmark/runtime-evidence.tar.gz!gunzip",
+      "members": 44,
+      "unpacked_bytes": 456315,
+      "sample_names": [
+        "onnx-controls/edge_codes_g16.ort.log",
+        "onnx-controls/edge_codes_g16.profile.json",
+        "onnx-controls/edge_codes_g32.ort.log",
+        "onnx-controls/edge_codes_g32.profile.json",
+        "onnx-controls/partial_padding_g16.ort.log",
+        "onnx-controls/partial_padding_g16.profile.json",
+        "onnx-controls/partial_padding_g32.ort.log",
+        "onnx-controls/partial_padding_g32.profile.json",
+        "onnx-controls/projection_original_g16_rows1.ort.log",
+        "onnx-controls/projection_original_g16_rows1.profile.json",
+        "onnx-controls/projection_original_g16_rows8.ort.log",
+        "onnx-controls/projection_original_g16_rows8.profile.json"
+      ]
+    },
+    {
+      "location": "git:a7712bf9dc93fd91a2030e4dcaae3a21ed039f2c:validation/2026-10-17-model-benchmark/unqualified-rss-runtime-evidence.tar.gz",
+      "members": 1,
+      "unpacked_bytes": 481280,
+      "sample_names": []
+    },
+    {
+      "location": "git:a7712bf9dc93fd91a2030e4dcaae3a21ed039f2c:validation/2026-10-17-model-benchmark/unqualified-rss-runtime-evidence.tar.gz!gunzip",
+      "members": 40,
+      "unpacked_bytes": 403447,
+      "sample_names": [
+        "edge_codes_g16.ort.log",
+        "edge_codes_g16.profile.json",
+        "edge_codes_g32.ort.log",
+        "edge_codes_g32.profile.json",
+        "partial_padding_g16.ort.log",
+        "partial_padding_g16.profile.json",
+        "partial_padding_g32.ort.log",
+        "partial_padding_g32.profile.json",
+        "projection_original_g16_rows1.ort.log",
+        "projection_original_g16_rows1.profile.json",
+        "projection_original_g16_rows8.ort.log",
+        "projection_original_g16_rows8.profile.json"
+      ]
+    },
+    {
+      "location": "git:4fa8471dc08aa7cf93724e59a86a89b75a63a6a0:validation/2026-10-17-model-campaign/dependencies/provenance.tar.gz",
+      "members": 1,
+      "unpacked_bytes": 1280000,
+      "sample_names": []
+    },
+    {
+      "location": "git:4fa8471dc08aa7cf93724e59a86a89b75a63a6a0:validation/2026-10-17-model-campaign/dependencies/provenance.tar.gz!gunzip",
+      "members": 23,
+      "unpacked_bytes": 1257238,
+      "sample_names": [
+        "logs/converter-install-1.log",
+        "receipts/converter-abi.json",
+        "receipts/converter-installed-verification-final.json",
+        "receipts/effort-result-1.json",
+        "receipts/effort-result-2.json",
+        "receipts/effort-start.json",
+        "receipts/runtime-abi.json",
+        "receipts/runtime-installed-verification-final.json",
+        "receipts/transfer-converter-1.json",
+        "receipts/transfer-converter-2.json",
+        "receipts/transfer-runtime-1.json",
+        "receipts/wheel-files.json"
+      ]
+    },
+    {
+      "location": "git:1547743dc19ae09063016e1c70deb681183da62a:validation/2026-10-17-model-campaign/export-probe/raw-evidence.tar.gz",
+      "members": 1,
+      "unpacked_bytes": 2263040,
+      "sample_names": []
+    },
+    {
+      "location": "git:1547743dc19ae09063016e1c70deb681183da62a:validation/2026-10-17-model-campaign/export-probe/raw-evidence.tar.gz!gunzip",
+      "members": 35,
+      "unpacked_bytes": 2230592,
+      "sample_names": [
+        "attempt-1/stderr.log",
+        "attempt-1/stdout.log",
+        "attempt-1/task-receipt.json",
+        "attempt-1/worker-identity.json",
+        "attempt-1/worker-result.json",
+        "attempt-2/original-source-snapshot-ledger.json",
+        "attempt-2/stderr.log",
+        "attempt-2/stdout.log",
+        "attempt-2/task-receipt.json",
+        "attempt-2/worker-identity.json",
+        "attempt-2/worker-result.json",
+        "attempt-3/probe.json"
+      ]
+    },
+    {
+      "location": "git:696c0a929b061597a8a4996b186f2344b9df59c8:validation/2026-10-18-campaign-development/cache-maintenance/raw-evidence.tar.gz",
+      "members": 1,
+      "unpacked_bytes": 29665280,
+      "sample_names": []
+    },
+    {
+      "location": "git:696c0a929b061597a8a4996b186f2344b9df59c8:validation/2026-10-18-campaign-development/cache-maintenance/raw-evidence.tar.gz!gunzip",
+      "members": 3,
+      "unpacked_bytes": 29659949,
+      "sample_names": [
+        "advice.json",
+        "files.jsonl",
+        "start.json"
+      ]
+    },
+    {
+      "location": "git:a7a80dbbb76c2170f4741671b1b19cbd1030f897:validation/2026-10-18-campaign-development/campaign-attempt-1/raw-evidence.tar.gz",
+      "members": 1,
+      "unpacked_bytes": 215040,
+      "sample_names": []
+    },
+    {
+      "location": "git:a7a80dbbb76c2170f4741671b1b19cbd1030f897:validation/2026-10-18-campaign-development/campaign-attempt-1/raw-evidence.tar.gz!gunzip",
+      "members": 25,
+      "unpacked_bytes": 193058,
+      "sample_names": [
+        "artifacts/acquisition.json",
+        "campaign.json",
+        "dependencies.json",
+        "dependency-lock.json",
+        "library-cache/version.txt",
+        "preflight.json",
+        "review.json",
+        "tasks/acquisition.json",
+        "tasks/dependencies-converter.json",
+        "tasks/dependencies-runtime.json",
+        "workers/acquisition/stderr.log",
+        "workers/acquisition/stdout.log"
+      ]
+    },
+    {
+      "location": "git:18eb9eca1e055f7a93c404cd401c4ccd26e92066:validation/2026-10-18-campaign-development/campaign-attempt-2/cache-comparison-slices.npz",
+      "members": 4,
+      "unpacked_bytes": 805376,
+      "sample_names": [
+        "article0_full.npy",
+        "article0_cached.npy",
+        "article1_full.npy",
+        "article1_cached.npy"
+      ]
+    },
+    {
+      "location": "git:f0cea512cc4ff678fc2a26fc98302b6596e8b843:validation/2026-10-18-campaign-development/campaign-attempt-2/raw-evidence.tar.gz",
+      "members": 1,
+      "unpacked_bytes": 2355200,
+      "sample_names": []
+    },
+    {
+      "location": "git:f0cea512cc4ff678fc2a26fc98302b6596e8b843:validation/2026-10-18-campaign-development/campaign-attempt-2/raw-evidence.tar.gz!gunzip",
+      "members": 49,
+      "unpacked_bytes": 2312296,
+      "sample_names": [
+        "artifacts/acquisition.json",
+        "campaign.json",
+        "dependencies.json",
+        "dependency-lock.json",
+        "export/export.json",
+        "library-cache/version.txt",
+        "preflight.json",
+        "reference/article0.cached.npy",
+        "reference/article1.cached.npy",
+        "reference/reference.json",
+        "review.json",
+        "selection/selection.json"
+      ]
+    },
+    {
+      "location": "git:a9eac9bb5e7fc4e5ea5d15ce17c2a2300c65264a:validation/2026-10-18-campaign-development/diagnostic-environment-recovery/raw-evidence.tar.gz",
+      "members": 1,
+      "unpacked_bytes": 1464320,
+      "sample_names": []
+    },
+    {
+      "location": "git:a9eac9bb5e7fc4e5ea5d15ce17c2a2300c65264a:validation/2026-10-18-campaign-development/diagnostic-environment-recovery/raw-evidence.tar.gz!gunzip",
+      "members": 32,
+      "unpacked_bytes": 1434516,
+      "sample_names": [
+        "abi-converter/stderr.log",
+        "abi-converter/stdout.log",
+        "abi-converter/task-receipt.json",
+        "abi-converter/worker-identity.json",
+        "abi-converter/worker-result.json",
+        "abi-runtime/stderr.log",
+        "abi-runtime/stdout.log",
+        "abi-runtime/task-receipt.json",
+        "abi-runtime/worker-identity.json",
+        "abi-runtime/worker-result.json",
+        "converter-abi-config.json",
+        "converter-abi-host.json"
+      ]
+    },
+    {
+      "location": "git:6b71794fa0558124af906f009effa17a1761a6bf:validation/2026-10-18-campaign-development/diagnostic-input-recovery/raw-evidence.tar.gz",
+      "members": 1,
+      "unpacked_bytes": 1167360,
+      "sample_names": []
+    },
+    {
+      "location": "git:6b71794fa0558124af906f009effa17a1761a6bf:validation/2026-10-18-campaign-development/diagnostic-input-recovery/raw-evidence.tar.gz!gunzip",
+      "members": 20,
+      "unpacked_bytes": 1144702,
+      "sample_names": [
+        "acquisition-host.json",
+        "artifacts/acquisition.json",
+        "campaign.json",
+        "new-acquisition/artifacts/acquisition.json",
+        "new-acquisition/config.json",
+        "new-acquisition/worker/stderr.log",
+        "new-acquisition/worker/stdout.log",
+        "new-acquisition/worker/task-receipt.json",
+        "new-acquisition/worker/worker-identity.json",
+        "new-acquisition/worker/worker-result.json",
+        "reconstruction-start.json",
+        "reconstruction.json"
+      ]
+    },
+    {
+      "location": "git:6b71794fa0558124af906f009effa17a1761a6bf:validation/2026-10-18-campaign-development/diagnostic-input-recovery/raw-evidence.tar.gz!gunzip!reference/cache-comparison-slices.npz",
+      "members": 4,
+      "unpacked_bytes": 805376,
+      "sample_names": [
+        "article0_full.npy",
+        "article0_cached.npy",
+        "article1_full.npy",
+        "article1_cached.npy"
+      ]
+    },
+    {
+      "location": "git:a2b53984118ff7771d5b75cff9107c815fba42a7:validation/2026-10-18-campaign-development/recovered-cache-maintenance/raw-evidence.tar.gz",
+      "members": 1,
+      "unpacked_bytes": 30167040,
+      "sample_names": []
+    },
+    {
+      "location": "git:a2b53984118ff7771d5b75cff9107c815fba42a7:validation/2026-10-18-campaign-development/recovered-cache-maintenance/raw-evidence.tar.gz!gunzip",
+      "members": 3,
+      "unpacked_bytes": 30161159,
+      "sample_names": [
+        "advice.json",
+        "files.jsonl",
+        "start.json"
+      ]
+    },
+    {
+      "location": "git:b8d60375c56ee845fbb14ec7950cfa31ffad3210:validation/2026-10-18-campaign-development/reference-trace-v2/raw-evidence.tar.gz",
+      "members": 1,
+      "unpacked_bytes": 5990400,
+      "sample_names": []
+    },
+    {
+      "location": "git:b8d60375c56ee845fbb14ec7950cfa31ffad3210:validation/2026-10-18-campaign-development/reference-trace-v2/raw-evidence.tar.gz!gunzip",
+      "members": 15,
+      "unpacked_bytes": 5977560,
+      "sample_names": [
+        "library-cache/transformers/version.txt",
+        "preflight.json",
+        "trace-run.json",
+        "worker/article0.cached.trace.npz",
+        "worker/article0.full.trace.npz",
+        "worker/article0.prefill.trace.npz",
+        "worker/article1.cached.trace.npz",
+        "worker/article1.full.trace.npz",
+        "worker/article1.prefill.trace.npz",
+        "worker/start.json",
+        "worker/stderr.log",
+        "worker/stdout.log"
+      ]
+    },
+    {
+      "location": "git:b8d60375c56ee845fbb14ec7950cfa31ffad3210:validation/2026-10-18-campaign-development/reference-trace-v2/raw-evidence.tar.gz!gunzip!worker/article0.cached.trace.npz",
+      "members": 160,
+      "unpacked_bytes": 663072,
+      "sample_names": [
+        "gpt_neox.embed_in:input.npy",
+        "gpt_neox.embed_in:output.npy",
+        "gpt_neox.rotary_emb:input.npy",
+        "gpt_neox.rotary_emb:position_ids.npy",
+        "gpt_neox.rotary_emb:cos.npy",
+        "gpt_neox.rotary_emb:sin.npy",
+        "gpt_neox.layers.0:input.npy",
+        "gpt_neox.layers.0.input_layernorm:input.npy",
+        "gpt_neox.layers.0.input_layernorm:output.npy",
+        "gpt_neox.layers.0.attention:input.npy",
+        "gpt_neox.layers.0.attention:position_ids.npy",
+        "gpt_neox.layers.0.attention:cache_position.npy"
+      ]
+    },
+    {
+      "location": "git:b8d60375c56ee845fbb14ec7950cfa31ffad3210:validation/2026-10-18-campaign-development/reference-trace-v2/raw-evidence.tar.gz!gunzip!worker/article0.full.trace.npz",
+      "members": 160,
+      "unpacked_bytes": 663072,
+      "sample_names": [
+        "gpt_neox.embed_in:input.npy",
+        "gpt_neox.embed_in:output.npy",
+        "gpt_neox.rotary_emb:input.npy",
+        "gpt_neox.rotary_emb:position_ids.npy",
+        "gpt_neox.rotary_emb:cos.npy",
+        "gpt_neox.rotary_emb:sin.npy",
+        "gpt_neox.layers.0:input.npy",
+        "gpt_neox.layers.0.input_layernorm:input.npy",
+        "gpt_neox.layers.0.input_layernorm:output.npy",
+        "gpt_neox.layers.0.attention:input.npy",
+        "gpt_neox.layers.0.attention:position_ids.npy",
+        "gpt_neox.layers.0.attention:cache_position.npy"
+      ]
+    },
+    {
+      "location": "git:b8d60375c56ee845fbb14ec7950cfa31ffad3210:validation/2026-10-18-campaign-development/reference-trace-v2/raw-evidence.tar.gz!gunzip!worker/article0.prefill.trace.npz",
+      "members": 160,
+      "unpacked_bytes": 663048,
+      "sample_names": [
+        "gpt_neox.embed_in:input.npy",
+        "gpt_neox.embed_in:output.npy",
+        "gpt_neox.rotary_emb:input.npy",
+        "gpt_neox.rotary_emb:position_ids.npy",
+        "gpt_neox.rotary_emb:cos.npy",
+        "gpt_neox.rotary_emb:sin.npy",
+        "gpt_neox.layers.0:input.npy",
+        "gpt_neox.layers.0.input_layernorm:input.npy",
+        "gpt_neox.layers.0.input_layernorm:output.npy",
+        "gpt_neox.layers.0.attention:input.npy",
+        "gpt_neox.layers.0.attention:position_ids.npy",
+        "gpt_neox.layers.0.attention:cache_position.npy"
+      ]
+    },
+    {
+      "location": "git:b8d60375c56ee845fbb14ec7950cfa31ffad3210:validation/2026-10-18-campaign-development/reference-trace-v2/raw-evidence.tar.gz!gunzip!worker/article1.cached.trace.npz",
+      "members": 160,
+      "unpacked_bytes": 663072,
+      "sample_names": [
+        "gpt_neox.embed_in:input.npy",
+        "gpt_neox.embed_in:output.npy",
+        "gpt_neox.rotary_emb:input.npy",
+        "gpt_neox.rotary_emb:position_ids.npy",
+        "gpt_neox.rotary_emb:cos.npy",
+        "gpt_neox.rotary_emb:sin.npy",
+        "gpt_neox.layers.0:input.npy",
+        "gpt_neox.layers.0.input_layernorm:input.npy",
+        "gpt_neox.layers.0.input_layernorm:output.npy",
+        "gpt_neox.layers.0.attention:input.npy",
+        "gpt_neox.layers.0.attention:position_ids.npy",
+        "gpt_neox.layers.0.attention:cache_position.npy"
+      ]
+    },
+    {
+      "location": "git:b8d60375c56ee845fbb14ec7950cfa31ffad3210:validation/2026-10-18-campaign-development/reference-trace-v2/raw-evidence.tar.gz!gunzip!worker/article1.full.trace.npz",
+      "members": 160,
+      "unpacked_bytes": 663072,
+      "sample_names": [
+        "gpt_neox.embed_in:input.npy",
+        "gpt_neox.embed_in:output.npy",
+        "gpt_neox.rotary_emb:input.npy",
+        "gpt_neox.rotary_emb:position_ids.npy",
+        "gpt_neox.rotary_emb:cos.npy",
+        "gpt_neox.rotary_emb:sin.npy",
+        "gpt_neox.layers.0:input.npy",
+        "gpt_neox.layers.0.input_layernorm:input.npy",
+        "gpt_neox.layers.0.input_layernorm:output.npy",
+        "gpt_neox.layers.0.attention:input.npy",
+        "gpt_neox.layers.0.attention:position_ids.npy",
+        "gpt_neox.layers.0.attention:cache_position.npy"
+      ]
+    },
+    {
+      "location": "git:b8d60375c56ee845fbb14ec7950cfa31ffad3210:validation/2026-10-18-campaign-development/reference-trace-v2/raw-evidence.tar.gz!gunzip!worker/article1.prefill.trace.npz",
+      "members": 160,
+      "unpacked_bytes": 663048,
+      "sample_names": [
+        "gpt_neox.embed_in:input.npy",
+        "gpt_neox.embed_in:output.npy",
+        "gpt_neox.rotary_emb:input.npy",
+        "gpt_neox.rotary_emb:position_ids.npy",
+        "gpt_neox.rotary_emb:cos.npy",
+        "gpt_neox.rotary_emb:sin.npy",
+        "gpt_neox.layers.0:input.npy",
+        "gpt_neox.layers.0.input_layernorm:input.npy",
+        "gpt_neox.layers.0.input_layernorm:output.npy",
+        "gpt_neox.layers.0.attention:input.npy",
+        "gpt_neox.layers.0.attention:position_ids.npy",
+        "gpt_neox.layers.0.attention:cache_position.npy"
+      ]
+    },
+    {
+      "location": "git:42ba9f23973854df68832a3448270b360d2080cb:validation/2026-10-18-environment-recovery/dependencies/raw-evidence.tar.gz",
+      "members": 1,
+      "unpacked_bytes": 1464320,
+      "sample_names": []
+    },
+    {
+      "location": "git:42ba9f23973854df68832a3448270b360d2080cb:validation/2026-10-18-environment-recovery/dependencies/raw-evidence.tar.gz!gunzip",
+      "members": 32,
+      "unpacked_bytes": 1433948,
+      "sample_names": [
+        "abi-converter/stderr.log",
+        "abi-converter/stdout.log",
+        "abi-converter/task-receipt.json",
+        "abi-converter/worker-identity.json",
+        "abi-converter/worker-result.json",
+        "abi-runtime/stderr.log",
+        "abi-runtime/stdout.log",
+        "abi-runtime/task-receipt.json",
+        "abi-runtime/worker-identity.json",
+        "abi-runtime/worker-result.json",
+        "converter-abi-config.json",
+        "converter-abi-host.json"
+      ]
+    },
+    {
+      "location": "git:b550294b98a36cfe2bdd7d01fc07e03ca0de9f73:validation/2026-10-18-environment-recovery/offline/raw-evidence.tar.gz",
+      "members": 1,
+      "unpacked_bytes": 92160,
+      "sample_names": []
+    },
+    {
+      "location": "git:b550294b98a36cfe2bdd7d01fc07e03ca0de9f73:validation/2026-10-18-environment-recovery/offline/raw-evidence.tar.gz!gunzip",
+      "members": 9,
+      "unpacked_bytes": 80480,
+      "sample_names": [
+        "campaign-preflight/preflight.json",
+        "effort-start.json",
+        "full-suite/stderr.log",
+        "full-suite/stdout.log",
+        "full-suite/task-receipt.json",
+        "full-suite/worker-identity.json",
+        "full-suite/worker-result.json",
+        "host-preflight.json",
+        "qualification.json"
+      ]
+    },
+    {
+      "location": "git:a4000ad367c86cb07c30df436d231954526b4dec:hadamard-exposition-v1.zip",
+      "members": 36,
+      "unpacked_bytes": 2303136,
+      "sample_names": [
+        "hadamard-exposition-v1/.nojekyll",
+        "hadamard-exposition-v1/CITATION.cff",
+        "hadamard-exposition-v1/LICENSE-CC-BY-4.0.md",
+        "hadamard-exposition-v1/LICENSE-MIT.txt",
+        "hadamard-exposition-v1/LICENSE.md",
+        "hadamard-exposition-v1/MANIFEST.json",
+        "hadamard-exposition-v1/README.md",
+        "hadamard-exposition-v1/SHA256SUMS",
+        "hadamard-exposition-v1/SUBMISSION.md",
+        "hadamard-exposition-v1/article.md",
+        "hadamard-exposition-v1/calculator-verification.json",
+        "hadamard-exposition-v1/calculator.html"
+      ]
+    },
+    {
+      "location": "run:39536817779:attempt:1.zip",
+      "members": 2,
+      "unpacked_bytes": 43532,
+      "sample_names": [
+        "0_preserve.txt",
+        "preserve/system.txt"
+      ]
+    },
+    {
+      "location": "run:39474617755:attempt:1.zip",
+      "members": 2,
+      "unpacked_bytes": 40621,
+      "sample_names": [
+        "0_preserve.txt",
+        "preserve/system.txt"
+      ]
+    },
+    {
+      "location": "run:39466379866:attempt:1.zip",
+      "members": 2,
+      "unpacked_bytes": 75914,
+      "sample_names": [
+        "0_recover.txt",
+        "recover/system.txt"
+      ]
+    },
+    {
+      "location": "run:39465577952:attempt:1.zip",
+      "members": 2,
+      "unpacked_bytes": 20639,
+      "sample_names": [
+        "0_recover.txt",
+        "recover/system.txt"
+      ]
+    }
+  ],
+  "redistribution_review": [],
+  "automated_status": "review_required",
+  "publication_authorized_by_scanner": false,
+  "api_reads": [
+    {
+      "path": "/issues?state=all&per_page=100&page=1",
+      "sha256": "3607a8843e43de2c86607a6881d6ccbbb358e0a8761ef668059d2c140c2f8311",
+      "bytes": 146667
+    },
+    {
+      "path": "/pulls/15/reviews?per_page=100&page=1",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "bytes": 2
+    },
+    {
+      "path": "/pulls/14/reviews?per_page=100&page=1",
+      "sha256": "ddbdf35c395f866e4a137d8de103934cb7c6d3a6764c60894ec610a7976a6761",
+      "bytes": 3328
+    },
+    {
+      "path": "/pulls/13/reviews?per_page=100&page=1",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "bytes": 2
+    },
+    {
+      "path": "/pulls/12/reviews?per_page=100&page=1",
+      "sha256": "d599f1bb58f173a08645fcb4c9af3fc1c75ed4083fd867b7b9bea728c283a77c",
+      "bytes": 2513
+    },
+    {
+      "path": "/pulls/10/reviews?per_page=100&page=1",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "bytes": 2
+    },
+    {
+      "path": "/pulls/9/reviews?per_page=100&page=1",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "bytes": 2
+    },
+    {
+      "path": "/pulls/8/reviews?per_page=100&page=1",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "bytes": 2
+    },
+    {
+      "path": "/pulls/7/reviews?per_page=100&page=1",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "bytes": 2
+    },
+    {
+      "path": "/pulls/4/reviews?per_page=100&page=1",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "bytes": 2
+    },
+    {
+      "path": "/pulls/3/reviews?per_page=100&page=1",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "bytes": 2
+    },
+    {
+      "path": "/issues/comments?per_page=100&page=1",
+      "sha256": "4374a4a2db5244cfdf4b413d5979d13f176d969d3b37075cff32aa779c5a51f4",
+      "bytes": 142931
+    },
+    {
+      "path": "/pulls/comments?per_page=100&page=1",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "bytes": 2
+    },
+    {
+      "path": "/comments?per_page=100&page=1",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "bytes": 2
+    },
+    {
+      "path": "/releases?per_page=100&page=1",
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "bytes": 2
+    },
+    {
+      "path": "/actions/runs?per_page=100&page=1",
+      "sha256": "8186a0b3be524da73ef161236cf453bd76f6f810a8f607a0d61cf36900aef202",
+      "bytes": 213182
+    },
+    {
+      "path": "/actions/runs/39548955770/attempts/1/jobs?per_page=100&page=1",
+      "sha256": "483f6c1845c060b0d371bf5b8bf31be91317f334fbc5418e66e81382480dd30d",
+      "bytes": 975
+    },
+    {
+      "path": "/actions/runs/39536817779/attempts/1/jobs?per_page=100&page=1",
+      "sha256": "32bd8dae8497aafcdad5a5b690e70789f21e638ebcf2ad1d6d2b61eef04cc5c3",
+      "bytes": 3322
+    },
+    {
+      "path": "/actions/runs/39536817779/attempts/1/logs",
+      "sha256": "e4b19c8a30ad29d27e5a82892e33d0378746e2502c6eda67a48072d2f82ddf8b",
+      "bytes": 11225
+    },
+    {
+      "path": "/actions/runs/39474617755/attempts/1/jobs?per_page=100&page=1",
+      "sha256": "5734401f4592a981345c358aa8f1d17709718b7a0f8e9f224b7e0c8e872c013e",
+      "bytes": 3322
+    },
+    {
+      "path": "/actions/runs/39474617755/attempts/1/logs",
+      "sha256": "54a130b40a56a2d3fb2c14b76b28831d27b268b41c44d65a32d0183ef9ab5e74",
+      "bytes": 10679
+    },
+    {
+      "path": "/actions/runs/39466379866/attempts/1/jobs?per_page=100&page=1",
+      "sha256": "c1b350a73e6215dd0579b181e4b6b7688bfd30525a477e34d1a8c56405a18787",
+      "bytes": 3734
+    },
+    {
+      "path": "/actions/runs/39466379866/attempts/1/logs",
+      "sha256": "a70b287fd9d401aaae54233a4dff19841f12c5599aa6cb24075282cbba9fc51e",
+      "bytes": 17979
+    },
+    {
+      "path": "/actions/runs/39465577952/attempts/1/jobs?per_page=100&page=1",
+      "sha256": "4bf3b4c2b31a0647b665e0601bdb3adac1a6c85f930d42d5455e060cd709ca3f",
+      "bytes": 2497
+    },
+    {
+      "path": "/actions/runs/39465577952/attempts/1/logs",
+      "sha256": "fbfbc3e4d251d4a5c1fe0db58f9155eff19ae49e0d305686800957ab15966093",
+      "bytes": 5930
+    },
+    {
+      "path": "/actions/runs/39465577945/attempts/1/jobs?per_page=100&page=1",
+      "sha256": "b3dab5870ff3a8209160335de7c1077b89e461d875d9041ac9d8b8ed7c1666f6",
+      "bytes": 27
+    },
+    {
+      "path": "/actions/runs/39465140377/attempts/1/jobs?per_page=100&page=1",
+      "sha256": "b3dab5870ff3a8209160335de7c1077b89e461d875d9041ac9d8b8ed7c1666f6",
+      "bytes": 27
+    },
+    {
+      "path": "/actions/runs/39463443466/attempts/1/jobs?per_page=100&page=1",
+      "sha256": "b92a576d25ab773361de6d00485a9fc2076ab92a256584ef2b57f2a8d797c02f",
+      "bytes": 965
+    },
+    {
+      "path": "/actions/runs/39462259382/attempts/1/jobs?per_page=100&page=1",
+      "sha256": "0c1213a3cba6daddbc6230f6d46293fab7868a232d33f5b2be0a26d4d37dfd09",
+      "bytes": 950
+    },
+    {
+      "path": "/actions/runs/39458232472/attempts/1/jobs?per_page=100&page=1",
+      "sha256": "dda01ab3c962ccb55fa37dc959b2b1b58ddd77e33d4a1ec41dd5eb762a0253cf",
+      "bytes": 950
+    },
+    {
+      "path": "/actions/runs/39454855096/attempts/1/jobs?per_page=100&page=1",
+      "sha256": "e3794822755d3e4e2637ac447bc1ed2db613ceca3a4b35487cb39765cf5059ae",
+      "bytes": 950
+    },
+    {
+      "path": "/actions/runs/39454679982/attempts/1/jobs?per_page=100&page=1",
+      "sha256": "312578e2ffc62c0dfb22e645c73754c158b3f3edce9e81c29f5881c5010b4210",
+      "bytes": 950
+    },
+    {
+      "path": "/actions/artifacts?per_page=100&page=1",
+      "sha256": "244563f989470892c537c9a4622920af0d228ee4528f7d00c64a06d6cd95856c",
+      "bytes": 32
+    }
+  ],
+  "limits": {
+    "per_object_bytes": 67108864,
+    "expanded_bytes": 536870912,
+    "members": 30000,
+    "depth": 6
+  },
+  "scope_limits": [
+    "Indicator scan only, not a guarantee of no secrets or personal data.",
+    "No archive member is extracted or executed.",
+    "Matched credential values are never included in this report.",
+    "Redistribution and license review remains a separate decision.",
+    "No repository visibility, history or artifact mutation occurs."
+  ]
+}

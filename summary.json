@@ -1,0 +1,106 @@
+{
+  "schema": "hadamard-publication-audit.v1",
+  "started_utc": "2026-10-21T05:23:02.421130+00:00",
+  "finished_utc": "2026-10-21T05:23:29.059004+00:00",
+  "scanner_sha256": "f1fb0560fb1f4ddbd29ed2ca5012bec22f3ccb1291ab90964551bd292e552240",
+  "automated_status": "review_required",
+  "counts": {
+    "objects_or_members": 1814,
+    "bytes_inspected": 184261439,
+    "archives": 39,
+    "archive_members": 1342
+  },
+  "scopes": {
+    "git": {
+      "head": "a64120aacb2983a5155b4384adc05fb0c836fb6d",
+      "refs": [
+        "ed6963b416d00d11f8c0adec5ad90d1db4970332 refs/audit/heads/evidence/release-v1-39466379866",
+        "ec2aac8ab33114d352b0441d6e45137e2eae9659 refs/audit/heads/evidence/v2-reproduction-39474617755",
+        "4eecf2fdcde85618429b9ce98dd8845affc62db0 refs/audit/heads/evidence/v2-reproduction-39536817779",
+        "911f9ad0840fe36521b51ce9038c2ed97c81f9c8 refs/audit/heads/main",
+        "14fd6e88326dddf3afecc800c56790046997fc9b refs/audit/heads/work/award-strengthening-v2",
+        "bf7cf67e64e9bcf90c424ac6f64c7bff9001d6ef refs/audit/heads/work/award-submission-v1",
+        "554beb2647eb5430de20bddeea3df100c163725c refs/audit/heads/work/issue1-group-size-sensitivity",
+        "a64120aacb2983a5155b4384adc05fb0c836fb6d refs/audit/heads/work/issue11-publication-audit",
+        "145341727c963c9768a4bac26bf0d470d93c0cd7 refs/audit/heads/work/issue11-release-bundle",
+        "a38ea0445fab7702392a963b91a6602a8b780f97 refs/audit/heads/work/issue2-benchmark-contract",
+        "a72bb30a4b65a6adce751b5c6b136d6880f2d43b refs/audit/heads/work/issue5-model-campaign",
+        "5d552e6a7e6aa1cfe0675daf0fa574cb945bc5da refs/audit/heads/work/issue5-operator-arithmetic",
+        "e26702bdd16242abbfe7dd34cdcf7529327f527a refs/audit/heads/work/issue6-campaign-development",
+        "1b501f564750d0938adbe0ece3314dc0960bbc26 refs/audit/heads/work/issue6-environment-qualification",
+        "9430216d2ff070a1818c2540a5157e82921b2ed5 refs/audit/heads/work/public-release-plan-v1",
+        "bf7cf67e64e9bcf90c424ac6f64c7bff9001d6ef refs/audit/pull/10",
+        "9430216d2ff070a1818c2540a5157e82921b2ed5 refs/audit/pull/12",
+        "145341727c963c9768a4bac26bf0d470d93c0cd7 refs/audit/pull/13",
+        "14fd6e88326dddf3afecc800c56790046997fc9b refs/audit/pull/14",
+        "a64120aacb2983a5155b4384adc05fb0c836fb6d refs/audit/pull/15",
+        "554beb2647eb5430de20bddeea3df100c163725c refs/audit/pull/3",
+        "a38ea0445fab7702392a963b91a6602a8b780f97 refs/audit/pull/4",
+        "a72bb30a4b65a6adce751b5c6b136d6880f2d43b refs/audit/pull/7",
+        "1b501f564750d0938adbe0ece3314dc0960bbc26 refs/audit/pull/8",
+        "e26702bdd16242abbfe7dd34cdcf7529327f527a refs/audit/pull/9",
+        "ed6963b416d00d11f8c0adec5ad90d1db4970332 refs/remotes/origin/evidence/release-v1-39466379866",
+        "ec2aac8ab33114d352b0441d6e45137e2eae9659 refs/remotes/origin/evidence/v2-reproduction-39474617755",
+        "4eecf2fdcde85618429b9ce98dd8845affc62db0 refs/remotes/origin/evidence/v2-reproduction-39536817779",
+        "911f9ad0840fe36521b51ce9038c2ed97c81f9c8 refs/remotes/origin/main",
+        "14fd6e88326dddf3afecc800c56790046997fc9b refs/remotes/origin/work/award-strengthening-v2",
+        "bf7cf67e64e9bcf90c424ac6f64c7bff9001d6ef refs/remotes/origin/work/award-submission-v1",
+        "554beb2647eb5430de20bddeea3df100c163725c refs/remotes/origin/work/issue1-group-size-sensitivity",
+        "a64120aacb2983a5155b4384adc05fb0c836fb6d refs/remotes/origin/work/issue11-publication-audit",
+        "145341727c963c9768a4bac26bf0d470d93c0cd7 refs/remotes/origin/work/issue11-release-bundle",
+        "a38ea0445fab7702392a963b91a6602a8b780f97 refs/remotes/origin/work/issue2-benchmark-contract",
+        "a72bb30a4b65a6adce751b5c6b136d6880f2d43b refs/remotes/origin/work/issue5-model-campaign",
+        "5d552e6a7e6aa1cfe0675daf0fa574cb945bc5da refs/remotes/origin/work/issue5-operator-arithmetic",
+        "e26702bdd16242abbfe7dd34cdcf7529327f527a refs/remotes/origin/work/issue6-campaign-development",
+        "1b501f564750d0938adbe0ece3314dc0960bbc26 refs/remotes/origin/work/issue6-environment-qualification",
+        "9430216d2ff070a1818c2540a5157e82921b2ed5 refs/remotes/origin/work/public-release-plan-v1"
+      ],
+      "unique_objects": 625,
+      "object_types": {
+        "commit": 60,
+        "tree": 213,
+        "blob": 352
+      },
+      "scope": "All objects reachable from fetched branches, tags and PR-head refs; not unreachable deleted GitHub objects."
+    },
+    "remote": {
+      "/issues?state=all": 15,
+      "reviews": 2,
+      "/issues/comments": 26,
+      "/pulls/comments": 0,
+      "/comments": 0,
+      "/releases": 0,
+      "workflow_runs": 16,
+      "current_audit_run_excluded": 1,
+      "no_step_attempts": 8,
+      "not_completed_runs": 3,
+      "log_archives_scanned": 4,
+      "artifacts": 0
+    }
+  },
+  "gaps": [
+    {
+      "location": "run:39536825246",
+      "reason": "unfinished run; logs can change after this audit"
+    },
+    {
+      "location": "run:39466379796",
+      "reason": "unfinished run; logs can change after this audit"
+    },
+    {
+      "location": "run:39465140698",
+      "reason": "unfinished run; logs can change after this audit"
+    }
+  ],
+  "findings_by_rule": {
+    "authenticated_url": 3,
+    "credential_assignment": 1,
+    "personal_email": 9,
+    "home_path": 10,
+    "url_capability": 8
+  },
+  "redistribution_review_count": 0,
+  "workflow_source": "a64120aacb2983a5155b4384adc05fb0c836fb6d",
+  "runner": "blacksmith-2vcpu-ubuntu-2404-znrqkrp3oh4ra6oj",
+  "public_release": false
+}
