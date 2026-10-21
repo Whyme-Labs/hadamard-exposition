@@ -1,0 +1,64 @@
+{
+  "status": "passed",
+  "cells": 7600,
+  "seconds": 3.8689309740000013,
+  "primary": {
+    "case": "gaussian_outlier",
+    "multiplier": 32,
+    "group": 32,
+    "seeds": 100,
+    "arms": {
+      "original": {
+        "mean_error": 0.026061753740665536,
+        "mean_delta_vs_original": 0.0,
+        "paired_95_interval_vs_original": [
+          0.0,
+          0.0
+        ],
+        "wins_vs_original": 0,
+        "min_error": 0.01737045378059743,
+        "max_error": 0.0392668838314663
+      },
+      "randomized_hadamard": {
+        "mean_error": 0.013558977723082425,
+        "mean_delta_vs_original": -0.012502776017583117,
+        "paired_95_interval_vs_original": [
+          -0.01307422272561057,
+          -0.011942032422965532
+        ],
+        "wins_vs_original": 100,
+        "min_error": 0.0088117029267983,
+        "max_error": 0.021963881445229688
+      },
+      "haar_orthogonal": {
+        "mean_error": 0.018937155760594883,
+        "mean_delta_vs_original": -0.007124597980070657,
+        "paired_95_interval_vs_original": [
+          -0.0076537899451754226,
+          -0.006589518763394885
+        ],
+        "wins_vs_original": 99,
+        "min_error": 0.013055395292884176,
+        "max_error": 0.030779061113211402
+      },
+      "signed_permutation": {
+        "mean_error": 0.02577980894643409,
+        "mean_delta_vs_original": -0.00028194479423145394,
+        "paired_95_interval_vs_original": [
+          -0.0005861785921212384,
+          3.237302088701054e-05
+        ],
+        "wins_vs_original": 57,
+        "min_error": 0.017485251739677007,
+        "max_error": 0.0394511135269573
+      }
+    },
+    "hadamard_minus_haar": {
+      "mean": -0.0053781780375124575,
+      "descriptive_paired_95_interval": [
+        -0.005906317155237004,
+        -0.004864142406433527
+      ]
+    }
+  }
+}
