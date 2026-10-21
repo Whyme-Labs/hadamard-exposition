@@ -1,0 +1,52 @@
+test_all_constructions_and_equivalences (test_all_hadamard.AllHadamardTests.test_all_constructions_and_equivalences) ... ok
+test_corruption_rejected (test_all_hadamard.AllHadamardTests.test_corruption_rejected) ... ok
+test_non_power_of_two_example (test_all_hadamard.AllHadamardTests.test_non_power_of_two_example) ... ok
+test_non_sign_rejected (test_all_hadamard.AllHadamardTests.test_non_sign_rejected) ... ok
+test_support_and_width_rejected (test_all_hadamard.AllHadamardTests.test_support_and_width_rejected) ... ok
+test_changed_protocol (test_audit.AuditTests.test_changed_protocol) ... ok
+test_changed_source (test_audit.AuditTests.test_changed_source) ... ok
+test_complete_fixture (test_audit.AuditTests.test_complete_fixture) ... ok
+test_corrupt_matrix_with_updated_checksum (test_audit.AuditTests.test_corrupt_matrix_with_updated_checksum) ... ok
+test_duplicate_input_seed (test_audit.AuditTests.test_duplicate_input_seed) ... ok
+test_duplicate_json_key (test_audit.AuditTests.test_duplicate_json_key) ... ok
+test_duplicate_raw_cell (test_audit.AuditTests.test_duplicate_raw_cell) ... ok
+test_extra_file (test_audit.AuditTests.test_extra_file) ... ok
+test_false_delta_with_updated_checksum (test_audit.AuditTests.test_false_delta_with_updated_checksum) ... ok
+test_false_directional_decision (test_audit.AuditTests.test_false_directional_decision) ... ok
+test_false_haar_contrast (test_audit.AuditTests.test_false_haar_contrast) ... ok
+test_false_haar_interval (test_audit.AuditTests.test_false_haar_interval) ... ok
+test_false_maximum (test_audit.AuditTests.test_false_maximum) ... ok
+test_false_minimum (test_audit.AuditTests.test_false_minimum) ... ok
+test_false_primary_copy (test_audit.AuditTests.test_false_primary_copy) ... ok
+test_false_receipt_count (test_audit.AuditTests.test_false_receipt_count) ... ok
+test_missing_hash (test_audit.AuditTests.test_missing_hash) ... ok
+test_missing_raw_cell (test_audit.AuditTests.test_missing_raw_cell) ... ok
+test_nonfinite_control (test_audit.AuditTests.test_nonfinite_control) ... ok
+test_symlink_output (test_audit.AuditTests.test_symlink_output) ... ok
+test_unbound_source (test_audit.AuditTests.test_unbound_source) ... ok
+test_all_registered_constructions (test_exact.ExactTests.test_all_registered_constructions) ... ok
+test_bad_inputs (test_exact.ExactTests.test_bad_inputs) ... ok
+test_bad_matrices (test_exact.ExactTests.test_bad_matrices) ... ok
+test_determinant_against_independent_permutation_sum (test_exact.ExactTests.test_determinant_against_independent_permutation_sum) ... ok
+test_paley_worked_example (test_exact.ExactTests.test_paley_worked_example) ... ok
+test_rational_example (test_exact.ExactTests.test_rational_example) ... ok
+test_all_registered_examples_and_closed_form (test_family.FamilyTests.test_all_registered_examples_and_closed_form) ... ok
+test_all_supported_signs (test_family.FamilyTests.test_all_supported_signs) ... ok
+test_four_bit_reference (test_family.FamilyTests.test_four_bit_reference) ... ok
+test_invalid (test_family.FamilyTests.test_invalid) ... ok
+test_linear_layer_corollary (test_family.FamilyTests.test_linear_layer_corollary) ... ok
+test_orthogonality (test_family.FamilyTests.test_orthogonality) ... ok
+test_three_bit (test_family.FamilyTests.test_three_bit) ... ok
+test_all_transforms_orthogonal_and_compensated (test_study.StudyTests.test_all_transforms_orthogonal_and_compensated) ... ok
+test_group_orientation (test_study.StudyTests.test_group_orientation) ... ok
+test_non_power_of_two_rejected (test_study.StudyTests.test_non_power_of_two_rejected) ... ok
+test_reject_bad_groups_and_values (test_study.StudyTests.test_reject_bad_groups_and_values) ... ok
+test_signed_permutation_preserves_full_group_error (test_study.StudyTests.test_signed_permutation_preserves_full_group_error) ... ok
+test_summary_pairing_and_coverage (test_study.StudyTests.test_summary_pairing_and_coverage) ... ok
+test_ties_and_zero (test_study.StudyTests.test_ties_and_zero) ... ok
+test_zero_reference_rejected (test_study.StudyTests.test_zero_reference_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 47 tests in 4.214s
+
+OK

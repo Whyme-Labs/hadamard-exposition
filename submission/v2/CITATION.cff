@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "Cite the author and exact version of this exposition and its experiments."
+title: "What the Hadamard conjecture promises"
+type: software
+version: "2-submission-candidate"
+authors:
+  - family-names: "Soh"
+    given-names: "Wei Meng"
+    affiliation: "Whyme Labs"
+abstract: >-
+  An exposition of the Hadamard conjecture, flat orthogonal matrices,
+  Paley construction and representation-dependent quantization. Includes
+  a proved counterexample family, exact interactive calculator and a
+  reproducible 100-seed synthetic study. No conjecture solution, model
+  performance result or prize committee acceptance is claimed.
+keywords:
+  - "Hadamard conjecture"
+  - "mathematical exposition"
+  - "quantization"
+  - "reproducibility"

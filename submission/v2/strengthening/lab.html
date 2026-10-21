@@ -1,0 +1,15 @@
+<section class="lab" aria-labelledby="family-lab-title">
+<h3 id="family-lab-title">Test the counterexample family</h3>
+<p>Change the dimension, bit width or signs. The peak falls, but rounding introduces error where the original input had none. This calculator evaluates every transformed coordinate with exact integer arithmetic. Only the peak display uses a floating-point square root.</p>
+<div class="controls">
+<label>Bit width<select id="family-bits"><option>3</option><option selected>4</option><option>5</option><option>8</option><option>16</option></select></label>
+<label>Dimension<select id="family-n"><option selected>4</option><option>8</option><option>16</option><option>64</option><option>128</option><option>1024</option></select></label>
+<label>Signs on nonzero inputs<select id="family-signs"><option value="0">+ + +</option><option value="1">− + +</option><option value="2">+ − +</option><option value="3">− − +</option><option value="4">+ + −</option><option value="5">− + −</option><option value="6">+ − −</option><option value="7">− − −</option></select></label>
+</div>
+<div class="readouts" aria-live="polite">
+<div><span>Peak magnitude</span><output id="family-peak"></output><small id="family-ratio"></small></div>
+<div><span>Relative squared error after rotation</span><output id="family-error"></output><small>Exact fraction: <span id="family-fraction"></span></small></div>
+</div>
+<p class="note">Original-basis reconstruction error is exactly zero. At a fixed bit width, changing the dimension or signs leaves the positive error fraction unchanged.</p>
+<noscript><p>JavaScript is disabled. The proof and all numerical tables remain readable. At four bits, the error is 11/3332 in every supported dimension and for every sign pattern.</p></noscript>
+</section>
