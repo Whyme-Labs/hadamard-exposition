@@ -38,6 +38,8 @@ python strengthening/all_hadamard_checks.py > new-all-hadamard-checks.json
 
 The numerical work needs Python and NumPy, no GPU or external dataset. The unmodified study requests one BLAS thread and has an internal deadline. Use an outer process timeout where required.
 
+A fresh run should pass the audit, but its `cells.csv` need not match `run-v2/cells.csv` byte for byte. Values can differ in the last floating-point digits across NumPy versions, BLAS builds and platforms; a rerun with NumPy 2.5.3 differed by at most 6.2e-16 per error value. Compare values numerically or use the audit, not `cmp` or file digests.
+
 ## Source edition and rendered files
 
 The accepted archive has SHA-256 `6074fcc3745e756765bd676be051d04b72c3c29314dd6094b64ef555af29b044`. This source edition copies 41 files from that archive without changing their bytes. It adds this README, `SOURCE-MANIFEST.json` and its own `SHA256SUMS`. It is not the complete 49-file archive.
@@ -46,7 +48,7 @@ The two PDFs, two rendered HTML files and large generated all-Hadamard witness J
 
 To render HTML from the included source, install Pandoc and run `python strengthening/build_article.py`; Node.js can then run `node strengthening/verify_lab.cjs exposition-v2.html`. PDF generation additionally requires Playwright and Chromium. New PDF metadata may differ from the accepted PDF, so do not relabel a rebuild with its earlier digest.
 
-The two family JSON files intentionally contain the same original report for compatibility with the article's pointers. They are not independent experiments. `SOURCE-MANIFEST.json` identifies every copied Git blob; `SHA256SUMS` records the source-edition SHA-256 digests, and explains which original files were omitted.
+The two family JSON files intentionally contain the same original report for compatibility with the article's pointers. They are not independent experiments. `SOURCE-MANIFEST.json` identifies every copied Git blob and lists the original files omitted from this edition; `SHA256SUMS` records the source-edition SHA-256 digests.
 
 [License map](LICENSE.md): CC BY 4.0 for original exposition and data; MIT for original executable code. Third-party references retain their own terms.
 
