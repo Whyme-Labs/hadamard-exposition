@@ -170,7 +170,7 @@ Williamson's method is not universal. Exhaustive searches show that Williamson m
 
 ## The computational frontier
 
-Progress at individual orders now comes from large structured searches. Kharaghani and Tayfeh-Rezaie constructed order 428 in 2005. [13] Đoković constructed order 764 in 2008, using a Goethals-Seidel array. [14] As of a 2024 database of constructions, the only multiples of four up to 1208 with no known Hadamard matrix are [15]
+Progress at individual orders now comes from large structured searches. Kharaghani and Tayfeh-Rezaie found order 428 in 2004 by a cluster search for Turyn-type sequences, and published it in 2005. [13] Đoković constructed order 764 in 2008, using a Goethals-Seidel array. [14] As of a 2024 database of constructions, the only multiples of four up to 1208 with no known Hadamard matrix are [15]
 
 $$668,\ 716,\ 892,\ 1132.$$
 
@@ -180,9 +180,9 @@ The number of matrices grows quickly once they exist. Up to equivalence there is
 
 ## What is proved about all orders
 
-The strongest general results show that every odd number appears in some Hadamard order, provided we allow a large enough power of two. In 1976 Seberry proved that for every odd $q$ there is a Hadamard matrix of order $2^tq$ for all $t$ larger than about $2\log_2q$. [18] Craigen's signed-group method lowered the coefficient of $\log_2 q$ to about $2/3$. [19] Later refinements lowered it to about $1/5$. [20] The conjecture asks for $t=2$ for every odd $q$, and these bounds still grow with $q$.
+The strongest general results show that every odd number appears in some Hadamard order, provided we allow a large enough power of two. In 1976 Seberry proved that for every odd $q$ there is a Hadamard matrix of order $2^tq$ for all sufficiently large $t$. [18] Her paper stated the explicit threshold $t\approx2\log_2(q-3)$. A 2007 note by Jensen showed that this threshold does not follow from the proof when $q$ has several prime factors, although the existence result stands. [18] Craigen's signed-group method lowered the coefficient of $\log_2 q$ to about $2/3$. [19] Later refinements lowered it to about $1/5$. [20] The conjecture asks for $t=2$ for every odd $q$, and these bounds still grow with $q$.
 
-Density results measure the same gap from another direction. If the conjecture holds, the number of Hadamard orders up to $x$ is about $x/4$. Paley's constructions alone give about $x/\log x$ orders. De Launey and Gordon proved a slightly larger lower bound for all known constructions together, and noted that it is still not known whether known Hadamard orders have positive density. [21] De Launey also proved an asymptotic existence result of this kind that holds for all odd $q$ outside an exceptional set of small density. [22]
+Density results measure the same gap from another direction. If the conjecture holds, the number of Hadamard orders up to $x$ is about $x/4$. Paley's constructions alone give about $x/\log x$ orders. De Launey and Gordon proved a slightly larger lower bound for all known constructions together, and noted that it is still not known whether known Hadamard orders have positive density. [21] De Launey proved that for every $\varepsilon>0$, a positive proportion of odd numbers $k$ admit a Hadamard matrix of order $k\cdot2^{2+\lfloor\varepsilon\log_2k\rfloor}$. [22] Allowing only a slowly growing power of two thus covers a positive fraction of odd parts, but not all of them.
 
 Two related problems are also open and are sometimes confused with this one. The *skew-Hadamard conjecture* asks for a Hadamard matrix with $H+H^{\mathsf T}=2I$ in every order divisible by four. Ryser's *circulant Hadamard conjecture* asserts the opposite kind of statement: no circulant Hadamard matrix exists beyond order four. Excluding circulant matrices does not construct general Hadamard matrices. [1,4]
 
@@ -327,7 +327,7 @@ The first two commands check the classical-order counts and the Williamson examp
 
 [17] H. Kharaghani and B. Tayfeh-Rezaie, On the classification of Hadamard matrices of order 32, *Journal of Combinatorial Designs* 18 (2010), 328–336.
 
-[18] Jennifer Seberry Wallis, On the existence of Hadamard matrices, *Journal of Combinatorial Theory, Series A* 21 (1976), 188–195.
+[18] Jennifer Seberry Wallis, On the existence of Hadamard matrices, *Journal of Combinatorial Theory, Series A* 21 (1976), 188–195. Jonas Lindstrøm Jensen, [Correction of paper published in J. Combinatorial Theory 21, 1976](https://arxiv.org/abs/0706.1720), 2007.
 
 [19] Robert Craigen, Signed groups, sequences, and the asymptotic existence of Hadamard matrices, *Journal of Combinatorial Theory, Series A* 71 (1995), 241–254.
 
@@ -335,7 +335,7 @@ The first two commands check the classical-order counts and the Williamson examp
 
 [21] Warwick de Launey and Daniel M. Gordon, [On the density of the set of known Hadamard orders](https://arxiv.org/abs/1004.4872), *Cryptography and Communications* 2 (2010), 233–246.
 
-[22] Warwick de Launey, [On the asymptotic existence of Hadamard matrices](https://arxiv.org/abs/1003.4001), 2010.
+[22] Warwick de Launey, [On the asymptotic existence of Hadamard matrices](https://arxiv.org/abs/1003.4001), *Journal of Combinatorial Theory, Series A* 116 (2009), 1002–1008.
 
 [23] Warwick de Launey and David A. Levin, A Fourier-analytic approach to counting partial Hadamard matrices, *Cryptography and Communications* 2 (2010), 307–334.
 
