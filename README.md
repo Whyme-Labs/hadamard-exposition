@@ -16,6 +16,10 @@ sha256sum -c SHA256SUMS
 
 The raw-data audit checks all 19 settings and reconstructs 589 scalar summary fields. This directory is an immutable submission snapshot, not a second development copy. Make future scientific revisions under a new submission version rather than editing these recorded results.
 
+## Version 3 draft
+
+The [v3 draft](exposition-v3/README.md) adds the conjecture's history, constructions, computational frontier and asymptotic results. It merges the all-Hadamard addendum into the main text and shortens the quantization application. It is not yet reviewed or frozen. The v2 records below remain the accepted candidate until a v3 source edition replaces them.
+
 ## Current submission candidate
 
 **What the Hadamard conjecture promises** explains the conjecture through optimal coordinate spreading, determinant equality and an explicit Paley construction, then connects the mathematics to quantization error.
