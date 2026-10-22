@@ -12,8 +12,8 @@ python publication/build_mathdb_packet.py      # writes build/mathdb-v3/
 
 | File | Bytes | SHA-256 |
 |---|---:|---|
-| `hadamard-conjecture-v3.pdf` (main paper) | 302,548 | `dccd9940906f9b2a488a8b1c7e22554a38fda194d50853af3213e63c8716c294` |
-| `hadamard-exposition-v3-supporting-files.zip` (supporting material) | 442,102 | `aadb079599beaf58595fe17a404cf68abe4c443a7b08b54d9d6c7f29518a29f2` |
+| `hadamard-conjecture-v3.pdf` (main paper) | 303,893 | `1661863090430be092dc8946ae0cbcb88abb5e3e219491db9d321a7162dbb3d3` |
+| `hadamard-exposition-v3-supporting-files.zip` (supporting material) | 444,473 | `4bc217e6e6cf8ff2fd3fdbda4346ba094f57ee2a71e8e21d7b941d5e7e0a6241` |
 
 The PDF is the frozen `submission/v3` file, unchanged. The ZIP holds `submission/v3` and `submission/v2` at their repository paths, so the article's "Reproduce and inspect" commands run from the ZIP root. The script rebuilds the same ZIP bytes from the same commit. If the upload form accepts only one file, upload the PDF.
 
