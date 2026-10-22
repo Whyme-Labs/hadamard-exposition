@@ -27,7 +27,10 @@ An independent AI referee reviewed the draft without seeing the author's reasoni
 | Missing Williamson conjecture, Baumert-Hall/T-sequences, skew frontier | Added |
 | Exact verifier path, bibliography details, letter $s$ used for both a sign and the scale | Fixed |
 
+## Citation verification
+
+Every reference was checked against registry or publisher metadata: Crossref, arXiv, PMLR, the authors' and publishers' pages, and secondary bibliographies. DOIs were added where they exist. This found and fixed one further error. The complete order-32 classification is Kharaghani and Tayfeh-Rezaie, J. Combin. Des. 21 (2013), not their 2010 partial classification. Scarpis (1898) is confirmed only through secondary bibliographies, and the reference says so. Venues were added for QuIP# (ICML 2024) and SpinQuant (ICLR 2025).
+
 ## Open
 
-- [21] and [23]: journal volume and pages not confirmed online. [3], [6]–[8], [11]–[13], [16]–[19] and the Scarpis and Agaian references were checked against the referee's and author's knowledge, not the original texts.
-- Review by a human specialist in Hadamard matrices is still recommended before freezing a v3 source edition.
+- Review by a human specialist in Hadamard matrices is still recommended. The cited papers' contents were checked through abstracts and secondary sources, not read in full.

@@ -97,7 +97,7 @@ Taking $H_2$ as one factor gives Sylvester's 1867 doubling: [6]
 
 $$H_{2n}=\begin{pmatrix}H_n&H_n\\ H_n&-H_n\end{pmatrix}.$$
 
-Starting at order one gives every power of two. It does not give order twelve. Infinite is not the same as exhaustive. Products alone also never produce an order whose odd part is a new prime, so new building blocks are needed. Hadamard himself exhibited matrices of orders 12 and 20 in 1893, [3] and Scarpis gave a construction from primes in 1898. [4]
+Starting at order one gives every power of two. It does not give order twelve. Infinite is not the same as exhaustive. Products alone also never produce an order whose odd part is a new prime, so new building blocks are needed. Hadamard himself exhibited matrices of orders 12 and 20 in 1893. [3] In 1898 Scarpis showed that a Hadamard matrix of order $p+1$, for a prime $p\equiv3\pmod4$, yields one of order $p(p+1)$. [4]
 
 ## Paley's construction and order twelve
 
@@ -178,7 +178,7 @@ $$668,\ 716,\ 892,\ 1132.$$
 
 The smallest open case, $668=4\cdot167$, has resisted every method so far. Paley's constructions would need $q=667=23\cdot29$ or $q=333=3^2\cdot37$, and neither is a prime power. Products do not help either: the only factorizations of 668 into two orders greater than one use 2 and 334, or 4 and 167, and neither 334 nor 167 is an admissible order. Searches with the array methods have not found the required sequences. This is evidence of difficulty, not of nonexistence. No order divisible by four has ever been shown to have no Hadamard matrix.
 
-The number of matrices grows quickly once they exist. Up to equivalence there is one Hadamard matrix of each order 1, 2, 4, 8 and 12. Order 16 has five, order 20 has three, order 24 has 60 and order 28 has 487. [16] Order 32 has exactly 13,710,027, a classification completed by Kharaghani and Tayfeh-Rezaie. [17] Abundance at the orders we can search does not translate into a general existence proof.
+The number of matrices grows quickly once they exist. Up to equivalence there is one Hadamard matrix of each order 1, 2, 4, 8 and 12. Order 16 has five, order 20 has three, order 24 has 60 and order 28 has 487. [16] Order 32 has exactly 13,710,027, a classification Kharaghani and Tayfeh-Rezaie completed in 2013. [17] Abundance at the orders we can search does not translate into a general existence proof.
 
 ## What is proved about all orders
 
@@ -297,55 +297,55 @@ The first two commands check the classical-order counts and the Williamson examp
 
 [1] The Justin Sun Prize, [JSP-000013 catalog entry](https://github.com/TheJustinSunPrize/awards/blob/main/problems/catalog-0001-0100.md#jsp-000013--hadamard-matrix-conjecture). Problem identity and general statement.
 
-[2] Philippe Jaming and Máté Matolcsi, [On the existence of flat orthogonal matrices](https://arxiv.org/abs/1505.03668), *Acta Mathematica Hungarica* 147 (2015), 179–188.
+[2] Philippe Jaming and Máté Matolcsi, [On the existence of flat orthogonal matrices](https://arxiv.org/abs/1505.03668), *Acta Mathematica Hungarica* 147 (2015), 179–188. doi:10.1007/s10474-015-0517-6.
 
-[3] Jacques Hadamard, Résolution d'une question relative aux déterminants, *Bulletin des Sciences Mathématiques* 17 (1893), 240–246.
+[3] Jacques Hadamard, Résolution d'une question relative aux déterminants, *Bulletin des Sciences Mathématiques* (2) 17 (1893), 240–246.
 
-[4] Robert Craigen and Hadi Kharaghani, Hadamard matrices and Hadamard designs, in C. J. Colbourn and J. H. Dinitz (eds.), *Handbook of Combinatorial Designs*, 2nd ed., Chapman & Hall/CRC, 2007, Chapter V.1. Surveys the array, sequence and product constructions. See also U. Scarpis, Sui determinanti di valore massimo, *Rendiconti del Reale Istituto Lombardo* (2) 31 (1898), 1441–1446, and S. S. Agaian, *Hadamard Matrices and Their Applications*, Lecture Notes in Mathematics 1168, Springer, 1985. Also SageMath, [Hadamard matrices reference](https://doc.sagemath.org/html/en/reference/combinat/sage/combinat/matrices/hadamard_matrix.html).
+[4] Robert Craigen and Hadi Kharaghani, Hadamard matrices and Hadamard designs, in C. J. Colbourn and J. H. Dinitz (eds.), *Handbook of Combinatorial Designs*, 2nd ed., Chapman & Hall/CRC, 2007, Chapter V.1, pp. 273–279. Surveys the array, sequence and product constructions. See also U. Scarpis, Sui determinanti di valore massimo, *Rendiconti del Reale Istituto Lombardo* (2) 31 (1898), 1441–1446 (as cited in secondary sources; not seen in the original), and S. S. Agaian, *Hadamard Matrices and Their Applications*, Lecture Notes in Mathematics 1168, Springer, 1985, doi:10.1007/BFb0101073. Also SageMath, [Hadamard matrices reference](https://doc.sagemath.org/html/en/reference/combinat/sage/combinat/matrices/hadamard_matrix.html).
 
-[5] Kathy J. Horadam, *Hadamard Matrices and Their Applications*, Princeton University Press, 2007.
+[5] Kathy J. Horadam, *Hadamard Matrices and Their Applications*, Princeton University Press, 2007. doi:10.1515/9781400842902.
 
-[6] J. J. Sylvester, Thoughts on inverse orthogonal matrices, simultaneous sign-successions, and tessellated pavements in two or more colours, …, *Philosophical Magazine* 34 (1867), 461–475.
+[6] J. J. Sylvester, Thoughts on inverse orthogonal matrices, simultaneous sign-successions, and tessellated pavements in two or more colours, …, *Philosophical Magazine* 34 (1867), 461–475. doi:10.1080/14786446708639914.
 
-[7] R. E. A. C. Paley, On orthogonal matrices, *Journal of Mathematics and Physics* 12 (1933), 311–320.
+[7] R. E. A. C. Paley, On orthogonal matrices, *Journal of Mathematics and Physics* 12 (1933), 311–320. doi:10.1002/sapm1933121311.
 
-[8] John Williamson, Hadamard's determinant theorem and the sum of four squares, *Duke Mathematical Journal* 11 (1944), 65–81.
+[8] John Williamson, Hadamard's determinant theorem and the sum of four squares, *Duke Mathematical Journal* 11 (1944), 65–81. doi:10.1215/S0012-7094-44-01108-7.
 
-[9] L. Baumert, S. W. Golomb and M. Hall Jr., [Discovery of an Hadamard matrix of order 92](https://www.ams.org/journals/bull/1962-68-03/S0002-9904-1962-10761-7), *Bulletin of the AMS* 68 (1962), 237–238.
+[9] L. Baumert, S. W. Golomb and M. Hall Jr., [Discovery of an Hadamard matrix of order 92](https://www.ams.org/journals/bull/1962-68-03/S0002-9904-1962-10761-7), *Bulletin of the AMS* 68 (1962), 237–238. doi:10.1090/S0002-9904-1962-10761-7.
 
-[10] D. Ž. Đoković, Williamson matrices of order $4n$ for $n=33,35,39$, *Discrete Mathematics* 115 (1993), 267–271; W. H. Holzmann, H. Kharaghani and B. Tayfeh-Rezaie, Williamson matrices up to order 59, *Designs, Codes and Cryptography* 46 (2008), 343–352.
+[10] D. Ž. Đoković, Williamson matrices of order $4n$ for $n=33,35,39$, *Discrete Mathematics* 115 (1993), 267–271, doi:10.1016/0012-365X(93)90495-F; W. H. Holzmann, H. Kharaghani and B. Tayfeh-Rezaie, Williamson matrices up to order 59, *Designs, Codes and Cryptography* 46 (2008), 343–352, doi:10.1007/s10623-007-9163-5.
 
-[11] J. M. Goethals and J. J. Seidel, A skew Hadamard matrix of order 36, *Journal of the Australian Mathematical Society* 11 (1970), 343–344.
+[11] J. M. Goethals and J. J. Seidel, A skew Hadamard matrix of order 36, *Journal of the Australian Mathematical Society* 11 (1970), 343–344. doi:10.1017/S144678870000673X.
 
-[12] R. J. Turyn, An infinite class of Williamson matrices, *Journal of Combinatorial Theory, Series A* 12 (1972), 319–321.
+[12] R. J. Turyn, An infinite class of Williamson matrices, *Journal of Combinatorial Theory, Series A* 12 (1972), 319–321. doi:10.1016/0097-3165(72)90095-7.
 
-[13] H. Kharaghani and B. Tayfeh-Rezaie, A Hadamard matrix of order 428, *Journal of Combinatorial Designs* 13 (2005), 435–440.
+[13] H. Kharaghani and B. Tayfeh-Rezaie, A Hadamard matrix of order 428, *Journal of Combinatorial Designs* 13 (2005), 435–440. doi:10.1002/jcd.20043.
 
-[14] D. Ž. Đoković, [Hadamard matrices of order 764 exist](https://arxiv.org/abs/math/0703312), *Combinatorica* 28 (2008), 487–489.
+[14] D. Ž. Đoković, [Hadamard matrices of order 764 exist](https://arxiv.org/abs/math/0703312), *Combinatorica* 28 (2008), 487–489. doi:10.1007/s00493-008-2384-z.
 
 [15] Matteo Cati and Dmitrii V. Pasechnik, [A database of constructions of Hadamard matrices](https://arxiv.org/abs/2411.18897), arXiv preprint, 2024, revised 2025.
 
 [16] Brendan McKay, [Hadamard matrices data](https://users.cecs.anu.edu.au/~bdm/data/hadamard.html). Equivalence-class counts for small orders.
 
-[17] H. Kharaghani and B. Tayfeh-Rezaie, On the classification of Hadamard matrices of order 32, *Journal of Combinatorial Designs* 18 (2010), 328–336.
+[17] H. Kharaghani and B. Tayfeh-Rezaie, Hadamard matrices of order 32, *Journal of Combinatorial Designs* 21 (2013), 212–221, doi:10.1002/jcd.21323. The earlier partial classification is On the classification of Hadamard matrices of order 32, *Journal of Combinatorial Designs* 18 (2010), 328–336, doi:10.1002/jcd.20245.
 
-[18] Jennifer Seberry Wallis, On the existence of Hadamard matrices, *Journal of Combinatorial Theory, Series A* 21 (1976), 188–195. Jonas Lindstrøm Jensen, [Correction of paper published in J. Combinatorial Theory 21, 1976](https://arxiv.org/abs/0706.1720), 2007.
+[18] Jennifer Seberry Wallis, On the existence of Hadamard matrices, *Journal of Combinatorial Theory, Series A* 21 (1976), 188–195, doi:10.1016/0097-3165(76)90062-5. Jonas Lindstrøm Jensen, [Correction of paper published in J. Combinatorial Theory 21, 1976](https://arxiv.org/abs/0706.1720), 2007.
 
-[19] Robert Craigen, Signed groups, sequences, and the asymptotic existence of Hadamard matrices, *Journal of Combinatorial Theory, Series A* 71 (1995), 241–254.
+[19] Robert Craigen, Signed groups, sequences, and the asymptotic existence of Hadamard matrices, *Journal of Combinatorial Theory, Series A* 71 (1995), 241–254. doi:10.1016/0097-3165(95)90002-0.
 
 [20] Ivan Livinskyi, [Asymptotic existence of Hadamard matrices](https://mspace.lib.umanitoba.ca/handle/1993/8915), M.Sc. thesis, University of Manitoba, 2012. Cheng Du and Yi Jiang, [Golay complementary sequences of arbitrary length and asymptotic existence of Hadamard matrices](https://arxiv.org/abs/2401.15381), arXiv preprint, 2024.
 
-[21] Warwick de Launey and Daniel M. Gordon, [On the density of the set of known Hadamard orders](https://arxiv.org/abs/1004.4872), *Cryptography and Communications* 2 (2010), 233–246.
+[21] Warwick de Launey and Daniel M. Gordon, [On the density of the set of known Hadamard orders](https://arxiv.org/abs/1004.4872), *Cryptography and Communications* 2 (2010), 233–246. doi:10.1007/s12095-010-0028-9.
 
-[22] Warwick de Launey, [On the asymptotic existence of Hadamard matrices](https://arxiv.org/abs/1003.4001), *Journal of Combinatorial Theory, Series A* 116 (2009), 1002–1008.
+[22] Warwick de Launey, [On the asymptotic existence of Hadamard matrices](https://arxiv.org/abs/1003.4001), *Journal of Combinatorial Theory, Series A* 116 (2009), 1002–1008. doi:10.1016/j.jcta.2009.01.001.
 
-[23] Warwick de Launey and David A. Levin, A Fourier-analytic approach to counting partial Hadamard matrices, *Cryptography and Communications* 2 (2010), 307–334.
+[23] Warwick de Launey and David A. Levin, A Fourier-analytic approach to counting partial Hadamard matrices, *Cryptography and Communications* 2 (2010), 307–334. doi:10.1007/s12095-010-0033-z.
 
 [24] Saleh Ashkboos and coauthors, [QuaRot: Outlier-Free 4-Bit Inference in Rotated LLMs](https://arxiv.org/abs/2404.00456), 2024.
 
-[25] Albert Tseng and coauthors, [QuIP#: Even Better LLM Quantization with Hadamard Incoherence and Lattice Codebooks](https://proceedings.mlr.press/v235/tseng24a.html), 2024.
+[25] Albert Tseng and coauthors, [QuIP#: Even Better LLM Quantization with Hadamard Incoherence and Lattice Codebooks](https://proceedings.mlr.press/v235/tseng24a.html), *Proceedings of the 41st International Conference on Machine Learning*, PMLR 235 (2024), 48630–48656.
 
-[26] Zechun Liu and coauthors, [SpinQuant: LLM quantization with learned rotations](https://arxiv.org/abs/2405.16406), 2024.
+[26] Zechun Liu and coauthors, [SpinQuant: LLM quantization with learned rotations](https://arxiv.org/abs/2405.16406), ICLR 2025.
 
 [27] `submission/v2/strengthening/protocol-v2.json`, SHA-256 `1a239984661f3c229225aa4d899fe3960eb2f5f47dc5e7099c49764022f08c29`. The study code, raw measurements and audit are in `submission/v2`.
 
