@@ -45,7 +45,7 @@ Every row has squared length one. If all entries were smaller in magnitude than 
 
 $$\mu(Q)\geq\frac1{\sqrt n}.$$
 
-Equality forces every entry of every row to have magnitude exactly $1/\sqrt n$. Otherwise a row containing a smaller entry could not reach squared length one without another entry exceeding the bound. Hence $\sqrt n\,Q$ is a Hadamard matrix. Conversely, every normalized Hadamard matrix attains equality.
+Equality forces every entry of every row to have magnitude exactly $1/\sqrt n$. Otherwise a row containing a smaller entry could not reach squared length one without another entry exceeding the bound. Hence $\sqrt n\,Q$ is a Hadamard matrix. Conversely, $H/\sqrt n$ attains equality for every Hadamard matrix $H$.
 
 This is more than a statement about individual entries. Treat $x$ as a row vector. For $\|x\|_1\leq1$,
 
@@ -55,7 +55,7 @@ Choose $x$ to be a coordinate vector corresponding to an entry attaining the max
 
 $$\sup_{\|x\|_1\leq1}\|xQ\|_\infty=\mu(Q).$$
 
-The best possible value of this worst-case peak is $1/\sqrt n$, **and it is attainable exactly when an order-$n$ Hadamard matrix exists**. A minimum exists because the real orthogonal group is compact and the largest-entry function is continuous.
+The worst-case peak is therefore always at least $1/\sqrt n$, **and this lower bound is attained exactly when an order-$n$ Hadamard matrix exists**. A minimum over all orthogonal matrices always exists, because the real orthogonal group is compact and the largest-entry function is continuous. When no Hadamard matrix of order $n$ exists, that minimum is strictly larger than $1/\sqrt n$.
 
 The Hadamard conjecture is thus an exact optimality question: does this lower bound become attainable in every dimension $n=4k$? The connection with flat real orthogonal matrices is established mathematics. Jaming and Matolcsi study this viewpoint and relaxations of perfect flatness. [2]
 
@@ -83,7 +83,7 @@ The conjecture has several equivalent forms, which is one reason it appears in s
 - **Codes.** The rows of $H$ and $-H$, written over $\{0,1\}$, form a binary code of length $n$ with $2n$ codewords and minimum distance $n/2$. Plotkin's bound shows this is the largest possible such code, so Hadamard matrices give optimal codes.
 - **Orthogonal arrays and experimental design.** Hadamard matrices give two-level orthogonal arrays of strength two. In statistics these are the Plackett-Burman designs for screening many factors with few runs.
 
-These are reformulations, not routes around the difficulty. Each one is as hard as the original.
+These are reformulations, not routes around the difficulty. Being equivalent, none is easier than the original.
 
 # Part II. What is known
 
@@ -97,11 +97,11 @@ Taking $H_2$ as one factor gives Sylvester's 1867 doubling: [6]
 
 $$H_{2n}=\begin{pmatrix}H_n&H_n\\ H_n&-H_n\end{pmatrix}.$$
 
-Starting at order one gives every power of two. It does not give order twelve. Infinite is not the same as exhaustive. Products alone also never produce an order whose odd part is a new prime, so new building blocks are needed.
+Starting at order one gives every power of two. It does not give order twelve. Infinite is not the same as exhaustive. Products alone also never produce an order whose odd part is a new prime, so new building blocks are needed. Hadamard himself exhibited matrices of orders 12 and 20 in 1893, [3] and Scarpis gave a construction from primes in 1898. [4]
 
 ## Paley's construction and order twelve
 
-Paley's 1933 paper supplied the first large families of new orders, from finite fields. [7] The conjecture is usually traced to that paper. We prove the prime-field case of his first construction.
+Paley's 1933 paper supplied the first systematic infinite families of new orders, from finite fields. [7] The conjecture is usually traced to that paper. We prove the prime-field case of his first construction.
 
 Take a prime $q\equiv3\pmod4$. Define the quadratic character $\chi$ on residues modulo $q$: it is zero at zero, $+1$ at nonzero squares, and $-1$ at non-squares. Let
 
@@ -142,7 +142,7 @@ For $q=11$, the nonzero squares are $1,3,4,5,9$. The resulting order-twelve matr
 + + - + + + - - - + - -
 ```
 
-The exact verifier checks all 144 row dot products and computes $|\det H|=12^6=2{,}985{,}984$ using fraction-free integer elimination. It also checks the construction at primes $3,7,11,19,23,31,43$, producing orders $4,8,12,20,24,32,44$.
+The exact verifier, `submission/v2/strengthening/exact_checks.py`, checks all 144 row dot products and computes $|\det H|=12^6=2{,}985{,}984$ using fraction-free integer elimination. It also checks the construction at primes $3,7,11,19,23,31,43$, producing orders $4,8,12,20,24,32,44$.
 
 ## How far the classical methods reach
 
@@ -150,11 +150,13 @@ Combine Sylvester doubling, both Paley constructions over prime powers, and Kron
 
 $$92,\ 116,\ 156,\ 172,\ 184,\ 188.$$
 
-Order 92 is the first. Paley's first construction would need $q=91=7\cdot13$, and his second would need $q=45=3^2\cdot5$. Neither is a prime power. The only factorizations of 92 into two orders greater than one use 2 and 46, or 4 and 23, and neither 46 nor 23 is a Hadamard order. Up to 1000 the classical methods reach 195 of the 250 multiples of four. A missed order is not an unknown order. Every order missed below 668 has since been reached by other methods.
+These are exactly the orders below 200 that Paley himself listed as unsettled. Order 92 is the first. Paley's first construction would need $q=91=7\cdot13$, and his second would need $q=45=3^2\cdot5$. Neither is a prime power. The only factorizations of 92 into two orders greater than one use 2 and 46, or 4 and 23, and neither 46 nor 23 is a Hadamard order. Williamson settled 172 in 1944, order 92 fell in 1962, and $184=2\cdot92$ then followed by doubling. [8,9]
+
+Up to 1000, these three methods alone reach 195 of the 250 multiples of four. Product variants, such as Agaian's theorem giving order $8mn$ from orders $4m$ and $4n$, reach a few more. [4] A missed order is not an unknown order. The classical methods miss many orders below 668, and every one of those has since been reached by other methods.
 
 ## Williamson's method and the computer
 
-Williamson's 1944 construction builds an order-$4m$ matrix from four smaller pieces. [8] Let $A,B,C,D$ be symmetric circulant $m\times m$ sign matrices that commute with each other and satisfy
+Williamson's 1944 construction builds an order-$4m$ matrix from four smaller pieces. [8] Let $A,B,C,D$ be symmetric circulant $m\times m$ sign matrices satisfying
 
 $$A^2+B^2+C^2+D^2=4m\,I_m.$$
 
@@ -162,29 +164,29 @@ Then the block matrix
 
 $$H=\begin{pmatrix}A&B&C&D\\-B&A&-D&C\\-C&D&A&-B\\-D&-C&B&A\end{pmatrix}$$
 
-is Hadamard of order $4m$. The pattern of signs is the multiplication table of the quaternions, which is why the cross terms cancel. For $m=3$, take $A=J$ and $B=C=D=2I-J$. Then $A^2+3B^2=3J+3(4I-4J+3J)=12I$, giving another order-twelve matrix. The accompanying test checks this block identity directly.
+is Hadamard of order $4m$. Circulant matrices always commute with each other, and symmetry makes each block equal to its transpose. The pattern of signs is the multiplication table of the quaternions, which is why the cross terms cancel. For $m=3$, take $A=J$ and $B=C=D=2I-J$. Then $A^2+3B^2=3J+3(4I-4J+3J)=12I$, giving another order-twelve matrix. The accompanying test checks this block identity directly.
 
 The method turns a search over $(4m)^2$ signs into a search over four circulant first rows of length $m$, with symmetry cutting that further. In 1962 Baumert, Golomb and Hall used an early computer at the Jet Propulsion Laboratory to find Williamson matrices with $m=23$. This gave the first Hadamard matrix of order 92. [9] It is an early example of a computer settling a case of a classical existence question.
 
-Williamson's method is not universal. Exhaustive searches show that Williamson matrices do not exist for $m=35$, nor for $m=47,53,59$. [10] Hadamard matrices of those orders exist by other means. Goethals and Seidel removed the symmetry requirement by inserting a reversal matrix into a modified array. [11] Turyn found infinite families of Williamson matrices. [12] Later work used complementary sequences, difference families and signed groups. Each method reaches many new orders, and none is known to reach them all.
+It was once conjectured that Williamson matrices exist for every odd $m$. That *Williamson conjecture* is false. Exhaustive searches show that Williamson matrices do not exist for $m=35$, nor for $m=47,53,59$. [10] Hadamard matrices of those orders exist by other means. Turyn found an infinite family of Williamson matrices. [12] Goethals and Seidel removed the symmetry requirement by inserting a reversal matrix into a modified array. [11] Baumert-Hall arrays are larger templates of the same kind. Filled with T-sequences, which are built from base sequences or Turyn-type sequences, they reach many more orders. This is how order 428 was found. Later work added difference families, further infinite families, and product theorems that build new orders from old ones. [4] Each method reaches many new orders, and none is known to reach them all.
 
 ## The computational frontier
 
-Progress at individual orders now comes from large structured searches. Kharaghani and Tayfeh-Rezaie found order 428 in 2004 by a cluster search for Turyn-type sequences, and published it in 2005. [13] Đoković constructed order 764 in 2008, using a Goethals-Seidel array. [14] As of a 2024 database of constructions, the only multiples of four up to 1208 with no known Hadamard matrix are [15]
+Progress at individual orders now comes from large structured searches. Kharaghani and Tayfeh-Rezaie found order 428 in 2004 by a cluster search for Turyn-type sequences, and published it in 2005. [13] Đoković constructed order 764 in 2008, using a Goethals-Seidel array. [14] According to Cati and Pasechnik's database of constructions, consistent with the list in Đoković's 2008 paper, the only multiples of four up to 1208 with no known Hadamard matrix are [14,15]
 
 $$668,\ 716,\ 892,\ 1132.$$
 
-The smallest open case, $668=4\cdot167$, has resisted every method so far. Paley's constructions would need $q=667=23\cdot29$ or $q=333=3^2\cdot37$, and neither is a prime power. Since 167 is prime, no Kronecker product with a smaller factor gives order 668 either. Searches with the array methods have not found the required sequences. This is evidence of difficulty, not of nonexistence. No order divisible by four has ever been shown to have no Hadamard matrix.
+The smallest open case, $668=4\cdot167$, has resisted every method so far. Paley's constructions would need $q=667=23\cdot29$ or $q=333=3^2\cdot37$, and neither is a prime power. Products do not help either: the only factorizations of 668 into two orders greater than one use 2 and 334, or 4 and 167, and neither 334 nor 167 is an admissible order. Searches with the array methods have not found the required sequences. This is evidence of difficulty, not of nonexistence. No order divisible by four has ever been shown to have no Hadamard matrix.
 
 The number of matrices grows quickly once they exist. Up to equivalence there is one Hadamard matrix of each order 1, 2, 4, 8 and 12. Order 16 has five, order 20 has three, order 24 has 60 and order 28 has 487. [16] Order 32 has exactly 13,710,027, a classification completed by Kharaghani and Tayfeh-Rezaie. [17] Abundance at the orders we can search does not translate into a general existence proof.
 
 ## What is proved about all orders
 
-The strongest general results show that every odd number appears in some Hadamard order, provided we allow a large enough power of two. In 1976 Seberry proved that for every odd $q$ there is a Hadamard matrix of order $2^tq$ for all sufficiently large $t$. [18] Her paper stated the explicit threshold $t\approx2\log_2(q-3)$. A 2007 note by Jensen showed that this threshold does not follow from the proof when $q$ has several prime factors, although the existence result stands. [18] Craigen's signed-group method lowered the coefficient of $\log_2 q$ to about $2/3$. [19] Later refinements lowered it to about $1/5$. [20] The conjecture asks for $t=2$ for every odd $q$, and these bounds still grow with $q$.
+The strongest general results show that every odd number appears in some Hadamard order, provided we allow a large enough power of two. In 1976 Seberry proved that for every odd $q$ there is a Hadamard matrix of order $2^tq$ for all sufficiently large $t$. [18] Her paper stated the explicit threshold $t\approx2\log_2(q-3)$. A 2007 note by Jensen showed that this threshold does not follow from the proof when $q$ has several prime factors, although the existence result stands. [18] Craigen introduced *signed groups*, which produce no new small orders but sharpen this asymptotic estimate. They lowered the coefficient of $\log_2 q$ to about $2/3$. [19] Craigen and Tiessen reduced it to $3/8$ in unpublished work, and Livinskyi to $1/5$. [20] A 2024 preprint claims $3/20$; it had not been published at the time of writing. [20] The conjecture asks for $t=2$ for every odd $q$, and all of these bounds still grow with $q$.
 
-Density results measure the same gap from another direction. If the conjecture holds, the number of Hadamard orders up to $x$ is about $x/4$. Paley's constructions alone give about $x/\log x$ orders. De Launey and Gordon proved a slightly larger lower bound for all known constructions together, and noted that it is still not known whether known Hadamard orders have positive density. [21] De Launey proved that for every $\varepsilon>0$, a positive proportion of odd numbers $k$ admit a Hadamard matrix of order $k\cdot2^{2+\lfloor\varepsilon\log_2k\rfloor}$. [22] Allowing only a slowly growing power of two thus covers a positive fraction of odd parts, but not all of them.
+Density results measure the same gap from another direction. If the conjecture holds, the number of Hadamard orders up to $x$ is about $x/4$. Paley's constructions alone give about $x/\log x$ orders. Counting Kronecker products of Paley orders, de Launey and Gordon proved the slightly larger lower bound $x\,e^{(C+o(1))(\log\log\log x)^2}/\log x$, with $C\approx0.8178$. They also showed that the other major constructions do not improve this bound. It is not even known that the Hadamard orders have positive density. [21] De Launey proved that for every $\varepsilon>0$, a positive proportion of odd numbers $k$ admit a Hadamard matrix of order $k\cdot2^{2+\lfloor\varepsilon\log_2k\rfloor}$. [22] Allowing only a slowly growing power of two thus covers a positive fraction of odd parts, but not all of them.
 
-Two related problems are also open and are sometimes confused with this one. The *skew-Hadamard conjecture* asks for a Hadamard matrix with $H+H^{\mathsf T}=2I$ in every order divisible by four. Ryser's *circulant Hadamard conjecture* asserts the opposite kind of statement: no circulant Hadamard matrix exists beyond order four. Excluding circulant matrices does not construct general Hadamard matrices. [1,4]
+Two related problems are also open and are sometimes confused with this one. The *skew-Hadamard conjecture* asks for a Hadamard matrix with $H+H^{\mathsf T}=2I$ in every order divisible by four. It is stronger than the Hadamard conjecture and has its own frontier: Cati and Pasechnik list 41 orders up to 1208 with no known skew-Hadamard matrix. [15] Ryser's *circulant Hadamard conjecture* asserts the opposite kind of statement: no circulant Hadamard matrix exists beyond order four. Excluding circulant matrices does not construct general Hadamard matrices. [1,4]
 
 ## Why the problem is hard
 
@@ -192,7 +194,7 @@ Three features explain why no single idea has closed the gap.
 
 1. **Constructions need structure.** Every infinite family comes from algebra: finite fields, group rings, or sequences with special autocorrelation. Each structure exists only at orders with matching arithmetic, such as $q+1$ for a prime power $q$. The open orders are exactly those where no known structure fits.
 2. **Unstructured search is hopeless at these sizes.** An order-668 sign matrix has $668^2=446{,}224$ entries. Williamson-type arrays reduce this to a few sequences of length 167. Even that space is too large to search exhaustively without further constraints that might exclude every solution.
-3. **Random constructions are too rare to count.** For a random sign matrix, two given rows are orthogonal with probability of order $1/\sqrt n$. Requiring all $\binom n2$ pairs to be orthogonal makes Hadamard matrices extremely rare among sign matrices. Probabilistic methods can show that matrices with a small number of mutually orthogonal rows exist in large numbers. [23] They are nowhere near the full square case.
+3. **Naive probability gives the wrong answer.** For a random sign matrix, two given rows are orthogonal with probability about $\sqrt{2/(\pi n)}$. If the $\binom n2$ pairs were independent, the expected number of Hadamard matrices would tend to zero as $n$ grows. Yet order 32 alone has more than thirteen million inequivalent examples. The orthogonality events are strongly dependent, so this naive reasoning cannot settle existence either way. Rigorous probabilistic methods can count matrices with a small number of mutually orthogonal rows. [23] They are nowhere near the full square case.
 
 The conjecture is therefore not about whether balance is plausible. It asks whether a rigid algebraic coincidence, which we can produce in many families, occurs in every admissible order.
 
@@ -204,7 +206,7 @@ Large numerical models are often stored with low-precision weights and activatio
 
 $$X_r=XQ,\qquad W_r=Q^{\mathsf T}W,\qquad X_rW_r=XW.$$
 
-A normalized Hadamard matrix is the natural choice. By Part I it minimizes the worst-case peak over the $\ell_1$ ball, and a Sylvester matrix also has a fast transform. Methods such as QuaRot and QuIP# build randomized Hadamard rotations into language-model quantization. SpinQuant shows that the choice of rotation matters. [24,25,26] This article does not propose or evaluate such a method.
+A scaled Hadamard matrix $H/\sqrt n$ is the natural choice. By Part I it minimizes the worst-case peak over the $\ell_1$ ball, and a Sylvester matrix also has a fast transform. Methods such as QuaRot and QuIP# build randomized Hadamard rotations into language-model quantization. SpinQuant shows that the choice of rotation matters. [24,25,26] This article does not propose or evaluate such a method.
 
 The question here is narrower. Suppose the conjecture were true, so perfectly balanced rotations existed in every admissible dimension. Would they guarantee lower rounding error? They would not. This holds even with the optimal peak, and even for every Hadamard matrix at once.
 
@@ -234,7 +236,7 @@ $$N_{s,t}=\frac14\sum_j(1+s p_j)(1+t q_j)=\frac n4.$$
 
 This is the same three-row count that forced $n$ to be a multiple of four. Write $u=xH$ and $v_j=H_{aj}u_j=K+p_j+q_j$. Thus $v_j$ takes the values $K+2,K,K-2$ with multiplicities $n/4,n/2,n/4$, and the rotated peak is $(K+2)/\sqrt n<K$.
 
-Work before dividing by $\sqrt n$, with scale $s=(K+2)/K$. Symmetric rounding is odd, so the sign $H_{aj}$ passes through it. For $b\geq5$, so $K\geq15$, the codes for $K+2,K,K-2$ are $K,K-2,K-4$, because
+Work before dividing by $\sqrt n$, with scale $\Delta=(K+2)/K$. Symmetric rounding is odd, so the sign $H_{aj}$ passes through it. For $b\geq5$, so $K\geq15$, the codes for $K+2,K,K-2$ are $K,K-2,K-4$, because
 
 $$\frac{K^2}{K+2}=K-2+\frac4{K+2},\qquad
 \frac{K(K-2)}{K+2}=K-4+\frac8{K+2},$$
@@ -295,15 +297,15 @@ The first two commands check the classical-order counts and the Williamson examp
 
 [1] The Justin Sun Prize, [JSP-000013 catalog entry](https://github.com/TheJustinSunPrize/awards/blob/main/problems/catalog-0001-0100.md#jsp-000013--hadamard-matrix-conjecture). Problem identity and general statement.
 
-[2] Philippe Jaming and Máté Matolcsi, [On the existence of flat orthogonal matrices](https://arxiv.org/abs/1505.03668), 2015.
+[2] Philippe Jaming and Máté Matolcsi, [On the existence of flat orthogonal matrices](https://arxiv.org/abs/1505.03668), *Acta Mathematica Hungarica* 147 (2015), 179–188.
 
 [3] Jacques Hadamard, Résolution d'une question relative aux déterminants, *Bulletin des Sciences Mathématiques* 17 (1893), 240–246.
 
-[4] Robert Craigen and Hadi Kharaghani, Hadamard matrices and Hadamard designs, in C. J. Colbourn and J. H. Dinitz (eds.), *Handbook of Combinatorial Designs*, 2nd ed., Chapman & Hall/CRC, 2007. Also SageMath, [Hadamard matrices reference](https://doc.sagemath.org/html/en/reference/combinat/sage/combinat/matrices/hadamard_matrix.html).
+[4] Robert Craigen and Hadi Kharaghani, Hadamard matrices and Hadamard designs, in C. J. Colbourn and J. H. Dinitz (eds.), *Handbook of Combinatorial Designs*, 2nd ed., Chapman & Hall/CRC, 2007, Chapter V.1. Surveys the array, sequence and product constructions. See also U. Scarpis, Sui determinanti di valore massimo, *Rendiconti del Reale Istituto Lombardo* (2) 31 (1898), 1441–1446, and S. S. Agaian, *Hadamard Matrices and Their Applications*, Lecture Notes in Mathematics 1168, Springer, 1985. Also SageMath, [Hadamard matrices reference](https://doc.sagemath.org/html/en/reference/combinat/sage/combinat/matrices/hadamard_matrix.html).
 
 [5] Kathy J. Horadam, *Hadamard Matrices and Their Applications*, Princeton University Press, 2007.
 
-[6] J. J. Sylvester, Thoughts on inverse orthogonal matrices, *Philosophical Magazine* 34 (1867), 461–475.
+[6] J. J. Sylvester, Thoughts on inverse orthogonal matrices, simultaneous sign-successions, and tessellated pavements in two or more colours, …, *Philosophical Magazine* 34 (1867), 461–475.
 
 [7] R. E. A. C. Paley, On orthogonal matrices, *Journal of Mathematics and Physics* 12 (1933), 311–320.
 
@@ -321,7 +323,7 @@ The first two commands check the classical-order counts and the Williamson examp
 
 [14] D. Ž. Đoković, [Hadamard matrices of order 764 exist](https://arxiv.org/abs/math/0703312), *Combinatorica* 28 (2008), 487–489.
 
-[15] Matteo Cati and Dmitrii V. Pasechnik, [A database of constructions of Hadamard matrices](https://arxiv.org/abs/2411.18897), 2024.
+[15] Matteo Cati and Dmitrii V. Pasechnik, [A database of constructions of Hadamard matrices](https://arxiv.org/abs/2411.18897), arXiv preprint, 2024, revised 2025.
 
 [16] Brendan McKay, [Hadamard matrices data](https://users.cecs.anu.edu.au/~bdm/data/hadamard.html). Equivalence-class counts for small orders.
 
@@ -331,7 +333,7 @@ The first two commands check the classical-order counts and the Williamson examp
 
 [19] Robert Craigen, Signed groups, sequences, and the asymptotic existence of Hadamard matrices, *Journal of Combinatorial Theory, Series A* 71 (1995), 241–254.
 
-[20] Ivan Livinskyi, [Asymptotic existence of Hadamard matrices](https://mspace.lib.umanitoba.ca/handle/1993/8915), M.Sc. thesis, University of Manitoba, 2012.
+[20] Ivan Livinskyi, [Asymptotic existence of Hadamard matrices](https://mspace.lib.umanitoba.ca/handle/1993/8915), M.Sc. thesis, University of Manitoba, 2012. Cheng Du and Yi Jiang, [Golay complementary sequences of arbitrary length and asymptotic existence of Hadamard matrices](https://arxiv.org/abs/2401.15381), arXiv preprint, 2024.
 
 [21] Warwick de Launey and Daniel M. Gordon, [On the density of the set of known Hadamard orders](https://arxiv.org/abs/1004.4872), *Cryptography and Communications* 2 (2010), 233–246.
 

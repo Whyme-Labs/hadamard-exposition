@@ -23,6 +23,6 @@ node submission/v2/strengthening/verify_lab.cjs exposition-v3/build/hadamard-con
 
 ## Not yet done
 
-- Independent review of Part II by someone who works on Hadamard matrices. The citations were checked against bibliographic sources, but the papers were not all read in full.
+- Human specialist review. An internal AI review is recorded in [REVIEW.md](REVIEW.md), with every finding fixed. A few bibliographic details remain unconfirmed online.
 - A frozen `submission/v3` source edition, PDF rendering and checksums, after review.
 - Public release with a stable link and date, then submission through the official review route.
