@@ -1,0 +1,51 @@
+{
+  "schema": "hadamard-v3-source-edition.v1",
+  "source_commit": "cae15edcf8aa861bed0c3389c8d3155024c1f6a2",
+  "copied_git_blobs": {
+    "hadamard-conjecture.md": "122d9999fa3959c7ca09f3316c22d915c33dfc0e",
+    "known_orders.py": "6918801ac30ce232c4ef06b659a3dee30b68bfba",
+    "test_v3.py": "079a75508358feb3e39700c6d30df14a4c2980cd",
+    "build_article.py": "cf009ae53250811534f3a8f60cf311a80a007f75",
+    "build_pdf.py": "1b85b6896afa6907f4b572cc85ecda4255852b3c",
+    "REVIEW.md": "05cb5e1b0ed76f3f94b013958874a8337a9db850",
+    "README.md": "5751e21de86c792146f7014ddc1d1e6b68e5daba",
+    "SUBMISSION.md": "bf562ce0aabd8d67ef28e970dedd3eefe376b55f",
+    "CITATION.cff": "14fbff1199f88ccc90472d9eb112fe2d550e3dad",
+    "LICENSE.md": "e6fceb23bf66b2a61a76cbf552393a1c155eb9c4",
+    "PUBLICATION.json": "5f707ef1a860aea76f4e6053159c21db4df718c9",
+    "requirements-v3.txt": "d59d856f1cc6c05962ca6bd4f14dd3315acd207c",
+    "LICENSE-CC-BY-4.0.md": "4904772fc5ce4874b9427a993589d6d5326c5e41",
+    "LICENSE-MIT.txt": "629404e2b1f6fe712c353a0c19551e04aa277fc6"
+  },
+  "copied_from": {
+    "hadamard-conjecture.md": "exposition-v3/hadamard-conjecture.md",
+    "known_orders.py": "exposition-v3/known_orders.py",
+    "test_v3.py": "exposition-v3/test_v3.py",
+    "build_article.py": "exposition-v3/build_article.py",
+    "build_pdf.py": "exposition-v3/build_pdf.py",
+    "REVIEW.md": "exposition-v3/REVIEW.md",
+    "README.md": "exposition-v3/edition/README.md",
+    "SUBMISSION.md": "exposition-v3/edition/SUBMISSION.md",
+    "CITATION.cff": "exposition-v3/edition/CITATION.cff",
+    "LICENSE.md": "exposition-v3/edition/LICENSE.md",
+    "PUBLICATION.json": "exposition-v3/edition/PUBLICATION.json",
+    "requirements-v3.txt": "exposition-v3/edition/requirements-v3.txt",
+    "LICENSE-CC-BY-4.0.md": "submission/v2/LICENSE-CC-BY-4.0.md",
+    "LICENSE-MIT.txt": "submission/v2/LICENSE-MIT.txt"
+  },
+  "generated": {
+    "hadamard-conjecture-v3.html": "build_article.py",
+    "hadamard-conjecture-v3.pdf": "build_pdf.py",
+    "verification/known-orders-1000.json": "known_orders.py --limit 1000",
+    "verification/unit-tests.txt": "unittest discover",
+    "verification/calculator.json": "submission/v2/strengthening/verify_lab.cjs"
+  },
+  "build_environment": {
+    "python": "3.13.16",
+    "numpy": "2.5.3",
+    "pandoc": "pandoc 3.1.3",
+    "node": "v22.22.0"
+  },
+  "evidence_dependency": "Part III cites submission/v2, unchanged and covered by its own SHA256SUMS.",
+  "scope": "Frozen v3 source edition with rendered HTML and PDF. Not a public publication record."
+}

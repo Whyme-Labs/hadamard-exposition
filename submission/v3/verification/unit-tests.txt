@@ -1,0 +1,12 @@
+test_missing_orders_up_to_200 (test_v3.ClassicalOrders.test_missing_orders_up_to_200) ... ok
+test_paley_obstructions (test_v3.ClassicalOrders.test_paley_obstructions) ... ok
+test_prime_powers (test_v3.ClassicalOrders.test_prime_powers) ... ok
+test_up_to_1000 (test_v3.ClassicalOrders.test_up_to_1000) ... ok
+test_array_with_distinct_blocks (test_v3.WilliamsonArray.test_array_with_distinct_blocks) ... ok
+test_corrupted_entry_rejected (test_v3.WilliamsonArray.test_corrupted_entry_rejected) ... ok
+test_order_twelve_example (test_v3.WilliamsonArray.test_order_twelve_example) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.013s
+
+OK
