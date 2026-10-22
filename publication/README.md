@@ -59,6 +59,8 @@ The full Git database and archived evidence were not available in the local runt
 
 `submission/v3` supersedes v2 as the intended candidate once released; v2 stays frozen as the Part III evidence. Use [the v3 release notes](release-notes-v3.md) in step 3 of the handoff above, in place of the v2 notes. The signed-footer exposure question in step 1 still applies before the repository is made public.
 
+On 22 October 2026 the author chose to publish v3 by uploading it to MathDB rather than by changing this repository's visibility. The upload files, form text and post-upload receipt steps are in [the MathDB submission packet](mathdb-submission-v3.md). The repository stays private, so the signed-footer question does not block this route.
+
 An alternative that still uses this repository is publishing only the selected package through a configured static site. GitHub Pages from a private repository requires an eligible plan and initial administrator setup. Neither that plan eligibility nor Pages enablement has been established here.
 
 Official references: [GitHub visibility consequences](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility), [GitHub Pages setup](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site), and [the Exposition process](https://github.com/TheJustinSunPrize/awards/blob/main/docs/award-process-mathdb.md).
