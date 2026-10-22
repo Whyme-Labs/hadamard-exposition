@@ -10,19 +10,19 @@
 - **Application shortened** into Part III. The study's design and headline numbers are unchanged, and the four-arm table shows selected multipliers.
 - **Prize discussion removed** from the manuscript body. Award status belongs in the submission note.
 
-## Check and build
+## Check, build and freeze
 
 ```bash
 python exposition-v3/known_orders.py --limit 200
 python -m unittest discover -s exposition-v3 -p 'test_*.py' -v
 python exposition-v3/build_article.py            # needs Pandoc
-node submission/v2/strengthening/verify_lab.cjs exposition-v3/build/hadamard-conjecture-v3.html
+python exposition-v3/build_pdf.py                # needs Playwright and Chromium
+python exposition-v3/freeze_edition.py           # clean committed tree only; writes submission/v3
 ```
 
-`known_orders.py` computes which multiples of four the Sylvester, Paley and Kronecker-product constructions reach. A missed order is not a nonexistence claim. The tests also check the Williamson array on two examples (orders 12 and 20). The counterexample theorem and study evidence are checked from `submission/v2`, as the article's last section describes.
+`known_orders.py` computes which multiples of four the Sylvester, Paley and Kronecker-product constructions reach. A missed order is not a nonexistence claim. The tests check the Williamson array on two examples (orders 12 and 20). `edition/` holds the metadata files copied into the frozen edition. `freeze_edition.py` refuses to overwrite an existing `submission/v3`.
 
 ## Not yet done
 
 - Human specialist review. An internal AI review is recorded in [REVIEW.md](REVIEW.md), with every finding fixed. A few bibliographic details remain unconfirmed online.
-- A frozen `submission/v3` source edition, PDF rendering and checksums, after review.
 - Public release with a stable link and date, then submission through the official review route.

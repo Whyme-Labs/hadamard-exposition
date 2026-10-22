@@ -280,18 +280,18 @@ The constructions, equivalences and frontier results in Parts I and II are estab
 
 ## Reproduce and inspect
 
-The checks need Python and NumPy, with no GPU, model download or external dataset.
+The checks need Python and NumPy, with no GPU, model download or external dataset. Run them from the repository root.
 
 ```bash
-python exposition-v3/known_orders.py --limit 200
-python -m unittest discover -s exposition-v3 -p 'test_*.py' -v
+python submission/v3/known_orders.py --limit 200
+python -m unittest discover -s submission/v3 -p 'test_*.py' -v
 cd submission/v2
 python -m unittest discover -s strengthening -p 'test_*.py' -v
 python strengthening/audit_study.py run-v2
 python strengthening/all_hadamard_checks.py > new-all-hadamard-checks.json
 ```
 
-The first two commands check the classical-order counts and the Williamson example in Part II. The remaining commands check the Paley construction, the counterexample theorem and the retained study data, which are unchanged from version 2. A fresh study run uses `python strengthening/study.py --output new-run` from the same directory.
+The first two commands check the classical-order counts and the Williamson examples in Part II. The remaining commands check the Paley construction, the counterexample theorem and the retained study data. Those are unchanged from version 2 and stored in `submission/v2`. A fresh study run uses `python strengthening/study.py --output new-run` from that directory.
 
 ## Sources
 

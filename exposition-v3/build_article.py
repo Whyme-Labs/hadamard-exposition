@@ -8,7 +8,8 @@ import subprocess
 import tempfile
 
 ROOT = Path(__file__).resolve().parent
-V2 = ROOT.parent/'submission'/'v2'/'strengthening'
+REPO = next(p for p in ROOT.parents if (p/'submission'/'v2').is_dir())
+V2 = REPO/'submission'/'v2'/'strengthening'
 MARKER = '## A fresh-seed study with competing transforms'
 
 parser = argparse.ArgumentParser(description=__doc__)
