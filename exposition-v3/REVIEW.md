@@ -31,6 +31,26 @@ An independent AI referee reviewed the draft without seeing the author's reasoni
 
 Every reference was checked against registry or publisher metadata: Crossref, arXiv, PMLR, the authors' and publishers' pages, and secondary bibliographies. DOIs were added where they exist. This found and fixed one further error. The complete order-32 classification is Kharaghani and Tayfeh-Rezaie, J. Combin. Des. 21 (2013), not their 2010 partial classification. Scarpis (1898) is confirmed only through secondary bibliographies, and the reference says so. Venues were added for QuIP# (ICML 2024) and SpinQuant (ICLR 2025).
 
+## Primary-source check, 23 October 2026
+
+Three agents checked each sourced claim against the cited texts and quoted the supporting passage.
+
+- **Read in the original:**
+  - Hadamard 1893, Sylvester 1867, Paley 1933 and Scarpis 1898, from archive.org scans.
+  - Goethals-Seidel 1970, Seberry 1976, Jensen 2007, the order-428 paper and Livinskyi's thesis.
+  - The arXiv versions of Đoković 2008, de Launey-Gordon, de Launey 2009, de Launey-Levin, Jaming-Matolcsi, Cati-Pasechnik and Du-Jiang.
+- **Paywalled; checked through abstracts and secondary sources:** Williamson 1944, Baumert-Golomb-Hall 1962, Turyn 1972, Đoković 1993, Holzmann-Kharaghani-Tayfeh-Rezaie 2008 and Craigen 1995.
+
+**Material finding.** The frontier was out of date. In August 2026 Hadamard matrices were announced at the twelve open orders below 2000, including 668. Egan, Kotsireas, London and Ó Catháin verified them in October 2026, and their survey lists 2396 as the smallest open order. The frontier, introduction, hardness example and summary were rewritten.
+
+**Other fixes:**
+- Order 428 used a Goethals-Seidel array, not a Baumert-Hall array. Order 764 was posted in 2007.
+- Jensen's correction applies already for primes $p\equiv1\pmod4$.
+- Craigen's coefficient is $2/3$. Livinskyi's $1/5$ is disputed by a 2024 preprint.
+- Paley's statement of the conjecture is now quoted, and his list of unsettled orders is cited to his Lemma 6.
+- Williamson's 1944 order 172 is no longer attributed to a specific construction. The Williamson conjecture is stated for all orders $4m$.
+- The Goethals-Seidel array is described as introduced for skew-Hadamard matrices. Turyn's family is stated, and Hadamard's complex-entry bound is noted.
+
 ## Open
 
-- Review by a human specialist in Hadamard matrices is still recommended. The cited papers' contents were checked through abstracts and secondary sources, not read in full.
+- Review by a human specialist in Hadamard matrices is still recommended. Six cited papers were checked only through abstracts and secondary sources.

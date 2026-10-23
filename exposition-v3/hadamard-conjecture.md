@@ -67,7 +67,7 @@ The upper bound follows from length preservation. The vector $x=e_jQ^{\mathsf T}
 
 ## The same object maximizes a determinant
 
-Hadamard's own interest was a determinant problem. [3] For any real $n\times n$ matrix $A$ with entries of magnitude at most one, let $G=AA^{\mathsf T}$. Its nonnegative eigenvalues have sum $\operatorname{tr}G\leq n^2$. Applying the arithmetic-geometric mean inequality gives
+Hadamard's own interest was a determinant problem. He proved the bound below for complex entries of modulus at most one, and showed that real matrices attaining it need order divisible by four. [3] For any real $n\times n$ matrix $A$ with entries of magnitude at most one, let $G=AA^{\mathsf T}$. Its nonnegative eigenvalues have sum $\operatorname{tr}G\leq n^2$. Applying the arithmetic-geometric mean inequality gives
 
 $$\det G\leq\left(\frac{n^2}{n}\right)^n=n^n,$$
 
@@ -101,7 +101,7 @@ Starting at order one gives every power of two. It does not give order twelve. I
 
 ## Paley's construction and order twelve
 
-Paley's 1933 paper supplied the first systematic infinite families of new orders, from finite fields. [7] It is also where the conjecture is first stated: "It seems probable that, whenever $m$ is divisible by 4, it is possible to construct an orthogonal matrix of order $m$ composed of $\pm1$, but the general theorem has every appearance of difficulty." [7, p. 312] We prove the prime-field case of his first construction.
+Paley's 1933 paper supplied the first systematic infinite families of new orders, from finite fields. [7] It also states the conjecture: "It seems probable that, whenever $m$ is divisible by 4, it is possible to construct an orthogonal matrix of order $m$ composed of $\pm1$, but the general theorem has every appearance of difficulty." [7, p. 312] We prove the prime-field case of his first construction.
 
 Take a prime $q\equiv3\pmod4$. Define the quadratic character $\chi$ on residues modulo $q$: it is zero at zero, $+1$ at nonzero squares, and $-1$ at non-squares. Let
 
@@ -150,13 +150,13 @@ Combine Sylvester doubling, both Paley constructions over prime powers, and Kron
 
 $$92,\ 116,\ 156,\ 172,\ 184,\ 188.$$
 
-These are exactly the orders below 200 that Paley himself listed as unsettled. Order 92 is the first. Paley's first construction would need $q=91=7\cdot13$, and his second would need $q=45=3^2\cdot5$. Neither is a prime power. The only factorizations of 92 into two orders greater than one use 2 and 46, or 4 and 23, and neither 46 nor 23 is a Hadamard order. Williamson settled 172 in 1944, order 92 fell in 1962, and $184=2\cdot92$ then followed by doubling. [8,9]
+These are exactly the orders below 200 that Paley himself listed as unsettled. Order 92 is the first. Paley's first construction would need $q=91=7\cdot13$, and his second would need $q=45=3^2\cdot5$. Neither is a prime power. The only factorizations of 92 into two orders greater than one use 2 and 46, or 4 and 23, and neither 46 nor 23 is a Hadamard order. Williamson's 1944 paper gave a matrix of order 172, order 92 fell in 1962, and $184=2\cdot92$ then followed by doubling. [7,8,9]
 
 Up to 1000, these three methods alone reach 195 of the 250 multiples of four. Product variants, such as Agaian's theorem giving order $8mn$ from orders $4m$ and $4n$, reach a few more. [4] A missed order is not an unknown order. The classical methods miss many orders below 2000, and every one of those has since been reached by other methods.
 
 ## Williamson's method and the computer
 
-Williamson's 1944 construction builds an order-$4m$ matrix from four smaller pieces. [8] Let $A,B,C,D$ be symmetric circulant $m\times m$ sign matrices satisfying
+Williamson's 1944 method builds an order-$4m$ matrix from four smaller pieces placed in a fixed array. [8] The following is one standard form. Let $A,B,C,D$ be symmetric circulant $m\times m$ sign matrices satisfying
 
 $$A^2+B^2+C^2+D^2=4m\,I_m.$$
 
@@ -168,7 +168,7 @@ is Hadamard of order $4m$. Circulant matrices always commute with each other, an
 
 The method turns a search over $(4m)^2$ signs into a search over four circulant first rows of length $m$, with symmetry cutting that further. In 1962 Baumert, Golomb and Hall used an early computer at the Jet Propulsion Laboratory to find Williamson matrices with $m=23$. This gave the first Hadamard matrix of order 92. [9] It is an early example of a computer settling a case of a classical existence question.
 
-It was once conjectured that Williamson matrices exist for every odd $m$. That *Williamson conjecture* is false. Exhaustive searches show that Williamson matrices do not exist for $m=35$, nor for $m=47,53,59$. [10] Hadamard matrices of those orders exist by other means. Turyn found an infinite family of Williamson matrices. [12] Goethals and Seidel removed the symmetry requirement by inserting a reversal matrix into a modified array. [11] T-sequences, built from base sequences or Turyn-type sequences, can be placed in the Goethals-Seidel array or in larger Baumert-Hall arrays, and reach many more orders. Later work added difference families, further infinite families, and product theorems that build new orders from old ones. [4] Each method reaches many new orders, and none is known to reach them all.
+It was once conjectured that every order $4m$ has a Hadamard matrix of Williamson type. That *Williamson conjecture* is false. Exhaustive searches show that Williamson matrices do not exist for $m=35$, nor for $m=47,53,59$. [10] Hadamard matrices of those orders exist by other means. Turyn found an infinite family: Williamson matrices of size $(q+1)/2$ for every prime power $q\equiv1\pmod4$. [12] Goethals and Seidel removed the symmetry requirement by inserting the reversal matrix, with ones on the back diagonal, into a modified array. They introduced it in 1970 to build skew-Hadamard matrices; its general form takes any four circulant sign matrices whose Gram matrices sum to $4mI$. [11] T-sequences, built from base sequences or Turyn-type sequences, can be placed in the Goethals-Seidel array or in larger Baumert-Hall arrays, and reach many more orders. Later work added difference families, further infinite families, and product theorems that build new orders from old ones. [4] Each method reaches many new orders, and none is known to reach them all.
 
 ## The computational frontier
 
@@ -190,7 +190,7 @@ The strongest general results show that every odd number appears in some Hadamar
 
 Density results measure the same gap from another direction. If the conjecture holds, the number of Hadamard orders up to $x$ is about $x/4$. Paley's constructions alone give on the order of $x/\log x$ orders. Counting Kronecker products of Paley orders, de Launey and Gordon proved the slightly larger lower bound $x\,e^{(C+o(1))(\log\log\log x)^2}/\log x$, with $C\approx0.8178$. They also showed that the other major constructions do not improve this bound. It is not even known that the Hadamard orders have positive density. [21] De Launey proved that for every $\varepsilon>0$, a positive proportion of odd numbers $k$ admit a Hadamard matrix of order $k\cdot2^{2+\lfloor\varepsilon\log_2k\rfloor}$. [22] Allowing only a slowly growing power of two thus covers a positive fraction of odd parts, but not all of them.
 
-Two related problems are also open and are sometimes confused with this one. The *skew-Hadamard conjecture* asks for a Hadamard matrix with $H+H^{\mathsf T}=2I$ in every order divisible by four. It is stronger than the Hadamard conjecture and has its own frontier: Cati and Pasechnik list 41 orders up to 1208 with no known skew-Hadamard matrix. [15] Ryser's *circulant Hadamard conjecture* asserts the opposite kind of statement: no circulant Hadamard matrix exists beyond order four. Excluding circulant matrices does not construct general Hadamard matrices. [1,4]
+Two related problems are also open and are sometimes confused with this one. The *skew-Hadamard conjecture* asks for a Hadamard matrix with $H+H^{\mathsf T}=2I$ in every order divisible by four. It is stronger than the Hadamard conjecture and has its own frontier: as of 2025, Cati and Pasechnik list 41 orders up to 1208 with no known skew-Hadamard matrix. [15] Ryser's *circulant Hadamard conjecture* asserts the opposite kind of statement: no circulant Hadamard matrix exists beyond order four. Excluding circulant matrices does not construct general Hadamard matrices. [1,4]
 
 ## Why the problem is hard
 
@@ -303,15 +303,15 @@ The first two commands check the classical-order counts and the Williamson examp
 
 [2] Philippe Jaming and Máté Matolcsi, [On the existence of flat orthogonal matrices](https://arxiv.org/abs/1505.03668), *Acta Mathematica Hungarica* 147 (2015), 179–188. doi:10.1007/s10474-015-0517-6.
 
-[3] Jacques Hadamard, Résolution d'une question relative aux déterminants, *Bulletin des Sciences Mathématiques* (2) 17 (1893), 240–246.
+[3] Jacques Hadamard, Résolution d'une question relative aux déterminants, *Bulletin des Sciences Mathématiques* (2) 17 (1893), 240–246. Orders 12 and 20 appear on pp. 245–246.
 
-[4] Robert Craigen and Hadi Kharaghani, Hadamard matrices and Hadamard designs, in C. J. Colbourn and J. H. Dinitz (eds.), *Handbook of Combinatorial Designs*, 2nd ed., Chapman & Hall/CRC, 2007, Chapter V.1, pp. 273–279. Surveys the array, sequence and product constructions. See also U. Scarpis, Sui determinanti di valore massimo, *Rendiconti del Reale Istituto Lombardo* (2) 31 (1898), 1441–1446 (as cited in secondary sources; not seen in the original), and S. S. Agaian, *Hadamard Matrices and Their Applications*, Lecture Notes in Mathematics 1168, Springer, 1985, doi:10.1007/BFb0101073. Also SageMath, [Hadamard matrices reference](https://doc.sagemath.org/html/en/reference/combinat/sage/combinat/matrices/hadamard_matrix.html).
+[4] Robert Craigen and Hadi Kharaghani, Hadamard matrices and Hadamard designs, in C. J. Colbourn and J. H. Dinitz (eds.), *Handbook of Combinatorial Designs*, 2nd ed., Chapman & Hall/CRC, 2007, Chapter V.1, pp. 273–279. Surveys the array, sequence and product constructions. See also U. Scarpis, Sui determinanti di valore massimo, *Rendiconti del Reale Istituto Lombardo di Scienze e Lettere* (2) 31 (1898), 1441–1446, and S. S. Agaian, *Hadamard Matrices and Their Applications*, Lecture Notes in Mathematics 1168, Springer, 1985, doi:10.1007/BFb0101073. Also SageMath, [Hadamard matrices reference](https://doc.sagemath.org/html/en/reference/combinat/sage/combinat/matrices/hadamard_matrix.html).
 
 [5] Kathy J. Horadam, *Hadamard Matrices and Their Applications*, Princeton University Press, 2007. doi:10.1515/9781400842902.
 
 [6] J. J. Sylvester, Thoughts on inverse orthogonal matrices, simultaneous sign-successions, and tessellated pavements in two or more colours, …, *Philosophical Magazine* 34 (1867), 461–475. doi:10.1080/14786446708639914.
 
-[7] R. E. A. C. Paley, On orthogonal matrices, *Journal of Mathematics and Physics* 12 (1933), 311–320. doi:10.1002/sapm1933121311. The quoted sentence is from p. 312, as reproduced in G. A. Jones, [Paley and the Paley graphs](https://arxiv.org/abs/1702.00285), 2017.
+[7] R. E. A. C. Paley, On orthogonal matrices, *Journal of Mathematics and Physics* 12 (1933), 311–320. doi:10.1002/sapm1933121311. The conjecture is stated on p. 312, and the list of unsettled orders below 200 is Lemma 6.
 
 [8] John Williamson, Hadamard's determinant theorem and the sum of four squares, *Duke Mathematical Journal* 11 (1944), 65–81. doi:10.1215/S0012-7094-44-01108-7.
 
