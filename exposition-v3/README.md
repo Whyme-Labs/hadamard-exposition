@@ -20,7 +20,7 @@ python exposition-v3/build_pdf.py                # needs Playwright and Chromium
 python exposition-v3/freeze_edition.py           # clean committed tree only; writes submission/v3
 ```
 
-`known_orders.py` computes which multiples of four the Sylvester, Paley and Kronecker-product constructions reach. A missed order is not a nonexistence claim. The tests check the Williamson array on two examples (orders 12 and 20). `edition/` holds the metadata files copied into the frozen edition. `freeze_edition.py` refuses to overwrite an existing `submission/v3`.
+`known_orders.py` computes which multiples of four the Sylvester, Paley and Kronecker-product constructions reach. A missed order is not a nonexistence claim. The tests check the Williamson array at orders 12 and 20, and rebuild the 1962 order-92 matrix from its published first rows. `edition/` holds the metadata files copied into the frozen edition. `freeze_edition.py` refuses to overwrite an existing `submission/v3`.
 
 ## Not yet done
 

@@ -52,6 +52,18 @@ class WilliamsonArray(unittest.TestCase):
         h = williamson(a, b, c, c)
         self.assertTrue(np.array_equal(h @ h.T, 20 * np.eye(20, dtype=int)))
 
+    def test_baumert_golomb_hall_order_92(self):
+        # First rows of A, B, C, D as printed in Bull. AMS 68 (1962), p. 237.
+        rows = ['++---+---+-++-+---+---+', '+-++-++--++++++--++-++-',
+                '+++---++-+-++-+-++---++', '+++-+++-+------+-+++-++']
+        blocks = []
+        for r in rows:
+            signs = [1 if c == '+' else -1 for c in r]
+            self.assertEqual(signs[1:], signs[1:][::-1])  # symmetric circulant
+            blocks.append(circulant(signs))
+        h = williamson(*blocks)
+        self.assertTrue(np.array_equal(h @ h.T, 92 * np.eye(92, dtype=int)))
+
     def test_corrupted_entry_rejected(self):
         a = np.ones((3, 3), dtype=int); b = 2 * np.eye(3, dtype=int) - a
         h = williamson(a, b, b, b); h[0, 5] *= -1

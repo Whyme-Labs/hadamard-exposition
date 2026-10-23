@@ -37,9 +37,10 @@ Three agents checked each sourced claim against the cited texts and quoted the s
 
 - **Read in the original:**
   - Hadamard 1893, Sylvester 1867, Paley 1933 and Scarpis 1898, from archive.org scans.
+  - Baumert-Golomb-Hall 1962, downloaded from the AMS site with a headless browser. Its printed first rows reproduce a Hadamard matrix of order 92, now a test.
   - Goethals-Seidel 1970, Seberry 1976, Jensen 2007, the order-428 paper and Livinskyi's thesis.
   - The arXiv versions of Đoković 2008, de Launey-Gordon, de Launey 2009, de Launey-Levin, Jaming-Matolcsi, Cati-Pasechnik and Du-Jiang.
-- **Paywalled; checked through abstracts and secondary sources:** Williamson 1944, Baumert-Golomb-Hall 1962, Turyn 1972, Đoković 1993, Holzmann-Kharaghani-Tayfeh-Rezaie 2008 and Craigen 1995.
+- **Paywalled or behind a captcha; checked through abstracts and secondary sources:** Williamson 1944, Turyn 1972, Đoković 1993, Holzmann-Kharaghani-Tayfeh-Rezaie 2008 and Craigen 1995.
 
 **Material finding.** The frontier was out of date. In August 2026 Hadamard matrices were announced at the twelve open orders below 2000, including 668. Egan, Kotsireas, London and Ó Catháin verified them in October 2026, and their survey lists 2396 as the smallest open order. The frontier, introduction, hardness example and summary were rewritten.
 
@@ -53,4 +54,4 @@ Three agents checked each sourced claim against the cited texts and quoted the s
 
 ## Open
 
-- Review by a human specialist in Hadamard matrices is still recommended. Six cited papers were checked only through abstracts and secondary sources.
+- Review by a human specialist in Hadamard matrices is still recommended. Five cited papers were checked only through abstracts and secondary sources.

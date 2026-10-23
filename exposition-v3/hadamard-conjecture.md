@@ -150,13 +150,13 @@ Combine Sylvester doubling, both Paley constructions over prime powers, and Kron
 
 $$92,\ 116,\ 156,\ 172,\ 184,\ 188.$$
 
-These are exactly the orders below 200 that Paley himself listed as unsettled. Order 92 is the first. Paley's first construction would need $q=91=7\cdot13$, and his second would need $q=45=3^2\cdot5$. Neither is a prime power. The only factorizations of 92 into two orders greater than one use 2 and 46, or 4 and 23, and neither 46 nor 23 is a Hadamard order. Williamson's 1944 paper gave a matrix of order 172, order 92 fell in 1962, and $184=2\cdot92$ then followed by doubling. [7,8,9]
+These are exactly the orders below 200 that Paley himself listed as unsettled. Order 92 is the first. Paley's first construction would need $q=91=7\cdot13$, and his second would need $q=45=3^2\cdot5$. Neither is a prime power. The only factorizations of 92 into two orders greater than one use 2 and 46, or 4 and 23, and neither 46 nor 23 is a Hadamard order. Williamson's 1944 paper gave a matrix of order 172, using an extra symmetry of order 3, order 92 fell in 1962, and $184=2\cdot92$ then followed by doubling. [7,8,9]
 
 Up to 1000, these three methods alone reach 195 of the 250 multiples of four. Product variants, such as Agaian's theorem giving order $8mn$ from orders $4m$ and $4n$, reach a few more. [4] A missed order is not an unknown order. The classical methods miss many orders below 2000, and every one of those has since been reached by other methods.
 
 ## Williamson's method and the computer
 
-Williamson's 1944 method builds an order-$4m$ matrix from four smaller pieces placed in a fixed array. [8] The following is one standard form. Let $A,B,C,D$ be symmetric circulant $m\times m$ sign matrices satisfying
+Williamson's 1944 method builds an order-$4m$ matrix from four smaller pieces placed in a fixed array. [8] Baumert, Golomb and Hall used the following form. [9] Let $A,B,C,D$ be symmetric circulant $m\times m$ sign matrices satisfying
 
 $$A^2+B^2+C^2+D^2=4m\,I_m.$$
 
@@ -164,9 +164,9 @@ Then the block matrix
 
 $$H=\begin{pmatrix}A&B&C&D\\-B&A&-D&C\\-C&D&A&-B\\-D&-C&B&A\end{pmatrix}$$
 
-is Hadamard of order $4m$. Circulant matrices always commute with each other, and symmetry makes each block equal to its transpose. The pattern of signs is the multiplication table of the quaternions, which is why the cross terms cancel. For $m=3$, take $A=J$ and $B=C=D=2I-J$. Then $A^2+3B^2=3J+3(4I-4J+3J)=12I$, giving another order-twelve matrix. The accompanying test checks this block identity directly.
+is Hadamard of order $4m$. Circulant matrices always commute with each other, and symmetry makes each block equal to its transpose. The pattern of signs is the multiplication table of the quaternions, which is why the cross terms cancel. For $m=3$, take $A=J$ and $B=C=D=2I-J$. Then $A^2+3B^2=3J+3(4I-4J+3J)=12I$, giving another order-twelve matrix. The accompanying test checks this block identity directly, at orders 12 and 20.
 
-The method turns a search over $(4m)^2$ signs into a search over four circulant first rows of length $m$, with symmetry cutting that further. In 1962 Baumert, Golomb and Hall used an early computer at the Jet Propulsion Laboratory to find Williamson matrices with $m=23$. This gave the first Hadamard matrix of order 92. [9] It is an early example of a computer settling a case of a classical existence question.
+The method turns a search over $(4m)^2$ signs into a search over four circulant first rows of length $m$, with symmetry cutting that further. In 1962 Baumert, Golomb and Hall ran Williamson's method on an IBM 7090 at the Jet Propulsion Laboratory and found Williamson matrices with $m=23$. This gave the first Hadamard matrix of order 92. They printed the first rows of the four $23\times23$ blocks, and the accompanying test rebuilds their matrix from those rows and checks $HH^{\mathsf T}=92I$. [9] It is an early example of a computer settling a case of a classical existence question.
 
 It was once conjectured that every order $4m$ has a Hadamard matrix of Williamson type. That *Williamson conjecture* is false. Exhaustive searches show that Williamson matrices do not exist for $m=35$, nor for $m=47,53,59$. [10] Hadamard matrices of those orders exist by other means. Turyn found an infinite family: Williamson matrices of size $(q+1)/2$ for every prime power $q\equiv1\pmod4$. [12] Goethals and Seidel removed the symmetry requirement by inserting the reversal matrix, with ones on the back diagonal, into a modified array. They introduced it in 1970 to build skew-Hadamard matrices; its general form takes any four circulant sign matrices whose Gram matrices sum to $4mI$. [11] T-sequences, built from base sequences or Turyn-type sequences, can be placed in the Goethals-Seidel array or in larger Baumert-Hall arrays, and reach many more orders. Later work added difference families, further infinite families, and product theorems that build new orders from old ones. [4] Each method reaches many new orders, and none is known to reach them all.
 

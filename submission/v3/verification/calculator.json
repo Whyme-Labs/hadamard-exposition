@@ -1,7 +1,0 @@
-{
-  "status": "passed",
-  "actual_bundled_javascript_executed": true,
-  "exact_python_witness_matches": 672,
-  "change_events_checked": true,
-  "rounding_ties_checked": true
-}
