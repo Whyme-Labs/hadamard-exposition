@@ -17,7 +17,7 @@ Please review this article as an explanation of JSP-000013. It does not claim a 
   - A complete proof of Paley's prime-field construction, with an explicit order-12 matrix.
   - The exact reach of the classical constructions.
   - Williamson's method, the 1962 order-92 search and the failed Williamson conjecture.
-  - The computational frontier, from order 428 to the open orders 668, 716, 892 and 1132.
+  - The computational frontier, from order 428 to the twelve orders below 2000 settled in 2026, and the smallest open order, now 2396.
   - Asymptotic and density results, related open problems, and why the problem is hard.
 - **Part III** is an application. It proves that one fixed input loses quantization accuracy under every Hadamard matrix of each existing order, and summarizes a preregistered synthetic study with both favorable and unfavorable results.
 

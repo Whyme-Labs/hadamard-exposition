@@ -29,11 +29,11 @@ class ClassicalOrders(unittest.TestCase):
         self.assertIn(668, r['missing'])
 
     def test_paley_obstructions(self):
-        for n, q1, q2 in [(92, 91, 45), (668, 667, 333)]:
+        for n, q1, q2 in [(92, 91, 45), (668, 667, 333), (2396, 2395, 1197)]:
             o = k.paley_obstruction(n)
             self.assertEqual((o['paley_i_q'], o['paley_ii_q']), (q1, q2))
             self.assertFalse(o['paley_i_q_is_prime_power'] or o['paley_ii_q_is_prime_power'])
-        self.assertEqual((667, 333), (23 * 29, 9 * 37))
+        self.assertEqual((667, 333, 2395, 1197), (23 * 29, 9 * 37, 5 * 479, 9 * 7 * 19))
 
 
 class WilliamsonArray(unittest.TestCase):

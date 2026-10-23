@@ -4,7 +4,7 @@
 
 ## What changed from v2
 
-- **New Part II, "What is known".** History from Sylvester and Hadamard to Paley; Kronecker products; the exact reach of the classical constructions; Williamson's method and the 1962 order-92 search; the computational frontier (428, 764, and the open orders 668, 716, 892 and 1132); asymptotic results of Seberry, Craigen and later work; density results; related open problems; and why the problem is hard.
+- **New Part II, "What is known".** History from Sylvester and Hadamard to Paley; Kronecker products; the exact reach of the classical constructions; Williamson's method and the 1962 order-92 search; the computational frontier (428, 764, the twelve orders below 2000 settled in 2026, and the smallest open order 2396); asymptotic results of Seberry, Craigen and later work; density results; related open problems; and why the problem is hard.
 - **New equivalent forms** in Part I: Hadamard designs, optimal codes and orthogonal arrays.
 - **Addendum merged.** The all-Hadamard counterexample theorem replaces the Sylvester-only version in the main text.
 - **Application shortened** into Part III. The study's design and headline numbers are unchanged, and the four-arm table shows selected multipliers.

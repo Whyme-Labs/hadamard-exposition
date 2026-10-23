@@ -57,7 +57,7 @@ def report(limit: int) -> dict:
                      'A missing order is not a nonexistence claim.',
             'multiples_of_four': limit // 4, 'reached': sum(1 for n in range(4, limit + 1, 4) if n in reached),
             'first_missing': missing[0] if missing else None, 'missing': missing,
-            'order_668': paley_obstruction(668)}
+            'order_668': paley_obstruction(668), 'order_2396': paley_obstruction(2396)}
 
 
 if __name__ == '__main__':

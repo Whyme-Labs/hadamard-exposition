@@ -7,7 +7,7 @@ Wei Meng Soh, Whyme Labs. Exposition candidate for JSP-000013 (MathDB problem 31
 The exposition has three parts:
 
 - **Part I** states the conjecture and proves the multiple-of-four condition and the flatness and determinant characterizations. It explains the equivalent design, code and orthogonal-array forms.
-- **Part II** surveys what is known. It covers the Sylvester, Paley and Williamson constructions and the 1962 order-92 search, the frontier from order 428 to the open orders 668, 716, 892 and 1132, and the asymptotic and density results. It also explains why the problem is hard.
+- **Part II** surveys what is known. It covers the Sylvester, Paley and Williamson constructions and the 1962 order-92 search, the frontier from order 428 to the twelve orders below 2000 settled in 2026 and the smallest open order, now 2396, and the asymptotic and density results. It also explains why the problem is hard.
 - **Part III** is an application. It proves that perfect balance does not guarantee lower quantization error, and summarizes a preregistered synthetic study, including its unfavorable results.
 
 AI assistance is disclosed. The internal AI review is recorded in `submission/v3/REVIEW.md`; it is not external peer review or committee selection.
