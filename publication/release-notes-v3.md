@@ -14,10 +14,10 @@ AI assistance is disclosed. The internal AI review is recorded in `submission/v3
 
 ## Fixed source and assets
 
-- Source edition: `submission/v3`, frozen from development commit `f9363186e7c8658daaf1efb57793523a2a5bca0d`. The release tag must point at a commit on the default branch that contains it unchanged.
-- `hadamard-conjecture-v3.pdf`, 15 pages, SHA-256 `d2feda9e7bf6d81ee392683239f4520d368d1617836eda771cde6da6fe565fb0`.
-- `hadamard-conjecture-v3.html`, standalone with the exact calculator, SHA-256 `617a6a21383e8b5f650d4bd15a37b00fa9e71e16d3733d80c5936c09a94947bc`.
-- `submission/v3/SHA256SUMS`, SHA-256 `f29e9b2699f07b412c411a5fd63e3e979aa5451d236436e8f0be95ed0faf6398`.
+- Source edition: `submission/v3`, frozen from development commit `c337592a21fcdf81dc9e7e4f3a7603e1f1fa6b29`. The release tag must point at a commit on the default branch that contains it unchanged.
+- `hadamard-conjecture-v3.pdf`, 15 pages, SHA-256 `cdc51674a7a25633445088c7767e3ccb6aaea219fedacaa1aa2ecdd1847635d4`.
+- `hadamard-conjecture-v3.html`, standalone with the exact calculator, SHA-256 `934af545af0d4d17210c4e35755548910d13fb4768bbd6294e7edee1275c2f91`.
+- `submission/v3/SHA256SUMS`, SHA-256 `4992001787b639334f7369acb12e569b722cd6b400522d7faaab9a44fbb125c9`.
 - Part III evidence: `submission/v2`, unchanged, with its own checksums and audit.
 
 Attach the PDF and HTML from `submission/v3` without rebuilding them. A suggested tag name is `exposition-v3`.
