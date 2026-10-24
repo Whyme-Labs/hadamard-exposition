@@ -4,7 +4,7 @@ The MathDB pilot process says to submit Exposition material "through MathDB's av
 
 ## Files to upload
 
-Build them from a clean checkout of the commit that contains this file:
+The exact files are committed in [`publication/mathdb-v3/`](mathdb-v3/) on branch `claude/friendly-archimedes-hr59ze`. Upload those copies. They can also be rebuilt from a clean checkout of the same branch:
 
 ```bash
 python publication/build_mathdb_packet.py      # writes build/mathdb-v3/
@@ -15,7 +15,7 @@ python publication/build_mathdb_packet.py      # writes build/mathdb-v3/
 | `hadamard-conjecture-v3.pdf` (main paper) | 309,619 | `cdc51674a7a25633445088c7767e3ccb6aaea219fedacaa1aa2ecdd1847635d4` |
 | `hadamard-exposition-v3-supporting-files.zip` (supporting material) | 452,530 | `c36d540d33b20da5d6d7bd46f882b3ecb93fca0fd3f4e8c67f5da9baf0f9b2f1` |
 
-The PDF is the frozen `submission/v3` file, unchanged. The ZIP holds `submission/v3` and `submission/v2` at their repository paths, so the article's "Reproduce and inspect" commands run from the ZIP root. The script rebuilds the same ZIP bytes from the same commit. If the upload form accepts only one file, upload the PDF.
+The PDF is the frozen `submission/v3` file, unchanged. The ZIP holds `submission/v3` and `submission/v2` at their repository paths, so the article's "Reproduce and inspect" commands run from the ZIP root. A fresh clone rebuilt both files with identical digests. A different Python or zlib version can still compress the ZIP differently, so if a rebuilt ZIP's digest differs, use the committed copy; each edition's own `SHA256SUMS` checks the contents either way. If the upload form accepts only one file, upload the PDF.
 
 ## Form fields
 
@@ -42,7 +42,7 @@ The PDF is the frozen `submission/v3` file, unchanged. The ZIP holds `submission
 ## Before you upload
 
 1. Sign in to MathDB as the author.
-2. Rebuild the files and compare both digests with the table above.
+2. Compare both files' SHA-256 digests with the table above (`shasum -a 256` on macOS, `sha256sum` on Linux).
 3. Read the PDF once more. After upload, the version is fixed; any change needs a new version and, under the prize rules, a fresh 14-day notice.
 
 ## After you upload
@@ -53,6 +53,27 @@ The upload creates the public date that counts for priority. Record it right awa
 2. Note the UTC time at which you saw it public, and the page's own posted date.
 3. Download the PDF back from MathDB and check its SHA-256 against the table.
 4. Send these to the assistant, or commit them as `publication/receipt-v3.json`: the MathDB paper URL, the observed UTC time, the posted date, and the downloaded digest. Do not edit `submission/v3/PUBLICATION.json`; it is the frozen pre-publication record.
+
+## For an assistant doing the upload in a browser
+
+- Work from branch `claude/friendly-archimedes-hr59ze` of `Whyme-Labs/hadamard-exposition`. It is not merged into `main`.
+- The author signs in to MathDB personally. Never type, store or ask for the password.
+- Upload `publication/mathdb-v3/hadamard-conjecture-v3.pdf` as the paper, and the ZIP as supporting material if the form allows it.
+- Fill the fields from "Form fields" above, verbatim. If the form needs a field not listed here, ask the author.
+- Link the upload to problem 315867. If there is no way to link it, stop and ask.
+- Before the final submit, show the author the completed form and get explicit approval. The upload is public, and it fixes the version.
+- After submitting, do the "After you upload" steps and commit `publication/receipt-v3.json` on the same branch:
+
+```json
+{
+  "mathdb_paper_url": "",
+  "first_public_observed_utc": "",
+  "mathdb_posted_date": "",
+  "downloaded_pdf_sha256": "",
+  "matches_submitted_pdf": true,
+  "observed_signed_out": true
+}
+```
 
 ## What happens next under the official process
 
